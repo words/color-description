@@ -1,2 +1,2 @@
 # color-description
-Get textual description for a given golor
+Get textual description for a given color
