@@ -107,7 +107,15 @@ const temperatures = [
 
 export default class ColorDescription {
   constructor (color) {
-    this.color = this.#parseColor(color);
+    this.color = color;
+  }
+
+  set color (color) {
+    this.currentColor = this.#parseColor(color)
+  }
+
+  get color () {
+    return this.currentColor;
   }
 
   #parseColor (color) {
@@ -125,13 +133,20 @@ export default class ColorDescription {
     , {value: 0});
   }
 
-  get hslAdjectives () {
+  get rgbPercentages () {
+    const gl = this.color.gl();
+    gl.pop() // removes alpha
+    const total = gl.reduce((r,d) => r + d, 0);
+    return gl.map(c => c/total);
+  }
+
+
+  get adjectives () {
     const hsl = this.color.hsl();
 
     return HSLadjectives.reduce((rem, current) => {
       //console.log(rem, current);
       const colorModels = Object.keys(current.criteria);
-
       const matchesEveryCriteria = colorModels.every(colorModel => {
 
         const colorAsModel = this.color[colorModel]();
@@ -147,7 +162,7 @@ export default class ColorDescription {
           } else {
             return false;
           }
-        })
+        });
       });
 
       if (matchesEveryCriteria) {

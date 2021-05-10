@@ -30,6 +30,19 @@ test('get adjectives for color temperature', () => {
 test('gets fancy HSL Adjectives', () => {
   const cd = new ColorDescription('white');
 
-  expect(cd).toHaveProperty('hslAdjectives');
-  expect(cd.hslAdjectives.length).toBeGreaterThan(0);
+  expect(cd).toHaveProperty('adjectives');
+  expect(cd.adjectives.length).toBeGreaterThan(0);
+});
+
+
+test('getting RGB in percentage of the whole color', () => {
+  const cd = new ColorDescription('#ffffff');
+
+  expect(cd).toHaveProperty('rgbPercentages');
+  expect(cd.rgbPercentages[0]).toBeGreaterThan(0.3);
+  expect(cd.rgbPercentages[1]).toBeGreaterThan(0.3);
+  expect(cd.rgbPercentages[2]).toBeGreaterThan(0.3);
+
+  cd.color = '#ff0000';
+  expect(cd.rgbPercentages[0]).toBe(1);
 });
