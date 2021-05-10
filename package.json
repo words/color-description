@@ -1,0 +1,24 @@
+{
+  "name": "color-description",
+  "version": "0.1.0",
+  "description": "Textual color description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/words/color-description.git"
+  },
+  "keywords": [
+    "color",
+    "text",
+    "colour"
+  ],
+  "author": "meodai@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/words/color-description/issues"
+  },
+  "homepage": "https://github.com/words/color-description#readme"
+}
