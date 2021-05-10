@@ -26,3 +26,10 @@ test('get adjectives for color temperature', () => {
   expect(cd).toHaveProperty('temeratureAdjectives');
   expect(cd.temeratureAdjectives.adjecives[0]).toBe('ultra warm');
 });
+
+test('gets fancy HSL Adjectives', () => {
+  const cd = new ColorDescription('white');
+
+  expect(cd).toHaveProperty('hslAdjectives');
+  expect(cd.hslAdjectives.length).toBeGreaterThan(0);
+});
