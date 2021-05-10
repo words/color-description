@@ -31,6 +31,7 @@
     "chroma-js": "^2.1.1"
   },
   "devDependencies": {
+    "git-cz": "^4.7.6",
     "jest": "^26.6.3"
   }
 }
