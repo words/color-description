@@ -12,7 +12,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.75, 1], [0.4, 0.55]],
     },
-    adjecives: [
+    adjectives: [
       'saturated', 
       'strong', 
       'lush', 
@@ -30,7 +30,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0, 0.07]],
     },
-    adjecives: [
+    adjectives: [
       'dark', 
       'dull', 
       'ashy', 
@@ -46,7 +46,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0, 0.3]],
     },
-    adjecives: [
+    adjectives: [
       'dark',
     ],
   },
@@ -54,7 +54,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.1, 0.7], [0.15, 0.35]],
     },
-    adjecives: [
+    adjectives: [
       'bleak',
       'muted',
       'matte',
@@ -65,7 +65,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.12, 1], [0.7, 1]],
     },
-    adjecives: [
+    adjectives: [
       'tinted'
     ],
   },
@@ -73,7 +73,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0.88, 1]],
     },
-    adjecives: [
+    adjectives: [
       'pale', 
       'light', 
       'faded', 
@@ -86,7 +86,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.5, 1], [0.7, 0.9]],
     },
-    adjecives: [
+    adjectives: [
       'fresh',
       'sparkling',
       'glittering',
@@ -99,13 +99,13 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0.9, 1]],
     },
-    adjecives: ['neutral'],
+    adjectives: ['neutral'],
   },
   {
     criteria: {
       hsl: [null, [0.74, 1], [0.9, 1]],
     },
-    adjecives: [
+    adjectives: [
       'muted'
     ],
   },
@@ -113,7 +113,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, 1],
     },
-    adjecives: [
+    adjectives: [
       'colorless', 
       'bright', 
       'briliant', 
@@ -124,7 +124,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, 0],
     },
-    adjecives: [
+    adjectives: [
       'colorless', 
       'low',
       'dark'
@@ -136,7 +136,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0,0.04], [0.1, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'grey',
     ],
   },
@@ -144,7 +144,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.04, 0.1], [0.17, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'almost grey',
     ],
   },
@@ -152,7 +152,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.1, 0.3], [0.17, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'very unsaturated',
     ],
   },
@@ -160,7 +160,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.3, 0.46], null],
     },
-    adjecives: [
+    adjectives: [
       'unsaturated',
     ],
   },
@@ -168,7 +168,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.46, 0.6], [0.4, 0.55]],
     },
-    adjecives: [
+    adjectives: [
       'rather unsaturated',
     ],
   },
@@ -176,7 +176,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.601, 0.8], [0.45, 0.6]],
     },
-    adjecives: [
+    adjectives: [
       'saturated',
     ],
   },
@@ -184,7 +184,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.801, 0.94], [0.45, 0.6]],
     },
-    adjecives: [
+    adjectives: [
       'rather saturated',
     ],
   },
@@ -192,7 +192,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.941, 1], [0.45, 0.6]],
     },
-    adjecives: [
+    adjectives: [
       'very saturated',
     ],
   },
@@ -204,7 +204,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[0, 90], [0.5, 1], [0.1 ,1]],
     },
-    adjecives: [
+    adjectives: [
       'warm',
       'mellow',
       'hot'
@@ -214,7 +214,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[270,360], [0.5, 1], [.1,1]],
     },
-    adjecives: [
+    adjectives: [
       'warm',
       'mellow',
       'hot'
@@ -224,7 +224,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[90.01,269.99], null, [.1,1]],
     },
-    adjecives: [
+    adjectives: [
       'cold',
       'cool'
     ],
@@ -235,19 +235,31 @@ const HSLadjectives = [
     criteria: {
       hsl: [[0,15], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'red', 
       'reddish'
     ],
     nouns: [
       'red'
+    ],
+    emotions: [
+      'excitement',
+      'energy',
+      'passion',
+      'courage',
+      'attention',
+    ],
+    usage: [
+      'stimulate',
+      'createe urgency',
+      'draw attention'
     ]
   },
   {
     criteria: {
       hsl: [[15,45], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'orange',
     ],
     nouns: [
@@ -258,7 +270,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[45,70], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'yellow',
     ],
     nouns: [
@@ -269,7 +281,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[70,79], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'lime',
     ],
     nouns: [
@@ -280,7 +292,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[79,163], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'green',
       'greenish',
     ],
@@ -292,7 +304,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[163,193], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'cyan'
     ],
     nouns: [
@@ -303,7 +315,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[193,240], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'blue',
       'blueish'
     ],
@@ -315,7 +327,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[240,260], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'indigo',
     ],
     nouns: [
@@ -326,7 +338,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[260,270], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'violet',
     ],
     nouns: [
@@ -337,7 +349,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[270,291], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'purple',
       'purplish'
     ],
@@ -349,7 +361,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[291,327], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'magenta'
     ],
     nouns: [
@@ -360,7 +372,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[327,344], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'rose'
     ],
     nouns: [
@@ -371,7 +383,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[344,360], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'red', 
       'reddish'
     ],
@@ -384,37 +396,37 @@ const HSLadjectives = [
 const temperatures = [
   {
     value: 1800,
-    adjecives: [
+    adjectives: [
       'ultra warm',
     ]
   },
   {
     value: 2400,
-    adjecives: [
+    adjectives: [
       'very warm',
     ]
   },
   {
     value: 2700,
-    adjecives: [
+    adjectives: [
       'warm',
     ]
   },
   {
     value: 3000,
-    adjecives: [
+    adjectives: [
       'warm white',
     ]
   },
   {
     value: 4000,
-    adjecives: [
+    adjectives: [
       'cool or cold',
     ]
   },
   {
     value: 6500,
-    adjecives: [
+    adjectives: [
       'cool',
     ]
   }
@@ -455,21 +467,13 @@ export default class ColorDescription {
     return gl.map(c => c/total);
   }
 
-  get adjectivesList () {
-    const arr = [...this.adjectives];
-
-    if (arr.length > 1) {
-      const last = arr.pop()
-      return `${arr.join(', ')} and ${last}`;
-    } else {
-      return arr[0];
-    }
-  }
-
-  get adjectives () {
+  #getWords (scope = 'adjectives') {
     const hsl = this.color.hsl();
 
     return HSLadjectives.reduce((rem, current) => {
+      if( !current.hasOwnProperty(scope) ) {
+        return rem;
+      }
       const colorModels = Object.keys(current.criteria);
       const matchesEveryCriteria = colorModels.every(colorModel => {
         const colorAsModel = this.color[colorModel]();
@@ -491,10 +495,41 @@ export default class ColorDescription {
       });
 
       if (matchesEveryCriteria) {
-        return [...new Set([...rem, ...current.adjecives])];
+        return [...new Set([...rem, ...current[scope]])];
       } else {
         return rem;
       }
     },[]);
+  }
+
+  get adjectives () {
+    return this.#getWords('adjectives');
+  }
+
+  get nouns () {
+    return this.#getWords('nouns');
+  }
+
+  get bestContrast () {
+    return chroma.contrast(this.color, 'black') > chroma.contrast(this.color, 'white') ? 'black' : 'white';
+  }
+
+  getAdjectivesList (limit, random) {
+    let arr = [...this.adjectives];
+    
+    if (random) {
+      arr = arr.sort(() => 0.5 - Math.random());
+    }
+
+    if (limit) {
+      arr = arr.slice(0, limit);
+    }
+
+    if (arr.length > 1) {
+      const last = arr.pop()
+      return `${arr.join(', ')} and ${last}`;
+    } else {
+      return arr[0];
+    }
   }
 }
