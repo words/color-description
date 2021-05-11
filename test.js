@@ -43,6 +43,8 @@ test('getting RGB in percentage of the whole color', () => {
   expect(cd.rgbPercentages[1]).toBeGreaterThan(0.3);
   expect(cd.rgbPercentages[2]).toBeGreaterThan(0.3);
 
+  console.log(cd.adjectivesList)
+
   cd.color = '#ff0000';
   expect(cd.rgbPercentages[0]).toBe(1);
 });

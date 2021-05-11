@@ -1,6 +1,7 @@
 import chroma from 'chroma-js';
 
 // https://grammar.yourdictionary.com/grammar/word-lists/list-of-words-to-describe-colors.html
+// https://www.writerswrite.co.za/204-words-that-describe-colours/
 
 const cmyk2cmy = cmyk => {
   const [c, m, y, k] = cmyk;
@@ -140,6 +141,16 @@ export default class ColorDescription {
     return gl.map(c => c/total);
   }
 
+  get adjectivesList () {
+    const arr = [...this.adjectives];
+
+    if (arr.length > 1) {
+      const last = arr.pop()
+      return `${arr.join(', ')} and ${last}`;
+    } else {
+      return arr[0];
+    }
+  }
 
   get adjectives () {
     const hsl = this.color.hsl();
