@@ -46,3 +46,4 @@ console.log(cd.description)
 ### Color Adjectives
 
 - [Adjective List](https://grammar.yourdictionary.com/grammar/word-lists/list-of-words-to-describe-colors.html)
+- [Human Colors](https://github.com/vasilisvg/human-colours/blob/master/js/human-colours-en-gb.js)

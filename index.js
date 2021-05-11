@@ -46,6 +46,14 @@ const HSLadjectives = [
   },
   {
     criteria: {
+      hsl: [null, null, [0, 0.3]],
+    },
+    adjecives: [
+      'dark',
+    ],
+  },
+  {
+    criteria: {
       hsl: [null, [0.1, 0.7], [0.15, 0.35]],
     },
     adjecives: [
@@ -196,7 +204,7 @@ const HSLadjectives = [
   // https://discuss.pixls.us/t/color-choosing-paradox-also-warmer-vs-cooler/5722/40
   {
     criteria: {
-      hsl: [[0, 90], [0, 0.5], [0.1 ,1]],
+      hsl: [[0, 90], [0.5, 1], [0.1 ,1]],
     },
     adjecives: [
       'warm',
@@ -206,7 +214,7 @@ const HSLadjectives = [
   },
   {
     criteria: {
-      hsl: [[270,360], [0, 0.5], [.1,1]],
+      hsl: [[270,360], [0.5, 1], [.1,1]],
     },
     adjecives: [
       'warm',
@@ -224,17 +232,6 @@ const HSLadjectives = [
     ],
   },
 ];
-
-const HSLhue = [
-  {
-    range: [349, 11], 
-    name: 'red',
-  },
-  {
-    range: [11, 37], 
-    name: 'orange ',
-  }
-]
 
 const temperatures = [
   {
@@ -325,12 +322,12 @@ export default class ColorDescription {
     const hsl = this.color.hsl();
 
     return HSLadjectives.reduce((rem, current) => {
-      //console.log(rem, current);
       const colorModels = Object.keys(current.criteria);
       const matchesEveryCriteria = colorModels.every(colorModel => {
-
         const colorAsModel = this.color[colorModel]();
-        colorAsModel.pop() // removes alpha
+        if (colorModel === 'hsl' || colorModel === 'gl' || colorModel === 'rgb') {
+          colorAsModel.pop() // removes alpha
+        }
         
         return current.criteria[colorModel].every((criterium, i) => {
           if (criterium === null) {

@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang=en>
+
+<head>
+  <meta charset=utf-8>
+  <title>Wikipedia TLDR Browser Demo</title>
+</head>
+
+<body>
+  <div class="currentColor" style="height: 20rem">
+
+  </div>
+  <div class="result" style="font-size: 2rem;">
+
+  </div>
+  <input type="color" value='#b40404' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
+  <script type="module">
+    import ColorDescription from '../index.js';
+
+    const cd = new ColorDescription('#b40404');
+    const $result = document.querySelector('.result');
+    const $currentColor = document.querySelector('.currentColor');
+
+    $result.innerHTML = cd.adjectivesList;
+    $currentColor.style.backgroundColor = '#b40404';
+
+    const $input = document.querySelector('input').addEventListener('input', e => {
+      cd.color = e.target.value;
+      $result.innerHTML = chroma(e.target.value).css('hsl') + '<br>' + cd.adjectivesList;
+      $currentColor.style.backgroundColor = e.target.value;
+    });
+  </script>
+</body>
+
+</html>
