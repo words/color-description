@@ -1,3 +1,5 @@
+import chroma from 'chroma-js';
+
 // https://www.writerswrite.co.za/204-words-that-describe-colours/
 
 const cmyk2cmy = cmyk => {

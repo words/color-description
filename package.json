@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "build": "node --experimental-vm-modules build.js",
+    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",

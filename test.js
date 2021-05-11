@@ -1,4 +1,4 @@
-import ColorDescription from '.';
+import ColorDescription from './dist/index.node';
 
 test('parses color corectly', () => {
   const cd = new ColorDescription('red');
