@@ -231,6 +231,156 @@ const HSLadjectives = [
       'cool'
     ],
   },
+
+  // hues
+  {
+    criteria: {
+      hsl: [[0,15], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'red', 
+      'reddish'
+    ],
+    nouns: [
+      'red'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[15,45], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'orange',
+    ],
+    nouns: [
+      'orange'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[45,70], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'yellow',
+    ],
+    nouns: [
+      'yellow'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[70,79], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'lime',
+    ],
+    nouns: [
+      'lime'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[79,163], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'green',
+      'greenish',
+    ],
+    nouns: [
+      'green'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[163,193], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'cyan'
+    ],
+    nouns: [
+      'cyan'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[193,240], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'blue',
+      'blueish'
+    ],
+    nouns: [
+      'blue'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[240,260], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'indigo',
+    ],
+    nouns: [
+      'indigo'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[260,270], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'violet',
+    ],
+    nouns: [
+      'violet'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[270,291], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'purple',
+      'purplish'
+    ],
+    nouns: [
+      'purple'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[291,327], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'magenta'
+    ],
+    nouns: [
+      'magenta'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[327,344], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'rose'
+    ],
+    nouns: [
+      'rose'
+    ]
+  },
+  {
+    criteria: {
+      hsl: [[344,360], [0.1, 1], [.07, 0.99]],
+    },
+    adjecives: [
+      'red', 
+      'reddish'
+    ],
+    nouns: [
+      'red'
+    ]
+  },
 ];
 
 const temperatures = [
