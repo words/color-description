@@ -1,6 +1,5 @@
 import chroma from 'chroma-js';
 
-// https://grammar.yourdictionary.com/grammar/word-lists/list-of-words-to-describe-colors.html
 // https://www.writerswrite.co.za/204-words-that-describe-colours/
 
 const cmyk2cmy = cmyk => {
@@ -47,6 +46,17 @@ const HSLadjectives = [
   },
   {
     criteria: {
+      hsl: [null, [0.1, 0.7], [0.15, 0.35]],
+    },
+    adjecives: [
+      'bleak',
+      'muted',
+      'matte',
+      'dusty'
+    ],
+  },
+  {
+    criteria: {
       hsl: [null, [0.12, 1], [0.7, 1]],
     },
     adjecives: [
@@ -62,7 +72,8 @@ const HSLadjectives = [
       'light', 
       'faded', 
       'delicate',
-      'glistening'
+      'glistening',
+      'bleached'
     ],
   },
   {
@@ -111,6 +122,105 @@ const HSLadjectives = [
       'colorless', 
       'low',
       'dark'
+    ],
+  },
+
+  // saturations
+  {
+    criteria: {
+      hsl: [null, [0,0.04], [0.1, 0.99]],
+    },
+    adjecives: [
+      'grey',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.04, 0.1], [0.17, 0.99]],
+    },
+    adjecives: [
+      'almost grey',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.1, 0.3], [0.17, 0.99]],
+    },
+    adjecives: [
+      'very unsaturated',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.3, 0.46], null],
+    },
+    adjecives: [
+      'unsaturated',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.46, 0.6], [0.4, 0.55]],
+    },
+    adjecives: [
+      'rather unsaturated',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.601, 0.8], [0.45, 0.6]],
+    },
+    adjecives: [
+      'saturated',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.801, 0.94], [0.45, 0.6]],
+    },
+    adjecives: [
+      'rather saturated',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.941, 1], [0.45, 0.6]],
+    },
+    adjecives: [
+      'very saturated',
+    ],
+  },
+
+  // warm vs cold colors
+  // loosly based on https://www.sensationalcolor.com/color-temperature/
+  // https://discuss.pixls.us/t/color-choosing-paradox-also-warmer-vs-cooler/5722/40
+  {
+    criteria: {
+      hsl: [[0, 90], [0, 0.5], [0.1 ,1]],
+    },
+    adjecives: [
+      'warm',
+      'mellow',
+      'hot'
+    ],
+  },
+  {
+    criteria: {
+      hsl: [[270,360], [0, 0.5], [.1,1]],
+    },
+    adjecives: [
+      'warm',
+      'mellow',
+      'hot'
+    ],
+  },
+  {
+    criteria: {
+      hsl: [[90.01,269.99], null, [.1,1]],
+    },
+    adjecives: [
+      'cold',
+      'cool'
     ],
   },
 ];
