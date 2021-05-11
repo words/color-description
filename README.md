@@ -42,3 +42,7 @@ console.log(cd.description)
 
 - [Named color wheel](https://en.wikipedia.org/wiki/Hue#24_hues_of_HSL/HSV)
 - [Named color wheel](https://www.color-meanings.com/primary-secondary-tertiary-colors/)
+
+### Color Adjectives
+
+- [Adjective List](https://grammar.yourdictionary.com/grammar/word-lists/list-of-words-to-describe-colors.html)

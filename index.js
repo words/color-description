@@ -13,21 +13,70 @@ const isInRange = (x, min, max) => (x >= min && x <= max);
 const HSLadjectives = [
   {
     criteria: {
+      hsl: [null, [0.75, 1], [0.4, 0.55]],
+    },
+    adjecives: [
+      'saturated', 
+      'strong', 
+      'lush', 
+      'ablaze', 
+      'beaming', 
+      'bold', 
+      'brilliant', 
+      'flamboyant',
+      'vibrant',
+      'vivid',
+      'loud'
+    ],
+  },
+  {
+    criteria: {
       hsl: [null, null, [0, 0.07]],
     },
-    adjecives: ['dark', 'dull', 'ashy', 'somber', 'bleak', 'dim', 'muddy', 'gloomy', 'sooty'],
+    adjecives: [
+      'dark', 
+      'dull', 
+      'ashy', 
+      'somber', 
+      'bleak', 
+      'dim', 
+      'muddy', 
+      'gloomy', 
+      'sooty'
+    ],
   },
   {
     criteria: {
       hsl: [null, [0.12, 1], [0.7, 1]],
     },
-    adjecives: ['tinted'],
+    adjecives: [
+      'tinted'
+    ],
   },
   {
     criteria: {
       hsl: [null, null, [0.88, 1]],
     },
-    adjecives: ['pale', 'light', 'faded'],
+    adjecives: [
+      'pale', 
+      'light', 
+      'faded', 
+      'delicate',
+      'glistening'
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.5, 1], [0.7, 0.9]],
+    },
+    adjecives: [
+      'fresh',
+      'sparkling',
+      'glittering',
+      'glowing',
+      'jazzy',
+      'opalecent'
+    ],
   },
   {
     criteria: {
@@ -39,23 +88,33 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.74, 1], [0.9, 1]],
     },
-    adjecives: ['muted'],
+    adjecives: [
+      'muted'
+    ],
   },
   {
     criteria: {
       hsl: [null, null, 1],
     },
-    adjecives: ['colorless', 'bright', 'briliant', 'high'],
+    adjecives: [
+      'colorless', 
+      'bright', 
+      'briliant', 
+      'high'
+    ],
   },
   {
     criteria: {
       hsl: [null, null, 0],
     },
-    adjecives: ['colorless', 'briliant', 'low'],
+    adjecives: [
+      'colorless', 
+      'low',
+      'dark'
+    ],
   },
 ];
 
-// https://en.wikipedia.org/wiki/Hue#24_hues_of_HSL/HSV
 const HSLhue = [
   {
     range: [349, 11], 
