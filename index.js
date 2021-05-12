@@ -206,8 +206,7 @@ const HSLadjectives = [
     },
     adjectives: [
       'warm',
-      'mellow',
-      'hot'
+      'mellow'
     ],
   },
   {
@@ -216,8 +215,7 @@ const HSLadjectives = [
     },
     adjectives: [
       'warm',
-      'mellow',
-      'hot'
+      'mellow'
     ],
   },
   {
@@ -248,11 +246,18 @@ const HSLadjectives = [
       'passion',
       'courage',
       'attention',
+      'lust',
+      'power',
+      'love',
+      'speed',
+      'anger'
     ],
     usage: [
       'stimulate',
       'createe urgency',
-      'draw attention'
+      'draw attention',
+      'caution',
+      'encurage'
     ]
   },
   {
@@ -264,6 +269,19 @@ const HSLadjectives = [
     ],
     nouns: [
       'orange'
+    ],
+    emotions: [
+      'optimism',
+      'idependence',
+      'adventure',
+      'creativity',
+      'fun'
+    ],
+    usage: [
+      'stimulate',
+      'draw attention',
+      'express freedom',
+      'fascinate'
     ]
   },
   {
@@ -275,6 +293,22 @@ const HSLadjectives = [
     ],
     nouns: [
       'yellow'
+    ],
+    emotions: [
+      'ethusiasm',
+      'opportunity',
+      'spontaneity',
+      'happyness',
+      'positivity'
+    ],
+    usage: [
+      'stimulate',
+      'relax',
+      'awake awareness',
+      'egnergize',
+      'affect mood',
+      'sale',
+      'cheap'
     ]
   },
   {
@@ -286,6 +320,20 @@ const HSLadjectives = [
     ],
     nouns: [
       'lime'
+    ],
+    emotions: [
+      'growth',
+      'harmony',
+      'fertility',
+      'kindness',
+      'dependability'
+    ],
+    usage: [
+      'restore energy',
+      'promote growth',
+      'awake awareness',
+      'rejuvinate',
+      'nature'
     ]
   },
   {
@@ -298,6 +346,20 @@ const HSLadjectives = [
     ],
     nouns: [
       'green'
+    ],
+    emotions: [
+      'safety',
+      'harmony',
+      'stability',
+      'reliability',
+      'balance'
+    ],
+    usage: [
+      'relax',
+      'ballance',
+      'revitalize',
+      'encurage',
+      'posses'
     ]
   },
   {
@@ -373,10 +435,10 @@ const HSLadjectives = [
       hsl: [[327,344], [0.1, 1], [.07, 0.99]],
     },
     adjectives: [
-      'rose'
+      'pink'
     ],
     nouns: [
-      'rose'
+      'pink'
     ]
   },
   {
@@ -389,7 +451,26 @@ const HSLadjectives = [
     ],
     nouns: [
       'red'
-    ]
+    ],
+    emotions: [
+      'excitement',
+      'energy',
+      'passion',
+      'courage',
+      'attention',
+      'lust',
+      'power',
+      'love',
+      'speed',
+      'anger'
+    ],
+    usage: [
+      'stimulate',
+      'createe urgency',
+      'draw attention',
+      'caution',
+      'encurage'
+    ],
   },
 ];
 
