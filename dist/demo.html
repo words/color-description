@@ -5,16 +5,32 @@
 <head>
   <meta charset=utf-8>
   <title>Color-Description Browser Demo</title>
+  <style>
+    :root {
+      padding: 2rem;
+    }
+    .currentColor {
+      height: 20rem;
+      margin-bottom: 2rem;
+    }
+    .result {
+      font-size: 2rem; 
+      padding: 2rem;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="currentColor" style="height: 20rem">
-    <div class="result" style="font-size: 2rem; padding: 2rem;">
+  <h1>Color-Description Demo</h1>
+  <div class="currentColor">
+    <div class="result">
     
     </div>
   </div>
-  
-  <input type="color" value='#b40404' />
+  <label>
+    <h2>Change Color:</h2>
+    <input type="color" value='#b40404' />
+  </label>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
   <script type="module">
     import ColorDescription from '../index.js';
