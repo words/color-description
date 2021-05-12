@@ -202,22 +202,20 @@ const HSLadjectives = [
   // https://discuss.pixls.us/t/color-choosing-paradox-also-warmer-vs-cooler/5722/40
   {
     criteria: {
-      hsl: [[0, 90], [0.5, 1], [0.1 ,1]],
+      hsl: [[0, 90], [0.3, 1], [0.1 ,1]],
     },
     adjecives: [
       'warm',
-      'mellow',
-      'hot'
+      'mellow'
     ],
   },
   {
     criteria: {
-      hsl: [[270,360], [0.5, 1], [.1,1]],
+      hsl: [[270,360], [0.3, 1], [.1,1]],
     },
     adjecives: [
       'warm',
-      'mellow',
-      'hot'
+      'mellow'
     ],
   },
   {
@@ -281,8 +279,7 @@ const HSLadjectives = [
       hsl: [[79,163], [0.1, 1], [.07, 0.99]],
     },
     adjecives: [
-      'green',
-      'greenish',
+      'green'
     ],
     nouns: [
       'green'
@@ -304,8 +301,7 @@ const HSLadjectives = [
       hsl: [[193,240], [0.1, 1], [.07, 0.99]],
     },
     adjecives: [
-      'blue',
-      'blueish'
+      'blue'
     ],
     nouns: [
       'blue'
@@ -327,7 +323,7 @@ const HSLadjectives = [
       hsl: [[260,270], [0.1, 1], [.07, 0.99]],
     },
     adjecives: [
-      'violet',
+      'violet'
     ],
     nouns: [
       'violet'
@@ -338,8 +334,7 @@ const HSLadjectives = [
       hsl: [[270,291], [0.1, 1], [.07, 0.99]],
     },
     adjecives: [
-      'purple',
-      'purplish'
+      'purple'
     ],
     nouns: [
       'purple'
@@ -372,8 +367,7 @@ const HSLadjectives = [
       hsl: [[344,360], [0.1, 1], [.07, 0.99]],
     },
     adjecives: [
-      'red', 
-      'reddish'
+      'red'
     ],
     nouns: [
       'red'

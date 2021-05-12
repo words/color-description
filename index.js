@@ -202,7 +202,7 @@ const HSLadjectives = [
   // https://discuss.pixls.us/t/color-choosing-paradox-also-warmer-vs-cooler/5722/40
   {
     criteria: {
-      hsl: [[0, 90], [0.5, 1], [0.1 ,1]],
+      hsl: [[0, 90], [0.3, 1], [0.1 ,1]],
     },
     adjectives: [
       'warm',
@@ -211,7 +211,7 @@ const HSLadjectives = [
   },
   {
     criteria: {
-      hsl: [[270,360], [0.5, 1], [.1,1]],
+      hsl: [[270,360], [0.3, 1], [.1,1]],
     },
     adjectives: [
       'warm',
@@ -262,7 +262,7 @@ const HSLadjectives = [
   },
   {
     criteria: {
-      hsl: [[15,45], [0.1, 1], [.07, 0.99]],
+      hsl: [[15,45], [0.1, 1], [0.4, 0.99]],
     },
     adjectives: [
       'orange',
@@ -283,6 +283,17 @@ const HSLadjectives = [
       'express freedom',
       'fascinate'
     ]
+  },
+  {
+    criteria: {
+      hsl: [[15,45], [0.1, 1], [.07, 0.4]],
+    },
+    adjectives: [
+      'brown',
+    ],
+    nouns: [
+      'brown'
+    ],
   },
   {
     criteria: {
@@ -513,6 +524,41 @@ const temperatures = [
   }
 ];
 
+const percentAdjectives = [
+  {
+    maxPercentile: 0.06,
+    word: 'a dash of ',
+  },
+  {
+    maxPercentile: 0.16,
+    word: 'a little bit of',
+  },
+  {
+    maxPercentile: 0.31,
+    word: 'some',
+  },
+  {
+    maxPercentile: 0.56,
+    word: 'a good bit of',
+  },
+  {
+    maxPercentile: 0.71,
+    word: 'a lot of',
+  },
+  {
+    maxPercentile: 0.86,
+    word: 'a whole lot of',
+  },
+  {
+    maxPercentile: 0.99,
+    word: 'neatly entirely',
+  },
+  {
+    maxPercentile: 1,
+    word: 'entirely',
+  }
+];
+
 export default class ColorDescription {
   constructor (color) {
     this.color = color;
@@ -546,6 +592,24 @@ export default class ColorDescription {
     gl.pop() // removes alpha
     const total = gl.reduce((r,d) => r + d, 0);
     return gl.map(c => c/total);
+  }
+
+  get rgbPercentageWords () {
+    return this.rgbPercentages.map(component => 
+      percentAdjectives.find(words => words.maxPercentile > component).word
+    );
+  }
+
+  get cmyPercantages () {
+    const cmy = cmyk2cmy(this.color.cmyk());
+    const total = cmy.reduce((r,d) => r + d, 0);
+    return cmy.map(c => c/total);
+  }
+
+  get cmyPercentageWords () {
+    return this.cmyPercantages.map(component => 
+      percentAdjectives.find(words => words.maxPercentile > component).word
+    );
   }
 
   #getWords (scope = 'adjectives') {
@@ -595,7 +659,7 @@ export default class ColorDescription {
     return chroma.contrast(this.color, 'black') > chroma.contrast(this.color, 'white') ? 'black' : 'white';
   }
 
-  getAdjectivesList (limit, random) {
+  getAdjectivesList (random, limit) {
     let arr = [...this.adjectives];
     
     if (random) {

@@ -10,12 +10,18 @@
       padding: 2rem;
     }
     .currentColor {
-      height: 20rem;
+      min-height: 20rem;
       margin-bottom: 2rem;
     }
     .result {
-      font-size: 2rem; 
       padding: 2rem;
+    }
+    p {
+      margin: 0;
+      font-size: 1.2rem; 
+    }
+    p + p {
+      margin-top: 0.5em
     }
   </style>
 </head>
@@ -39,15 +45,27 @@
     const $result = document.querySelector('.result');
     const $currentColor = document.querySelector('.currentColor');
 
-    $result.innerHTML = cd.getAdjectivesList();
-    $currentColor.style.backgroundColor = '#b40404';
+    function setColor (e) {
+      const value = e ? e.target.value : '#b40404'; 
+      cd.color = value;
 
-    const $input = document.querySelector('input').addEventListener('input', e => {
-      cd.color = e.target.value;
-      $result.innerHTML = chroma(e.target.value).css('hsl') + '<br>' + cd.getAdjectivesList(3, true);
-      $currentColor.style.backgroundColor = e.target.value;
+      $result.innerHTML = `
+        <p>${cd.getAdjectivesList()}</p>
+        <p>If used as background ${cd.bestContrast} would be the most readable text color.</p>
+        <p>An LCD screen needs ${cd.rgbPercentageWords[0]} red, ${cd.rgbPercentageWords[1]} green and ${cd.rgbPercentageWords[2]} blue to produce this color.</p>
+        <p>To paint this color you would could mix ${cd.cmyPercentageWords[0]} cyan, ${cd.cmyPercentageWords[1]} magenta and ${cd.cmyPercentageWords[2]} yellow.</p>
+        
+        <small>${chroma(value).css('hsl')}</small>
+      `;
+
+      $currentColor.style.backgroundColor = value;
       $currentColor.style.color = cd.bestContrast;
-    });
+
+    }
+
+    setColor();
+
+    const $input = document.querySelector('input').addEventListener('input', setColor);
   </script>
 </body>
 
