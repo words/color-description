@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node --experimental-vm-modules build.js",
-    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest",
+    "dev": "live-server ./ --entry-file=dist/demo.html --watch=./index.js,dist/demo.html"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "git-cz": "^4.7.6",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "live-server": "^1.2.1"
   }
 }
