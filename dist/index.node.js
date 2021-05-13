@@ -2,11 +2,6 @@ import chroma from 'chroma-js';
 
 // https://www.writerswrite.co.za/204-words-that-describe-colours/
 
-const cmyk2cmy = cmyk => {
-  const [c, m, y, k] = cmyk;
-  return [c + k, m + k, y + k]
-};
-
 const isInRange = (x, min, max) => (x >= min && x <= max);
 
 const HSLadjectives = [
@@ -14,7 +9,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.75, 1], [0.4, 0.55]],
     },
-    adjecives: [
+    adjectives: [
       'saturated', 
       'strong', 
       'lush', 
@@ -32,7 +27,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0, 0.07]],
     },
-    adjecives: [
+    adjectives: [
       'dark', 
       'dull', 
       'ashy', 
@@ -48,7 +43,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0, 0.3]],
     },
-    adjecives: [
+    adjectives: [
       'dark',
     ],
   },
@@ -56,7 +51,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.1, 0.7], [0.15, 0.35]],
     },
-    adjecives: [
+    adjectives: [
       'bleak',
       'muted',
       'matte',
@@ -67,7 +62,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.12, 1], [0.7, 1]],
     },
-    adjecives: [
+    adjectives: [
       'tinted'
     ],
   },
@@ -75,7 +70,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0.88, 1]],
     },
-    adjecives: [
+    adjectives: [
       'pale', 
       'light', 
       'faded', 
@@ -88,7 +83,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.5, 1], [0.7, 0.9]],
     },
-    adjecives: [
+    adjectives: [
       'fresh',
       'sparkling',
       'glittering',
@@ -101,13 +96,13 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0.9, 1]],
     },
-    adjecives: ['neutral'],
+    adjectives: ['neutral'],
   },
   {
     criteria: {
       hsl: [null, [0.74, 1], [0.9, 1]],
     },
-    adjecives: [
+    adjectives: [
       'muted'
     ],
   },
@@ -115,7 +110,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, 1],
     },
-    adjecives: [
+    adjectives: [
       'colorless', 
       'bright', 
       'briliant', 
@@ -126,7 +121,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, 0],
     },
-    adjecives: [
+    adjectives: [
       'colorless', 
       'low',
       'dark'
@@ -138,7 +133,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0,0.04], [0.1, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'grey',
     ],
   },
@@ -146,7 +141,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.04, 0.1], [0.17, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'almost grey',
     ],
   },
@@ -154,7 +149,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.1, 0.3], [0.17, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'very unsaturated',
     ],
   },
@@ -162,7 +157,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.3, 0.46], null],
     },
-    adjecives: [
+    adjectives: [
       'unsaturated',
     ],
   },
@@ -170,7 +165,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.46, 0.6], [0.4, 0.55]],
     },
-    adjecives: [
+    adjectives: [
       'rather unsaturated',
     ],
   },
@@ -178,7 +173,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.601, 0.8], [0.45, 0.6]],
     },
-    adjecives: [
+    adjectives: [
       'saturated',
     ],
   },
@@ -186,7 +181,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.801, 0.94], [0.45, 0.6]],
     },
-    adjecives: [
+    adjectives: [
       'rather saturated',
     ],
   },
@@ -194,7 +189,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, [0.941, 1], [0.45, 0.6]],
     },
-    adjecives: [
+    adjectives: [
       'very saturated',
     ],
   },
@@ -204,29 +199,27 @@ const HSLadjectives = [
   // https://discuss.pixls.us/t/color-choosing-paradox-also-warmer-vs-cooler/5722/40
   {
     criteria: {
-      hsl: [[0, 90], [0.5, 1], [0.1 ,1]],
+      hsl: [[0, 90], [0.3, 1], [0.1 ,1]],
     },
-    adjecives: [
+    adjectives: [
       'warm',
-      'mellow',
-      'hot'
+      'mellow'
     ],
   },
   {
     criteria: {
-      hsl: [[270,360], [0.5, 1], [.1,1]],
+      hsl: [[270,360], [0.3, 1], [.1,1]],
     },
-    adjecives: [
+    adjectives: [
       'warm',
-      'mellow',
-      'hot'
+      'mellow'
     ],
   },
   {
     criteria: {
       hsl: [[90.01,269.99], null, [.1,1]],
     },
-    adjecives: [
+    adjectives: [
       'cold',
       'cool'
     ],
@@ -237,64 +230,151 @@ const HSLadjectives = [
     criteria: {
       hsl: [[0,15], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'red', 
       'reddish'
     ],
     nouns: [
       'red'
+    ],
+    emotions: [
+      'excitement',
+      'energy',
+      'passion',
+      'courage',
+      'attention',
+      'lust',
+      'power',
+      'love',
+      'speed',
+      'anger'
+    ],
+    usage: [
+      'stimulate',
+      'createe urgency',
+      'draw attention',
+      'caution',
+      'encurage'
     ]
   },
   {
     criteria: {
-      hsl: [[15,45], [0.1, 1], [.07, 0.99]],
+      hsl: [[15,45], [0.1, 1], [0.4, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'orange',
     ],
     nouns: [
       'orange'
+    ],
+    emotions: [
+      'optimism',
+      'idependence',
+      'adventure',
+      'creativity',
+      'fun'
+    ],
+    usage: [
+      'stimulate',
+      'draw attention',
+      'express freedom',
+      'fascinate'
     ]
+  },
+  {
+    criteria: {
+      hsl: [[15,45], [0.1, 1], [.07, 0.4]],
+    },
+    adjectives: [
+      'brown',
+    ],
+    nouns: [
+      'brown'
+    ],
   },
   {
     criteria: {
       hsl: [[45,70], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'yellow',
     ],
     nouns: [
       'yellow'
+    ],
+    emotions: [
+      'ethusiasm',
+      'opportunity',
+      'spontaneity',
+      'happyness',
+      'positivity'
+    ],
+    usage: [
+      'stimulate',
+      'relax',
+      'awake awareness',
+      'egnergize',
+      'affect mood',
+      'sale',
+      'cheap'
     ]
   },
   {
     criteria: {
       hsl: [[70,79], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'lime',
     ],
     nouns: [
       'lime'
+    ],
+    emotions: [
+      'growth',
+      'harmony',
+      'fertility',
+      'kindness',
+      'dependability'
+    ],
+    usage: [
+      'restore energy',
+      'promote growth',
+      'awake awareness',
+      'rejuvinate',
+      'nature'
     ]
   },
   {
     criteria: {
       hsl: [[79,163], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'green',
       'greenish',
     ],
     nouns: [
       'green'
+    ],
+    emotions: [
+      'safety',
+      'harmony',
+      'stability',
+      'reliability',
+      'balance'
+    ],
+    usage: [
+      'relax',
+      'ballance',
+      'revitalize',
+      'encurage',
+      'posses'
     ]
   },
   {
     criteria: {
       hsl: [[163,193], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'cyan'
     ],
     nouns: [
@@ -305,7 +385,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[193,240], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'blue',
       'blueish'
     ],
@@ -317,7 +397,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[240,260], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'indigo',
     ],
     nouns: [
@@ -328,7 +408,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[260,270], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'violet',
     ],
     nouns: [
@@ -339,7 +419,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[270,291], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'purple',
       'purplish'
     ],
@@ -351,7 +431,7 @@ const HSLadjectives = [
     criteria: {
       hsl: [[291,327], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'magenta'
     ],
     nouns: [
@@ -362,63 +442,117 @@ const HSLadjectives = [
     criteria: {
       hsl: [[327,344], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
-      'rose'
+    adjectives: [
+      'pink'
     ],
     nouns: [
-      'rose'
+      'pink'
     ]
   },
   {
     criteria: {
       hsl: [[344,360], [0.1, 1], [.07, 0.99]],
     },
-    adjecives: [
+    adjectives: [
       'red', 
       'reddish'
     ],
     nouns: [
       'red'
-    ]
+    ],
+    emotions: [
+      'excitement',
+      'energy',
+      'passion',
+      'courage',
+      'attention',
+      'lust',
+      'power',
+      'love',
+      'speed',
+      'anger'
+    ],
+    usage: [
+      'stimulate',
+      'createe urgency',
+      'draw attention',
+      'caution',
+      'encurage'
+    ],
   },
 ];
 
 const temperatures = [
   {
     value: 1800,
-    adjecives: [
+    adjectives: [
       'ultra warm',
     ]
   },
   {
     value: 2400,
-    adjecives: [
+    adjectives: [
       'very warm',
     ]
   },
   {
     value: 2700,
-    adjecives: [
+    adjectives: [
       'warm',
     ]
   },
   {
     value: 3000,
-    adjecives: [
+    adjectives: [
       'warm white',
     ]
   },
   {
     value: 4000,
-    adjecives: [
+    adjectives: [
       'cool or cold',
     ]
   },
   {
     value: 6500,
-    adjecives: [
+    adjectives: [
       'cool',
     ]
+  }
+];
+
+const percentAdjectives = [
+  {
+    maxPercentile: 0.06,
+    word: 'a dash of ',
+  },
+  {
+    maxPercentile: 0.16,
+    word: 'a little bit of',
+  },
+  {
+    maxPercentile: 0.31,
+    word: 'some',
+  },
+  {
+    maxPercentile: 0.56,
+    word: 'a good bit of',
+  },
+  {
+    maxPercentile: 0.71,
+    word: 'a lot of',
+  },
+  {
+    maxPercentile: 0.86,
+    word: 'a whole lot of',
+  },
+  {
+    maxPercentile: 0.99,
+    word: 'neatly entirely',
+  },
+  {
+    maxPercentile: 1,
+    word: 'entirely',
   }
 ];
 
@@ -450,28 +584,30 @@ export default class ColorDescription {
     , {value: 0});
   }
 
-  get rgbPercentages () {
-    const gl = this.color.gl();
-    gl.pop() // removes alpha
-    const total = gl.reduce((r,d) => r + d, 0);
-    return gl.map(c => c/total);
-  }
-
-  get adjectivesList () {
-    const arr = [...this.adjectives];
-
-    if (arr.length > 1) {
-      const last = arr.pop()
-      return `${arr.join(', ')} and ${last}`;
-    } else {
-      return arr[0];
+  percentages (model='gl') {
+    const props = this.color[model]();
+    if (
+      model==='gl'
+    ){
+      props.pop() // removes alpha
     }
+    const total = props.reduce((r,d) => r + d, 0);
+    return props.map(c => c/total);
   }
 
-  get adjectives () {
+  percentageWords (model='gl') {
+    return this.percentages(model).map(component => 
+      percentAdjectives.find(words => words.maxPercentile > component).word
+    );
+  }
+
+  #getWords (scope = 'adjectives') {
     const hsl = this.color.hsl();
 
     return HSLadjectives.reduce((rem, current) => {
+      if( !current.hasOwnProperty(scope) ) {
+        return rem;
+      }
       const colorModels = Object.keys(current.criteria);
       const matchesEveryCriteria = colorModels.every(colorModel => {
         const colorAsModel = this.color[colorModel]();
@@ -493,10 +629,41 @@ export default class ColorDescription {
       });
 
       if (matchesEveryCriteria) {
-        return [...new Set([...rem, ...current.adjecives])];
+        return [...new Set([...rem, ...current[scope]])];
       } else {
         return rem;
       }
     },[]);
+  }
+
+  get adjectives () {
+    return this.#getWords('adjectives');
+  }
+
+  get nouns () {
+    return this.#getWords('nouns');
+  }
+
+  get bestContrast () {
+    return chroma.contrast(this.color, 'black') > chroma.contrast(this.color, 'white') ? 'black' : 'white';
+  }
+
+  getAdjectivesList (random, limit) {
+    let arr = [...this.adjectives];
+    
+    if (random) {
+      arr = arr.sort(() => 0.5 - Math.random());
+    }
+
+    if (limit) {
+      arr = arr.slice(0, limit);
+    }
+
+    if (arr.length > 1) {
+      const last = arr.pop()
+      return `${arr.join(', ')} and ${last}`;
+    } else {
+      return arr[0];
+    }
   }
 }

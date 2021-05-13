@@ -1,10 +1,5 @@
 // https://www.writerswrite.co.za/204-words-that-describe-colours/
 
-const cmyk2cmy = cmyk => {
-  const [c, m, y, k] = cmyk;
-  return [c + k, m + k, y + k]
-};
-
 const isInRange = (x, min, max) => (x >= min && x <= max);
 
 const HSLadjectives = [
@@ -587,28 +582,20 @@ export default class ColorDescription {
     , {value: 0});
   }
 
-  get rgbPercentages () {
-    const gl = this.color.gl();
-    gl.pop() // removes alpha
-    const total = gl.reduce((r,d) => r + d, 0);
-    return gl.map(c => c/total);
+  percentages (model='gl') {
+    const props = this.color[model]();
+    if (
+      model==='gl'
+    ){
+      props.pop() // removes alpha
+    }
+    const total = props.reduce((r,d) => r + d, 0);
+    return props.map(c => total ? c/total : 0);
   }
 
-  get rgbPercentageWords () {
-    return this.rgbPercentages.map(component => 
-      percentAdjectives.find(words => words.maxPercentile > component).word
-    );
-  }
-
-  get cmyPercantages () {
-    const cmy = cmyk2cmy(this.color.cmyk());
-    const total = cmy.reduce((r,d) => r + d, 0);
-    return cmy.map(c => c/total);
-  }
-
-  get cmyPercentageWords () {
-    return this.cmyPercantages.map(component => 
-      percentAdjectives.find(words => words.maxPercentile > component).word
+  percentageWords (model='gl') {
+    return this.percentages(model).map(component => 
+      percentAdjectives.find(words => words.maxPercentile >= component).word
     );
   }
 

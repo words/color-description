@@ -12,9 +12,22 @@
     .currentColor {
       min-height: 20rem;
       margin-bottom: 2rem;
+      display: flex;
+      padding: 2rem;
+    }
+    @media (orientation: portrait) {
+      .currentColor {
+        flex-direction: column;
+      }
     }
     .result {
-      padding: 2rem;
+      margin-left: 2rem;
+    }
+    @media (orientation: portrait) {
+      .result {
+        margin-top: 2rem;
+        margin-left: 0;
+      }
     }
     p {
       margin: 0;
@@ -29,14 +42,17 @@
 <body>
   <h1>Color-Description Demo</h1>
   <div class="currentColor">
+    <div id="picker"></div>
     <div class="result">
     
     </div>
   </div>
+  
   <label>
     <h2>Change Color:</h2>
     <input type="color" value='#b40404' />
   </label>
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
   <script type="module">
     import ColorDescription from '../index.js';
@@ -48,12 +64,14 @@
     function setColor (e) {
       const value = e ? e.target.value : '#b40404'; 
       cd.color = value;
+      const glPercentages = cd.percentageWords('gl')
+      const cmykPercentageWords = cd.percentageWords('cmyk');
 
       $result.innerHTML = `
         <p>${cd.getAdjectivesList()}</p>
         <p>If used as background ${cd.bestContrast} would be the most readable text color.</p>
-        <p>An LCD screen needs ${cd.rgbPercentageWords[0]} red, ${cd.rgbPercentageWords[1]} green and ${cd.rgbPercentageWords[2]} blue to produce this color.</p>
-        <p>To paint this color you would could mix ${cd.cmyPercentageWords[0]} cyan, ${cd.cmyPercentageWords[1]} magenta and ${cd.cmyPercentageWords[2]} yellow.</p>
+        <p>An LCD screen needs ${glPercentages[0]} red, ${glPercentages[1]} green and ${glPercentages[2]} blue to produce this color.</p>
+        <p>To print this color you would could mix ${cmykPercentageWords[0]} cyan, ${cmykPercentageWords[1]} magenta, ${cmykPercentageWords[2]} yellow and ${cmykPercentageWords[3]} black.</p>
         
         <small>${chroma(value).css('hsl')}</small>
       `;
@@ -64,6 +82,12 @@
     }
 
     setColor();
+
+    const colorPicker = new iro.ColorPicker('#picker', { borderWidth: 4});
+
+    colorPicker.on(['color:init', 'color:change'], function (color) {
+      setColor({ target: { value: color.hexString } });
+    });
 
     const $input = document.querySelector('input').addEventListener('input', setColor);
   </script>
