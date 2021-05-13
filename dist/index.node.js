@@ -28,14 +28,11 @@ const HSLadjectives = [
       hsl: [null, null, [0, 0.07]],
     },
     adjectives: [
-      'dark', 
-      'dull', 
+      'dark',
       'ashy', 
       'somber', 
       'bleak', 
-      'dim', 
       'muddy', 
-      'gloomy', 
       'sooty'
     ],
   },
@@ -45,11 +42,14 @@ const HSLadjectives = [
     },
     adjectives: [
       'dark',
+      'dim',
+      'gloomy',
+      'dull'
     ],
   },
   {
     criteria: {
-      hsl: [null, [0.1, 0.7], [0.15, 0.35]],
+      hsl: [null, [0.1, 0.7], [0.15, 0.5]],
     },
     adjectives: [
       'bleak',
@@ -63,7 +63,15 @@ const HSLadjectives = [
       hsl: [null, [0.12, 1], [0.7, 1]],
     },
     adjectives: [
-      'tinted'
+      'tinted',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0.2, 1], [0.75, 0.95]],
+    },
+    adjectives: [
+      'pastel',
     ],
   },
   {
@@ -96,7 +104,9 @@ const HSLadjectives = [
     criteria: {
       hsl: [null, null, [0.9, 1]],
     },
-    adjectives: ['neutral'],
+    adjectives: [
+      'neutral'
+    ],
   },
   {
     criteria: {
@@ -127,6 +137,41 @@ const HSLadjectives = [
       'dark'
     ],
   },
+  {
+    criteria: {
+      hsl: [null, null, [0.01, 0.3]],
+    },
+    adjectives: [
+      'shady'
+    ],
+  },
+
+  // lightness
+  {
+    criteria: {
+      hsl: [null, null, [0.01, 0.08]],
+    },
+    adjectives: [
+      'almost black',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, null, [0, 0.09]],
+    },
+    adjectives: [
+      'very dark',
+    ],
+  },
+  {
+    criteria: {
+      hsl: [null, [0, 0.4], [0, 0.22]],
+    },
+    adjectives: [
+      'dark',
+    ],
+  },
+
 
   // saturations
   {
@@ -524,7 +569,7 @@ const temperatures = [
 const percentAdjectives = [
   {
     maxPercentile: 0.06,
-    word: 'a dash of ',
+    word: 'a dash of',
   },
   {
     maxPercentile: 0.16,
@@ -592,12 +637,12 @@ export default class ColorDescription {
       props.pop() // removes alpha
     }
     const total = props.reduce((r,d) => r + d, 0);
-    return props.map(c => c/total);
+    return props.map(c => total ? c/total : 0);
   }
 
   percentageWords (model='gl') {
     return this.percentages(model).map(component => 
-      percentAdjectives.find(words => words.maxPercentile > component).word
+      percentAdjectives.find(words => words.maxPercentile >= component).word
     );
   }
 

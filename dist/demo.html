@@ -5,9 +5,20 @@
 <head>
   <meta charset=utf-8>
   <title>Color-Description Browser Demo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght&display=swap" rel="stylesheet">
   <style>
     :root {
       padding: 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2 {
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 4rem;
     }
     .currentColor {
       min-height: 20rem;
@@ -36,6 +47,9 @@
     p + p {
       margin-top: 0.5em
     }
+    svg *[stroke] {
+      stroke: currentColor;
+    }
   </style>
 </head>
 
@@ -44,7 +58,8 @@
   <div class="currentColor">
     <div id="picker"></div>
     <div class="result">
-    
+      <h2></h2>
+      <div data-result></div>
     </div>
   </div>
   
@@ -58,12 +73,36 @@
     import ColorDescription from '../index.js';
 
     const cd = new ColorDescription('#b40404');
-    const $result = document.querySelector('.result');
+    const $result = document.querySelector('[data-result]');
     const $currentColor = document.querySelector('.currentColor');
+    const $input = document.querySelector('input');
+
+    let timer;
+
+    function colorFetch(color) {
+      const apiURL = new URL('https://api.color.pizza/v1/');
+
+      const params = {
+        values: [color.replace('#', '')],
+        goodnamesonly: true,
+        noduplicates: true,
+      }
+
+      apiURL.search = new URLSearchParams(params).toString();
+
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          document.querySelector('h2').innerHTML = data.colors[0].name;
+        }).catch(error => {
+          throw new Error(`API ${error}`);
+        });
+    }
 
     function setColor (e) {
       const value = e ? e.target.value : '#b40404'; 
       cd.color = value;
+      $input.value = value;
       const glPercentages = cd.percentageWords('gl')
       const cmykPercentageWords = cd.percentageWords('cmyk');
 
@@ -79,17 +118,20 @@
       $currentColor.style.backgroundColor = value;
       $currentColor.style.color = cd.bestContrast;
 
+      document.querySelector('h2').innerHTML = "…"
+      clearTimeout(timer);
+      timer = setTimeout(() => colorFetch(value), 500)
     }
 
     setColor();
 
-    const colorPicker = new iro.ColorPicker('#picker', { borderWidth: 4});
+    const colorPicker = new iro.ColorPicker('#picker', { borderWidth: 8});
 
     colorPicker.on(['color:init', 'color:change'], function (color) {
       setColor({ target: { value: color.hexString } });
     });
 
-    const $input = document.querySelector('input').addEventListener('input', setColor);
+    $input.addEventListener('input', setColor);
   </script>
 </body>
 
