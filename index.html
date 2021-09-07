@@ -86,9 +86,9 @@
       margin-bottom: 2rem;
       display: flex;
       padding: 2rem;
-      margin-top: 6rem;
+      margin-top: -1.5rem;
       border-radius: 15px;
-      border: 2px solid currentColor;
+      border: 2px solid #202124;
     }
     .currentColor p {
       max-width: 37rem;
@@ -127,6 +127,20 @@
       white-space: nowrap;
       width: 1px;
     }
+    code {
+      position: relative;
+      display: block;
+      margin-top: 2rem;
+      background: #202124;
+      color: #fff;
+      padding: 2rem;
+      padding-bottom: 3rem;
+      z-index: -1;
+      border-radius: 15px;
+    }
+    pre {
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 
@@ -140,6 +154,12 @@
     <input type="color" value='#b40404' />
   </label>
   <button data-random>Radomize Color</button>
+  <code>
+    <pre data-code>
+const cd = new ColorDescription('#b40404');
+cd.getAdjectivesList();
+    </pre>
+  </code>
   <div class="currentColor">
     <div aria-hidden id="picker"></div>
     <div class="result">
@@ -158,6 +178,7 @@
     const $currentColor = document.querySelector('.currentColor');
     const $input = document.querySelector('input');
     const $randomButton = document.querySelector('[data-random]');
+    const $code = document.querySelector('[data-code]');
 
     let timer;
 
@@ -185,8 +206,10 @@
       const value = e ? e.target.value : '#b40404'; 
       cd.color = value;
       $input.value = value;
-      const glPercentages = cd.percentageWords('gl')
+      const glPercentages = cd.percentageWords('gl');
       const cmykPercentageWords = cd.percentageWords('cmyk');
+      $code.innerHTML =`const cd = new ColorDescription('${value}');
+cd.getAdjectivesList();`;
 
       $result.innerHTML = `
         <p aria-label="adjectives">${cd.getAdjectivesList()}</p>
