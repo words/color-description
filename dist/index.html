@@ -65,8 +65,14 @@
       font-weight: 200;
       color: currentColor;
     }
-    button:hover {
-      
+    button span {
+      display: block;
+      font-weight: bold;
+      transition: 650ms transform cubic-bezier(.7,.3,0,1);
+      text-shadow: 0 0 0 var(--color);
+    }
+    button:hover span {
+      transform: translateY(.2em);
     }
     button:hover::before {
       transform: translateY(.2em);
@@ -197,7 +203,7 @@
     <h3>Change Color:</h3>
     <input type="color" value='#b40404' />
   </label>
-  <button data-random>Radomize Color</button>
+  <button data-random><span>Radomize Color</span></button>
   <a class="link-project" href="https://github.com/words/color-description" hreflang="en-us">Github Project</a>
   <code data-label="code example">
     <pre data-code>
