@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node build.js",
     "test": "npm run build && node node_modules/.bin/jest",
-    "dev": "live-server ./ --entry-file=dist/index.html --watch=./src/index.js,./src/lib.js,dist/index.html"
+    "dev": "live-server ./dist --entry-file=dist/index.html --watch=./src/index.js,./src/lib.js,dist/index.html"
   },
   "repository": {
     "type": "git",
