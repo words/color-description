@@ -796,6 +796,10 @@ export default class ColorDescription {
     return chroma.contrast(this.color, 'black') > chroma.contrast(this.color, 'white') ? 'black' : 'white';
   }
 
+  get description () {
+    
+  }
+
   getAdjectivesList (random, limit) {
     let arr = [...this.adjectives];
     

@@ -10,23 +10,16 @@ import ColorDescription from 'colordescription';
 
 const cd = new ColorDescription('#ffffff');
 
-console.log(cd.description) 
+console.log(cd.getAdjectivesList()) 
 /**
- * #ffffff is a color that is colorless, bright, briliant and elegant. 
- * It suggests hope, simlicity, purity, goodness
- * 
- * A pixel that shines in that color would need to be 33.33% Red, 33.33% Green and * 33.33% Blue.
+ * pale, light, faded, delicate, glistening, bleached, neutral colorless, bright, briliant and high
  **/
 
 const cd.color = 'red';
 
-console.log(cd.description) 
+console.log(cd.getAdjectivesList()) 
 /**
- * red is a color that is saturated, vivid and strong. 
- * It suggests excitement, energy, passion, currage and attention and is often
- * used to stimulate, create urgency, draw attention, caution or encurrage. 
- * 
- * A pixel that shines in that color would need to be 100% Red, 0% Green and 0 Blue.
+ * saturated, strong, lush, ablaze, beaming, bold, brilliant, flamboyant, vibrant, vivid, loud, very saturated, warm, mellow, red and reddish
  **/
 ```
 
