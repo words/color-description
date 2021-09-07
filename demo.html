@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang=en>
+
+<head>
+  <meta charset=utf-8>
+  <title>Color-Description Browser Demo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      padding: 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2 {
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    .currentColor {
+      min-height: 20rem;
+      margin-bottom: 2rem;
+      display: flex;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    @media (orientation: portrait) {
+      .currentColor {
+        flex-direction: column;
+      }
+    }
+    .result {
+      margin-left: 2rem;
+    }
+    @media (orientation: portrait) {
+      .result {
+        margin-top: 2rem;
+        margin-left: 0;
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 1.2rem; 
+    }
+    p + p {
+      margin-top: 0.5em
+    }
+    svg *[stroke] {
+      stroke: currentColor;
+    }
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Color-Description Demo</h1>
+  <label class="visually-hidden">
+    <h3>Change Color:</h3>
+    <input type="color" value='#b40404' />
+  </label>
+  <button data-random>Radomize Color</button>
+  <div class="currentColor">
+    <div aria-hidden id="picker"></div>
+    <div class="result">
+      <h2 aria-live="polite"></h2>
+      <div data-result aria-live="polite"></div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
+  <script type="module">
+    import ColorDescription from '../index.js';
+
+    const cd = new ColorDescription('#b40404');
+    const $result = document.querySelector('[data-result]');
+    const $currentColor = document.querySelector('.currentColor');
+    const $input = document.querySelector('input');
+    const $randomButton = document.querySelector('[data-random]');
+
+    let timer;
+
+    function colorFetch(color) {
+      const apiURL = new URL('https://api.color.pizza/v1/');
+
+      const params = {
+        values: [color.replace('#', '')],
+        goodnamesonly: true,
+        noduplicates: true,
+      }
+
+      apiURL.search = new URLSearchParams(params).toString();
+
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          document.querySelector('h2').innerHTML = `<span>Color Name:</span> ${data.colors[0].name}`;
+        }).catch(error => {
+          throw new Error(`API ${error}`);
+        });
+    }
+
+    function setColor (e) {
+      const value = e ? e.target.value : '#b40404'; 
+      cd.color = value;
+      $input.value = value;
+      const glPercentages = cd.percentageWords('gl')
+      const cmykPercentageWords = cd.percentageWords('cmyk');
+
+      $result.innerHTML = `
+        <p aria-label="adjectives">${cd.getAdjectivesList()}</p>
+        <p aria-label="best contrast color">If used as background ${cd.bestContrast} would be the most readable text color.</p>
+        <p aria-label="RGB mix">An LCD screen needs ${glPercentages[0]} red, ${glPercentages[1]} green and ${glPercentages[2]} blue to produce this color.</p>
+        <p aria-label="CMYK mix">To print this color you would could mix ${cmykPercentageWords[0]} cyan, ${cmykPercentageWords[1]} magenta, ${cmykPercentageWords[2]} yellow and ${cmykPercentageWords[3]} black.</p>
+        <br />
+        <small data-label="HSL color representation">${chroma(value).css('hsl')}</small>
+      `;
+
+      $currentColor.style.backgroundColor = value;
+      $currentColor.style.color = cd.bestContrast;
+
+      document.querySelector('h2').innerHTML = "…"
+      clearTimeout(timer);
+      timer = setTimeout(() => colorFetch(value), 500)
+    }
+
+    setColor();
+
+    const colorPicker = new iro.ColorPicker('#picker', { borderWidth: 8});
+
+    colorPicker.on(['color:init', 'color:change'], function (color) {
+      setColor({ target: { value: color.hexString } });
+    });
+
+    $input.addEventListener('input', setColor);
+
+    $randomButton.addEventListener('click', e => {
+      setColor({ target: { value: chroma.random().hex() } });
+    });
+  </script>
+</body>
+
+</html>
