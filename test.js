@@ -24,7 +24,7 @@ test('get adjectives for color temperature', () => {
   const cd = new ColorDescription('red');
 
   expect(cd).toHaveProperty('temeratureAdjectives');
-  expect(cd.temeratureAdjectives.adjecives[0]).toBe('ultra warm');
+  expect(cd.temeratureAdjectives.adjectives[0]).toBe('ultra warm');
 });
 
 test('gets fancy HSL Adjectives', () => {
@@ -38,13 +38,31 @@ test('gets fancy HSL Adjectives', () => {
 test('getting RGB in percentage of the whole color', () => {
   const cd = new ColorDescription('#ffffff');
 
-  expect(cd).toHaveProperty('rgbPercentages');
-  expect(cd.rgbPercentages[0]).toBeGreaterThan(0.3);
-  expect(cd.rgbPercentages[1]).toBeGreaterThan(0.3);
-  expect(cd.rgbPercentages[2]).toBeGreaterThan(0.3);
-
-  console.log(cd.adjectivesList)
+  expect(cd).toHaveProperty('percentages');
+  expect(cd.percentages()[0]).toBeGreaterThan(0.3);
+  expect(cd.percentages()[1]).toBeGreaterThan(0.3);
+  expect(cd.percentages()[2]).toBeGreaterThan(0.3);
 
   cd.color = '#ff0000';
-  expect(cd.rgbPercentages[0]).toBe(1);
+  expect(cd.percentages()[0]).toBe(1);
+});
+
+test('get general color adjectives', () => {
+  const cd = new ColorDescription('#ffffff');
+
+  expect(cd).toHaveProperty('percentages');
+  expect(cd.percentages()[0]).toBeGreaterThan(0.3);
+  expect(cd.percentages()[1]).toBeGreaterThan(0.3);
+  expect(cd.percentages()[2]).toBeGreaterThan(0.3);
+
+  cd.color = '#ff0000';
+  expect(cd.percentages()[0]).toBe(1);
+});
+
+test('get best contrast color, using WCAG formula', () => {
+  // test data from https://webaim.org/resources/contrastchecker/
+  const cd = new ColorDescription('#0000ff');
+
+  expect(cd).toHaveProperty('bestContrast');
+  expect(cd.bestContrast).toBe('white');
 });

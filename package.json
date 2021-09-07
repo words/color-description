@@ -2,7 +2,7 @@
   "name": "color-description",
   "version": "0.2.0",
   "description": "Textual color description",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "node --experimental-vm-modules build.js",
