@@ -783,7 +783,7 @@ export default class ColorDescription {
           if (criterium === null) {
             return true;
           } else if (Array.isArray(criterium)) {
-            return isInRange(colorAsModel[i],criterium[0], criterium[1]); 
+            return isInRange(colorAsModel[i], criterium[0], criterium[1]); 
           } else if (!isNaN(criterium)) {
             return colorAsModel[i] === criterium;
           } else {
@@ -806,6 +806,14 @@ export default class ColorDescription {
 
   get nouns () {
     return this.#getWords('nouns');
+  }
+
+  get emotions () {
+    return this.#getWords('emotions');
+  }
+
+  get usage() {
+    return this.#getWords('usage');
   }
 
   get bestContrast () {
