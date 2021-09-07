@@ -1,5 +1,5 @@
-const fs = require('fs');
-const babel = require("@babel/core");
+import fs from 'fs';
+import babel from "@babel/core";
 
 const transpile = code => babel.transform(code, {
   presets: ["@babel/preset-env"],

@@ -90,124 +90,124 @@ var HSLadjectives = [{
   criteria: {
     hsl: [null, [0.75, 1], [0.4, 0.55]]
   },
-  adjectives: ['saturated', 'strong', 'lush', 'ablaze', 'beaming', 'bold', 'brilliant', 'flamboyant', 'vibrant', 'vivid', 'loud']
+  adjectives: ["saturated", "strong", "lush", "ablaze", "beaming", "bold", "brilliant", "flamboyant", "vibrant", "vivid", "loud"]
 }, {
   criteria: {
     hsl: [null, null, [0, 0.07]]
   },
-  adjectives: ['dark', 'ashy', 'somber', 'bleak', 'muddy', 'sooty']
+  adjectives: ["dark", "ashy", "somber", "bleak", "muddy", "sooty"]
 }, {
   criteria: {
     hsl: [null, null, [0, 0.3]]
   },
-  adjectives: ['dark', 'dim', 'gloomy', 'dull']
+  adjectives: ["dark", "dim", "gloomy", "dull"]
 }, {
   criteria: {
     hsl: [null, [0.1, 0.7], [0.15, 0.5]]
   },
-  adjectives: ['bleak', 'muted', 'matte', 'dusty']
+  adjectives: ["bleak", "muted", "matte", "dusty"]
 }, {
   criteria: {
     hsl: [null, [0.12, 1], [0.7, 1]]
   },
-  adjectives: ['tinted']
+  adjectives: ["tinted"]
 }, {
   criteria: {
     hsl: [null, [0.2, 1], [0.75, 0.95]]
   },
-  adjectives: ['pastel']
+  adjectives: ["pastel"]
 }, {
   criteria: {
     hsl: [null, null, [0.88, 1]]
   },
-  adjectives: ['pale', 'light', 'faded', 'delicate', 'glistening', 'bleached']
+  adjectives: ["pale", "light", "faded", "delicate", "glistening", "bleached"]
 }, {
   criteria: {
     hsl: [null, [0.5, 1], [0.7, 0.9]]
   },
-  adjectives: ['fresh', 'sparkling', 'glittering', 'glowing', 'jazzy', 'opalecent']
+  adjectives: ["fresh", "sparkling", "glittering", "glowing", "jazzy", "opalecent"]
 }, {
   criteria: {
     hsl: [null, null, [0.9, 1]]
   },
-  adjectives: ['neutral']
+  adjectives: ["neutral"]
 }, {
   criteria: {
     hsl: [null, [0.74, 1], [0.9, 1]]
   },
-  adjectives: ['muted']
+  adjectives: ["muted"]
 }, {
   criteria: {
     hsl: [null, null, 1]
   },
-  adjectives: ['colorless', 'bright', 'briliant', 'high']
+  adjectives: ["colorless", "bright", "briliant", "high"]
 }, {
   criteria: {
     hsl: [null, null, 0]
   },
-  adjectives: ['colorless', 'low', 'dark']
+  adjectives: ["colorless", "low", "dark"]
 }, {
   criteria: {
     hsl: [null, null, [0.01, 0.3]]
   },
-  adjectives: ['shady']
+  adjectives: ["shady"]
 }, // lightness
 {
   criteria: {
     hsl: [null, null, [0.01, 0.08]]
   },
-  adjectives: ['almost black']
+  adjectives: ["almost black"]
 }, {
   criteria: {
     hsl: [null, null, [0, 0.09]]
   },
-  adjectives: ['very dark']
+  adjectives: ["very dark"]
 }, {
   criteria: {
     hsl: [null, [0, 0.4], [0, 0.22]]
   },
-  adjectives: ['dark']
+  adjectives: ["dark"]
 }, // saturations
 {
   criteria: {
     hsl: [null, [0, 0.04], [0.1, 0.99]]
   },
-  adjectives: ['grey']
+  adjectives: ["grey"]
 }, {
   criteria: {
     hsl: [null, [0.04, 0.1], [0.17, 0.99]]
   },
-  adjectives: ['almost grey']
+  adjectives: ["almost grey"]
 }, {
   criteria: {
     hsl: [null, [0.1, 0.3], [0.17, 0.99]]
   },
-  adjectives: ['very unsaturated']
+  adjectives: ["very unsaturated"]
 }, {
   criteria: {
     hsl: [null, [0.3, 0.46], null]
   },
-  adjectives: ['unsaturated']
+  adjectives: ["unsaturated"]
 }, {
   criteria: {
     hsl: [null, [0.46, 0.6], [0.4, 0.55]]
   },
-  adjectives: ['rather unsaturated']
+  adjectives: ["rather unsaturated"]
 }, {
   criteria: {
     hsl: [null, [0.601, 0.8], [0.45, 0.6]]
   },
-  adjectives: ['saturated']
+  adjectives: ["saturated"]
 }, {
   criteria: {
     hsl: [null, [0.801, 0.94], [0.45, 0.6]]
   },
-  adjectives: ['rather saturated']
+  adjectives: ["rather saturated"]
 }, {
   criteria: {
     hsl: [null, [0.941, 1], [0.45, 0.6]]
   },
-  adjectives: ['very saturated']
+  adjectives: ["very saturated"]
 }, // warm vs cold colors
 // loosly based on https://www.sensationalcolor.com/color-temperature/
 // https://discuss.pixls.us/t/color-choosing-paradox-also-warmer-vs-cooler/5722/40
@@ -215,158 +215,158 @@ var HSLadjectives = [{
   criteria: {
     hsl: [[0, 90], [0.3, 1], [0.1, 1]]
   },
-  adjectives: ['warm', 'mellow']
+  adjectives: ["warm", "mellow"]
 }, {
   criteria: {
-    hsl: [[270, 360], [0.3, 1], [.1, 1]]
+    hsl: [[270, 360], [0.3, 1], [0.1, 1]]
   },
-  adjectives: ['warm', 'mellow']
+  adjectives: ["warm", "mellow"]
 }, {
   criteria: {
-    hsl: [[90.01, 269.99], null, [.1, 1]]
+    hsl: [[90.01, 269.99], null, [0.1, 1]]
   },
-  adjectives: ['cold', 'cool']
+  adjectives: ["cold", "cool"]
 }, // hues
 {
   criteria: {
-    hsl: [[0, 15], [0.1, 1], [.07, 0.99]]
+    hsl: [[0, 15], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['red', 'reddish'],
-  nouns: ['red'],
-  emotions: ['excitement', 'energy', 'passion', 'courage', 'attention', 'lust', 'power', 'love', 'speed', 'anger'],
-  usage: ['stimulate', 'createe urgency', 'draw attention', 'caution', 'encurage']
+  adjectives: ["red", "reddish"],
+  nouns: ["red"],
+  emotions: ["excitement", "energy", "passion", "courage", "attention", "lust", "power", "love", "speed", "anger"],
+  usage: ["stimulate", "createe urgency", "draw attention", "caution", "encurage"]
 }, {
   criteria: {
     hsl: [[15, 45], [0.1, 1], [0.4, 0.99]]
   },
-  adjectives: ['orange'],
-  nouns: ['orange'],
-  emotions: ['optimism', 'idependence', 'adventure', 'creativity', 'fun'],
-  usage: ['stimulate', 'draw attention', 'express freedom', 'fascinate']
+  adjectives: ["orange"],
+  nouns: ["orange"],
+  emotions: ["optimism", "idependence", "adventure", "creativity", "fun"],
+  usage: ["stimulate", "draw attention", "express freedom", "fascinate"]
 }, {
   criteria: {
-    hsl: [[15, 45], [0.1, 1], [.07, 0.4]]
+    hsl: [[15, 45], [0.1, 1], [0.07, 0.4]]
   },
-  adjectives: ['brown'],
-  nouns: ['brown']
+  adjectives: ["brown"],
+  nouns: ["brown"]
 }, {
   criteria: {
-    hsl: [[45, 70], [0.1, 1], [.07, 0.99]]
+    hsl: [[45, 70], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['yellow'],
-  nouns: ['yellow'],
-  emotions: ['ethusiasm', 'opportunity', 'spontaneity', 'happyness', 'positivity'],
-  usage: ['stimulate', 'relax', 'awake awareness', 'egnergize', 'affect mood', 'sale', 'cheap']
+  adjectives: ["yellow"],
+  nouns: ["yellow"],
+  emotions: ["ethusiasm", "opportunity", "spontaneity", "happyness", "positivity"],
+  usage: ["stimulate", "relax", "awake awareness", "egnergize", "affect mood", "sale", "cheap"]
 }, {
   criteria: {
-    hsl: [[70, 79], [0.1, 1], [.07, 0.99]]
+    hsl: [[70, 79], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['lime'],
-  nouns: ['lime'],
-  emotions: ['growth', 'harmony', 'fertility', 'kindness', 'dependability'],
-  usage: ['restore energy', 'promote growth', 'awake awareness', 'rejuvinate', 'nature']
+  adjectives: ["lime"],
+  nouns: ["lime"],
+  emotions: ["growth", "harmony", "fertility", "kindness", "dependability"],
+  usage: ["restore energy", "promote growth", "awake awareness", "rejuvinate", "nature"]
 }, {
   criteria: {
-    hsl: [[79, 163], [0.1, 1], [.07, 0.99]]
+    hsl: [[79, 163], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['green', 'greenish'],
-  nouns: ['green'],
-  emotions: ['safety', 'harmony', 'stability', 'reliability', 'balance'],
-  usage: ['relax', 'ballance', 'revitalize', 'encurage', 'posses']
+  adjectives: ["green", "greenish"],
+  nouns: ["green"],
+  emotions: ["safety", "harmony", "stability", "reliability", "balance"],
+  usage: ["relax", "ballance", "revitalize", "encurage", "posses"]
 }, {
   criteria: {
-    hsl: [[163, 193], [0.1, 1], [.07, 0.99]]
+    hsl: [[163, 193], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['cyan'],
-  nouns: ['cyan']
+  adjectives: ["cyan"],
+  nouns: ["cyan"]
 }, {
   criteria: {
-    hsl: [[193, 240], [0.1, 1], [.07, 0.99]]
+    hsl: [[193, 240], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['blue', 'blueish'],
-  nouns: ['blue']
+  adjectives: ["blue", "blueish"],
+  nouns: ["blue"]
 }, {
   criteria: {
-    hsl: [[240, 260], [0.1, 1], [.07, 0.99]]
+    hsl: [[240, 260], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['indigo'],
-  nouns: ['indigo']
+  adjectives: ["indigo"],
+  nouns: ["indigo"]
 }, {
   criteria: {
-    hsl: [[260, 270], [0.1, 1], [.07, 0.99]]
+    hsl: [[260, 270], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['violet'],
-  nouns: ['violet']
+  adjectives: ["violet"],
+  nouns: ["violet"]
 }, {
   criteria: {
-    hsl: [[270, 291], [0.1, 1], [.07, 0.99]]
+    hsl: [[270, 291], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['purple', 'purplish'],
-  nouns: ['purple']
+  adjectives: ["purple", "purplish"],
+  nouns: ["purple"]
 }, {
   criteria: {
-    hsl: [[291, 327], [0.1, 1], [.07, 0.99]]
+    hsl: [[291, 327], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['magenta'],
-  nouns: ['magenta']
+  adjectives: ["magenta"],
+  nouns: ["magenta"]
 }, {
   criteria: {
-    hsl: [[327, 344], [0.1, 1], [.07, 0.99]]
+    hsl: [[327, 344], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['pink'],
-  nouns: ['pink']
+  adjectives: ["pink"],
+  nouns: ["pink"]
 }, {
   criteria: {
-    hsl: [[344, 360], [0.1, 1], [.07, 0.99]]
+    hsl: [[344, 360], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ['red', 'reddish'],
-  nouns: ['red'],
-  emotions: ['excitement', 'energy', 'passion', 'courage', 'attention', 'lust', 'power', 'love', 'speed', 'anger'],
-  usage: ['stimulate', 'createe urgency', 'draw attention', 'caution', 'encurage']
+  adjectives: ["red", "reddish"],
+  nouns: ["red"],
+  emotions: ["excitement", "energy", "passion", "courage", "attention", "lust", "power", "love", "speed", "anger"],
+  usage: ["stimulate", "createe urgency", "draw attention", "caution", "encurage"]
 }];
 var temperatures = [{
   value: 1800,
-  adjectives: ['ultra warm']
+  adjectives: ["ultra warm"]
 }, {
   value: 2400,
-  adjectives: ['very warm']
+  adjectives: ["very warm"]
 }, {
   value: 2700,
-  adjectives: ['warm']
+  adjectives: ["warm"]
 }, {
   value: 3000,
-  adjectives: ['warm white']
+  adjectives: ["warm white"]
 }, {
   value: 4000,
-  adjectives: ['cool or cold']
+  adjectives: ["cool or cold"]
 }, {
   value: 6500,
-  adjectives: ['cool']
+  adjectives: ["cool"]
 }];
 var percentAdjectives = [{
   maxPercentile: 0.06,
-  word: 'a dash of'
+  word: "a dash of"
 }, {
   maxPercentile: 0.16,
-  word: 'a little bit of'
+  word: "a little bit of"
 }, {
   maxPercentile: 0.31,
-  word: 'some'
+  word: "some"
 }, {
   maxPercentile: 0.56,
-  word: 'a good bit of'
+  word: "a good bit of"
 }, {
   maxPercentile: 0.71,
-  word: 'a lot of'
+  word: "a lot of"
 }, {
   maxPercentile: 0.86,
-  word: 'a whole lot of'
+  word: "a whole lot of"
 }, {
   maxPercentile: 0.99,
-  word: 'neatly entirely'
+  word: "neatly entirely"
 }, {
   maxPercentile: 1,
-  word: 'entirely'
+  word: "entirely"
 }];
 
 var _parseColor = /*#__PURE__*/new WeakSet();
@@ -412,7 +412,7 @@ var ColorDescription = /*#__PURE__*/function () {
       });
     }
     /**
-     * 
+     *
      * @param {string} model color model in whitch the components are measured
      * @returns {Array} color component mix in percent
      */
@@ -420,10 +420,10 @@ var ColorDescription = /*#__PURE__*/function () {
   }, {
     key: "percentages",
     value: function percentages() {
-      var model = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'gl';
+      var model = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "gl";
       var props = this.color[model]();
 
-      if (model === 'gl') {
+      if (model === "gl") {
         props.pop(); // removes alpha
       }
 
@@ -437,7 +437,7 @@ var ColorDescription = /*#__PURE__*/function () {
   }, {
     key: "percentageWords",
     value: function percentageWords() {
-      var model = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'gl';
+      var model = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "gl";
       return this.percentages(model).map(function (component) {
         return percentAdjectives.find(function (words) {
           return words.maxPercentile >= component;
@@ -447,27 +447,27 @@ var ColorDescription = /*#__PURE__*/function () {
   }, {
     key: "adjectives",
     get: function get() {
-      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, 'adjectives');
+      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, "adjectives");
     }
   }, {
     key: "nouns",
     get: function get() {
-      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, 'nouns');
+      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, "nouns");
     }
   }, {
     key: "emotions",
     get: function get() {
-      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, 'emotions');
+      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, "emotions");
     }
   }, {
     key: "usage",
     get: function get() {
-      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, 'usage');
+      return _classPrivateMethodGet(this, _getWords, _getWords2).call(this, "usage");
     }
   }, {
     key: "bestContrast",
     get: function get() {
-      return chroma.contrast(this.color, 'black') > chroma.contrast(this.color, 'white') ? 'black' : 'white';
+      return chroma.contrast(this.color, "black") > chroma.contrast(this.color, "white") ? "black" : "white";
     }
     /**
      * @param {Boolean} random randomizes sentense of adjectives
@@ -492,7 +492,7 @@ var ColorDescription = /*#__PURE__*/function () {
 
       if (arr.length > 1) {
         var last = arr.pop();
-        return "".concat(arr.join(', '), " and ").concat(last);
+        return "".concat(arr.join(", "), " and ").concat(last);
       } else {
         return arr[0];
       }
@@ -506,14 +506,14 @@ function _parseColor2(color) {
   if (chroma.valid(color)) {
     return chroma(color);
   } else {
-    throw new TypeError('Color is not a valid color, check the chroma.js documentation.', 'color-description', 14);
+    throw new TypeError("Color is not a valid color, check the chroma.js documentation.", "color-description", 14);
   }
 }
 
 function _getWords2() {
   var _this = this;
 
-  var scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'adjectives';
+  var scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "adjectives";
   var hsl = this.color.hsl();
   return HSLadjectives.reduce(function (rem, current) {
     if (!current.hasOwnProperty(scope)) {
@@ -524,7 +524,7 @@ function _getWords2() {
     var matchesEveryCriteria = colorModels.every(function (colorModel) {
       var colorAsModel = _this.color[colorModel]();
 
-      if (colorModel === 'hsl' || colorModel === 'gl' || colorModel === 'rgb') {
+      if (colorModel === "hsl" || colorModel === "gl" || colorModel === "rgb") {
         colorAsModel.pop(); // removes alpha
       }
 
@@ -551,19 +551,19 @@ function _getWords2() {
 
 window.ColorDescription = ColorDescription;"use strict";
 
-var cd = new ColorDescription('#b40404');
-var $result = document.querySelector('[data-result]');
-var $currentColor = document.querySelector('.currentColor');
-var $input = document.querySelector('input');
-var $randomButton = document.querySelector('[data-random]');
-var $code = document.querySelector('[data-code]');
+var cd = new ColorDescription("#b40404");
+var $result = document.querySelector("[data-result]");
+var $currentColor = document.querySelector(".currentColor");
+var $input = document.querySelector("input");
+var $randomButton = document.querySelector("[data-random]");
+var $code = document.querySelector("[data-code]");
 var $body = document.documentElement;
 var timer;
 
 function colorFetch(color) {
-  var apiURL = new URL('https://api.color.pizza/v1/');
+  var apiURL = new URL("https://api.color.pizza/v1/");
   var params = {
-    values: [color.replace('#', '')],
+    values: [color.replace("#", "")],
     goodnamesonly: true,
     noduplicates: true
   };
@@ -571,27 +571,27 @@ function colorFetch(color) {
   fetch(apiURL).then(function (response) {
     return response.json();
   }).then(function (data) {
-    document.querySelector('h2').innerHTML = "<span>Color Name:</span> ".concat(data.colors[0].name);
+    document.querySelector("h2").innerHTML = "<span>Color Name:</span> ".concat(data.colors[0].name);
   })["catch"](function (error) {
     throw new Error("API ".concat(error));
   });
 }
 
 function setColor(e) {
-  var value = e ? e.target.value : '#b40404';
+  var value = e ? e.target.value : "#b40404";
   cd.color = value;
   $input.value = value;
-  var glPercentages = cd.percentageWords('gl');
-  var cmykPercentageWords = cd.percentageWords('cmyk');
+  var glPercentages = cd.percentageWords("gl");
+  var cmykPercentageWords = cd.percentageWords("cmyk");
   $code.innerHTML = "const cd = new ColorDescription('<i>".concat(value, "</i>');\ncd.getAdjectivesList();");
   var temparature = cd.temeratureAdjectives;
   var emotions = cd.emotions;
   var usage = cd.usage;
-  $body.style.setProperty('--color', value);
-  $result.innerHTML = "\n        <h3>Adjectives</h3>\n        <p>".concat(cd.getAdjectivesList(), "</p>\n        \n        ").concat(emotions.length ? "<h3>Emotions</h3><p>".concat(emotions.join(', '), "</p>") : '', "\n\n        ").concat(usage.length ? "<h3>Usage</h3><p>".concat(usage.join(', '), "</p>") : '', "\n\n        <h3>Contrast Information</h3>\n        <p>If used as background ").concat(cd.bestContrast, " would be the most readable text color.</p>\n        \n\n        <h3>Light Temparature</h3>\n        <p>It has a temperature of <strong>").concat(temparature.value, "</strong><abbr title=\"kelvin\">K</abbr> this is considered to be ").concat(temparature.adjectives.join(', '), "</p>\n        \n        <h3>RGB Mix</h3>\n        <p>An LCD screen needs ").concat(glPercentages[0], " red, ").concat(glPercentages[1], " green and ").concat(glPercentages[2], " blue to produce this color.</p>\n        \n        <h3>CMYK Mix</h3>\n        <p>To print this color you would could mix ").concat(cmykPercentageWords[0], " cyan, ").concat(cmykPercentageWords[1], " magenta, ").concat(cmykPercentageWords[2], " yellow and ").concat(cmykPercentageWords[3], " black.</p>\n        <br />\n        <small data-label=\"HSL color representation\">").concat(chroma(value).css('hsl'), "</small>\n      ");
+  $body.style.setProperty("--color", value);
+  $result.innerHTML = "\n        <h3>Adjectives</h3>\n        <p>".concat(cd.getAdjectivesList(), "</p>\n        \n        ").concat(emotions.length ? "<h3>Emotions</h3><p>".concat(emotions.join(", "), "</p>") : "", "\n\n        ").concat(usage.length ? "<h3>Usage</h3><p>".concat(usage.join(", "), "</p>") : "", "\n\n        <h3>Contrast Information</h3>\n        <p>If used as background ").concat(cd.bestContrast, " would be the most readable text color.</p>\n        \n\n        <h3>Light Temparature</h3>\n        <p>It has a temperature of <strong>").concat(temparature.value, "</strong><abbr title=\"kelvin\">K</abbr> this is considered to be ").concat(temparature.adjectives.join(", "), "</p>\n        \n        <h3>RGB Mix</h3>\n        <p>An LCD screen needs ").concat(glPercentages[0], " red, ").concat(glPercentages[1], " green and ").concat(glPercentages[2], " blue to produce this color.</p>\n        \n        <h3>CMYK Mix</h3>\n        <p>To print this color you would could mix ").concat(cmykPercentageWords[0], " cyan, ").concat(cmykPercentageWords[1], " magenta, ").concat(cmykPercentageWords[2], " yellow and ").concat(cmykPercentageWords[3], " black.</p>\n        <br />\n        <small data-label=\"HSL color representation\">").concat(chroma(value).css("hsl"), "</small>\n      ");
   $currentColor.style.backgroundColor = value;
   $currentColor.style.color = cd.bestContrast;
-  document.querySelector('h2').innerHTML = "…";
+  document.querySelector("h2").innerHTML = "…";
   clearTimeout(timer);
   timer = setTimeout(function () {
     return colorFetch(value);
@@ -599,18 +599,18 @@ function setColor(e) {
 }
 
 setColor();
-var colorPicker = new iro.ColorPicker('#picker', {
+var colorPicker = new iro.ColorPicker("#picker", {
   borderWidth: 8
 });
-colorPicker.on(['color:init', 'color:change'], function (color) {
+colorPicker.on(["color:init", "color:change"], function (color) {
   setColor({
     target: {
       value: color.hexString
     }
   });
 });
-$input.addEventListener('input', setColor);
-$randomButton.addEventListener('click', function (e) {
+$input.addEventListener("input", setColor);
+$randomButton.addEventListener("click", function (e) {
   setColor({
     target: {
       value: chroma.random().hex()
