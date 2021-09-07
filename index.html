@@ -15,7 +15,7 @@
       font-family: 'Inter', sans-serif;
       color: #202124;
     }
-    h1, h2 {
+    h1, h2, h3 {
       font-weight: 300;
       font-size: 2.5rem;
       margin-top: 0;
@@ -23,6 +23,10 @@
     }
     h1 {
       font-size: 4rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5em;
     }
     .link-project {
       line-height: 1;
@@ -124,6 +128,9 @@
     }
     p + p {
       margin-top: 0.5em
+    }
+    p + h3 {
+      margin-top: 1.2em;
     }
     svg *[stroke] {
       stroke: currentColor;
@@ -229,10 +236,15 @@ cd.getAdjectivesList();`;
       $code.style.setProperty('--color', value);
 
       $result.innerHTML = `
-        <p aria-label="adjectives">${cd.getAdjectivesList()}</p>
-        <p aria-label="best contrast color">If used as background ${cd.bestContrast} would be the most readable text color.</p>
-        <p aria-label="RGB mix">An LCD screen needs ${glPercentages[0]} red, ${glPercentages[1]} green and ${glPercentages[2]} blue to produce this color.</p>
-        <p aria-label="CMYK mix">To print this color you would could mix ${cmykPercentageWords[0]} cyan, ${cmykPercentageWords[1]} magenta, ${cmykPercentageWords[2]} yellow and ${cmykPercentageWords[3]} black.</p>
+        <h3>Adjectives</h3>
+        <p>${cd.getAdjectivesList()}</p>
+        <h3>Contrast Information</h3>
+        <p>If used as background ${cd.bestContrast} would be the most readable text color.</p>
+        
+        <h3>RGB Mix</h3>
+        <p>An LCD screen needs ${glPercentages[0]} red, ${glPercentages[1]} green and ${glPercentages[2]} blue to produce this color.</p>
+        <h3>CMYK Mix</h3>
+        <p>To print this color you would could mix ${cmykPercentageWords[0]} cyan, ${cmykPercentageWords[1]} magenta, ${cmykPercentageWords[2]} yellow and ${cmykPercentageWords[3]} black.</p>
         <br />
         <small data-label="HSL color representation">${chroma(value).css('hsl')}</small>
       `;
