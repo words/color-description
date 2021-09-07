@@ -25,6 +25,15 @@
     h1 {
       font-size: 4rem;
     }
+    h1::after {
+      position: relative;
+      content: '⬤';
+      font-size: .2em;
+      color: var(--color);
+      vertical-align: super;
+      top: -1em;
+      left: 1ex;
+    }
     h3 {
       font-size: 1.5rem;
       margin-bottom: 0.5em;
@@ -42,6 +51,7 @@
     .link-project:hover {
       text-decoration: underline;
       text-decoration-style: wavy;
+      text-decoration-color: var(--color);
     }
     button {
       line-height: 1;
@@ -219,6 +229,7 @@ cd.getAdjectivesList();
     const $input = document.querySelector('input');
     const $randomButton = document.querySelector('[data-random]');
     const $code = document.querySelector('[data-code]');
+    const $body = document.documentElement;
 
     let timer;
 
@@ -252,7 +263,7 @@ cd.getAdjectivesList();
 cd.getAdjectivesList();`;
       const temparature = cd.temeratureAdjectives;
 
-      $code.style.setProperty('--color', value);
+      $body.style.setProperty('--color', value);
 
       $result.innerHTML = `
         <h3>Adjectives</h3>
