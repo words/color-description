@@ -51,12 +51,21 @@
     svg *[stroke] {
       stroke: currentColor;
     }
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
   </style>
 </head>
 
 <body>
   <h1>Color-Description Demo</h1>
-  <label>
+  <label class="visually-hidden">
     <h3>Change Color:</h3>
     <input type="color" value='#b40404' />
   </label>
