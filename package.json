@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "node --experimental-vm-modules build.js",
-    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest",
-    "dev": "live-server ./ --entry-file=dist/index.html --watch=./index.js,dist/index.html"
+    "build": "node build.js",
+    "test": "npm run build && node node_modules/.bin/jest",
+    "dev": "live-server ./ --entry-file=dist/index.html --watch=./src/index.js,./src/lib.js,dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,9 @@
     "chroma-js": "^2.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
     "git-cz": "^4.7.6",
     "jest": "^26.6.3",
     "live-server": "^1.2.1",

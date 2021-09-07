@@ -652,7 +652,7 @@ const percentAdjectives = [
   }
 ];
 
-export default class ColorDescription {
+class ColorDescription {
   constructor (color) {
     this.color = color;
   }
@@ -792,3 +792,5 @@ export default class ColorDescription {
     }
   }
 }
+
+window.ColorDescription = ColorDescription;
