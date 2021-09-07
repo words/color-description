@@ -142,6 +142,9 @@
     pre {
       font-size: 1.2rem;
     }
+    pre i {
+      color: var(--color, '#fff');
+    }
   </style>
 </head>
 
@@ -209,8 +212,10 @@ cd.getAdjectivesList();
       $input.value = value;
       const glPercentages = cd.percentageWords('gl');
       const cmykPercentageWords = cd.percentageWords('cmyk');
-      $code.innerHTML =`const cd = new ColorDescription('${value}');
+      $code.innerHTML =`const cd = new ColorDescription('<i>${value}</i>');
 cd.getAdjectivesList();`;
+
+      $code.style.setProperty('--color', value);
 
       $result.innerHTML = `
         <p aria-label="adjectives">${cd.getAdjectivesList()}</p>
