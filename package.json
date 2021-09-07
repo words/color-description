@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node --experimental-vm-modules build.js",
     "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest",
-    "dev": "live-server ./ --entry-file=dist/demo.html --watch=./index.js,dist/demo.html"
+    "dev": "live-server ./ --entry-file=dist/index.html --watch=./index.js,dist/index.html"
   },
   "repository": {
     "type": "git",
