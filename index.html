@@ -28,13 +28,31 @@
       line-height: 1;
       margin-top: 2em;
       position: relative;
-      background: #fff;
+      background: transparent;
+      border: none;
       font-size: 1.5em;
-      border: 2px solid #202124;
-      border-radius: 15px;
       padding: 1.2em 1.5em;
       font-weight: 100;
       color: currentColor;
+    }
+    button:hover {
+      
+    }
+    button:hover::before {
+      transform: translateY(.2em);
+    }
+    button::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: white;
+      border: 2px solid #202124;
+      border-radius: 15px;
+      transition: 300ms transform cubic-bezier(.7,.3,0,1);
     }
     button::after {
       content: '';
@@ -48,7 +66,7 @@
       animation: gradient 15s ease infinite; 
       border: 2px solid #202124;
       border-radius: 18px;
-      z-index: -1;
+      z-index: -2;
     }
 
     @keyframes gradient {
