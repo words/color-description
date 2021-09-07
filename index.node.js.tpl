@@ -1,3 +1,3 @@
-const chroma = require('chroma-js');
+import chroma from 'chroma-js';
 
 {{body}}
