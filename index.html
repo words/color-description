@@ -24,6 +24,16 @@
     h1 {
       font-size: 4rem;
     }
+    .link-project {
+      line-height: 1;
+      font-size: 1.5em;
+      padding: 1.2em 1.5em;
+      text-decoration: none;
+    }
+    .link-project:hover {
+      text-decoration: underline;
+      text-decoration-style: wavy;
+    }
     button {
       line-height: 1;
       margin-top: 2em;
@@ -32,7 +42,7 @@
       border: none;
       font-size: 1.5em;
       padding: 1.2em 1.5em;
-      font-weight: 100;
+      font-weight: 200;
       color: currentColor;
     }
     button:hover {
@@ -158,6 +168,7 @@
     <input type="color" value='#b40404' />
   </label>
   <button data-random>Radomize Color</button>
+  <a class="link-project" href="https://github.com/words/color-description" hreflang="en-us">Github Project</a>
   <code data-label="code example">
     <pre data-code>
 const cd = new ColorDescription('#b40404');
