@@ -4,28 +4,73 @@
 
 <head>
   <meta charset=utf-8>
-  <title>Color-Description Browser Demo</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <title>Color-Description Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
       padding: 2rem;
       font-family: 'Inter', sans-serif;
+      color: #202124;
     }
     h1, h2 {
-      font-weight: 900;
+      font-weight: 300;
       font-size: 2.5rem;
       margin-top: 0;
+      font-family: 'Playfair Display', serif;
     }
     h1 {
       font-size: 4rem;
+    }
+    button {
+      line-height: 1;
+      margin-top: 2em;
+      position: relative;
+      background: #fff;
+      font-size: 1.5em;
+      border: 2px solid #202124;
+      border-radius: 15px;
+      padding: 1.2em 1.5em;
+      font-weight: 100;
+      color: currentColor;
+    }
+    button::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      left: 2px;
+      right: 2px;
+      top: .2em;
+      background: linear-gradient(-92deg, #EE7752, #E73C7E, #23A6D5, #23D5AB, #EE7752);
+      background-size: 400% 100%;
+      animation: gradient 15s ease infinite; 
+      border: 2px solid #202124;
+      border-radius: 18px;
+      z-index: -1;
+    }
+
+    @keyframes gradient {
+      100% {
+        background-position: 400% 50%;
+      }
+    }
+
+    .intro {
+      font-size: 2rem;
+      max-width: 37rem;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.1;
     }
     .currentColor {
       min-height: 20rem;
       margin-bottom: 2rem;
       display: flex;
       padding: 2rem;
-      margin-top: 2rem;
+      margin-top: 4rem;
+      border-radius: 15px;
+      border: 2px solid currentColor;
     }
     @media (orientation: portrait) {
       .currentColor {
@@ -64,7 +109,10 @@
 </head>
 
 <body>
-  <h1>Color-Description Demo</h1>
+  <h1>Color-Description</h1>
+  <p class="intro">
+    Color-Description turns a technical color representation into a human readable
+    description.</p>
   <label class="visually-hidden">
     <h3>Change Color:</h3>
     <input type="color" value='#b40404' />
