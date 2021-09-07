@@ -281,8 +281,8 @@ var HSLadjectives = [{
   criteria: {
     hsl: [[193, 240], [0.1, 1], [0.07, 0.99]]
   },
-  adjectives: ["blue", "blueish"],
-  nouns: ["blue"]
+  adjectives: ['blue', 'blueish'],
+  nouns: ['blue']
 }, {
   criteria: {
     hsl: [[240, 260], [0.1, 1], [0.07, 0.99]]
