@@ -25,6 +25,7 @@
       margin-bottom: 2rem;
       display: flex;
       padding: 2rem;
+      margin-top: 2rem;
     }
     @media (orientation: portrait) {
       .currentColor {
@@ -55,18 +56,19 @@
 
 <body>
   <h1>Color-Description Demo</h1>
+  <label>
+    <h3>Change Color:</h3>
+    <input type="color" value='#b40404' />
+  </label>
+  <button data-random>Radomize Color</button>
   <div class="currentColor">
-    <div id="picker"></div>
+    <div aria-hidden id="picker"></div>
     <div class="result">
-      <h2></h2>
-      <div data-result></div>
+      <h2 aria-live="polite"></h2>
+      <div data-result aria-live="polite"></div>
     </div>
   </div>
   
-  <label>
-    <h2>Change Color:</h2>
-    <input type="color" value='#b40404' />
-  </label>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
   <script type="module">
@@ -76,6 +78,7 @@
     const $result = document.querySelector('[data-result]');
     const $currentColor = document.querySelector('.currentColor');
     const $input = document.querySelector('input');
+    const $randomButton = document.querySelector('[data-random]');
 
     let timer;
 
@@ -93,7 +96,7 @@
       fetch(apiURL)
         .then(response => response.json())
         .then(data => {
-          document.querySelector('h2').innerHTML = data.colors[0].name;
+          document.querySelector('h2').innerHTML = `<span>Color Name:</span> ${data.colors[0].name}`;
         }).catch(error => {
           throw new Error(`API ${error}`);
         });
@@ -107,12 +110,12 @@
       const cmykPercentageWords = cd.percentageWords('cmyk');
 
       $result.innerHTML = `
-        <p>${cd.getAdjectivesList()}</p>
-        <p>If used as background ${cd.bestContrast} would be the most readable text color.</p>
-        <p>An LCD screen needs ${glPercentages[0]} red, ${glPercentages[1]} green and ${glPercentages[2]} blue to produce this color.</p>
-        <p>To print this color you would could mix ${cmykPercentageWords[0]} cyan, ${cmykPercentageWords[1]} magenta, ${cmykPercentageWords[2]} yellow and ${cmykPercentageWords[3]} black.</p>
-        
-        <small>${chroma(value).css('hsl')}</small>
+        <p aria-label="adjectives">${cd.getAdjectivesList()}</p>
+        <p aria-label="best contrast color">If used as background ${cd.bestContrast} would be the most readable text color.</p>
+        <p aria-label="RGB mix">An LCD screen needs ${glPercentages[0]} red, ${glPercentages[1]} green and ${glPercentages[2]} blue to produce this color.</p>
+        <p aria-label="CMYK mix">To print this color you would could mix ${cmykPercentageWords[0]} cyan, ${cmykPercentageWords[1]} magenta, ${cmykPercentageWords[2]} yellow and ${cmykPercentageWords[3]} black.</p>
+        <br />
+        <small data-label="HSL color representation">${chroma(value).css('hsl')}</small>
       `;
 
       $currentColor.style.backgroundColor = value;
@@ -132,6 +135,10 @@
     });
 
     $input.addEventListener('input', setColor);
+
+    $randomButton.addEventListener('click', e => {
+      setColor({ target: { value: chroma.random().hex() } });
+    });
   </script>
 </body>
 
