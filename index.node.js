@@ -489,7 +489,7 @@ const HSLadjectives = [
     ],
     nouns: [
       'blue'
-    ]
+    ],
   },
   {
     criteria: {
