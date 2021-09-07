@@ -34,6 +34,14 @@ test('gets fancy HSL Adjectives', () => {
   expect(cd.adjectives.length).toBeGreaterThan(0);
 });
 
+test('gets a maximum of 2 Adjectives', () => {
+  const cd = new ColorDescription('white');
+
+  expect(cd).toHaveProperty('getAdjectivesList');
+  expect(cd.getAdjectivesList(false, 2).length).toBeGreaterThan(0);
+  expect(cd.getAdjectivesList(false, 2).split(' and ').length).toBe(2);
+});
+
 
 test('getting RGB in percentage of the whole color', () => {
   const cd = new ColorDescription('#ffffff');
