@@ -717,14 +717,25 @@ export default class ColorDescription {
     return this.currentColor;
   }
 
+  /**
+   * @param {string} color chroma.js compatible color string
+   * @returns {object} chroma.js instance
+   */
   #parseColor (color) {
     if (chroma.valid(color)) {
       return chroma(color); 
     } else {
-      throw new TypeError('Color is not a valid color, check the chroma.js documentation.', 'color-description', 14);
+      throw new TypeError(
+        'Color is not a valid color, check the chroma.js documentation.', 
+        'color-description', 
+        14
+      );
     }
   }
 
+  /**
+   * @returns {Array} adjectives describing the color temparature
+   */
   get temeratureAdjectives () {
     const goal = this.color.temperature();
     return temperatures.reduce((prev, curr) =>
@@ -732,6 +743,11 @@ export default class ColorDescription {
     , {value: 0});
   }
 
+  /**
+   * 
+   * @param {string} model color model in whitch the components are measured
+   * @returns {Array} color component mix in percent
+   */
   percentages (model='gl') {
     const props = this.color[model]();
     if (
@@ -796,6 +812,11 @@ export default class ColorDescription {
     return chroma.contrast(this.color, 'black') > chroma.contrast(this.color, 'white') ? 'black' : 'white';
   }
 
+  /**
+   * @param {Boolean} random randomizes sentense of adjectives
+   * @param {Integer} limit maximum adjectives to return
+   * @returns {String} Adjectives describing the color
+   */
   getAdjectivesList (random, limit) {
     let arr = [...this.adjectives];
     
