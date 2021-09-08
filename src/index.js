@@ -108,3 +108,9 @@ $input.addEventListener("input", setColor);
 $randomButton.addEventListener("click", (e) => {
   setColor({ target: { value: chroma.random().hex() } });
 });
+
+document.documentElement.addEventListener('click', e => {
+  if( e.target.matches('[data-setcolor]')  ) {
+    setColor({ target: { value: e.target.dataset.setcolor } });
+  }
+})
