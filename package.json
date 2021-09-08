@@ -5,7 +5,10 @@
   "main": "dist/index.module.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --target=es6 --outfile=dist/index.nomodule.js && esbuild src/index.js --bundle --target=es2020 --format=esm --outfile=dist/index.module.js",
+    "build": "npm run build:nomodule && npm run build:module && npm run build:node",
+    "build:nomodule": "esbuild src/index.js --bundle --target=es6 --outfile=dist/index.nomodule.js",
+    "build:module": "esbuild src/index.js --bundle --target=es2020 --format=esm --outfile=dist/index.module.js",
+    "build:node": "esbuild src/index.js --platform=node --outfile=dist/index.node.js --target=node14",
     "test": "npm run build && node node_modules/.bin/jest",
     "dev": "live-server ./dist --entry-file=dist/index.html --watch=./dist/index.nomodule.js,dist/index.html"
   },
