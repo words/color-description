@@ -591,7 +591,7 @@ class ColorDescription {
     return temperatures.reduce(
       (prev, curr) =>
         Math.abs(curr.value - goal) < Math.abs(prev.value - goal) ? curr : prev,
-      { value: 0 }
+      {value: 0}
     );
   }
 
@@ -673,7 +673,7 @@ class ColorDescription {
 
   get bestContrast() {
     return chroma.contrast(this.color, "black") >
-      chroma.contrast(this.color, "white")
+    chroma.contrast(this.color, "white")
       ? "black"
       : "white";
   }
@@ -703,4 +703,4 @@ class ColorDescription {
   }
 }
 
-window.ColorDescription = ColorDescription;
+export default ColorDescription;

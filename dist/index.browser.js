@@ -20,19 +20,6 @@
   var __toModule = (module) => {
     return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
   };
-  var __accessCheck = (obj, member, msg) => {
-    if (!member.has(obj))
-      throw TypeError("Cannot " + msg);
-  };
-  var __privateAdd = (obj, member, value) => {
-    if (member.has(obj))
-      throw TypeError("Cannot add the same private member more than once");
-    member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
-  };
-  var __privateMethod = (obj, member, method) => {
-    __accessCheck(obj, member, "access private method");
-    return method;
-  };
 
   // node_modules/chroma-js/chroma.js
   var require_chroma = __commonJS({
@@ -3245,18 +3232,22 @@
       word: "entirely"
     }
   ];
-  var _parseColor, parseColor_fn, _getWords, getWords_fn;
   var ColorDescription = class {
     constructor(color) {
-      __privateAdd(this, _parseColor);
-      __privateAdd(this, _getWords);
       this.color = color;
     }
     set color(color) {
-      this.currentColor = __privateMethod(this, _parseColor, parseColor_fn).call(this, color);
+      this.currentColor = this.#parseColor(color);
     }
     get color() {
       return this.currentColor;
+    }
+    #parseColor(color) {
+      if (import_chroma_js.default.valid(color)) {
+        return (0, import_chroma_js.default)(color);
+      } else {
+        throw new TypeError("Color is not a valid color, check the chroma.js documentation.", "color-description", 14);
+      }
     }
     get temeratureAdjectives() {
       const goal = this.color.temperature();
@@ -3273,17 +3264,48 @@
     percentageWords(model = "gl") {
       return this.percentages(model).map((component) => percentAdjectives.find((words) => words.maxPercentile >= component).word);
     }
+    #getWords(scope = "adjectives") {
+      const hsl = this.color.hsl();
+      return HSLadjectives.reduce((rem, current) => {
+        if (!current.hasOwnProperty(scope)) {
+          return rem;
+        }
+        const colorModels = Object.keys(current.criteria);
+        const matchesEveryCriteria = colorModels.every((colorModel) => {
+          const colorAsModel = this.color[colorModel]();
+          if (colorModel === "hsl" || colorModel === "gl" || colorModel === "rgb") {
+            colorAsModel.pop();
+          }
+          return current.criteria[colorModel].every((criterium, i) => {
+            if (criterium === null) {
+              return true;
+            } else if (Array.isArray(criterium)) {
+              return isInRange(colorAsModel[i], criterium[0], criterium[1]);
+            } else if (!isNaN(criterium)) {
+              return colorAsModel[i] === criterium;
+            } else {
+              return false;
+            }
+          });
+        });
+        if (matchesEveryCriteria) {
+          return [...new Set([...rem, ...current[scope]])];
+        } else {
+          return rem;
+        }
+      }, []);
+    }
     get adjectives() {
-      return __privateMethod(this, _getWords, getWords_fn).call(this, "adjectives");
+      return this.#getWords("adjectives");
     }
     get nouns() {
-      return __privateMethod(this, _getWords, getWords_fn).call(this, "nouns");
+      return this.#getWords("nouns");
     }
     get emotions() {
-      return __privateMethod(this, _getWords, getWords_fn).call(this, "emotions");
+      return this.#getWords("emotions");
     }
     get usage() {
-      return __privateMethod(this, _getWords, getWords_fn).call(this, "usage");
+      return this.#getWords("usage");
     }
     get bestContrast() {
       return import_chroma_js.default.contrast(this.color, "black") > import_chroma_js.default.contrast(this.color, "white") ? "black" : "white";
@@ -3303,46 +3325,6 @@
         return arr[0];
       }
     }
-  };
-  _parseColor = new WeakSet();
-  parseColor_fn = function(color) {
-    if (import_chroma_js.default.valid(color)) {
-      return (0, import_chroma_js.default)(color);
-    } else {
-      throw new TypeError("Color is not a valid color, check the chroma.js documentation.", "color-description", 14);
-    }
-  };
-  _getWords = new WeakSet();
-  getWords_fn = function(scope = "adjectives") {
-    const hsl = this.color.hsl();
-    return HSLadjectives.reduce((rem, current) => {
-      if (!current.hasOwnProperty(scope)) {
-        return rem;
-      }
-      const colorModels = Object.keys(current.criteria);
-      const matchesEveryCriteria = colorModels.every((colorModel) => {
-        const colorAsModel = this.color[colorModel]();
-        if (colorModel === "hsl" || colorModel === "gl" || colorModel === "rgb") {
-          colorAsModel.pop();
-        }
-        return current.criteria[colorModel].every((criterium, i) => {
-          if (criterium === null) {
-            return true;
-          } else if (Array.isArray(criterium)) {
-            return isInRange(colorAsModel[i], criterium[0], criterium[1]);
-          } else if (!isNaN(criterium)) {
-            return colorAsModel[i] === criterium;
-          } else {
-            return false;
-          }
-        });
-      });
-      if (matchesEveryCriteria) {
-        return [...new Set([...rem, ...current[scope]])];
-      } else {
-        return rem;
-      }
-    }, []);
   };
   var src_default = ColorDescription;
 
