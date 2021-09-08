@@ -66,3 +66,12 @@ $randomButton.addEventListener("click", function (e) {
     }
   });
 });
+document.documentElement.addEventListener('click', function (e) {
+  if (e.target.matches('[data-setcolor]')) {
+    setColor({
+      target: {
+        value: e.target.dataset.setcolor
+      }
+    });
+  }
+});

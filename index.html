@@ -27,15 +27,7 @@
     h1 {
       font-size: 4rem;
       line-height: .9;
-    }
-    h1::after {
       position: relative;
-      content: '⬤';
-      font-size: .2em;
-      color: var(--color);
-      vertical-align: super;
-      top: -1em;
-      left: 1ex;
     }
     h3 {
       font-size: 1.5rem;
@@ -67,6 +59,17 @@
       font-weight: 200;
       color: currentColor;
     }
+
+    .color-buttons button {
+      padding: .5em;
+      margin-top: .2em;
+    }
+
+    .color-buttons__picker {
+      display: block;
+      margin-top: 1em;
+    }
+
     button span {
       display: block;
       font-weight: bold;
@@ -166,7 +169,8 @@
     svg [stroke] {
       stroke: currentColor;
     }
-    .visually-hidden {
+
+    .visually-hidden:not(:focus):not(:active):not(:focus-within) {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
       height: 1px;
@@ -201,10 +205,26 @@
   <p class="intro">
     Color-Description turns a technical color representation into a human readable
     description.</p>
-  <label class="visually-hidden">
-    <h3>Change Color:</h3>
-    <input type="color" value='#b40404' />
-  </label>
+  <div class="visually-hidden">
+    <nav class="color-buttons">
+      <h3>Set color to</h3>
+      <button data-setcolor="#ff0000">Red</button>
+      <button data-setcolor="#00ff00">Green</button>
+      <button data-setcolor="#00ff00">Blue</button>
+      <button data-setcolor="#ffff00">Yellow</button>
+      <button data-setcolor="#ff00ff">Magenta</button>
+      <button data-setcolor="#00ffff">Cyan</button>
+      <button data-setcolor="#ff7f00">Orange</button>
+      <button data-setcolor="#7f00ff">Violet</button>
+      <button data-setcolor="#007fff">Azure</button>
+      <button data-setcolor="#000000">Black</button>
+      <button data-setcolor="#ffffff">White</button>
+    </nav>
+    <label class="color-buttons__picker">
+      <span>Freely choose color (system color picker)</span>
+      <input type="color" value='#b40404' />
+    </label>
+  </div>
   <button data-random><span>Radomize Color</span></button>
   <a class="link-project" href="https://github.com/words/color-description" hreflang="en-us">Github Project</a>
   <code data-label="code example">
