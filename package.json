@@ -2,12 +2,12 @@
   "name": "color-description",
   "version": "0.5.0",
   "description": "Textual color description",
-  "main": "dist/index.js",
+  "main": "dist/index.module.js",
   "type": "module",
   "scripts": {
-    "build": "node build.js",
+    "build": "esbuild src/index.js --bundle --target=es6 --outfile=dist/index.nomodule.js && esbuild src/index.js --bundle --target=es2020 --format=esm --outfile=dist/index.module.js",
     "test": "npm run build && node node_modules/.bin/jest",
-    "dev": "live-server ./dist --entry-file=dist/index.html --watch=./src/index.js,./src/lib.js,dist/index.html"
+    "dev": "live-server ./dist --entry-file=dist/index.html --watch=./dist/index.nomodule.js,dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",
+    "esbuild": "^0.12.25",
     "git-cz": "^4.7.6",
     "jest": "^26.6.3",
     "live-server": "^1.2.1",
