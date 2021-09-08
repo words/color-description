@@ -10,7 +10,6 @@
     "build:nomodule": "esbuild src/ui.js --bundle --target=es6 --outfile=dist/index.nomodule.js",
     "build:browser": "esbuild src/ui.js --bundle --outfile=dist/index.browser.js",
     "build:node": "esbuild src/ui.js --platform=node --outfile=dist/index.node.js --target=node14",
-    "test": "npm run build && node --experimental-vm-modules ./node_modules/jest/bin/jest",
     "dev": "live-server ./dist --entry-file=dist/index.html --watch=./dist/index.nomodule.js,dist/index.html"
   },
   "repository": {
