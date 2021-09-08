@@ -1,8 +1,9 @@
 {
   "name": "color-description",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Textual color description",
-  "main": "dist/index.module.js",
+  "main": "dist/index.node.js",
+  "browser": "dist/index.nomodule.js",
   "type": "module",
   "scripts": {
     "build": "npm run build:nomodule && npm run build:module && npm run build:node",
