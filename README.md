@@ -1,5 +1,5 @@
 # color-description
-Describes color attributes using words instead of coordinates in a model.
+Color-Description turns a technical color representation into a human readable description.
 
 ## Installation
 `npm install colordescription`

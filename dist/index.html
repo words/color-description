@@ -16,6 +16,7 @@
       font-family: 'Inter', sans-serif;
       color: #202124;
       line-height: 1.5;
+      /*background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='8px' height='8px' viewBox='0 0 8 8' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 42 %2836781%29 - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EArtboard 2%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill='%23eee'%3E%3Cpath d='M7.5,8 L8,8 L8,-3.55271368e-15 L7,-3.55271368e-15 L7,7 L1.77635684e-15,7 L1.77635684e-15,8 L7.5,8 Z' transform='translate%284.000000, 4.000000%29 rotate%28-180.000000%29 translate%28-4.000000, -4.000000%29 '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");*/
     }
     h1, h2, h3 {
       font-weight: 300;
@@ -25,15 +26,8 @@
     }
     h1 {
       font-size: 4rem;
-    }
-    h1::after {
+      line-height: .9;
       position: relative;
-      content: '⬤';
-      font-size: .2em;
-      color: var(--color);
-      vertical-align: super;
-      top: -1em;
-      left: 1ex;
     }
     h3 {
       font-size: 1.5rem;
@@ -65,8 +59,29 @@
       font-weight: 200;
       color: currentColor;
     }
-    button:hover {
-      
+
+    .color-buttons {
+      margin-top: 1rem;
+    }
+
+    .color-buttons button {
+      padding: .5em;
+      margin-top: .2em;
+    }
+
+    .color-buttons__picker {
+      display: block;
+      margin-top: 1em;
+    }
+
+    button span {
+      display: block;
+      font-weight: bold;
+      transition: 650ms transform cubic-bezier(.7,.3,0,1);
+      text-shadow: 0 0 0 var(--color);
+    }
+    button:hover span {
+      transform: translateY(.2em);
     }
     button:hover::before {
       transform: translateY(.2em);
@@ -158,7 +173,8 @@
     svg [stroke] {
       stroke: currentColor;
     }
-    .visually-hidden {
+
+    .visually-hidden:not(:focus):not(:active):not(:focus-within) {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
       height: 1px;
@@ -193,11 +209,27 @@
   <p class="intro">
     Color-Description turns a technical color representation into a human readable
     description.</p>
-  <label class="visually-hidden">
-    <h3>Change Color:</h3>
-    <input type="color" value='#b40404' />
-  </label>
-  <button data-random>Radomize Color</button>
+  <div class="visually-hidden">
+    <nav class="color-buttons">
+      <h3>Set color to</h3>
+      <button data-setcolor="#ff0000">Red</button>
+      <button data-setcolor="#00ff00">Green</button>
+      <button data-setcolor="#0000ff">Blue</button>
+      <button data-setcolor="#ffff00">Yellow</button>
+      <button data-setcolor="#ff00ff">Magenta</button>
+      <button data-setcolor="#00ffff">Cyan</button>
+      <button data-setcolor="#ff7f00">Orange</button>
+      <button data-setcolor="#7f00ff">Violet</button>
+      <button data-setcolor="#007fff">Azure</button>
+      <button data-setcolor="#000000">Black</button>
+      <button data-setcolor="#ffffff">White</button>
+    </nav>
+    <label class="color-buttons__picker">
+      <span>Freely choose color (system color picker)</span>
+      <input type="color" value='#b40404' />
+    </label>
+  </div>
+  <button data-random><span>Radomize Color</span></button>
   <a class="link-project" href="https://github.com/words/color-description" hreflang="en-us">Github Project</a>
   <code data-label="code example">
     <pre data-code>
@@ -221,8 +253,125 @@ cd.getAdjectivesList();
   
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
-  <script src="./lib.js"></script>
-  <script src="./index.js"></script>
+  <script src="./index.nomodule.js"></script>
+  <script>
+    const cd = new ColorDescription("#b40404");
+    const $result = document.querySelector("[data-result]");
+    const $currentColor = document.querySelector(".currentColor");
+    const $input = document.querySelector("input");
+    const $randomButton = document.querySelector("[data-random]");
+    const $code = document.querySelector("[data-code]");
+    const $body = document.documentElement;
+
+    let timer;
+
+    function colorFetch(color) {
+      const apiURL = new URL("https://api.color.pizza/v1/");
+
+      const params = {
+        values: [color.replace("#", "")],
+        goodnamesonly: true,
+        noduplicates: true,
+      };
+
+      apiURL.search = new URLSearchParams(params).toString();
+
+      fetch(apiURL)
+        .then((response) => response.json())
+        .then((data) => {
+          document.querySelector(
+            "h2"
+          ).innerHTML = `<span>Color Name:</span> ${data.colors[0].name}`;
+        })
+        .catch((error) => {
+          throw new Error(`API ${error}`);
+        });
+    }
+
+    function setColor(e) {
+      const value = e ? e.target.value : "#b40404";
+      cd.color = value;
+      $input.value = value;
+      const glPercentages = cd.percentageWords("gl");
+      const cmykPercentageWords = cd.percentageWords("cmyk");
+      $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
+    cd.getAdjectivesList();`;
+      const temparature = cd.temeratureAdjectives;
+      const emotions = cd.emotions;
+      const usage = cd.usage;
+
+      $body.style.setProperty("--color", value);
+
+      $result.innerHTML = `
+            <h3>Adjectives</h3>
+            <p>${cd.getAdjectivesList()}</p>
+            
+            ${
+              emotions.length
+                ? `<h3>Emotions</h3><p>${emotions.join(", ")}</p>`
+                : ""
+            }
+
+            ${usage.length ? `<h3>Usage</h3><p>${usage.join(", ")}</p>` : ""}
+
+            <h3>Contrast Information</h3>
+            <p>If used as background ${
+              cd.bestContrast
+            } would be the most readable text color.</p>
+            
+
+            <h3>Light Temparature</h3>
+            <p>It has a temperature of <strong>${
+              temparature.value
+            }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temparature.adjectives.join(
+        ", "
+      )}</p>
+            
+            <h3>RGB Mix</h3>
+            <p>An LCD screen needs ${glPercentages[0]} red, ${
+        glPercentages[1]
+      } green and ${glPercentages[2]} blue to produce this color.</p>
+            
+            <h3>CMYK Mix</h3>
+            <p>To print this color you would could mix ${
+              cmykPercentageWords[0]
+            } cyan, ${cmykPercentageWords[1]} magenta, ${
+        cmykPercentageWords[2]
+      } yellow and ${cmykPercentageWords[3]} black.</p>
+            <br />
+            <small data-label="HSL color representation">${chroma(value).css(
+              "hsl"
+            )}</small>
+          `;
+
+      $currentColor.style.backgroundColor = value;
+      $currentColor.style.color = cd.bestContrast;
+
+      document.querySelector("h2").innerHTML = "…";
+      clearTimeout(timer);
+      timer = setTimeout(() => colorFetch(value), 500);
+    }
+
+    setColor();
+
+    const colorPicker = new iro.ColorPicker("#picker", { borderWidth: 8 });
+
+    colorPicker.on(["color:init", "color:change"], function (color) {
+      setColor({ target: { value: color.hexString } });
+    });
+
+    $input.addEventListener("input", setColor);
+
+    $randomButton.addEventListener("click", (e) => {
+      setColor({ target: { value: chroma.random().hex() } });
+    });
+
+    document.documentElement.addEventListener('click', e => {
+      if( e.target.matches('[data-setcolor]')  ) {
+        setColor({ target: { value: e.target.dataset.setcolor } });
+      }
+    });
+  </script>
 </body>
 
 </html>
