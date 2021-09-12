@@ -703,4 +703,4 @@ class ColorDescription {
   }
 }
 
-window.ColorDescription = ColorDescription;
+export default ColorDescription;

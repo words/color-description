@@ -1,16 +1,17 @@
 {
   "name": "color-description",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Textual color description",
-  "main": "dist/index.node.js",
-  "browser": "dist/index.nomodule.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.iife.js",
   "type": "module",
   "scripts": {
-    "build": "npm run build:nomodule && npm run build:module && npm run build:node",
-    "build:nomodule": "esbuild src/index.js --bundle --target=es6 --outfile=dist/index.nomodule.js",
-    "build:module": "esbuild src/index.js --bundle --target=es2020 --format=esm --outfile=dist/index.module.js",
-    "build:node": "esbuild src/index.js --platform=node --outfile=dist/index.node.js --target=node14",
-    "test": "npm run build && node node_modules/.bin/jest",
+    "build": "npm run build:esm && npm run build:browser && npm run build:node",
+    "build:esm": "esbuild src/index.js --outfile=dist/index.esm.js --format=esm --bundle --target=es2020 --minify",
+    "build:browser": "esbuild src/index.js --outfile=dist/index.iife.js --bundle --target=es6 --format=iife --global-name=ColorDescription --minify",
+    "build:node": "esbuild src/index.js --outfile=dist/index.js --platform=node --target=node14 --minify",
+    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest",
     "dev": "live-server ./dist --entry-file=dist/index.html --watch=./dist/index.nomodule.js,dist/index.html"
   },
   "repository": {
@@ -34,16 +35,13 @@
     }
   },
   "dependencies": {
-    "chroma-js": "^2.1.1"
+    "chroma-js": "^2.1.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.4",
-    "esbuild": "^0.12.25",
+    "esbuild": "^0.12.26",
     "git-cz": "^4.7.6",
     "jest": "^26.6.3",
     "live-server": "^1.2.1",
-    "prettier": "^2.3.2"
+    "prettier": "^2.4.0"
   }
 }
