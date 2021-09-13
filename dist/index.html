@@ -234,7 +234,7 @@
   <code data-label="code example">
     <pre data-code>
 const cd = new ColorDescription('#b40404');
-cd.getAdjectivesList();
+cd.getDescriptiveList();
     </pre>
   </code>
   <div class="currentColor">
@@ -298,8 +298,8 @@ cd.getAdjectivesList();
       const glPercentages = cd.percentageWords("gl");
       const cmykPercentageWords = cd.percentageWords("cmyk");
       $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
-cd.getAdjectivesList();`;
-      const temparature = cd.temeratureAdjectives;
+cd.getDescriptiveList();`;
+      const temparature = cd.temeratureWords;
       const emotions = cd.emotions;
       const usage = cd.usage;
       if(!fromPicker) {
@@ -309,8 +309,8 @@ cd.getAdjectivesList();`;
       $body.style.setProperty("--color", value);
 
       $result.innerHTML = `
-            <h3>Adjectives</h3>
-            <p>${cd.getAdjectivesList()}</p>
+            <h3>Description</h3>
+            <p>${cd.getDescriptiveList()}</p>
             
             ${
               emotions.length
@@ -329,7 +329,7 @@ cd.getAdjectivesList();`;
             <h3>Light Temparature</h3>
             <p>It has a temperature of <strong>${
               temparature.value
-            }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temparature.adjectives.join(
+            }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temparature.descriptive.join(
         ", "
       )}</p>
             

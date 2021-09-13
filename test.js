@@ -23,23 +23,23 @@ test('does not like funky colors', () => {
 test('get adjectives for color temperature', () => {
   const cd = new ColorDescription('red');
 
-  expect(cd).toHaveProperty('temeratureAdjectives');
-  expect(cd.temeratureAdjectives.adjectives[0]).toBe('ultra warm');
+  expect(cd).toHaveProperty('temeratureWords');
+  expect(cd.temeratureWords.descriptive[0]).toBe('ultra warm');
 });
 
-test('gets fancy HSL Adjectives', () => {
+test('gets fancy HSL Descriptions', () => {
   const cd = new ColorDescription('white');
 
-  expect(cd).toHaveProperty('adjectives');
-  expect(cd.adjectives.length).toBeGreaterThan(0);
+  expect(cd).toHaveProperty('descriptiveWords');
+  expect(cd.descriptiveWords.length).toBeGreaterThan(0);
 });
 
-test('gets a maximum of 2 Adjectives', () => {
+test('gets a maximum of 2 Descriptions', () => {
   const cd = new ColorDescription('white');
 
-  expect(cd).toHaveProperty('getAdjectivesList');
-  expect(cd.getAdjectivesList(false, 2).length).toBeGreaterThan(0);
-  expect(cd.getAdjectivesList(false, 2).split(' and ').length).toBe(2);
+  expect(cd).toHaveProperty('getDescriptiveList');
+  expect(cd.getDescriptiveList(false, 2).length).toBeGreaterThan(0);
+  expect(cd.getDescriptiveList(false, 2).split(' and ').length).toBe(2);
 });
 
 
