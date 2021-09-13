@@ -2,9 +2,7 @@ import chroma from 'chroma-js';
 import wordsEN from './en';
 
 const isInRange = (x, min, max) => x >= min && x <= max;
-
-// sources:
-// https://www.writerswrite.co.za/204-words-that-describe-colours/
+const randomizeArr = (arr) => [...arr].sort(() => 0.5 - Math.random());
 
 class ColorDescription {
   constructor(
@@ -74,22 +72,27 @@ class ColorDescription {
     );
   }
 
-  #getWords(scope = "descriptive") {
-    const hsl = this.color.hsl();
-
+  #getWords(
+    scope = "descriptive",
+    randomize = false,
+    wordLimit
+  ) {
     return this.descriptions.reduce((rem, current) => {
       if (!current.hasOwnProperty(scope)) {
         return rem;
       }
+ 
       const colorModels = Object.keys(current.criteria);
+      
       const matchesEveryCriteria = colorModels.every((colorModel) => {
         const colorAsModel = this.color[colorModel]();
+
         if (
           colorModel === "hsl" ||
           colorModel === "gl" ||
           colorModel === "rgb"
         ) {
-          colorAsModel.pop(); // removes alpha
+          colorAsModel.pop(); // ignore alpha
         }
 
         return current.criteria[colorModel].every((criterium, i) => {
@@ -106,6 +109,7 @@ class ColorDescription {
       });
 
       if (matchesEveryCriteria) {
+        // gets rid of duplicates by creating a map first
         return [...new Set([...rem, ...current[scope]])];
       } else {
         return rem;
@@ -145,7 +149,7 @@ class ColorDescription {
     let arr = [...this.descriptiveWords];
 
     if (random) {
-      arr = arr.sort(() => 0.5 - Math.random());
+      arr = randomizeArr(arr);
     }
 
     if (limit) {

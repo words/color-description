@@ -1,5 +1,6 @@
 export default {
-  "descriptions": [{
+  "descriptions": [
+    {
       "criteria": {
         "hsl": [
           null,
@@ -757,7 +758,26 @@ export default {
         "cyan"
       ],
       "nouns": [
-        "cyan"
+        "cyan",
+        "sky blue"
+      ],
+      "emotions": [
+        "freedom",
+        "trust",
+        "wisdom",
+        "joy",
+        "refreshing",
+        "consciousness",
+        "stimulating"
+      ],
+      "usage": [
+        "self expression",
+        "communication",
+        "children products",
+        "technology",
+        "aerospace",
+        "entertainment",
+        "prodcutivity"
       ]
     },
     {
@@ -783,6 +803,23 @@ export default {
       ],
       "nouns": [
         "blue"
+      ],
+      "emotions": [
+        "trust",
+        "responsability",
+        "honesty",
+        "loyality",
+        "security",
+        "relaing",
+        "calmness",
+        "control"
+      ],
+      "usage": [
+        "securitly",
+        "financy",
+        "technology",
+        "health care",
+        "accounting"
       ]
     },
     {
@@ -951,7 +988,8 @@ export default {
       ]
     }
   ],
-  "temperatures": [{
+  "temperatures": [
+    {
       "value": 1800,
       "descriptive": ["ultra warm"]
     },
@@ -976,7 +1014,8 @@ export default {
       "descriptive": ["cool"]
     }
   ],
-  "percentWords": [{
+  "percentWords": [
+    {
       "maxPercentile": 0.06,
       "word": "a dash of"
     },

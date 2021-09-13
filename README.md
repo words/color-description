@@ -34,9 +34,12 @@ console.log(cd.getAdjectivesList())
 ### Named Primary, Secondary and Tertiary Colors
 
 - [Named color wheel](https://en.wikipedia.org/wiki/Hue#24_hues_of_HSL/HSV)
-- [Named color wheel](https://www.color-meanings.com/primary-secondary-tertiary-colors/)
+- [Named color wheel 2](https://www.color-meanings.com/primary-secondary-tertiary-colors/)
 
 ### Color Adjectives
 
 - [Adjective List](https://grammar.yourdictionary.com/grammar/word-lists/list-of-words-to-describe-colors.html)
 - [Human Colors](https://github.com/vasilisvg/human-colours/blob/master/js/human-colours-en-gb.js)
+
+### Descriptions
+- [color meanings](https://www.canva.com/colors/color-meanings/)
