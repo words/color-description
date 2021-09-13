@@ -193,6 +193,13 @@
       stroke: currentColor;
     }
 
+    [data-picker]::after {
+      display: block;      
+      content: attr(data-hsl);
+      text-align: center;
+      margin-top: 1em;
+    }
+
     .visually-hidden:not(:focus):not(:active):not(:focus-within) {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
@@ -241,6 +248,7 @@
       <button data-setcolor="#7f00ff"><span>Violet</span></button>
       <button data-setcolor="#007fff"><span>Azure</span></button>
       <button data-setcolor="#000000"><span>Black</span></button>
+      <button data-setcolor="#c0c0c0"><span>Silver</span></button>
       <button data-setcolor="#ffffff"><span>White</span></button>
     </nav>
     <label class="color-buttons__picker">
@@ -257,7 +265,8 @@ cd.getDescriptiveList();
     </pre>
   </code>
   <div class="currentColor">
-    <div aria-hidden id="picker"></div>
+    <div aria-hidden data-picker>
+    </div>
     <article class="result">
       <h2 data-colorname aria-live="polite"></h2>
       <div data-result aria-live="polite"></div>
@@ -315,7 +324,7 @@ cd.getDescriptiveList();
         });
     }
 
-    const colorPicker = new iro.ColorPicker("#picker", { borderWidth: 8 });
+    const colorPicker = new iro.ColorPicker("[data-picker]", { borderWidth: 8 });
 
     function setColor(e, fromPicker) {
       const value = e ? e.target.value : "#b40404";
@@ -371,11 +380,11 @@ cd.getDescriptiveList();`;
         cmykPercentageWords[2]
       } yellow and ${cmykPercentageWords[3]} black.</p>
             <br />
-            <small data-label="HSL color representation">${chroma(value).css(
+            <!--small data-label="HSL color representation">${chroma(value).css(
               "hsl"
-            )}</small>
+            )}</small-->
           `;
-
+      document.querySelector('[data-picker]').dataset.hsl = chroma(value).css("hsl");
       $currentColor.style.backgroundColor = value;
       $currentColor.style.color = cd.bestContrast;
 
