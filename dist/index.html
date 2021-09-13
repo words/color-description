@@ -48,18 +48,7 @@
       text-decoration-style: wavy;
       text-decoration-color: var(--color);
     }
-    button {
-      line-height: 1;
-      margin-top: 2em;
-      position: relative;
-      background: transparent;
-      border: none;
-      font-size: 1.5em;
-      padding: 1.2em 1.5em;
-      font-weight: 200;
-      color: currentColor;
-    }
-
+    
     .color-buttons {
       margin-top: 1rem;
     }
@@ -74,7 +63,36 @@
       margin-top: 1em;
     }
 
+    button {
+      line-height: 1;
+      margin-top: 2em;
+      position: relative;
+      background: transparent;
+      border: none;
+      font-size: 1.5em;
+      padding: 1.2em 1.5em;
+      font-weight: 200;
+      color: currentColor;
+    }
+
+    button.similar {
+      margin-top: .7em;
+      margin-right: .7em;      
+      padding: .5em .7em;
+      font-size: 1.1em;
+    }
+
+    button.similar::before {
+      background: var(--c);
+    }
+
+    button.similar::after {
+      background: #fff;
+    }
+
     button span {
+      position: relative;
+      z-index: 3;
       display: block;
       font-weight: bold;
       transition: 650ms transform cubic-bezier(.7,.3,0,1);
@@ -89,7 +107,7 @@
     button::before {
       content: '';
       position: absolute;
-      z-index: -1;
+      z-index: 2;
       left: 0;
       right: 0;
       bottom: 0;
@@ -111,7 +129,7 @@
       animation: gradient 15s ease infinite; 
       border: 2px solid #202124;
       border-radius: 18px;
-      z-index: -2;
+      z-index: 1;
     }
 
     @keyframes gradient {
@@ -212,17 +230,17 @@
   <div class="visually-hidden">
     <nav class="color-buttons">
       <h3>Set color to</h3>
-      <button data-setcolor="#ff0000">Red</button>
-      <button data-setcolor="#00ff00">Green</button>
-      <button data-setcolor="#0000ff">Blue</button>
-      <button data-setcolor="#ffff00">Yellow</button>
-      <button data-setcolor="#ff00ff">Magenta</button>
-      <button data-setcolor="#00ffff">Cyan</button>
-      <button data-setcolor="#ff7f00">Orange</button>
-      <button data-setcolor="#7f00ff">Violet</button>
-      <button data-setcolor="#007fff">Azure</button>
-      <button data-setcolor="#000000">Black</button>
-      <button data-setcolor="#ffffff">White</button>
+      <button data-setcolor="#ff0000"><span>Red</span></button>
+      <button data-setcolor="#00ff00"><span>Green</span></button>
+      <button data-setcolor="#0000ff"><span>Blue</span></button>
+      <button data-setcolor="#ffff00"><span>Yellow</span></button>
+      <button data-setcolor="#ff00ff"><span>Magenta</span></button>
+      <button data-setcolor="#00ffff"><span>Cyan</span></button>
+      <button data-setcolor="#ff7f00"><span>Orange</span></button>
+      <button data-setcolor="#7f00ff"><span>Violet</span></button>
+      <button data-setcolor="#007fff"><span>Azure</span></button>
+      <button data-setcolor="#000000"><span>Black</span></button>
+      <button data-setcolor="#ffffff"><span>White</span></button>
     </nav>
     <label class="color-buttons__picker">
       <span>Freely choose color (system color picker)</span>
@@ -240,8 +258,12 @@ cd.getDescriptiveList();
   <div class="currentColor">
     <div aria-hidden id="picker"></div>
     <article class="result">
-      <h2 aria-live="polite"></h2>
+      <h2 data-colorname aria-live="polite"></h2>
       <div data-result aria-live="polite"></div>
+      <aside>
+        <h3>Similar Colors</h3>
+        <div data-neighbors></div>
+      </aside>
     </article>
   </div>
   <aside class="outro">
@@ -263,14 +285,17 @@ cd.getDescriptiveList();
     const $randomButton = document.querySelector("[data-random]");
     const $code = document.querySelector("[data-code]");
     const $body = document.documentElement;
+    const $colorname = document.querySelector("[data-colorname]");
+    const $neighbors = document.querySelector("[data-neighbors]");
 
     let timer;
 
-    function colorFetch(color) {
+    function colorFetch(color, colors = 10) {
       const apiURL = new URL("https://api.color.pizza/v1/");
+      const colorWithoutHash = color.replace("#", "");
 
       const params = {
-        values: [color.replace("#", "")],
+        values: (new Array(colors).fill(colorWithoutHash)),
         goodnamesonly: true,
         noduplicates: true,
       };
@@ -280,9 +305,9 @@ cd.getDescriptiveList();
       fetch(apiURL)
         .then((response) => response.json())
         .then((data) => {
-          document.querySelector(
-            "h2"
-          ).innerHTML = `<span>Color Name:</span> ${data.colors[0].name}`;
+          let colors = [...data.colors];
+          $colorname.innerHTML = `<span>Color Name:</span> ${colors.shift().name}`;
+          $neighbors.innerHTML = colors.reduce((r,c) => `${r}<button class="similar" style="--c: ${c.hex}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`, '');
         })
         .catch((error) => {
           throw new Error(`API ${error}`);
@@ -353,7 +378,8 @@ cd.getDescriptiveList();`;
       $currentColor.style.backgroundColor = value;
       $currentColor.style.color = cd.bestContrast;
 
-      document.querySelector("h2").innerHTML = "…";
+      $colorname.innerHTML = "…";
+      $neighbors.innerHTML = "…";
       clearTimeout(timer);
       timer = setTimeout(() => colorFetch(value), 500);
     }
