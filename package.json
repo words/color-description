@@ -12,7 +12,9 @@
     "build:browser": "esbuild src/index.js --outfile=dist/index.iife.js --bundle --target=es6 --format=iife --global-name=ColorDescription --minify",
     "build:node": "esbuild src/index.js --outfile=dist/index.js --platform=node --target=node14 --minify",
     "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest",
-    "dev": "live-server ./dist --entry-file=dist/index.html --watch=./dist/index.nomodule.js,dist/index.html"
+    "dev:watch": "esbuild src/index.js --outfile=dist/index.iife.js --bundle --target=es6 --format=iife --global-name=ColorDescription --watch",
+    "dev:watch-demo": "live-server ./dist --entry-file=dist/index.html --watch=dist/index.html,./dist/index.iife.js",
+    "dev": "concurrently \"npm run dev:watch\" \"npm run dev:watch-demo\""
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
     "chroma-js": "^2.1.2"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
     "esbuild": "^0.12.26",
     "git-cz": "^4.7.6",
     "jest": "^26.6.3",

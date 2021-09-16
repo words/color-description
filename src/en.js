@@ -866,7 +866,7 @@ export default {
         "financy",
         "technology",
         "health care",
-        "accounting"
+        "accounting",
       ]
     },
     {
