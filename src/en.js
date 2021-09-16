@@ -232,6 +232,19 @@ export default {
       "criteria": {
         "hsl": [
           null,
+          [0,0.01],
+          null
+        ]
+      },
+      "descriptive": [
+        "colorless",
+        "neutral",
+      ]
+    },
+    {
+      "criteria": {
+        "hsl": [
+          null,
           null,
           [
             0.01,
@@ -241,6 +254,19 @@ export default {
       },
       "descriptive": [
         "shady"
+      ]
+    }, 
+    {
+      "criteria": {
+        "hsl": [
+          null,
+          [0, 0.4],
+          null,
+        ]
+      },
+      "descriptive": [
+        "ashy",
+        "dusty",
       ]
     },
     {
@@ -289,6 +315,27 @@ export default {
       },
       "descriptive": [
         "dark"
+      ]
+    },
+    {
+      "criteria": {
+        "hsl": [
+          null,
+          [
+            0.1,
+            0.4
+          ],
+          [
+            0,
+            0.6
+          ]
+        ]
+      },
+      "descriptive": [
+        "dark",
+        "inky",
+        "dim",
+        "gloomy"
       ]
     },
     {
