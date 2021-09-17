@@ -3068,6 +3068,21 @@ var ColorDescription = (() => {
             null,
             [
               0,
+              0.02
+            ]
+          ]
+        },
+        "descriptive": [
+          "black"
+        ]
+      },
+      {
+        "criteria": {
+          "hsl": [
+            null,
+            null,
+            [
+              0,
               0.09
             ]
           ]
@@ -3322,6 +3337,37 @@ var ColorDescription = (() => {
       {
         "criteria": {
           "hsl": [
+            null,
+            null,
+            [
+              0,
+              0.08
+            ]
+          ]
+        },
+        "nouns": [
+          "black"
+        ],
+        "emotions": [
+          "power",
+          "control",
+          "authority",
+          "discipline",
+          "discretion",
+          "secrecy",
+          "ellegance",
+          "mistery"
+        ],
+        "usage": [
+          "intibidate",
+          "create fear",
+          "authority",
+          "luxury"
+        ]
+      },
+      {
+        "criteria": {
+          "hsl": [
             [
               0,
               15
@@ -3437,7 +3483,13 @@ var ColorDescription = (() => {
           "comfort",
           "security"
         ],
-        "usage": []
+        "usage": [
+          "agriculture",
+          "legal",
+          "food",
+          "tobacco",
+          "alcohol"
+        ]
       },
       {
         "criteria": {
@@ -3666,6 +3718,23 @@ var ColorDescription = (() => {
         ],
         "nouns": [
           "indigo"
+        ],
+        "emotions": [
+          "sprituality",
+          "structure",
+          "compassion",
+          "sensitivity",
+          "mystery",
+          "tolerance",
+          "integrity",
+          "order",
+          "wisdom",
+          "inspiration"
+        ],
+        "usage": [
+          "luxury",
+          "religion",
+          "psychic"
         ]
       },
       {
@@ -3690,6 +3759,23 @@ var ColorDescription = (() => {
         ],
         "nouns": [
           "violet"
+        ],
+        "emotions": [
+          "sprituality",
+          "structure",
+          "compassion",
+          "sensitivity",
+          "mystery",
+          "tolerance",
+          "integrity",
+          "order",
+          "wisdom",
+          "inspiration"
+        ],
+        "usage": [
+          "luxury",
+          "religion",
+          "psychic"
         ]
       },
       {
@@ -3715,6 +3801,24 @@ var ColorDescription = (() => {
         ],
         "nouns": [
           "purple"
+        ],
+        "emotions": [
+          "sprituality",
+          "structure",
+          "compassion",
+          "sensitivity",
+          "mystery",
+          "tolerance",
+          "integrity",
+          "order",
+          "wisdom",
+          "inspiration"
+        ],
+        "usage": [
+          "luxury",
+          "religion",
+          "psychic",
+          "royalty"
         ]
       },
       {
@@ -3739,6 +3843,25 @@ var ColorDescription = (() => {
         ],
         "nouns": [
           "magenta"
+        ],
+        "emotions": [
+          "supportive",
+          "kind",
+          "chaning",
+          "harmony",
+          "kink",
+          "charming",
+          "polite",
+          "sensitive",
+          "tender",
+          "sweet",
+          "feminin",
+          "romanitc",
+          "seductive",
+          "sexy"
+        ],
+        "usage": [
+          "children products"
         ]
       },
       {
@@ -3763,6 +3886,25 @@ var ColorDescription = (() => {
         ],
         "nouns": [
           "pink"
+        ],
+        "emotions": [
+          "supportive",
+          "kind",
+          "chaning",
+          "harmony",
+          "kink",
+          "charming",
+          "polite",
+          "sensitive",
+          "tender",
+          "sweet",
+          "feminin",
+          "romanitc",
+          "seductive",
+          "sexy"
+        ],
+        "usage": [
+          "children products"
         ]
       },
       {

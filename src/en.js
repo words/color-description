@@ -283,6 +283,21 @@ export default {
       "descriptive": [
         "almost black"
       ]
+    }, 
+    {
+      "criteria": {
+        "hsl": [
+          null,
+          null,
+          [
+            0.0,
+            0.02
+          ]
+        ]
+      },
+      "descriptive": [
+        "black"
+      ]
     },
     {
       "criteria": {
@@ -545,6 +560,37 @@ export default {
     {
       "criteria": {
         "hsl": [
+          null,
+          null,
+          [
+            0.0,
+            0.08
+          ]
+        ]
+      },
+      "nouns": [
+        "black"
+      ],
+      "emotions": [
+        "power",
+        "control",
+        "authority",
+        "discipline",
+        "discretion",
+        "secrecy",
+        "ellegance",
+        "mistery"
+      ],
+      "usage": [
+        "intibidate",
+        "create fear",
+        "authority",
+        "luxury"
+      ]
+    },
+    {
+      "criteria": {
+        "hsl": [
           [
             0,
             15
@@ -661,7 +707,11 @@ export default {
         "security"
       ],
       "usage": [
-
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol"
       ]
     },
     {
@@ -891,6 +941,23 @@ export default {
       ],
       "nouns": [
         "indigo"
+      ],
+      "emotions": [
+        "sprituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      "usage": [
+        "luxury",
+        "religion",
+        "psychic"
       ]
     },
     {
@@ -915,7 +982,24 @@ export default {
       ],
       "nouns": [
         "violet"
-      ]
+      ],
+      "emotions": [
+        "sprituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      "usage": [
+        "luxury",
+        "religion",
+        "psychic"
+      ],
     },
     {
       "criteria": {
@@ -940,7 +1024,25 @@ export default {
       ],
       "nouns": [
         "purple"
-      ]
+      ],
+      "emotions": [
+        "sprituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      "usage": [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty"
+      ],
     },
     {
       "criteria": {
@@ -964,7 +1066,26 @@ export default {
       ],
       "nouns": [
         "magenta"
-      ]
+      ],
+      "emotions": [
+        "supportive",
+        "kind",
+        "chaning",
+        "harmony",
+        "kink",
+        "charming",
+        "polite",
+        "sensitive",
+        "tender",
+        "sweet",
+        "feminin",
+        "romanitc",
+        "seductive",
+        "sexy"
+      ],
+      "usage": [
+        "children products",
+      ],
     },
     {
       "criteria": {
@@ -988,7 +1109,26 @@ export default {
       ],
       "nouns": [
         "pink"
-      ]
+      ],
+      "emotions": [
+        "supportive",
+        "kind",
+        "chaning",
+        "harmony",
+        "kink",
+        "charming",
+        "polite",
+        "sensitive",
+        "tender",
+        "sweet",
+        "feminin",
+        "romanitc",
+        "seductive",
+        "sexy"
+      ],
+      "usage": [
+        "children products",
+      ],
     },
     {
       "criteria": {
@@ -1035,6 +1175,7 @@ export default {
       ]
     }
   ],
+
   "temperatures": [
     {
       "value": 1800,
