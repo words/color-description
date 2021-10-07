@@ -3,6 +3,7 @@ Color-Description turns a technical color representation into a human readable d
 
 ## Installation
 `npm install colordescription`
+
 ## Usage
 
 ```js
@@ -22,6 +23,12 @@ console.log(cd.getAdjectivesList())
  * saturated, strong, lush, ablaze, beaming, bold, brilliant, flamboyant, vibrant, vivid, loud, very saturated, warm, mellow, red and reddish
  **/
 ```
+
+## Color Meaning & Translation
+
+The default dataset that is written in english so the "Emotions" and "Usage" very subjective and are written from a western perspective:
+https://github.com/words/color-description/blob/21ffa6b522f1751b471907aac4173acdc5c92fae/src/en.js
+
 
 ## Data Sources
 
