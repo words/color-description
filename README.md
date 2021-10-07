@@ -1,5 +1,5 @@
 # color-description
-Color-Description turns a technical color representation into a human readable description.
+Color-Description is a class that turns a technical color representation into a human readable description.
 
 ## Installation
 `npm install colordescription`
