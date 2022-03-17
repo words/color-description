@@ -2,22 +2,24 @@
 Color-Description turns a technical color representation into a human readable description.
 
 ## Installation
-`npm install colordescription`
+`npm install color-description`
 ## Usage
 
 ```js
-import ColorDescription from 'colordescription';
+import ColorDescription from 'color-description/dist/index.esm';
+
+console.log(ColorDescription)
 
 const cd = new ColorDescription('#ffffff');
 
-console.log(cd.getAdjectivesList()) 
+console.log(cd.getDescriptiveList())
 /**
  * pale, light, faded, delicate, glistening, bleached, neutral colorless, bright, briliant and high
  **/
 
-const cd.color = 'red';
+cd.color = 'red';
 
-console.log(cd.getAdjectivesList()) 
+console.log(cd.getDescriptiveList())
 /**
  * saturated, strong, lush, ablaze, beaming, bold, brilliant, flamboyant, vibrant, vivid, loud, very saturated, warm, mellow, red and reddish
  **/
