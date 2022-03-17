@@ -1,7 +1,9 @@
 # color-description
-Color-Description turns a technical color representation into a human readable description.
+
+Color-Description is a class that turns a technical color representation into a human readable description.
 
 ## Installation
+
 `npm install color-description`
 ## Usage
 
@@ -25,6 +27,11 @@ console.log(cd.getDescriptiveList())
  **/
 ```
 
+## Color Meaning & Translation
+
+The default dataset that is written in english so the "Emotions" and "Usage" very subjective and are written from a western perspective:
+https://github.com/words/color-description/blob/21ffa6b522f1751b471907aac4173acdc5c92fae/src/en.js
+
 ## Data Sources
 
 ### Color Psychology
@@ -44,4 +51,5 @@ console.log(cd.getDescriptiveList())
 - [Human Colors](https://github.com/vasilisvg/human-colours/blob/master/js/human-colours-en-gb.js)
 
 ### Descriptions
+
 - [color meanings](https://www.canva.com/colors/color-meanings/)
