@@ -1,4 +1,4 @@
-# color-description
+# 📜 color-description
 
 Color-Description is a class that turns a technical color representation into a human readable description.
 
