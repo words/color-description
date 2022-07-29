@@ -571,7 +571,7 @@ export default {
       "nouns": [
         "black"
       ],
-      "emotions": [
+      "meanings": [
         "power",
         "control",
         "authority",
@@ -612,7 +612,7 @@ export default {
       "nouns": [
         "red"
       ],
-      "emotions": [
+      "meanings": [
         "excitement",
         "energy",
         "passion",
@@ -624,14 +624,21 @@ export default {
         "speed",
         "anger",
         "lust",
-        "excitement"
+        "excitement",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "anger",
+        "vigor",
+        "urgency",
       ],
       "usage": [
         "stimulate",
-        "createe urgency",
+        "create urgency",
         "draw attention",
         "caution",
-        "encurage",
+        "encourage",
         "excite"
       ]
     },
@@ -658,9 +665,9 @@ export default {
       "nouns": [
         "orange"
       ],
-      "emotions": [
+      "meanings": [
         "optimism",
-        "idependence",
+        "independence",
         "adventure",
         "creativity",
         "fun"
@@ -695,7 +702,7 @@ export default {
       "nouns": [
         "brown"
       ],
-      "emotions": [
+      "meanings": [
         "strength",
         "reliability",
         "resilience",
@@ -737,8 +744,8 @@ export default {
       "nouns": [
         "yellow"
       ],
-      "emotions": [
-        "ethusiasm",
+      "meanings": [
+        "enthusiasm",
         "opportunity",
         "spontaneity",
         "happiness",
@@ -748,7 +755,7 @@ export default {
         "stimulate",
         "relax",
         "awake awareness",
-        "egnergize",
+        "energize",
         "affect mood",
         "sale",
         "cheap",
@@ -780,7 +787,7 @@ export default {
       "nouns": [
         "lime"
       ],
-      "emotions": [
+      "meanings": [
         "growth",
         "harmony",
         "fertility",
@@ -791,7 +798,7 @@ export default {
         "restore energy",
         "promote growth",
         "awake awareness",
-        "rejuvinate",
+        "rejuvenate",
         "nature"
       ]
     },
@@ -819,7 +826,7 @@ export default {
       "nouns": [
         "green"
       ],
-      "emotions": [
+      "meanings": [
         "safety",
         "harmony",
         "stability",
@@ -830,7 +837,7 @@ export default {
         "relax",
         "ballance",
         "revitalize",
-        "encurage",
+        "encourage",
         "posses"
       ]
     },
@@ -858,7 +865,7 @@ export default {
         "cyan",
         "sky blue"
       ],
-      "emotions": [
+      "meanings": [
         "freedom",
         "trust",
         "wisdom",
@@ -901,7 +908,7 @@ export default {
       "nouns": [
         "blue"
       ],
-      "emotions": [
+      "meanings": [
         "trust",
         "responsability",
         "honesty",
@@ -912,8 +919,8 @@ export default {
         "control"
       ],
       "usage": [
-        "securitly",
-        "financy",
+        "security",
+        "finance",
         "technology",
         "health care",
         "accounting",
@@ -942,8 +949,8 @@ export default {
       "nouns": [
         "indigo"
       ],
-      "emotions": [
-        "sprituality",
+      "meanings": [
+        "spirituality",
         "structure",
         "compassion",
         "sensitivity",
@@ -983,8 +990,8 @@ export default {
       "nouns": [
         "violet"
       ],
-      "emotions": [
-        "sprituality",
+      "meanings": [
+        "spirituality",
         "structure",
         "compassion",
         "sensitivity",
@@ -1025,8 +1032,8 @@ export default {
       "nouns": [
         "purple"
       ],
-      "emotions": [
-        "sprituality",
+      "meanings": [
+        "spirituality",
         "structure",
         "compassion",
         "sensitivity",
@@ -1067,24 +1074,25 @@ export default {
       "nouns": [
         "magenta"
       ],
-      "emotions": [
-        "supportive",
+      "meanings": [
+        "support",
         "kind",
-        "chaning",
+        "change",
         "harmony",
         "kink",
-        "charming",
-        "polite",
-        "sensitive",
-        "tender",
-        "sweet",
-        "feminin",
-        "romanitc",
-        "seductive",
-        "sexy"
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness"
       ],
       "usage": [
-        "children products",
+        "children products", ,
+        "erotica",
       ],
     },
     {
@@ -1110,24 +1118,25 @@ export default {
       "nouns": [
         "pink"
       ],
-      "emotions": [
-        "supportive",
-        "kind",
-        "chaning",
+      "meanings": [
+        "support",
+        "kindness",
+        "change",
         "harmony",
         "kink",
-        "charming",
-        "polite",
-        "sensitive",
-        "tender",
-        "sweet",
-        "feminin",
-        "romanitc",
-        "seductive",
-        "sexy"
+        "charme",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
       ],
       "usage": [
         "children products",
+        "erotica",
       ],
     },
     {
@@ -1154,7 +1163,7 @@ export default {
       "nouns": [
         "red"
       ],
-      "emotions": [
+      "meanings": [
         "excitement",
         "energy",
         "passion",
@@ -1164,14 +1173,23 @@ export default {
         "power",
         "love",
         "speed",
-        "anger"
+        "anger",
+        "lust",
+        "excitement",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "anger",
+        "vigor",
+        "urgency",
       ],
       "usage": [
         "stimulate",
-        "createe urgency",
+        "create urgency",
         "draw attention",
         "caution",
-        "encurage"
+        "encourage"
       ]
     }
   ],

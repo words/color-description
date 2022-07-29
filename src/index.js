@@ -125,8 +125,8 @@ class ColorDescription {
     return this.#getWords("nouns");
   }
 
-  get emotions() {
-    return this.#getWords("emotions");
+  get meanings() {
+    return this.#getWords("meanings");
   }
 
   get usage() {

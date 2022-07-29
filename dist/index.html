@@ -332,7 +332,7 @@ cd.getDescriptiveList();
       $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
 cd.getDescriptiveList();`;
       const temparature = cd.temeratureWords;
-      const emotions = cd.emotions;
+      const meanings = cd.meanings;
       const usage = cd.usage;
       if(!fromPicker) {
         colorPicker.color.hexString = value;
@@ -345,8 +345,8 @@ cd.getDescriptiveList();`;
             <p>${cd.getDescriptiveList()}</p>
             
             ${
-              emotions.length
-                ? `<h3>Emotions</h3><p>${emotions.join(", ")}</p>`
+              meanings.length
+                ? `<h3>meanings</h3><p>${meanings.join(", ")}</p>`
                 : ""
             }
 
