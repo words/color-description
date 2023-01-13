@@ -133,6 +133,10 @@ class ColorDescription {
     return this.#getWords("usage");
   }
 
+  get description() {
+    return this.#getWords("description");
+  }
+
   get bestContrast() {
     return chroma.contrast(this.color, "black") >
       chroma.contrast(this.color, "white")

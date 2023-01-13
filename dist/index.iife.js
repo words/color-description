@@ -2940,7 +2940,7 @@ var ColorDescription = (() => {
           "glittering",
           "glowing",
           "jazzy",
-          "opalecent"
+          "opalescent"
         ]
       },
       {
@@ -2987,7 +2987,7 @@ var ColorDescription = (() => {
         "descriptive": [
           "colorless",
           "bright",
-          "briliant",
+          "brilliant",
           "high"
         ]
       },
@@ -3340,6 +3340,47 @@ var ColorDescription = (() => {
             null,
             null,
             [
+              0.98,
+              1
+            ]
+          ]
+        },
+        "nouns": [
+          "white"
+        ],
+        "description": [
+          "White is a color that is often associated with purity, innocence, and cleanliness. It is the lightest color on the visible spectrum and is often described as having a bright, luminous quality. When you think of white, you might imagine a freshly fallen snow, a blank canvas, or a cloudless sky. It is a versatile color that can be used in a wide range of settings and contexts, from formal to casual. If you close your eyes and picture white, you might imagine a bright, radiant light that illuminates everything around it."
+        ],
+        "meanings": [
+          "purity",
+          "cleanliness",
+          "simplicity",
+          "innocence",
+          "freshness",
+          "light",
+          "goodness",
+          "virtue",
+          "safety",
+          "peace",
+          "tranquility",
+          "wholeness",
+          "perfection",
+          "honesty",
+          "truth",
+          "sincerity"
+        ],
+        "usage": [
+          "health",
+          "hospital",
+          "sanitary"
+        ]
+      },
+      {
+        "criteria": {
+          "hsl": [
+            null,
+            null,
+            [
               0,
               0.08
             ]
@@ -3348,6 +3389,9 @@ var ColorDescription = (() => {
         "nouns": [
           "black"
         ],
+        "description": [
+          "Black is a color that is often associated with power, elegance, and sophistication. It is a color that is often used to create a sense of mystery, depth, and contrast, and it is often described as a color that can be both bold and elegant. In art and design, black is often used to create a sense of sophistication and drama, and it is often used in fashion to create a sense of sophistication and refinement."
+        ],
         "meanings": [
           "power",
           "control",
@@ -3355,11 +3399,11 @@ var ColorDescription = (() => {
           "discipline",
           "discretion",
           "secrecy",
-          "ellegance",
-          "mistery"
+          "elegance",
+          "mystery"
         ],
         "usage": [
-          "intibidate",
+          "intimidate",
           "create fear",
           "authority",
           "luxury"
@@ -3388,6 +3432,9 @@ var ColorDescription = (() => {
         ],
         "nouns": [
           "red"
+        ],
+        "description": [
+          "Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages."
         ],
         "meanings": [
           "excitement",
@@ -3442,6 +3489,9 @@ var ColorDescription = (() => {
         "nouns": [
           "orange"
         ],
+        "description": [
+          "Orange is a vibrant and playful color that is often associated with creativity, energy, and warmth. It is a secondary color that is made by combining red and yellow, and it is often described as a warm and friendly color that can be both invigorating and calming. It is often associated with joy, enthusiasm, and warmth, and it is often used in art and design to create a sense of excitement and playfulness."
+        ],
         "meanings": [
           "optimism",
           "independence",
@@ -3479,6 +3529,7 @@ var ColorDescription = (() => {
         "nouns": [
           "brown"
         ],
+        "description": ["Brown is a warm and earthy color that is often associated with nature, stability, and reliability. It is a secondary color that is made by combining red, blue, and yellow in different proportions, and it is often described as a rich and luxurious color that can be both comforting and grounding. It is often associated with wood, soil, and the natural world, and it is often used in art and design to create a sense of warmth and permanence."],
         "meanings": [
           "strength",
           "reliability",
@@ -3521,6 +3572,7 @@ var ColorDescription = (() => {
         "nouns": [
           "yellow"
         ],
+        "description": ["Yellow is a bright and cheerful color that is often associated with sunshine, happiness, and warmth. It is a primary color that is made by combining red and green light, and it is usually described as a warm and vibrant color that can be both calming and energizing. It is often associated with joy, happiness, and friendship, and it is often used in art and design to create a sense of cheerfulness and playfulness."],
         "meanings": [
           "enthusiasm",
           "opportunity",
@@ -3564,6 +3616,7 @@ var ColorDescription = (() => {
         "nouns": [
           "lime"
         ],
+        "description": ["Lime is a bright, vibrant color that is often associated with freshness, energy, and youth. It is a pale shade of green that is similar to chartreuse, but it is slightly lighter and more vibrant. Some people may associate the color lime with feelings of playfulness and excitement, while others may associate it with feelings of rejuvenation and renewal. In terms of wavelength, lime is a mixture of green and yellow light, and it is often used in art and design to create a sense of energy and vitality. Overall, lime is a lively and refreshing color that can be used to create a wide range of moods and atmospheres."],
         "meanings": [
           "growth",
           "harmony",
@@ -3603,6 +3656,7 @@ var ColorDescription = (() => {
         "nouns": [
           "green"
         ],
+        "description": ["Green is a cool, refreshing color that is often associated with nature, growth, and freshness. It is the color of grass, leaves, and trees, and it is often used to create a sense of harmony and balance. Some people may associate the color green with feelings of jealousy or envy, while others may associate it with feelings of peace and tranquility. In terms of wavelength, green is a primary color of light, and it is located between blue and yellow on the visible light spectrum. It is often used in art and design to create a sense of growth and renewal. Overall, green is a versatile and popular color that can be used to create a wide range of moods and atmospheres."],
         "meanings": [
           "safety",
           "harmony",
@@ -3642,6 +3696,7 @@ var ColorDescription = (() => {
           "cyan",
           "sky blue"
         ],
+        "description": ["Cyan is a bright, fresh color that is often associated with the ocean, the sky, and the natural world. It is a pale shade of blue that is similar to teal, but it is slightly lighter and more muted. Some people may associate the color cyan with feelings of peace and serenity, while others may associate it with feelings of youth and playfulness. In terms of wavelength, cyan is a mixture of blue and green light, and it is often used in art and design to create a sense of freshness and vitality. Overall, cyan is a versatile and refreshing color that can be used to create a wide range of moods and atmospheres."],
         "meanings": [
           "freedom",
           "trust",
@@ -3658,7 +3713,7 @@ var ColorDescription = (() => {
           "technology",
           "aerospace",
           "entertainment",
-          "prodcutivity"
+          "productivity"
         ]
       },
       {
@@ -3685,13 +3740,14 @@ var ColorDescription = (() => {
         "nouns": [
           "blue"
         ],
+        "description": ["Blue is a cool, calming color that is often associated with trust, reliability, and intelligence. It is the color of the sky and the ocean, and it is often used to create a sense of peace and tranquility. Some people may associate the color blue with feelings of sadness or melancholy, while others may associate it with feelings of calm and relaxation. In terms of wavelength, blue is a primary color of light, and it is located between green and violet on the visible light spectrum. It is often used in art and design to create a sense of balance and harmony. Overall, blue is a versatile and popular color that can be used to create a wide range of moods and atmospheres."],
         "meanings": [
           "trust",
-          "responsability",
+          "responsibility",
           "honesty",
-          "loyality",
+          "loyalty",
           "security",
-          "relaing",
+          "relying",
           "calmness",
           "control"
         ],
@@ -3726,6 +3782,7 @@ var ColorDescription = (() => {
         "nouns": [
           "indigo"
         ],
+        "description": ["Indigo is a deep, rich color that is often associated with spirituality, intuition, and wisdom. It is a dark shade of blue that is similar to navy, but it is slightly lighter and more muted. Some people may associate the color indigo with feelings of calm and relaxation, while others may associate it with feelings of mystery and intrigue. In terms of wavelength, indigo is a deep blue color that is located between blue and violet on the visible light spectrum. It is often used in art and design to add a touch of depth and complexity. Overall, indigo is a beautiful and versatile color that can be used to create a wide range of moods and atmospheres."],
         "meanings": [
           "spirituality",
           "structure",
@@ -3767,6 +3824,7 @@ var ColorDescription = (() => {
         "nouns": [
           "violet"
         ],
+        "description": ["Violet is a rich, regal color that is often associated with luxury, royalty, and sophistication. It is a deep shade of purple that is similar to lavender, but it is slightly darker and more intense. Some people may associate the color violet with feelings of mystery and spirituality, while others may associate it with feelings of calm and tranquility. In terms of wavelength, violet is a mixture of blue and red light, and it is often used in art and design to add a touch of elegance and refinement. Overall, violet is a beautiful and sophisticated color that can be used to create a calm and peaceful atmosphere."],
         "meanings": [
           "spirituality",
           "structure",
@@ -3851,6 +3909,7 @@ var ColorDescription = (() => {
         "nouns": [
           "magenta"
         ],
+        "description": ["Magenta is a deep, rich color that is often associated with creativity, passion, and intensity. It is a vibrant shade of pink that is similar to fuchsia, but it is slightly darker and more muted. Some people may associate the color magenta with feelings of excitement and energy, while others may associate it with feelings of love and romance. In terms of wavelength, magenta is a mixture of red and blue light, and it is often used in art and design to add a bold and striking touch. Overall, magenta is a vibrant and lively color that can be used to add drama and excitement to any setting."],
         "meanings": [
           "support",
           "kind",
@@ -3896,6 +3955,7 @@ var ColorDescription = (() => {
         "nouns": [
           "pink"
         ],
+        "description": ["Pink is a light, delicate color that is often associated with femininity, romance, and sweetness. It is a pale shade of red, and it is often described as a softer, more gentle version of the color. Some people may associate the color pink with feelings of happiness and playfulness, while others may associate it with feelings of warmth and comfort. In terms of wavelength, pink is a mixture of red and white light, and it is often used in decorations and clothing to add a touch of whimsy and fun. Overall, pink is a cheerful and playful color that can be used to create a warm and inviting atmosphere."],
         "meanings": [
           "support",
           "kindness",
@@ -3941,6 +4001,7 @@ var ColorDescription = (() => {
         "nouns": [
           "red"
         ],
+        "description": ["Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages."],
         "meanings": [
           "excitement",
           "energy",
@@ -4078,6 +4139,9 @@ var ColorDescription = (() => {
     }
     get usage() {
       return __privateMethod(this, _getWords, getWords_fn).call(this, "usage");
+    }
+    get description() {
+      return __privateMethod(this, _getWords, getWords_fn).call(this, "description");
     }
     get bestContrast() {
       return import_chroma_js.default.contrast(this.color, "black") > import_chroma_js.default.contrast(this.color, "white") ? "black" : "white";
