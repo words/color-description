@@ -302,9 +302,11 @@ cd.getDescriptiveList();
     </aside>
 
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
+    
     <script src="./index.iife.js"></script>
-    <script>
+    <script type="module">
+      import { rgb, random, formatHex } from 'https://cdn.skypack.dev/culori';
+      
       //import ColorDescription from './index.esm.js';
       const cd = new ColorDescription.default("#b40404");
       const $result = document.querySelector("[data-result]");
@@ -351,7 +353,7 @@ cd.getDescriptiveList();
       });
 
       function setColor(e, fromPicker) {
-        const value = e ? e.target.value : chroma.random().hex();
+        const value = e ? e.target.value : formatHex(random());
         cd.color = value;
         $input.value = value;
         const glPercentages = cd.percentageWords("rgb");
@@ -407,12 +409,9 @@ cd.getDescriptiveList();`;
               cmykPercentageWords[2]
             } yellow and ${cmykPercentageWords[3]} black.</p>
             <br />
-            <!--small data-label="HSL color representation">${chroma(value).css(
-              "hsl",
-            )}</small-->
           `;
         document.querySelector("[data-picker]").dataset.hsl =
-          chroma(value).css("hsl");
+          '' /*chroma(value).css("hsl")*/;
         $currentColor.style.backgroundColor = value;
         $currentColor.style.color = cd.bestContrast;
 
@@ -431,7 +430,9 @@ cd.getDescriptiveList();`;
       $input.addEventListener("input", setColor);
 
       $randomButton.addEventListener("click", (e) => {
-        setColor({ target: { value: chroma.random().hex() } });
+        setColor({ target: { value: 
+          formatHex(random())
+         } });
       });
 
       document.documentElement.addEventListener("click", (e) => {

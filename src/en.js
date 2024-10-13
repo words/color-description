@@ -235,6 +235,7 @@ export default {
         },
       },
       descriptive: ["grey"],
+      nouns: ["grey"],
       description: [
         "Grey is a color often linked with neutrality, balance, and calm. It sits between black and white on the color spectrum, giving it a muted, understated quality. When you think of grey, you might picture misty mornings, smooth stone, or the quiet stillness of a cloudy day. It's a versatile color, fitting equally well in minimalist designs or more somber settings. Grey can evoke feelings of tranquility, contemplation, and sophistication. Close your eyes and imagine grey—it might appear as a soft shadow or a subtle haze that wraps the world in a calm, muted tone.",
       ],
@@ -248,9 +249,6 @@ export default {
         },
       },
       descriptive: ["almost grey"],
-      description: [
-        "Grey is a color often linked with neutrality, balance, and calm. It sits between black and white on the color spectrum, giving it a muted, understated quality. When you think of grey, you might picture misty mornings, smooth stone, or the quiet stillness of a cloudy day. It's a versatile color, fitting equally well in minimalist designs or more somber settings. Grey can evoke feelings of tranquility, contemplation, and sophistication. Close your eyes and imagine grey—it might appear as a soft shadow or a subtle haze that wraps the world in a calm, muted tone.",
-      ],
     },
     {
       criteria: {
