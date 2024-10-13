@@ -1,17 +1,22 @@
-import chroma from "chroma-js";
+import { rgb2temperature, isInRange, randomizeArr, rgbToCMYK } from "./utils";
+import { wcagContrast, parse, converter, formatHex } from "culori";
 import wordsEN from "./en";
 
-const isInRange = (x, min, max) => x >= min && x <= max;
-const randomizeArr = (arr) => {
-  let newArr = [...arr];
-  for (let i = newArr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-  }
-  return newArr;
+const converters = {
+  rgb: converter("rgb"),
+  hsl: converter("hsl"),
+};
+
+const formatComponents = {
+  rgb: ["r", "g", "b"],
+  cmyk: ["c", "m", "y", "k"],
+  hsl: ["h", "s", "l"],
 };
 
 class ColorDescription {
+  formats = {};
+  currentColor = null;
+
   constructor(color, words = wordsEN) {
     this.color = color;
     this.descriptions = words.descriptions;
@@ -21,6 +26,11 @@ class ColorDescription {
 
   set color(color) {
     this.currentColor = this.#parseColor(color);
+
+    const rgb = converters["rgb"](this.currentColor);
+    this.formats.rgb = rgb;
+    this.formats.hsl = converters["hsl"](this.currentColor);
+    this.formats.cmyk = rgbToCMYK(rgb);
   }
 
   get color() {
@@ -28,15 +38,15 @@ class ColorDescription {
   }
 
   /**
-   * @param {string} color chroma.js compatible color string
-   * @returns {object} chroma.js instance
+   * @param {string} color culori-js compatible color string
+   * @returns {object} culori-js instance
    * @throws {TypeError} if the color is not valid
    */
   #parseColor(color) {
-    if (chroma.valid(color)) {
-      return chroma(color);
-    } else {
-      throw new TypeError("Invalid color. Check the chroma.js documentation.");
+    try {
+      return parse(color);
+    } catch (error) {
+      throw new TypeError("Invalid color. Check the chroma-js documentation.");
     }
   }
 
@@ -44,23 +54,28 @@ class ColorDescription {
    * @returns {Array} descriptive words describing the color temperature
    */
   get temperatureWords() {
-    const goal = this.color.temperature();
+    const goal = rgb2temperature(this.formats.rgb);
     return this.temperatures.reduce(
       (prev, curr) =>
         Math.abs(curr.value - goal) < Math.abs(prev.value - goal) ? curr : prev,
-      { value: 0 }
+      { value: 0 },
     );
   }
 
   /**
    * @param {string} model color model in which the components are measured
+   *                 possible values: "rgb", "cmyk"
    * @returns {Array} color component mix in percent
    */
-  percentages(model = "gl") {
-    const props = this.color[model]();
-    if (model === "gl") {
-      props.pop(); // removes alpha
+  percentages(model = "rgb") {
+    // validate model
+    if (!["rgb", "cmyk"].includes(model)) {
+      throw new TypeError(
+        'Invalid color model. Use "rgb" or "cmyk" for percentages.',
+      );
     }
+    const color = this.formats[model];
+    const props = formatComponents[model].map((c) => color[c]);
     const total = props.reduce((r, d) => r + d, 0);
     return props.map((c) => (total ? c / total : 0));
   }
@@ -69,10 +84,11 @@ class ColorDescription {
    * @param {string} model color model in which the components are measured
    * @returns {Array} descriptive words for color percentages
    */
-  percentageWords(model = "gl") {
+  percentageWords(model = "rgb") {
     return this.percentages(model).map(
       (component) =>
-        this.percentWords.find((words) => words.maxPercentile >= component).word
+        this.percentWords.find((words) => words.maxPercentile >= component)
+          .word,
     );
   }
 
@@ -91,21 +107,30 @@ class ColorDescription {
       const colorModels = Object.keys(current.criteria);
 
       const matchesEveryCriteria = colorModels.every((colorModel) => {
-        const colorAsModel = this.color[colorModel]();
-        if (["hsl", "gl", "rgb"].includes(colorModel)) {
-          colorAsModel.pop(); // ignore alpha
-        }
-        return current.criteria[colorModel].every((criterium, i) => {
-          if (criterium === null) {
-            return true;
-          } else if (Array.isArray(criterium)) {
-            return isInRange(colorAsModel[i], criterium[0], criterium[1]);
-          } else if (!isNaN(criterium)) {
-            return colorAsModel[i] === criterium;
-          } else {
-            return false;
-          }
-        });
+        const colorAsModel = this.formats[colorModel];
+
+        return Object.entries(current.criteria[colorModel]).every(
+          ([key, criterium]) => {
+            // Check if the key exists in colorAsModel
+            if (
+              !(key in colorAsModel) ||
+              colorAsModel[key] === undefined ||
+              colorAsModel[key] === null ||
+              criterium === null
+            )
+              return true; // Skip if the component doesn't exist
+
+            const value = colorAsModel[key];
+
+            if (Array.isArray(criterium)) {
+              return isInRange(value, criterium[0], criterium[1]);
+            } else if (!isNaN(criterium)) {
+              return value === criterium;
+            } else {
+              return false;
+            }
+          },
+        );
       });
 
       if (matchesEveryCriteria) {
@@ -146,8 +171,7 @@ class ColorDescription {
   }
 
   get bestContrast() {
-    return chroma.contrast(this.color, "black") >
-      chroma.contrast(this.color, "white")
+    return wcagContrast(this.color, "black") > wcagContrast(this.color, "white")
       ? "black"
       : "white";
   }

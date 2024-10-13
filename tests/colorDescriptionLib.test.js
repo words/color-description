@@ -17,7 +17,9 @@ describe("ColorDescription Library", () => {
 
   test("Color setter", () => {
     colorDesc.color = "#00FF00";
-    expect(colorDesc.color.hex()).toBe("#00ff00");
+    expect(colorDesc.formats.rgb.r).toBe(0);
+    expect(colorDesc.formats.rgb.g).toBe(1);
+    expect(colorDesc.formats.rgb.b).toBe(0);
 
     expect(() => {
       colorDesc.color = "invalid color";
