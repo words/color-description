@@ -11,7 +11,7 @@
     "build:esm": "esbuild src/index.js --outfile=dist/index.esm.js --format=esm --bundle --target=es2020 --minify",
     "build:browser": "esbuild src/index.js --outfile=dist/index.iife.js --bundle --target=es6 --format=iife --global-name=ColorDescription --minify",
     "build:node": "esbuild src/index.js --outfile=dist/index.js --platform=node --target=node14 --minify",
-    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "npm run build && node --experimental-vm-modules node_modules/.bin/jest --verbose ./tests",
     "dev:watch": "esbuild src/index.js --outfile=dist/index.iife.js --bundle --target=es6 --format=iife --global-name=ColorDescription --watch",
     "dev:watch-demo": "live-server ./dist --entry-file=dist/index.html --watch=dist/index.html,./dist/index.iife.js",
     "dev": "concurrently \"npm run dev:watch\" \"npm run dev:watch-demo\""
