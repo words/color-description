@@ -40,7 +40,7 @@ class ColorDescription {
   }
 
   /**
-   * @returns {Array} descriptive describing the color temparature
+   * @returns {Array} descriptive describing the color temperature
    */
   get temeratureWords() {
     const goal = this.color.temperature();
@@ -53,7 +53,7 @@ class ColorDescription {
 
   /**
    *
-   * @param {string} model color model in whitch the components are measured
+   * @param {string} model color model in which the components are measured
    * @returns {Array} color component mix in percent
    */
   percentages(model = "gl") {
@@ -145,7 +145,7 @@ class ColorDescription {
   }
 
   /**
-   * @param {Boolean} random randomizes sentense of descriptive
+   * @param {Boolean} random randomizes sentence of descriptive
    * @param {Integer} limit maximum descriptive to return
    * @returns {String} descriptive describing the color
    */
