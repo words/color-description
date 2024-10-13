@@ -1,5 +1,4 @@
-import ColorDescription from "../src/index"; 
-import chroma from "chroma-js";
+import ColorDescription from "../src/index";
 
 describe("ColorDescription Library", () => {
   let colorDesc;
@@ -26,7 +25,7 @@ describe("ColorDescription Library", () => {
   });
 
   test("Temperature words", () => {
-    const tempWords = colorDesc.temeratureWords;
+    const tempWords = colorDesc.temperatureWords;
     expect(tempWords).toHaveProperty("value");
     expect(tempWords).toHaveProperty("descriptive");
     expect(Array.isArray(tempWords.descriptive)).toBe(true);

@@ -1,14 +1,18 @@
-import chroma from 'chroma-js';
-import wordsEN from './en';
+import chroma from "chroma-js";
+import wordsEN from "./en";
 
 const isInRange = (x, min, max) => x >= min && x <= max;
-const randomizeArr = (arr) => [...arr].sort(() => 0.5 - Math.random());
+const randomizeArr = (arr) => {
+  let newArr = [...arr];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
 
 class ColorDescription {
-  constructor(
-    color,
-    words = wordsEN
-  ) {
+  constructor(color, words = wordsEN) {
     this.color = color;
     this.descriptions = words.descriptions;
     this.temperatures = words.temperatures;
@@ -26,23 +30,20 @@ class ColorDescription {
   /**
    * @param {string} color chroma.js compatible color string
    * @returns {object} chroma.js instance
+   * @throws {TypeError} if the color is not valid
    */
   #parseColor(color) {
     if (chroma.valid(color)) {
       return chroma(color);
     } else {
-      throw new TypeError(
-        "Color is not a valid color, check the chroma.js documentation.",
-        "color-description",
-        14
-      );
+      throw new TypeError("Invalid color. Check the chroma.js documentation.");
     }
   }
 
   /**
-   * @returns {Array} descriptive describing the color temperature
+   * @returns {Array} descriptive words describing the color temperature
    */
-  get temeratureWords() {
+  get temperatureWords() {
     const goal = this.color.temperature();
     return this.temperatures.reduce(
       (prev, curr) =>
@@ -52,7 +53,6 @@ class ColorDescription {
   }
 
   /**
-   *
    * @param {string} model color model in which the components are measured
    * @returns {Array} color component mix in percent
    */
@@ -65,6 +65,10 @@ class ColorDescription {
     return props.map((c) => (total ? c / total : 0));
   }
 
+  /**
+   * @param {string} model color model in which the components are measured
+   * @returns {Array} descriptive words for color percentages
+   */
   percentageWords(model = "gl") {
     return this.percentages(model).map(
       (component) =>
@@ -72,29 +76,25 @@ class ColorDescription {
     );
   }
 
-  #getWords(
-    scope = "descriptive",
-    randomize = false,
-    wordLimit
-  ) {
-    return this.descriptions.reduce((rem, current) => {
+  /**
+   * @param {string} scope the scope of words to retrieve
+   * @param {boolean} randomize whether to randomize the words
+   * @param {number} wordLimit the maximum number of words to retrieve
+   * @returns {Array} words matching the criteria
+   */
+  #getWords(scope = "descriptive", randomize = false, wordLimit) {
+    const words = this.descriptions.reduce((rem, current) => {
       if (!current.hasOwnProperty(scope)) {
         return rem;
       }
- 
+
       const colorModels = Object.keys(current.criteria);
-      
+
       const matchesEveryCriteria = colorModels.every((colorModel) => {
         const colorAsModel = this.color[colorModel]();
-
-        if (
-          colorModel === "hsl" ||
-          colorModel === "gl" ||
-          colorModel === "rgb"
-        ) {
+        if (["hsl", "gl", "rgb"].includes(colorModel)) {
           colorAsModel.pop(); // ignore alpha
         }
-
         return current.criteria[colorModel].every((criterium, i) => {
           if (criterium === null) {
             return true;
@@ -109,12 +109,17 @@ class ColorDescription {
       });
 
       if (matchesEveryCriteria) {
-        // gets rid of duplicates by creating a map first
         return [...new Set([...rem, ...current[scope]])];
       } else {
         return rem;
       }
     }, []);
+
+    if (randomize) {
+      return randomizeArr(words).slice(0, wordLimit);
+    }
+
+    return words.slice(0, wordLimit);
   }
 
   get descriptiveWords() {
@@ -133,6 +138,9 @@ class ColorDescription {
     return this.#getWords("usage");
   }
 
+  /**
+   * @returns {string} a description of the color
+   */
   get description() {
     return this.#getWords("description");
   }
