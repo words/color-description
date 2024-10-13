@@ -1,346 +1,373 @@
 <!doctype html>
 
-<html lang=en>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Color-Description Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset=utf-8>
-  <title>Color-Description Demo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      padding: 4rem;
-      font-family: 'Inter', sans-serif;
-      color: #202124;
-      line-height: 1.5;
-      /*background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='8px' height='8px' viewBox='0 0 8 8' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 42 %2836781%29 - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EArtboard 2%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill='%23eee'%3E%3Cpath d='M7.5,8 L8,8 L8,-3.55271368e-15 L7,-3.55271368e-15 L7,7 L1.77635684e-15,7 L1.77635684e-15,8 L7.5,8 Z' transform='translate%284.000000, 4.000000%29 rotate%28-180.000000%29 translate%28-4.000000, -4.000000%29 '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");*/
-    }
-    h1, h2, h3 {
-      font-weight: 300;
-      font-size: 2.5rem;
-      margin-top: 0;
-      font-family: 'Playfair Display', serif;
-    }
-    h1 {
-      font-size: 4rem;
-      line-height: .9;
-      position: relative;
-    }
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5em;
-    }
-    .IroColorPicker {
-      position: sticky;
-      top: 1rem;
-    }
-    .link-project {
-      line-height: 1;
-      font-size: 1.5em;
-      padding: 1.2em 1.5em;
-      text-decoration: none;
-    }
-    .link-project:hover {
-      text-decoration: underline;
-      text-decoration-style: wavy;
-      text-decoration-color: var(--color);
-    }
-    
-    .color-buttons {
-      margin-top: 1rem;
-    }
-
-
-    .color-buttons__picker {
-      display: block;
-      margin-top: 1em;
-    }
-
-    button {
-      line-height: 1;
-      margin-top: 2em;
-      position: relative;
-      background: transparent;
-      border: none;
-      font-size: 1.5em;
-      padding: 1.2em 1.5em;
-      font-weight: 200;
-      color: currentColor;
-    }
-    
-    .color-buttons button,
-    button.similar {
-      margin-top: .7em;
-      margin-right: .7em;      
-      padding: .5em .7em;
-      font-size: 1.1em;
-    }
-
-    button.similar::before {
-      background: var(--c);
-    }
-
-    button.similar::after {
-      background: #fff;
-    }
-
-    button span {
-      pointer-events: none;
-      position: relative;
-      z-index: 3;
-      display: block;
-      font-weight: bold;
-      transition: 650ms transform cubic-bezier(.7,.3,0,1);
-      text-shadow: 0 0 0 var(--color);
-    }
-    button:hover span {
-      transform: translateY(.2em);
-    }
-    button:hover::before {
-      transform: translateY(.2em);
-    }
-    button::before {
-      content: '';
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      background: white;
-      border: 2px solid #202124;
-      border-radius: 15px;
-      transition: 300ms transform cubic-bezier(.7,.3,0,1);
-    }
-    button::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      left: 2px;
-      right: 2px;
-      top: .2em;
-      background: linear-gradient(-92deg, #EE7752, #E73C7E, #23A6D5, #23D5AB, #EE7752);
-      background-size: 400% 100%;
-      animation: gradient 15s ease infinite; 
-      border: 2px solid #202124;
-      border-radius: 18px;
-      z-index: 1;
-    }
-
-    @keyframes gradient {
-      100% {
-        background-position: 400% 50%;
+    <style>
+      :root {
+        padding: 4rem;
+        font-family: "Inter", sans-serif;
+        color: #202124;
+        line-height: 1.5;
+        /*background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='8px' height='8px' viewBox='0 0 8 8' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 42 %2836781%29 - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EArtboard 2%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill='%23eee'%3E%3Cpath d='M7.5,8 L8,8 L8,-3.55271368e-15 L7,-3.55271368e-15 L7,7 L1.77635684e-15,7 L1.77635684e-15,8 L7.5,8 Z' transform='translate%284.000000, 4.000000%29 rotate%28-180.000000%29 translate%28-4.000000, -4.000000%29 '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");*/
       }
-    }
+      h1,
+      h2,
+      h3 {
+        font-weight: 300;
+        font-size: 2.5rem;
+        margin-top: 0;
+        font-family: "Playfair Display", serif;
+      }
+      h1 {
+        font-size: 4rem;
+        line-height: 0.9;
+        position: relative;
+      }
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5em;
+      }
+      .IroColorPicker {
+        position: sticky;
+        top: 1rem;
+      }
+      .link-project {
+        line-height: 1;
+        font-size: 1.5em;
+        padding: 1.2em 1.5em;
+        text-decoration: none;
+      }
+      .link-project:hover {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: var(--color);
+      }
 
-    .intro {
-      font-size: 2rem;
-      max-width: 37rem;
-      font-family: 'Playfair Display', serif;
-      line-height: 1.1;
-    }
-    .outro {
-      margin-top: 4rem;
-      max-width: 37rem;
-    }
-    .currentColor {
-      min-height: 20rem;
-      margin-bottom: 2rem;
-      display: flex;
-      padding: 2rem;
-      margin-top: -1.5rem;
-      border-radius: 15px;
-      border: 2px solid #202124;
-    }
-    .currentColor p {
-      max-width: 37rem;
+      .color-buttons {
+        margin-top: 1rem;
+      }
 
-    }
-    @media (orientation: portrait) {
+      .color-buttons__picker {
+        display: block;
+        margin-top: 1em;
+      }
+
+      button {
+        line-height: 1;
+        margin-top: 2em;
+        position: relative;
+        background: transparent;
+        border: none;
+        font-size: 1.5em;
+        padding: 1.2em 1.5em;
+        font-weight: 200;
+        color: currentColor;
+      }
+
+      .color-buttons button,
+      button.similar {
+        margin-top: 0.7em;
+        margin-right: 0.7em;
+        padding: 0.5em 0.7em;
+        font-size: 1.1em;
+      }
+
+      button.similar::before {
+        background: var(--c);
+      }
+
+      button.similar::after {
+        background: #fff;
+      }
+
+      button span {
+        pointer-events: none;
+        position: relative;
+        z-index: 3;
+        display: block;
+        font-weight: bold;
+        transition: 650ms transform cubic-bezier(0.7, 0.3, 0, 1);
+        text-shadow: 0 0 0 var(--color);
+      }
+      button:hover span {
+        transform: translateY(0.2em);
+      }
+      button:hover::before {
+        transform: translateY(0.2em);
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: white;
+        border: 2px solid #202124;
+        border-radius: 15px;
+        transition: 300ms transform cubic-bezier(0.7, 0.3, 0, 1);
+      }
+      button::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        left: 2px;
+        right: 2px;
+        top: 0.2em;
+        background: linear-gradient(
+          -92deg,
+          #ee7752,
+          #e73c7e,
+          #23a6d5,
+          #23d5ab,
+          #ee7752
+        );
+        background-size: 400% 100%;
+        animation: gradient 15s ease infinite;
+        border: 2px solid #202124;
+        border-radius: 18px;
+        z-index: 1;
+      }
+
+      @keyframes gradient {
+        100% {
+          background-position: 400% 50%;
+        }
+      }
+
+      .intro {
+        font-size: 2rem;
+        max-width: 37rem;
+        font-family: "Playfair Display", serif;
+        line-height: 1.1;
+      }
+      .outro {
+        margin-top: 4rem;
+        max-width: 37rem;
+      }
       .currentColor {
-        flex-direction: column;
+        min-height: 20rem;
+        margin-bottom: 2rem;
+        display: flex;
+        padding: 2rem;
+        margin-top: -1.5rem;
+        border-radius: 15px;
+        border: 2px solid #202124;
       }
-    }
-    .result {
-      margin-left: 2rem;
-    }
-    @media (orientation: portrait) {
+      .currentColor p {
+        max-width: 37rem;
+      }
+      @media (orientation: portrait) {
+        .currentColor {
+          flex-direction: column;
+        }
+      }
       .result {
-        margin-top: 2rem;
-        margin-left: 0;
+        margin-left: 2rem;
       }
-    }
-    abbr {
-      text-decoration: none;
-    }
-    p {
-      margin: 0;
-      font-size: 1.2rem; 
-    }
-    p + p {
-      margin-top: 0.5em
-    }
-    p + h3 {
-      margin-top: 1.2em;
-    }
-    svg [stroke] {
-      stroke: currentColor;
-    }
+      @media (orientation: portrait) {
+        .result {
+          margin-top: 2rem;
+          margin-left: 0;
+        }
+      }
+      abbr {
+        text-decoration: none;
+      }
+      p {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      p + p {
+        margin-top: 0.5em;
+      }
+      p + h3 {
+        margin-top: 1.2em;
+      }
+      svg [stroke] {
+        stroke: currentColor;
+      }
 
-    [data-picker]::after {
-      display: block;      
-      content: attr(data-hsl);
-      text-align: center;
-      margin-top: 1em;
-    }
+      [data-picker]::after {
+        display: block;
+        content: attr(data-hsl);
+        text-align: center;
+        margin-top: 1em;
+      }
 
-    .visually-hidden:not(:focus):not(:active):not(:focus-within) {
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-    }
-    code {
-      position: relative;
-      display: block;
-      margin-top: 4rem;
-      background: #202124;
-      color: #fff;
-      padding: 1.5rem 2rem 1rem;
-      line-height: 1.5;
-      padding-bottom: 3rem;
-      z-index: -1;
-      border-radius: 15px;
-    }
-    pre {
-      font-size: 1.2rem;
-    }
-    pre i {
-      color: var(--color, '#fff');
-    }
-  </style>
-</head>
+      .visually-hidden:not(:focus):not(:active):not(:focus-within) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+      code {
+        position: relative;
+        display: block;
+        margin-top: 4rem;
+        background: #202124;
+        color: #fff;
+        padding: 1.5rem 2rem 1rem;
+        line-height: 1.5;
+        padding-bottom: 3rem;
+        z-index: -1;
+        border-radius: 15px;
+      }
+      pre {
+        font-size: 1.2rem;
+      }
+      pre i {
+        color: var(--color, "#fff");
+      }
+    </style>
+  </head>
 
-<body>
-  <h1>Color-Description</h1>
-  <p class="intro">
-    Color-Description turns a technical color representation into a human readable
-    description.</p>
-  <div class="visually-hidden">
-    <nav class="color-buttons">
-      <h3>Set color to</h3>
-      <button data-setcolor="#ff0000"><span>Red</span></button>
-      <button data-setcolor="#00ff00"><span>Green</span></button>
-      <button data-setcolor="#0000ff"><span>Blue</span></button>
-      <button data-setcolor="#ffff00"><span>Yellow</span></button>
-      <button data-setcolor="#ff00ff"><span>Magenta</span></button>
-      <button data-setcolor="#00ffff"><span>Cyan</span></button>
-      <button data-setcolor="#ff7f00"><span>Orange</span></button>
-      <button data-setcolor="#7f00ff"><span>Violet</span></button>
-      <button data-setcolor="#007fff"><span>Azure</span></button>
-      <button data-setcolor="#000000"><span>Black</span></button>
-      <button data-setcolor="#c0c0c0"><span>Silver</span></button>
-      <button data-setcolor="#ffffff"><span>White</span></button>
-    </nav>
-    <label class="color-buttons__picker">
-      <span>Freely choose color (system color picker)</span>
-      <input type="color" value='#b40404' />
-    </label>
-  </div>
-  <button data-random><span>Randomize Color</span></button>
-  <a class="link-project" href="https://github.com/words/color-description" hreflang="en-us">Github Project</a>
-  <code data-label="code example">
-    <pre data-code>
+  <body>
+    <h1>Color-Description</h1>
+    <p class="intro">
+      Color-Description turns a technical color representation into a human
+      readable description.
+    </p>
+    <div class="visually-hidden">
+      <nav class="color-buttons">
+        <h3>Set color to</h3>
+        <button data-setcolor="#ff0000"><span>Red</span></button>
+        <button data-setcolor="#00ff00"><span>Green</span></button>
+        <button data-setcolor="#0000ff"><span>Blue</span></button>
+        <button data-setcolor="#ffff00"><span>Yellow</span></button>
+        <button data-setcolor="#ff00ff"><span>Magenta</span></button>
+        <button data-setcolor="#00ffff"><span>Cyan</span></button>
+        <button data-setcolor="#ff7f00"><span>Orange</span></button>
+        <button data-setcolor="#7f00ff"><span>Violet</span></button>
+        <button data-setcolor="#007fff"><span>Azure</span></button>
+        <button data-setcolor="#000000"><span>Black</span></button>
+        <button data-setcolor="#c0c0c0"><span>Silver</span></button>
+        <button data-setcolor="#ffffff"><span>White</span></button>
+      </nav>
+      <label class="color-buttons__picker">
+        <span>Freely choose color (system color picker)</span>
+        <input type="color" value="#b40404" />
+      </label>
+    </div>
+    <button data-random><span>Randomize Color</span></button>
+    <a
+      class="link-project"
+      href="https://github.com/words/color-description"
+      hreflang="en-us"
+      >Github Project</a
+    >
+    <code data-label="code example">
+      <pre data-code>
 const cd = new ColorDescription('#b40404');
 cd.getDescriptiveList();
-    </pre>
-  </code>
-  <div class="currentColor">
-    <div aria-hidden data-picker>
+    </pre
+      >
+    </code>
+    <div class="currentColor">
+      <div aria-hidden data-picker></div>
+      <article class="result">
+        <h2 data-colorname aria-live="polite"></h2>
+        <div data-result aria-live="polite"></div>
+        <aside>
+          <h3>Similar Colors</h3>
+          <div data-neighbors></div>
+        </aside>
+      </article>
     </div>
-    <article class="result">
-      <h2 data-colorname aria-live="polite"></h2>
-      <div data-result aria-live="polite"></div>
-      <aside>
-        <h3>Similar Colors</h3>
-        <div data-neighbors></div>
-      </aside>
-    </article>
-  </div>
-  <aside class="outro">
-    <h2>About</h2>
-    <p>This is under heavy construction by <a href="https://twitter.com/meodai">David Aerne</a> so please 
-    feel free to submit ideas and issues on <a href="https://github.com/words/color-description/issues">github</a>.</p>
-  </aside>
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
-  <script src="./index.iife.js"></script>
-  <script>
-    //import ColorDescription from './index.esm.js';
-    const cd = new ColorDescription.default("#b40404");
-    const $result = document.querySelector("[data-result]");
-    const $currentColor = document.querySelector(".currentColor");
-    const $input = document.querySelector("input");
-    const $randomButton = document.querySelector("[data-random]");
-    const $code = document.querySelector("[data-code]");
-    const $body = document.documentElement;
-    const $colorname = document.querySelector("[data-colorname]");
-    const $neighbors = document.querySelector("[data-neighbors]");
+    <aside class="outro">
+      <h2>About</h2>
+      <p>
+        This is under heavy construction by
+        <a href="https://twitter.com/meodai">David Aerne</a> so please feel free
+        to submit ideas and issues on
+        <a href="https://github.com/words/color-description/issues">github</a>.
+      </p>
+    </aside>
 
-    let timer;
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"></script>
+    <script src="./index.iife.js"></script>
+    <script>
+      //import ColorDescription from './index.esm.js';
+      const cd = new ColorDescription.default("#b40404");
+      const $result = document.querySelector("[data-result]");
+      const $currentColor = document.querySelector(".currentColor");
+      const $input = document.querySelector("input");
+      const $randomButton = document.querySelector("[data-random]");
+      const $code = document.querySelector("[data-code]");
+      const $body = document.documentElement;
+      const $colorname = document.querySelector("[data-colorname]");
+      const $neighbors = document.querySelector("[data-neighbors]");
 
-    function colorFetch(color, colors = 10) {
-      const apiURL = new URL("https://api.color.pizza/v1/");
-      const colorWithoutHash = color.replace("#", "");
+      let timer;
 
-      const params = {
-        values: (new Array(colors).fill(colorWithoutHash)),
-        goodnamesonly: true,
-        noduplicates: true,
-      };
+      function colorFetch(color, colors = 10) {
+        const apiURL = new URL("https://api.color.pizza/v1/");
+        const colorWithoutHash = color.replace("#", "");
 
-      apiURL.search = new URLSearchParams(params).toString();
+        const params = {
+          values: new Array(colors).fill(colorWithoutHash),
+          goodnamesonly: true,
+          noduplicates: true,
+        };
 
-      fetch(apiURL)
-        .then((response) => response.json())
-        .then((data) => {
-          let colors = [...data.colors];
-          $colorname.innerHTML = `<span>Color Name:</span> ${colors.shift().name}`;
-          $neighbors.innerHTML = colors.reduce((r,c) => `${r}<button class="similar" style="--c: ${c.hex}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`, '');
-        })
-        .catch((error) => {
-          throw new Error(`API ${error}`);
-        });
-    }
+        apiURL.search = new URLSearchParams(params).toString();
 
-    const colorPicker = new iro.ColorPicker("[data-picker]", { borderWidth: 8 });
-
-    function setColor(e, fromPicker) {
-      const value = e ? e.target.value : chroma.random().hex();
-      cd.color = value;
-      $input.value = value;
-      const glPercentages = cd.percentageWords("gl");
-      const cmykPercentageWords = cd.percentageWords("cmyk");
-      $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
-cd.getDescriptiveList();`;
-      const temperature = cd.temperatureWords;
-      const meanings = cd.meanings;
-      const usage = cd.usage;
-      if(!fromPicker) {
-        colorPicker.color.hexString = value;
+        fetch(apiURL)
+          .then((response) => response.json())
+          .then((data) => {
+            let colors = [...data.colors];
+            $colorname.innerHTML = `<span>Color Name:</span> ${colors.shift().name}`;
+            $neighbors.innerHTML = colors.reduce(
+              (r, c) =>
+                `${r}<button class="similar" style="--c: ${c.hex}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`,
+              "",
+            );
+          })
+          .catch((error) => {
+            throw new Error(`API ${error}`);
+          });
       }
 
-      $body.style.setProperty("--color", value);
+      const colorPicker = new iro.ColorPicker("[data-picker]", {
+        borderWidth: 8,
+      });
 
-      $result.innerHTML = `
+      function setColor(e, fromPicker) {
+        const value = e ? e.target.value : chroma.random().hex();
+        cd.color = value;
+        $input.value = value;
+        const glPercentages = cd.percentageWords("rgb");
+        const cmykPercentageWords = cd.percentageWords("cmyk");
+        $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
+cd.getDescriptiveList();`;
+        const temperature = cd.temperatureWords;
+        const meanings = cd.meanings;
+        const usage = cd.usage;
+        if (!fromPicker) {
+          colorPicker.color.hexString = value;
+        }
+
+        $body.style.setProperty("--color", value);
+
+        $result.innerHTML = `
             <h3>Description Paragraph</h3>
             <p>${cd.description}</p>
 
@@ -365,54 +392,53 @@ cd.getDescriptiveList();`;
             <p>It has a temperature of <strong>${
               temperature.value
             }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temperature.descriptive.join(
-        ", "
-      )}</p>
+              ", ",
+            )}</p>
             
             <h3>RGB Mix</h3>
             <p>An LCD screen needs ${glPercentages[0]} red, ${
-        glPercentages[1]
-      } green and ${glPercentages[2]} blue to produce this color.</p>
+              glPercentages[1]
+            } green and ${glPercentages[2]} blue to produce this color.</p>
             
             <h3>CMYK Mix</h3>
             <p>To print this color you would could mix ${
               cmykPercentageWords[0]
             } cyan, ${cmykPercentageWords[1]} magenta, ${
-        cmykPercentageWords[2]
-      } yellow and ${cmykPercentageWords[3]} black.</p>
+              cmykPercentageWords[2]
+            } yellow and ${cmykPercentageWords[3]} black.</p>
             <br />
             <!--small data-label="HSL color representation">${chroma(value).css(
-              "hsl"
+              "hsl",
             )}</small-->
           `;
-      document.querySelector('[data-picker]').dataset.hsl = chroma(value).css("hsl");
-      $currentColor.style.backgroundColor = value;
-      $currentColor.style.color = cd.bestContrast;
+        document.querySelector("[data-picker]").dataset.hsl =
+          chroma(value).css("hsl");
+        $currentColor.style.backgroundColor = value;
+        $currentColor.style.color = cd.bestContrast;
 
-      $colorname.innerHTML = "…";
-      $neighbors.innerHTML = "…";
-      clearTimeout(timer);
-      timer = setTimeout(() => colorFetch(value), 500);
-    }
-
-    setColor();
-
-    
-    colorPicker.on(["color:init", "color:change"], function (color) {
-      setColor({ target: { value: color.hexString } }, true);
-    });
-
-    $input.addEventListener("input", setColor);
-
-    $randomButton.addEventListener("click", (e) => {
-      setColor({ target: { value: chroma.random().hex() } });
-    });
-
-    document.documentElement.addEventListener('click', e => {
-      if( e.target.matches('[data-setcolor]')  ) {
-        setColor({ target: { value: e.target.dataset.setcolor } });
+        $colorname.innerHTML = "…";
+        $neighbors.innerHTML = "…";
+        clearTimeout(timer);
+        timer = setTimeout(() => colorFetch(value), 500);
       }
-    });
-  </script>
-</body>
 
+      setColor();
+
+      colorPicker.on(["color:init", "color:change"], function (color) {
+        setColor({ target: { value: color.hexString } }, true);
+      });
+
+      $input.addEventListener("input", setColor);
+
+      $randomButton.addEventListener("click", (e) => {
+        setColor({ target: { value: chroma.random().hex() } });
+      });
+
+      document.documentElement.addEventListener("click", (e) => {
+        if (e.target.matches("[data-setcolor]")) {
+          setColor({ target: { value: e.target.dataset.setcolor } });
+        }
+      });
+    </script>
+  </body>
 </html>
