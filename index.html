@@ -331,7 +331,7 @@ cd.getDescriptiveList();
       const cmykPercentageWords = cd.percentageWords("cmyk");
       $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
 cd.getDescriptiveList();`;
-      const temparature = cd.temeratureWords;
+      const temperature = cd.temperatureWords;
       const meanings = cd.meanings;
       const usage = cd.usage;
       if(!fromPicker) {
@@ -361,10 +361,10 @@ cd.getDescriptiveList();`;
             } would be the most readable text color.</p>
             
 
-            <h3>Light Temparature</h3>
+            <h3>Light Temperature</h3>
             <p>It has a temperature of <strong>${
-              temparature.value
-            }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temparature.descriptive.join(
+              temperature.value
+            }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temperature.descriptive.join(
         ", "
       )}</p>
             
