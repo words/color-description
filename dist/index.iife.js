@@ -3867,6 +3867,7 @@ var ColorDescription = (() => {
         "nouns": [
           "purple"
         ],
+        "description": ["Purple is a rich and vibrant color that is often associated with royalty, luxury, and creativity. It is a combination of blue and red, with more red than blue, giving it a warm and passionate quality. The shade of purple can vary from a deep, dark hue to a light, almost lavender color, and each shade can evoke different emotions and meanings. Some people may associate purple with spirituality and mysticism, while others may see it as a symbol of extravagance and decadence. In terms of wavelength, purple is located between blue and violet on the visible light spectrum and has a shorter wavelength than most other colors. Because of its striking and eye-catching nature, purple is frequently used in fashion, art, and design to add a pop of color and flair. Overall, purple is a captivating and dynamic color that can express a wide range of moods and emotions, making it a favorite among many people."],
         "meanings": [
           "spirituality",
           "structure",
