@@ -371,6 +371,9 @@ const cd = new ColorDescription('#b40404');
         const temperature = cd.temperatureWords;
         const meanings = cd.meanings;
         const usage = cd.usage;
+        const nouns = cd.nouns;
+        const adjectives = cd.adjectives;
+
         if (!fromPicker) {
           colorPicker.color.hexString = value;
         }
@@ -405,7 +408,9 @@ const cd = new ColorDescription('#b40404');
               cd.bestContrast
             } would be the most readable text color.</p>
             
-            
+            ${nouns && nouns.length ? `
+            <div class="t"><h3>Color Nouns</h3><code>cd.nouns()</code></div>
+            <p>It is considered to be ${nouns.join(", ")}</p>` : ""}
 
             <div class="t"><h3>Light Temperature</h3><code>cd.temperature(); cd.temperatureWords();</code></div>
             <p>It has a temperature of <strong>${
