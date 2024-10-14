@@ -120,7 +120,12 @@ class ColorDescription {
             )
               return true; // Skip if the component doesn't exist
 
-            const value = colorAsModel[key];
+            let value = colorAsModel[key];
+
+            if (key === "h") {
+              // not sure if this is the best way to handle hue since other color models can have a component with the same name
+              value = Math.round(value);
+            }
 
             if (Array.isArray(criterium)) {
               return isInRange(value, criterium[0], criterium[1]);

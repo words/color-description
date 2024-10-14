@@ -44,11 +44,11 @@
       .colorname::before {
         content: " ";
         display: inline-block;
-        width: .75em;
+        width: 0.75em;
         aspect-ratio: 1;
         border-radius: 50%;
         background: var(--color);
-        margin-right: .25em;
+        margin-right: 0.25em;
       }
       .IroColorPicker {
         position: sticky;
@@ -144,7 +144,6 @@
         border-radius: 18px;
         z-index: 1;
       }
-
 
       .intro {
         font-size: 2rem;
@@ -242,7 +241,7 @@
         background: #202124;
         padding: 0.25em 1em;
         color: #fff;
-        font-size: .7rem;
+        font-size: 0.7rem;
         display: inline-block;
         margin-bottom: 1rem;
         border-radius: 15px;
@@ -297,7 +296,8 @@ const cd = new ColorDescription('#b40404');
         <div data-result aria-live="polite"></div>
         <aside>
           <div class="t">
-          <h3>Similar Colors</h3></div>
+            <h3>Similar Colors</h3>
+          </div>
           <div data-neighbors></div>
         </aside>
       </article>
@@ -313,11 +313,11 @@ const cd = new ColorDescription('#b40404');
     </aside>
 
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    
+
     <script src="./index.iife.js"></script>
     <script type="module">
-      import { rgb, random, formatHex } from 'https://cdn.skypack.dev/culori';
-      
+      import { rgb, random, formatHex } from "https://cdn.skypack.dev/culori";
+
       //import ColorDescription from './index.esm.js';
       const cd = new ColorDescription.default("#b40404");
       const $result = document.querySelector("[data-result]");
@@ -410,9 +410,13 @@ const cd = new ColorDescription('#b40404');
               cd.bestContrast
             } would be the most readable text color.</p>
             
-            ${nouns && nouns.length ? `
+            ${
+              nouns && nouns.length
+                ? `
             <div class="t"><h3>Color Nouns</h3><code>cd.nouns</code></div>
-            <p>This color is kinda <b>${nouns.join(", ")}</b></p>` : ""}
+            <p>This color is kinda <b>${nouns.join(", ")}</b></p>`
+                : ""
+            }
 
             <div class="t"><h3>Light Temperature</h3><code>cd.temperature(); cd.temperatureWords();</code></div>
             <p>It has a temperature of <strong>${
@@ -441,7 +445,7 @@ const cd = new ColorDescription('#b40404');
             
           `;
         document.querySelector("[data-picker]").dataset.hsl =
-          '' /*chroma(value).css("hsl")*/;
+          "" /*chroma(value).css("hsl")*/;
 
         $colorname.innerHTML = "…";
         $neighbors.innerHTML = "…";
@@ -458,9 +462,7 @@ const cd = new ColorDescription('#b40404');
       $input.addEventListener("input", setColor);
 
       $randomButton.addEventListener("click", (e) => {
-        setColor({ target: { value: 
-          formatHex(random())
-         } });
+        setColor({ target: { value: formatHex(random()) } });
       });
 
       document.documentElement.addEventListener("click", (e) => {
