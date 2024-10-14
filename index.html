@@ -93,6 +93,7 @@
         margin-right: 0.7em;
         padding: 0.5em 0.7em;
         font-size: 1.1em;
+        color: var(--t);
       }
 
       button.similar::before {
@@ -243,6 +244,7 @@
         font-size: 0.7rem;
         display: inline-block;
         margin-bottom: 1rem;
+        border-radius: 15px;
       }
     </style>
   </head>
@@ -348,7 +350,7 @@ const cd = new ColorDescription('#b40404');
             $colorname.innerHTML = `${colors.shift().name}`;
             $neighbors.innerHTML = colors.reduce(
               (r, c) =>
-                `${r}<button class="similar" style="--c: ${c.hex}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`,
+                `${r}<button class="similar" style="--c: ${c.hex}; --t: ${c.bestContrast}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`,
               "",
             );
           })
@@ -383,7 +385,7 @@ const cd = new ColorDescription('#b40404');
         $result.innerHTML = `
             <div class="t">
               <h3>Description Paragraph</h3>
-              <code>cd.description()</code>
+              <code>cd.description</code>
             </div>
             <p>${cd.description}</p>
             
@@ -396,14 +398,14 @@ const cd = new ColorDescription('#b40404');
             
             ${
               meanings.length
-                ? `<div class="t"><h3>Meanings</h3><code>cd.meanings()</code></div><p>${meanings.join(", ")}</p>`
+                ? `<div class="t"><h3>Meanings</h3><code>cd.meanings</code></div><p>${meanings.join(", ")}</p>`
                 : ""
             }
 
-            ${usage.length ? `<div class="t"><h3>Usage</h3><code>cd.usage()</code></div><p>${usage.join(", ")}</p>` : ""}
+            ${usage.length ? `<div class="t"><h3>Usage</h3><code>cd.usage</code></div><p>${usage.join(", ")}</p>` : ""}
 
             
-            <div class="t"><h3>Contrast Information</h3><code>cd.bestContrast()</code></div>
+            <div class="t"><h3>Contrast Information</h3><code>cd.bestContrast</code></div>
             <p>If used as background ${
               cd.bestContrast
             } would be the most readable text color.</p>
@@ -411,8 +413,8 @@ const cd = new ColorDescription('#b40404');
             ${
               nouns && nouns.length
                 ? `
-            <div class="t"><h3>Color Nouns</h3><code>cd.nouns()</code></div>
-            <p>It is considered to be ${nouns.join(", ")}</p>`
+            <div class="t"><h3>Color Nouns</h3><code>cd.nouns</code></div>
+            <p>This color is kinda <b>${nouns.join(", ")}</b></p>`
                 : ""
             }
 
