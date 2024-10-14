@@ -1,4 +1,4549 @@
-var ColorDescription=(()=>{var De=Object.defineProperty,Qo=Object.defineProperties,en=Object.getOwnPropertyDescriptor,tn=Object.getOwnPropertyDescriptors,rn=Object.getOwnPropertyNames,zr=Object.getOwnPropertySymbols;var Lr=Object.prototype.hasOwnProperty,on=Object.prototype.propertyIsEnumerable;var Rr=e=>{throw TypeError(e)};var wt=(e,t,r)=>t in e?De(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r,y=(e,t)=>{for(var r in t||(t={}))Lr.call(t,r)&&wt(e,r,t[r]);if(zr)for(var r of zr(t))on.call(t,r)&&wt(e,r,t[r]);return e},M=(e,t)=>Qo(e,tn(t));var nn=(e,t)=>{for(var r in t)De(e,r,{get:t[r],enumerable:!0})},an=(e,t,r,n)=>{if(t&&typeof t=="object"||typeof t=="function")for(let o of rn(t))!Lr.call(e,o)&&o!==r&&De(e,o,{get:()=>t[o],enumerable:!(n=en(t,o))||n.enumerable});return e};var ln=e=>an(De({},"__esModule",{value:!0}),e);var Tt=(e,t,r)=>wt(e,typeof t!="symbol"?t+"":t,r),sn=(e,t,r)=>t.has(e)||Rr("Cannot "+r);var Xr=(e,t,r)=>t.has(e)?Rr("Cannot add the same private member more than once"):t instanceof WeakSet?t.add(e):t.set(e,r);var oe=(e,t,r)=>(sn(e,t,"access private method"),r);var $i={};nn($i,{default:()=>qi});var{round:fn,min:kt,max:Je,log:je,floor:dn,random:un}=Math,pn=e=>{let t=e/100,r,n,o;return t<66?(r=1,n=t<6?0:(-155.25485562709179-.44596950469579133*(n=t-2)+104.49216199393888*je(n))/255,o=t<20?0:(-254.76935184120902+.8274096064007395*(o=t-10)+115.67994401066147*je(o))/255):(r=(351.97690566805693+.114206453784165*(r=t-55)-40.25366309332127*je(r))/255,n=(325.4494125711974+.07943456536662342*(n=t-50)-28.0852963507957*je(n))/255,o=1),{r:Je(0,kt(1,r)),g:Je(0,kt(1,n)),b:Je(0,kt(1,o)),a:1}},Hr=e=>{let{r:t,g:r,b:n}=e,o=1e3,a=4e4,i=.4,l;for(;a-o>i;){l=(a+o)*.5;let d=pn(l);d.b/d.r>=n/t?a=l:o=l}return fn(l)},_r=(e,t,r)=>e>=t&&e<=r,zt=e=>{let t=[...e];for(let r=t.length-1;r>0;r--){let n=dn(un()*(r+1));[t[r],t[n]]=[t[n],t[r]]}return t},Sr=e=>{let{r:t,g:r,b:n}=e,o=1-Je(t,r,n),a=1-o;return{mode:"cmyk",c:a&&(a-t)/a,m:a&&(a-r)/a,y:a&&(a-n)/a,k:o}};var cn=(e,t)=>{if(typeof e=="number"){if(t===3)return{mode:"rgb",r:(e>>8&15|e>>4&240)/255,g:(e>>4&15|e&240)/255,b:(e&15|e<<4&240)/255};if(t===4)return{mode:"rgb",r:(e>>12&15|e>>8&240)/255,g:(e>>8&15|e>>4&240)/255,b:(e>>4&15|e&240)/255,alpha:(e&15|e<<4&240)/255};if(t===6)return{mode:"rgb",r:(e>>16&255)/255,g:(e>>8&255)/255,b:(e&255)/255};if(t===8)return{mode:"rgb",r:(e>>24&255)/255,g:(e>>16&255)/255,b:(e>>8&255)/255,alpha:(e&255)/255}}},Ee=cn;var mn={aliceblue:15792383,antiquewhite:16444375,aqua:65535,aquamarine:8388564,azure:15794175,beige:16119260,bisque:16770244,black:0,blanchedalmond:16772045,blue:255,blueviolet:9055202,brown:10824234,burlywood:14596231,cadetblue:6266528,chartreuse:8388352,chocolate:13789470,coral:16744272,cornflowerblue:6591981,cornsilk:16775388,crimson:14423100,cyan:65535,darkblue:139,darkcyan:35723,darkgoldenrod:12092939,darkgray:11119017,darkgreen:25600,darkgrey:11119017,darkkhaki:12433259,darkmagenta:9109643,darkolivegreen:5597999,darkorange:16747520,darkorchid:10040012,darkred:9109504,darksalmon:15308410,darkseagreen:9419919,darkslateblue:4734347,darkslategray:3100495,darkslategrey:3100495,darkturquoise:52945,darkviolet:9699539,deeppink:16716947,deepskyblue:49151,dimgray:6908265,dimgrey:6908265,dodgerblue:2003199,firebrick:11674146,floralwhite:16775920,forestgreen:2263842,fuchsia:16711935,gainsboro:14474460,ghostwhite:16316671,gold:16766720,goldenrod:14329120,gray:8421504,green:32768,greenyellow:11403055,grey:8421504,honeydew:15794160,hotpink:16738740,indianred:13458524,indigo:4915330,ivory:16777200,khaki:15787660,lavender:15132410,lavenderblush:16773365,lawngreen:8190976,lemonchiffon:16775885,lightblue:11393254,lightcoral:15761536,lightcyan:14745599,lightgoldenrodyellow:16448210,lightgray:13882323,lightgreen:9498256,lightgrey:13882323,lightpink:16758465,lightsalmon:16752762,lightseagreen:2142890,lightskyblue:8900346,lightslategray:7833753,lightslategrey:7833753,lightsteelblue:11584734,lightyellow:16777184,lime:65280,limegreen:3329330,linen:16445670,magenta:16711935,maroon:8388608,mediumaquamarine:6737322,mediumblue:205,mediumorchid:12211667,mediumpurple:9662683,mediumseagreen:3978097,mediumslateblue:8087790,mediumspringgreen:64154,mediumturquoise:4772300,mediumvioletred:13047173,midnightblue:1644912,mintcream:16121850,mistyrose:16770273,moccasin:16770229,navajowhite:16768685,navy:128,oldlace:16643558,olive:8421376,olivedrab:7048739,orange:16753920,orangered:16729344,orchid:14315734,palegoldenrod:15657130,palegreen:10025880,paleturquoise:11529966,palevioletred:14381203,papayawhip:16773077,peachpuff:16767673,peru:13468991,pink:16761035,plum:14524637,powderblue:11591910,purple:8388736,rebeccapurple:6697881,red:16711680,rosybrown:12357519,royalblue:4286945,saddlebrown:9127187,salmon:16416882,sandybrown:16032864,seagreen:3050327,seashell:16774638,sienna:10506797,silver:12632256,skyblue:8900331,slateblue:6970061,slategray:7372944,slategrey:7372944,snow:16775930,springgreen:65407,steelblue:4620980,tan:13808780,teal:32896,thistle:14204888,tomato:16737095,turquoise:4251856,violet:15631086,wheat:16113331,white:16777215,whitesmoke:16119285,yellow:16776960,yellowgreen:10145074},Ir=mn;var hn=e=>Ee(Ir[e.toLowerCase()],6),Pr=hn;var bn=/^#?([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})$/i,gn=e=>{let t;return(t=e.match(bn))?Ee(parseInt(t[1],16),t[1].length):void 0},Cr=gn;var _="([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)",Bi=`(?:${_}|none)`,ne=`${_}%`,Fi=`(?:${_}%|none)`,Re=`(?:${_}%|${_})`,xn=`(?:${_}%|${_}|none)`,Or=`(?:${_}(deg|grad|rad|turn)|${_})`,Ki=`(?:${_}(deg|grad|rad|turn)|${_}|none)`,G="\\s*,\\s*";var Ui=new RegExp("^"+xn+"$");var vn=new RegExp(`^rgba?\\(\\s*${_}${G}${_}${G}${_}\\s*(?:,\\s*${Re}\\s*)?\\)$`),yn=new RegExp(`^rgba?\\(\\s*${ne}${G}${ne}${G}${ne}\\s*(?:,\\s*${Re}\\s*)?\\)$`),Mn=e=>{let t={mode:"rgb"},r;if(r=e.match(vn))r[1]!==void 0&&(t.r=r[1]/255),r[2]!==void 0&&(t.g=r[2]/255),r[3]!==void 0&&(t.b=r[3]/255);else if(r=e.match(yn))r[1]!==void 0&&(t.r=r[1]/100),r[2]!==void 0&&(t.g=r[2]/100),r[3]!==void 0&&(t.b=r[3]/100);else return;return r[4]!==void 0?t.alpha=Math.max(0,Math.min(1,r[4]/100)):r[5]!==void 0&&(t.alpha=Math.max(0,Math.min(1,+r[5]))),t},Nr=Mn;var wn=(e,t)=>e===void 0?void 0:typeof e!="object"?Xe(e):e.mode!==void 0?e:t?M(y({},e),{mode:t}):void 0,qr=wn;var Tn=(e="rgb")=>t=>(t=qr(t,e))!==void 0?t.mode===e?t:A[t.mode][e]?A[t.mode][e](t):e==="rgb"?A[t.mode].rgb(t):A.rgb[e](A[t.mode].rgb(t)):void 0,Z=Tn;var A={},$r={},He=[],Lt={},kn=e=>e,g=e=>(A[e.mode]=y(y({},A[e.mode]),e.toMode),Object.keys(e.fromMode||{}).forEach(t=>{A[t]||(A[t]={}),A[t][e.mode]=e.fromMode[t]}),e.ranges||(e.ranges={}),e.difference||(e.difference={}),e.channels.forEach(t=>{if(e.ranges[t]===void 0&&(e.ranges[t]=[0,1]),!e.interpolate[t])throw new Error(`Missing interpolator for: ${t}`);typeof e.interpolate[t]=="function"&&(e.interpolate[t]={use:e.interpolate[t]}),e.interpolate[t].fixup||(e.interpolate[t].fixup=kn)}),$r[e.mode]=e,(e.parse||[]).forEach(t=>{zn(t,e.mode)}),Z(e.mode)),Ar=e=>$r[e],zn=(e,t)=>{if(typeof e=="string"){if(!t)throw new Error("'mode' required when 'parser' is a string");Lt[e]=t}else typeof e=="function"&&He.indexOf(e)<0&&He.push(e)};var Rt=/[^\x00-\x7F]|[a-zA-Z_]/,Ln=/[^\x00-\x7F]|[-\w]/,s={Function:"function",Ident:"ident",Number:"number",Percentage:"percentage",ParenClose:")",None:"none",Hue:"hue",Alpha:"alpha"},u=0;function Ye(e){let t=e[u],r=e[u+1];return t==="-"||t==="+"?/\d/.test(r)||r==="."&&/\d/.test(e[u+2]):t==="."?/\d/.test(r):/\d/.test(t)}function Xt(e){if(u>=e.length)return!1;let t=e[u];if(Rt.test(t))return!0;if(t==="-"){if(e.length-u<2)return!1;let r=e[u+1];return!!(r==="-"||Rt.test(r))}return!1}var Rn={deg:1,rad:180/Math.PI,grad:9/10,turn:360};function _e(e){let t="";if((e[u]==="-"||e[u]==="+")&&(t+=e[u++]),t+=We(e),e[u]==="."&&/\d/.test(e[u+1])&&(t+=e[u++]+We(e)),(e[u]==="e"||e[u]==="E")&&((e[u+1]==="-"||e[u+1]==="+")&&/\d/.test(e[u+2])?t+=e[u++]+e[u++]+We(e):/\d/.test(e[u+1])&&(t+=e[u++]+We(e))),Xt(e)){let r=Ge(e);return r==="deg"||r==="rad"||r==="turn"||r==="grad"?{type:s.Hue,value:t*Rn[r]}:void 0}return e[u]==="%"?(u++,{type:s.Percentage,value:+t}):{type:s.Number,value:+t}}function We(e){let t="";for(;/\d/.test(e[u]);)t+=e[u++];return t}function Ge(e){let t="";for(;u<e.length&&Ln.test(e[u]);)t+=e[u++];return t}function Xn(e){let t=Ge(e);return e[u]==="("?(u++,{type:s.Function,value:t}):t==="none"?{type:s.None,value:void 0}:{type:s.Ident,value:t}}function Hn(e=""){let t=e.trim(),r=[],n;for(u=0;u<t.length;){if(n=t[u++],n===`
-`||n==="	"||n===" "){for(;u<t.length&&(t[u]===`
-`||t[u]==="	"||t[u]===" ");)u++;continue}if(n===",")return;if(n===")"){r.push({type:s.ParenClose});continue}if(n==="+"){if(u--,Ye(t)){r.push(_e(t));continue}return}if(n==="-"){if(u--,Ye(t)){r.push(_e(t));continue}if(Xt(t)){r.push({type:s.Ident,value:Ge(t)});continue}return}if(n==="."){if(u--,Ye(t)){r.push(_e(t));continue}return}if(n==="/"){for(;u<t.length&&(t[u]===`
-`||t[u]==="	"||t[u]===" ");)u++;let o;if(Ye(t)&&(o=_e(t),o.type!==s.Hue)){r.push({type:s.Alpha,value:o});continue}if(Xt(t)&&Ge(t)==="none"){r.push({type:s.Alpha,value:{type:s.None,value:void 0}});continue}return}if(/\d/.test(n)){u--,r.push(_e(t));continue}if(Rt.test(n)){u--,r.push(Xn(t));continue}return}return r}function _n(e){e._i=0;let t=e[e._i++];if(!t||t.type!==s.Function||t.value!=="color"||(t=e[e._i++],t.type!==s.Ident))return;let r=Lt[t.value];if(!r)return;let n={mode:r},o=Dr(e,!1);if(!o)return;let a=Ar(r).channels;for(let i=0,l,d;i<a.length;i++)l=o[i],d=a[i],l.type!==s.None&&(n[d]=l.type===s.Number?l.value:l.value/100,d==="alpha"&&(n[d]=Math.max(0,Math.min(1,n[d]))));return n}function Dr(e,t){let r=[],n;for(;e._i<e.length;){if(n=e[e._i++],n.type===s.None||n.type===s.Number||n.type===s.Alpha||n.type===s.Percentage||t&&n.type===s.Hue){r.push(n);continue}if(n.type===s.ParenClose){if(e._i<e.length)return;continue}return}if(!(r.length<3||r.length>4)){if(r.length===4){if(r[3].type!==s.Alpha)return;r[3]=r[3].value}return r.length===3&&r.push({type:s.None,value:void 0}),r.every(o=>o.type!==s.Alpha)?r:void 0}}function Sn(e,t){e._i=0;let r=e[e._i++];if(!r||r.type!==s.Function)return;let n=Dr(e,t);if(n)return n.unshift(r.value),n}var In=e=>{if(typeof e!="string")return;let t=Hn(e),r=t?Sn(t,!0):void 0,n,o=0,a=He.length;for(;o<a;)if((n=He[o++](e,r))!==void 0)return n;return t?_n(t):void 0},Xe=In;function Pn(e,t){if(!t||t[0]!=="rgb"&&t[0]!=="rgba")return;let r={mode:"rgb"},[,n,o,a,i]=t;if(!(n.type===s.Hue||o.type===s.Hue||a.type===s.Hue))return n.type!==s.None&&(r.r=n.type===s.Number?n.value/255:n.value/100),o.type!==s.None&&(r.g=o.type===s.Number?o.value/255:o.value/100),a.type!==s.None&&(r.b=a.type===s.Number?a.value/255:a.value/100),i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var jr=Pn;var Cn=e=>e==="transparent"?{mode:"rgb",r:0,g:0,b:0,alpha:0}:void 0,Jr=Cn;var Er=(e,t,r)=>e+r*(t-e);var On=e=>{let t=[];for(let r=0;r<e.length-1;r++){let n=e[r],o=e[r+1];n===void 0&&o===void 0?t.push(void 0):n!==void 0&&o!==void 0?t.push([n,o]):t.push(n!==void 0?[n,n]:[o,o])}return t},Yr=e=>t=>{let r=On(t);return n=>{let o=n*r.length,a=n>=1?r.length-1:Math.max(Math.floor(o),0),i=r[a];return i===void 0?void 0:e(i[0],i[1],o-a)}};var f=Yr(Er);var m=e=>{let t=!1,r=e.map(n=>n!==void 0?(t=!0,n):1);return t?r:e};var Nn={mode:"rgb",channels:["r","g","b","alpha"],parse:[jr,Cr,Nr,Pr,Jr,"srgb"],serialize:"srgb",interpolate:{r:f,g:f,b:f,alpha:{use:f,fixup:m}},gamut:!0,white:{r:1,g:1,b:1},black:{r:0,g:0,b:0}},N=Nn;var Ht=(e=0)=>Math.pow(Math.abs(e),2.19921875)*Math.sign(e),qn=e=>{let t=Ht(e.r),r=Ht(e.g),n=Ht(e.b),o={mode:"xyz65",x:.5766690429101305*t+.1855582379065463*r+.1882286462349947*n,y:.297344975250536*t+.6273635662554661*r+.0752914584939979*n,z:.0270313613864123*t+.0706888525358272*r+.9913375368376386*n};return e.alpha!==void 0&&(o.alpha=e.alpha),o},_t=qn;var St=e=>Math.pow(Math.abs(e),.4547069271758437)*Math.sign(e),$n=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o={mode:"a98",r:St(e*2.0415879038107465-t*.5650069742788597-.3447313507783297*r),g:St(e*-.9692436362808798+t*1.8759675015077206+.0415550574071756*r),b:St(e*.0134442806320312-t*.1183623922310184+1.0151749943912058*r)};return n!==void 0&&(o.alpha=n),o},It=$n;var Pt=(e=0)=>{let t=Math.abs(e);return t<=.04045?e/12.92:(Math.sign(e)||1)*Math.pow((t+.055)/1.055,2.4)},An=({r:e,g:t,b:r,alpha:n})=>{let o={mode:"lrgb",r:Pt(e),g:Pt(t),b:Pt(r)};return n!==void 0&&(o.alpha=n),o},q=An;var Dn=e=>{let{r:t,g:r,b:n,alpha:o}=q(e),a={mode:"xyz65",x:.4123907992659593*t+.357584339383878*r+.1804807884018343*n,y:.2126390058715102*t+.715168678767756*r+.0721923153607337*n,z:.0193308187155918*t+.119194779794626*r+.9505321522496607*n};return o!==void 0&&(a.alpha=o),a},I=Dn;var Ct=(e=0)=>{let t=Math.abs(e);return t>.0031308?(Math.sign(e)||1)*(1.055*Math.pow(t,.4166666666666667)-.055):e*12.92},jn=({r:e,g:t,b:r,alpha:n},o="rgb")=>{let a={mode:o,r:Ct(e),g:Ct(t),b:Ct(r)};return n!==void 0&&(a.alpha=n),a},$=jn;var Jn=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=$({r:e*3.2409699419045226-t*1.537383177570094-.4986107602930034*r,g:e*-.9692436362808796+t*1.8759675015077204+.0415550574071756*r,b:e*.0556300796969936-t*.2039769588889765+1.0569715142428784*r});return n!==void 0&&(o.alpha=n),o},P=Jn;var En=M(y({},N),{mode:"a98",parse:["a98-rgb"],serialize:"a98-rgb",fromMode:{rgb:e=>It(I(e)),xyz65:It},toMode:{rgb:e=>P(_t(e)),xyz65:_t}}),Wr=En;var Yn=e=>(e=e%360)<0?e+360:e,x=Yn;var Wn=(e,t)=>e.map((r,n,o)=>{if(r===void 0)return r;let a=x(r);return n===0||e[n-1]===void 0?a:t(a-x(o[n-1]))}).reduce((r,n)=>!r.length||n===void 0||r[r.length-1]===void 0?(r.push(n),r):(r.push(n+r[r.length-1]),r),[]),L=e=>Wn(e,t=>Math.abs(t)<=180?t:t-360*Math.sign(t));var T=[-.14861,1.78277,-.29227,-.90649,1.97294,0],Gr=Math.PI/180,Zr=180/Math.PI;var Br=T[3]*T[4],Fr=T[1]*T[4],Kr=T[1]*T[2]-T[0]*T[3],Gn=({r:e,g:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=(Kr*r+e*Br-t*Fr)/(Kr+Br-Fr),a=r-o,i=(T[4]*(t-o)-T[2]*a)/T[3],l={mode:"cubehelix",l:o,s:o===0||o===1?void 0:Math.sqrt(a*a+i*i)/(T[4]*o*(1-o))};return l.s&&(l.h=Math.atan2(i,a)*Zr-120),n!==void 0&&(l.alpha=n),l},Ur=Gn;var Zn=({h:e,s:t,l:r,alpha:n})=>{let o={mode:"rgb"};e=(e===void 0?0:e+120)*Gr,r===void 0&&(r=0);let a=t===void 0?0:t*r*(1-r),i=Math.cos(e),l=Math.sin(e);return o.r=r+a*(T[0]*i+T[1]*l),o.g=r+a*(T[2]*i+T[3]*l),o.b=r+a*(T[4]*i+T[5]*l),n!==void 0&&(o.alpha=n),o},Vr=Zn;var B=(e,t)=>{if(e.h===void 0||t.h===void 0||!e.s||!t.s)return 0;let r=x(e.h),n=x(t.h),o=Math.sin((n-r+360)/2*Math.PI/180);return 2*Math.sqrt(e.s*t.s)*o},Qr=(e,t)=>{if(e.h===void 0||t.h===void 0)return 0;let r=x(e.h),n=x(t.h);return Math.abs(n-r)>180?r-(n-360*Math.sign(n-r)):n-r},F=(e,t)=>{if(e.h===void 0||t.h===void 0||!e.c||!t.c)return 0;let r=x(e.h),n=x(t.h),o=Math.sin((n-r+360)/2*Math.PI/180);return 2*Math.sqrt(e.c*t.c)*o};var R=e=>{let t=e.reduce((n,o)=>{if(o!==void 0){let a=o*Math.PI/180;n.sin+=Math.sin(a),n.cos+=Math.cos(a)}return n},{sin:0,cos:0}),r=Math.atan2(t.sin,t.cos)*180/Math.PI;return r<0?360+r:r};var Bn={mode:"cubehelix",channels:["h","s","l","alpha"],parse:["--cubehelix"],serialize:"--cubehelix",ranges:{h:[0,360],s:[0,4.614],l:[0,1]},fromMode:{rgb:Ur},toMode:{rgb:Vr},interpolate:{h:{use:f,fixup:L},s:f,l:f,alpha:{use:f,fixup:m}},difference:{h:B},average:{h:R}},eo=Bn;var Fn=({l:e,a:t,b:r,alpha:n},o="lch")=>{t===void 0&&(t=0),r===void 0&&(r=0);let a=Math.sqrt(t*t+r*r),i={mode:o,l:e,c:a};return a&&(i.h=x(Math.atan2(r,t)*180/Math.PI)),n!==void 0&&(i.alpha=n),i},C=Fn;var Kn=({l:e,c:t,h:r,alpha:n},o="lab")=>{r===void 0&&(r=0);let a={mode:o,l:e,a:t?t*Math.cos(r/180*Math.PI):0,b:t?t*Math.sin(r/180*Math.PI):0};return n!==void 0&&(a.alpha=n),a},O=Kn;var Ze=Math.pow(29,3)/Math.pow(3,3),Be=Math.pow(6,3)/Math.pow(29,3);var w={X:.9642956764295677,Y:1,Z:.8251046025104602},K={X:.3127/.329,Y:1,Z:(1-.3127-.329)/.329},cs=Math.pow(29,3)/Math.pow(3,3),ms=Math.pow(6,3)/Math.pow(29,3);var Ot=e=>Math.pow(e,3)>Be?Math.pow(e,3):(116*e-16)/Ze,Un=({l:e,a:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=(e+16)/116,a=t/500+o,i=o-r/200,l={mode:"xyz65",x:Ot(a)*K.X,y:Ot(o)*K.Y,z:Ot(i)*K.Z};return n!==void 0&&(l.alpha=n),l},Fe=Un;var Vn=e=>P(Fe(e)),U=Vn;var Nt=e=>e>Be?Math.cbrt(e):(Ze*e+16)/116,Qn=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Nt(e/K.X),a=Nt(t/K.Y),i=Nt(r/K.Z),l={mode:"lab65",l:116*a-16,a:500*(o-a),b:200*(a-i)};return n!==void 0&&(l.alpha=n),l},Ke=Qn;var ea=e=>{let t=Ke(I(e));return e.r===e.b&&e.b===e.g&&(t.a=t.b=0),t},V=ea;var ae=.14444444444444443*Math.PI,se=Math.cos(ae),fe=Math.sin(ae),Ue=100/Math.log(139/100);var ta=({l:e,c:t,h:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o={mode:"lab65",l:(Math.exp(e*1/Ue)-1)/.0039},a=(Math.exp(.0435*t*1*1)-1)/.075,i=a*Math.cos(r/180*Math.PI-ae),l=a*Math.sin(r/180*Math.PI-ae);return o.a=i*se-l/.83*fe,o.b=i*fe+l/.83*se,n!==void 0&&(o.alpha=n),o},Ie=ta;var ra=({l:e,a:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=t*se+r*fe,a=.83*(r*se-t*fe),i=Math.sqrt(o*o+a*a),l={mode:"dlch",l:Ue/1*Math.log(1+.0039*e),c:Math.log(1+.075*i)/(.0435*1*1)};return l.c&&(l.h=x((Math.atan2(a,o)+ae)/Math.PI*180)),n!==void 0&&(l.alpha=n),l},Pe=ra;var to=e=>Ie(C(e,"dlch")),ro=e=>O(Pe(e),"dlab"),oa={mode:"dlab",parse:["--din99o-lab"],serialize:"--din99o-lab",toMode:{lab65:to,rgb:e=>U(to(e))},fromMode:{lab65:ro,rgb:e=>ro(V(e))},channels:["l","a","b","alpha"],ranges:{l:[0,100],a:[-40.09,45.501],b:[-40.469,44.344]},interpolate:{l:f,a:f,b:f,alpha:{use:f,fixup:m}}},oo=oa;var na={mode:"dlch",parse:["--din99o-lch"],serialize:"--din99o-lch",toMode:{lab65:Ie,dlab:e=>O(e,"dlab"),rgb:e=>U(Ie(e))},fromMode:{lab65:Pe,dlab:e=>C(e,"dlch"),rgb:e=>Pe(V(e))},channels:["l","c","h","alpha"],ranges:{l:[0,100],c:[0,51.484],h:[0,360]},interpolate:{l:f,c:f,h:{use:f,fixup:L},alpha:{use:f,fixup:m}},difference:{h:F},average:{h:R}},no=na;function $t({h:e,s:t,i:r,alpha:n}){e=x(e!==void 0?e:0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.abs(e/60%2-1),a;switch(Math.floor(e/60)){case 0:a={r:r*(1+t*(3/(2-o)-1)),g:r*(1+t*(3*(1-o)/(2-o)-1)),b:r*(1-t)};break;case 1:a={r:r*(1+t*(3*(1-o)/(2-o)-1)),g:r*(1+t*(3/(2-o)-1)),b:r*(1-t)};break;case 2:a={r:r*(1-t),g:r*(1+t*(3/(2-o)-1)),b:r*(1+t*(3*(1-o)/(2-o)-1))};break;case 3:a={r:r*(1-t),g:r*(1+t*(3*(1-o)/(2-o)-1)),b:r*(1+t*(3/(2-o)-1))};break;case 4:a={r:r*(1+t*(3*(1-o)/(2-o)-1)),g:r*(1-t),b:r*(1+t*(3/(2-o)-1))};break;case 5:a={r:r*(1+t*(3/(2-o)-1)),g:r*(1-t),b:r*(1+t*(3*(1-o)/(2-o)-1))};break;default:a={r:r*(1-t),g:r*(1-t),b:r*(1-t)}}return a.mode="rgb",n!==void 0&&(a.alpha=n),a}function At({r:e,g:t,b:r,alpha:n}){e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.max(e,t,r),a=Math.min(e,t,r),i={mode:"hsi",s:e+t+r===0?0:1-3*a/(e+t+r),i:(e+t+r)/3};return o-a!==0&&(i.h=(o===e?(t-r)/(o-a)+(t<r)*6:o===t?(r-e)/(o-a)+2:(e-t)/(o-a)+4)*60),n!==void 0&&(i.alpha=n),i}var aa={mode:"hsi",toMode:{rgb:$t},parse:["--hsi"],serialize:"--hsi",fromMode:{rgb:At},channels:["h","s","i","alpha"],ranges:{h:[0,360]},gamut:"rgb",interpolate:{h:{use:f,fixup:L},s:f,i:f,alpha:{use:f,fixup:m}},difference:{h:B},average:{h:R}},ao=aa;function Dt({h:e,s:t,l:r,alpha:n}){e=x(e!==void 0?e:0),t===void 0&&(t=0),r===void 0&&(r=0);let o=r+t*(r<.5?r:1-r),a=o-(o-r)*2*Math.abs(e/60%2-1),i;switch(Math.floor(e/60)){case 0:i={r:o,g:a,b:2*r-o};break;case 1:i={r:a,g:o,b:2*r-o};break;case 2:i={r:2*r-o,g:o,b:a};break;case 3:i={r:2*r-o,g:a,b:o};break;case 4:i={r:a,g:2*r-o,b:o};break;case 5:i={r:o,g:2*r-o,b:a};break;default:i={r:2*r-o,g:2*r-o,b:2*r-o}}return i.mode="rgb",n!==void 0&&(i.alpha=n),i}function jt({r:e,g:t,b:r,alpha:n}){e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.max(e,t,r),a=Math.min(e,t,r),i={mode:"hsl",s:o===a?0:(o-a)/(1-Math.abs(o+a-1)),l:.5*(o+a)};return o-a!==0&&(i.h=(o===e?(t-r)/(o-a)+(t<r)*6:o===t?(r-e)/(o-a)+2:(e-t)/(o-a)+4)*60),n!==void 0&&(i.alpha=n),i}var ia=(e,t)=>{switch(t){case"deg":return+e;case"rad":return e/Math.PI*180;case"grad":return e/10*9;case"turn":return e*360}},io=ia;var la=new RegExp(`^hsla?\\(\\s*${Or}${G}${ne}${G}${ne}\\s*(?:,\\s*${Re}\\s*)?\\)$`),sa=e=>{let t=e.match(la);if(!t)return;let r={mode:"hsl"};return t[3]!==void 0?r.h=+t[3]:t[1]!==void 0&&t[2]!==void 0&&(r.h=io(t[1],t[2])),t[4]!==void 0&&(r.s=Math.min(Math.max(0,t[4]/100),1)),t[5]!==void 0&&(r.l=Math.min(Math.max(0,t[5]/100),1)),t[6]!==void 0?r.alpha=Math.max(0,Math.min(1,t[6]/100)):t[7]!==void 0&&(r.alpha=Math.max(0,Math.min(1,+t[7]))),r},lo=sa;function fa(e,t){if(!t||t[0]!=="hsl"&&t[0]!=="hsla")return;let r={mode:"hsl"},[,n,o,a,i]=t;if(n.type!==s.None){if(n.type===s.Percentage)return;r.h=n.value}if(o.type!==s.None){if(o.type===s.Hue)return;r.s=o.value/100}if(a.type!==s.None){if(a.type===s.Hue)return;r.l=a.value/100}return i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var so=fa;var da={mode:"hsl",toMode:{rgb:Dt},fromMode:{rgb:jt},channels:["h","s","l","alpha"],ranges:{h:[0,360]},gamut:"rgb",parse:[so,lo],serialize:e=>`hsl(${e.h!==void 0?e.h:"none"} ${e.s!==void 0?e.s*100+"%":"none"} ${e.l!==void 0?e.l*100+"%":"none"}${e.alpha<1?` / ${e.alpha}`:""})`,interpolate:{h:{use:f,fixup:L},s:f,l:f,alpha:{use:f,fixup:m}},difference:{h:B},average:{h:R}},Ve=da;function Ce({h:e,s:t,v:r,alpha:n}){e=x(e!==void 0?e:0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.abs(e/60%2-1),a;switch(Math.floor(e/60)){case 0:a={r,g:r*(1-t*o),b:r*(1-t)};break;case 1:a={r:r*(1-t*o),g:r,b:r*(1-t)};break;case 2:a={r:r*(1-t),g:r,b:r*(1-t*o)};break;case 3:a={r:r*(1-t),g:r*(1-t*o),b:r};break;case 4:a={r:r*(1-t*o),g:r*(1-t),b:r};break;case 5:a={r,g:r*(1-t),b:r*(1-t*o)};break;default:a={r:r*(1-t),g:r*(1-t),b:r*(1-t)}}return a.mode="rgb",n!==void 0&&(a.alpha=n),a}function Oe({r:e,g:t,b:r,alpha:n}){e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.max(e,t,r),a=Math.min(e,t,r),i={mode:"hsv",s:o===0?0:1-a/o,v:o};return o-a!==0&&(i.h=(o===e?(t-r)/(o-a)+(t<r)*6:o===t?(r-e)/(o-a)+2:(e-t)/(o-a)+4)*60),n!==void 0&&(i.alpha=n),i}var ua={mode:"hsv",toMode:{rgb:Ce},parse:["--hsv"],serialize:"--hsv",fromMode:{rgb:Oe},channels:["h","s","v","alpha"],ranges:{h:[0,360]},gamut:"rgb",interpolate:{h:{use:f,fixup:L},s:f,v:f,alpha:{use:f,fixup:m}},difference:{h:B},average:{h:R}},Qe=ua;function Jt({h:e,w:t,b:r,alpha:n}){if(t===void 0&&(t=0),r===void 0&&(r=0),t+r>1){let o=t+r;t/=o,r/=o}return Ce({h:e,s:r===1?1:1-t/(1-r),v:1-r,alpha:n})}function Et(e){let t=Oe(e);if(t===void 0)return;let r=t.s!==void 0?t.s:0,n=t.v!==void 0?t.v:0,o={mode:"hwb",w:(1-r)*n,b:1-n};return t.h!==void 0&&(o.h=t.h),t.alpha!==void 0&&(o.alpha=t.alpha),o}function pa(e,t){if(!t||t[0]!=="hwb")return;let r={mode:"hwb"},[,n,o,a,i]=t;if(n.type!==s.None){if(n.type===s.Percentage)return;r.h=n.value}if(o.type!==s.None){if(o.type===s.Hue)return;r.w=o.value/100}if(a.type!==s.None){if(a.type===s.Hue)return;r.b=a.value/100}return i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var fo=pa;var ca={mode:"hwb",toMode:{rgb:Jt},fromMode:{rgb:Et},channels:["h","w","b","alpha"],ranges:{h:[0,360]},gamut:"rgb",parse:[fo],serialize:e=>`hwb(${e.h!==void 0?e.h:"none"} ${e.w!==void 0?e.w*100+"%":"none"} ${e.b!==void 0?e.b*100+"%":"none"}${e.alpha<1?` / ${e.alpha}`:""})`,interpolate:{h:{use:f,fixup:L},w:f,b:f,alpha:{use:f,fixup:m}},difference:{h:Qr},average:{h:R}},uo=ca;var de=.1593017578125,po=78.84375,ue=.8359375,pe=18.8515625,ce=18.6875;function et(e){if(e<0)return 0;let t=Math.pow(e,1/po);return 1e4*Math.pow(Math.max(0,t-ue)/(pe-ce*t),1/de)}function tt(e){if(e<0)return 0;let t=Math.pow(e/1e4,de);return Math.pow((ue+pe*t)/(1+ce*t),po)}var Yt=e=>Math.max(e/203,0),ha=({i:e,t,p:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=et(e+.008609037037932761*t+.11102962500302593*r),a=et(e-.00860903703793275*t-.11102962500302599*r),i=et(e+.5600313357106791*t-.32062717498731885*r),l={mode:"xyz65",x:Yt(2.070152218389422*o-1.3263473389671556*a+.2066510476294051*i),y:Yt(.3647385209748074*o+.680566024947227*a-.0453045459220346*i),z:Yt(-.049747207535812*o-.0492609666966138*a+1.1880659249923042*i)};return n!==void 0&&(l.alpha=n),l},Wt=ha;var Gt=(e=0)=>Math.max(e*203,0),ba=({x:e,y:t,z:r,alpha:n})=>{let o=Gt(e),a=Gt(t),i=Gt(r),l=tt(.3592832590121217*o+.6976051147779502*a-.0358915932320289*i),d=tt(-.1920808463704995*o+1.1004767970374323*a+.0753748658519118*i),p=tt(.0070797844607477*o+.0748396662186366*a+.8433265453898765*i),c=.5*l+.5*d,b=1.61376953125*l-3.323486328125*d+1.709716796875*p,h=4.378173828125*l-4.24560546875*d-.132568359375*p,v={mode:"itp",i:c,t:b,p:h};return n!==void 0&&(v.alpha=n),v},Zt=ba;var ga={mode:"itp",channels:["i","t","p","alpha"],parse:["--ictcp"],serialize:"--ictcp",toMode:{xyz65:Wt,rgb:e=>P(Wt(e))},fromMode:{xyz65:Zt,rgb:e=>Zt(I(e))},ranges:{i:[0,.581],t:[-.369,.272],p:[-.164,.331]},interpolate:{i:f,t:f,p:f,alpha:{use:f,fixup:m}}},co=ga;var xa=134.03437499999998,va=16295499532821565e-27,Bt=e=>{if(e<0)return 0;let t=Math.pow(e/1e4,de);return Math.pow((ue+pe*t)/(1+ce*t),xa)},Ft=(e=0)=>Math.max(e*203,0),ya=({x:e,y:t,z:r,alpha:n})=>{e=Ft(e),t=Ft(t),r=Ft(r);let o=1.15*e-.15*r,a=.66*t+.34*e,i=Bt(.41478972*o+.579999*a+.014648*r),l=Bt(-.20151*o+1.120649*a+.0531008*r),d=Bt(-.0166008*o+.2648*a+.6684799*r),p=(i+l)/2,c={mode:"jab",j:.44*p/(1-.56*p)-va,a:3.524*i-4.066708*l+.542708*d,b:.199076*i+1.096799*l-1.295875*d};return n!==void 0&&(c.alpha=n),c},rt=ya;var Ma=134.03437499999998,mo=16295499532821565e-27,Kt=e=>{if(e<0)return 0;let t=Math.pow(e,1/Ma);return 1e4*Math.pow((ue-t)/(ce*t-pe),1/de)},Ut=e=>e/203,wa=({j:e,a:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=(e+mo)/(.44+.56*(e+mo)),a=Kt(o+.13860504*t+.058047316*r),i=Kt(o-.13860504*t-.058047316*r),l=Kt(o-.096019242*t-.8118919*r),d={mode:"xyz65",x:Ut(1.661373024652174*a-.914523081304348*i+.23136208173913045*l),y:Ut(-.3250758611844533*a+1.571847026732543*i-.21825383453227928*l),z:Ut(-.090982811*a-.31272829*i+1.5227666*l)};return n!==void 0&&(d.alpha=n),d},ot=wa;var Ta=e=>{let t=rt(I(e));return e.r===e.b&&e.b===e.g&&(t.a=t.b=0),t},nt=Ta;var ka=e=>P(ot(e)),at=ka;var za={mode:"jab",channels:["j","a","b","alpha"],parse:["--jzazbz"],serialize:"--jzazbz",fromMode:{rgb:nt,xyz65:rt},toMode:{rgb:at,xyz65:ot},ranges:{j:[0,.222],a:[-.109,.129],b:[-.185,.134]},interpolate:{j:f,a:f,b:f,alpha:{use:f,fixup:m}}},ho=za;var La=({j:e,a:t,b:r,alpha:n})=>{t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.sqrt(t*t+r*r),a={mode:"jch",j:e,c:o};return o&&(a.h=x(Math.atan2(r,t)*180/Math.PI)),n!==void 0&&(a.alpha=n),a},Vt=La;var Ra=({j:e,c:t,h:r,alpha:n})=>{r===void 0&&(r=0);let o={mode:"jab",j:e,a:t?t*Math.cos(r/180*Math.PI):0,b:t?t*Math.sin(r/180*Math.PI):0};return n!==void 0&&(o.alpha=n),o},Qt=Ra;var Xa={mode:"jch",parse:["--jzczhz"],serialize:"--jzczhz",toMode:{jab:Qt,rgb:e=>at(Qt(e))},fromMode:{rgb:e=>Vt(nt(e)),jab:Vt},channels:["j","c","h","alpha"],ranges:{j:[0,.221],c:[0,.19],h:[0,360]},interpolate:{h:{use:f,fixup:L},c:f,j:f,alpha:{use:f,fixup:m}},difference:{h:F},average:{h:R}},bo=Xa;var Q=Math.pow(29,3)/Math.pow(3,3),me=Math.pow(6,3)/Math.pow(29,3);var er=e=>Math.pow(e,3)>me?Math.pow(e,3):(116*e-16)/Q,Ha=({l:e,a:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=(e+16)/116,a=t/500+o,i=o-r/200,l={mode:"xyz50",x:er(a)*w.X,y:er(o)*w.Y,z:er(i)*w.Z};return n!==void 0&&(l.alpha=n),l},he=Ha;var _a=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=$({r:e*3.1341359569958707-t*1.6173863321612538-.4906619460083532*r,g:e*-.978795502912089+t*1.916254567259524+.03344273116131949*r,b:e*.07195537988411677-t*.2289768264158322+1.405386058324125*r});return n!==void 0&&(o.alpha=n),o},D=_a;var Sa=e=>D(he(e)),it=Sa;var Ia=e=>{let{r:t,g:r,b:n,alpha:o}=q(e),a={mode:"xyz50",x:.436065742824811*t+.3851514688337912*r+.14307845442264197*n,y:.22249319175623702*t+.7168870538238823*r+.06061979053616537*n,z:.013923904500943465*t+.09708128566574634*r+.7140993584005155*n};return o!==void 0&&(a.alpha=o),a},j=Ia;var tr=e=>e>me?Math.cbrt(e):(Q*e+16)/116,Pa=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=tr(e/w.X),a=tr(t/w.Y),i=tr(r/w.Z),l={mode:"lab",l:116*a-16,a:500*(o-a),b:200*(a-i)};return n!==void 0&&(l.alpha=n),l},be=Pa;var Ca=e=>{let t=be(j(e));return e.r===e.b&&e.b===e.g&&(t.a=t.b=0),t},lt=Ca;function Oa(e,t){if(!t||t[0]!=="lab")return;let r={mode:"lab"},[,n,o,a,i]=t;if(!(n.type===s.Hue||o.type===s.Hue||a.type===s.Hue))return n.type!==s.None&&(r.l=Math.min(Math.max(0,n.value),100)),o.type!==s.None&&(r.a=o.type===s.Number?o.value:o.value*125/100),a.type!==s.None&&(r.b=a.type===s.Number?a.value:a.value*125/100),i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var go=Oa;var Na={mode:"lab",toMode:{xyz50:he,rgb:it},fromMode:{xyz50:be,rgb:lt},channels:["l","a","b","alpha"],ranges:{l:[0,100],a:[-100,100],b:[-100,100]},parse:[go],serialize:e=>`lab(${e.l!==void 0?e.l:"none"} ${e.a!==void 0?e.a:"none"} ${e.b!==void 0?e.b:"none"}${e.alpha<1?` / ${e.alpha}`:""})`,interpolate:{l:f,a:f,b:f,alpha:{use:f,fixup:m}}},ge=Na;var qa=M(y({},ge),{mode:"lab65",parse:["--lab-d65"],serialize:"--lab-d65",toMode:{xyz65:Fe,rgb:U},fromMode:{xyz65:Ke,rgb:V},ranges:{l:[0,100],a:[-86.182,98.234],b:[-107.86,94.477]}}),xo=qa;function $a(e,t){if(!t||t[0]!=="lch")return;let r={mode:"lch"},[,n,o,a,i]=t;if(n.type!==s.None){if(n.type===s.Hue)return;r.l=Math.min(Math.max(0,n.value),100)}if(o.type!==s.None&&(r.c=Math.max(0,o.type===s.Number?o.value:o.value*150/100)),a.type!==s.None){if(a.type===s.Percentage)return;r.h=a.value}return i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var vo=$a;var Aa={mode:"lch",toMode:{lab:O,rgb:e=>it(O(e))},fromMode:{rgb:e=>C(lt(e)),lab:C},channels:["l","c","h","alpha"],ranges:{l:[0,100],c:[0,150],h:[0,360]},parse:[vo],serialize:e=>`lch(${e.l!==void 0?e.l:"none"} ${e.c!==void 0?e.c:"none"} ${e.h!==void 0?e.h:"none"}${e.alpha<1?` / ${e.alpha}`:""})`,interpolate:{h:{use:f,fixup:L},c:f,l:f,alpha:{use:f,fixup:m}},difference:{h:F},average:{h:R}},xe=Aa;var Da=M(y({},xe),{mode:"lch65",parse:["--lch-d65"],serialize:"--lch-d65",toMode:{lab65:e=>O(e,"lab65"),rgb:e=>U(O(e,"lab65"))},fromMode:{rgb:e=>C(V(e),"lch65"),lab65:e=>C(e,"lch65")},ranges:{l:[0,100],c:[0,133.807],h:[0,360]}}),yo=Da;var ja=({l:e,u:t,v:r,alpha:n})=>{t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.sqrt(t*t+r*r),a={mode:"lchuv",l:e,c:o};return o&&(a.h=x(Math.atan2(r,t)*180/Math.PI)),n!==void 0&&(a.alpha=n),a},rr=ja;var Ja=({l:e,c:t,h:r,alpha:n})=>{r===void 0&&(r=0);let o={mode:"luv",l:e,u:t?t*Math.cos(r/180*Math.PI):0,v:t?t*Math.sin(r/180*Math.PI):0};return n!==void 0&&(o.alpha=n),o},or=Ja;var Mo=(e,t,r)=>4*e/(e+15*t+3*r),wo=(e,t,r)=>9*t/(e+15*t+3*r),Ea=Mo(w.X,w.Y,w.Z),Ya=wo(w.X,w.Y,w.Z),Wa=e=>e<=me?Q*e:116*Math.cbrt(e)-16,Ga=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Wa(t/w.Y),a=Mo(e,t,r),i=wo(e,t,r);!isFinite(a)||!isFinite(i)?o=a=i=0:(a=13*o*(a-Ea),i=13*o*(i-Ya));let l={mode:"luv",l:o,u:a,v:i};return n!==void 0&&(l.alpha=n),l},Ne=Ga;var Za=(e,t,r)=>4*e/(e+15*t+3*r),Ba=(e,t,r)=>9*t/(e+15*t+3*r),Fa=Za(w.X,w.Y,w.Z),Ka=Ba(w.X,w.Y,w.Z),Ua=({l:e,u:t,v:r,alpha:n})=>{if(e===void 0&&(e=0),e===0)return{mode:"xyz50",x:0,y:0,z:0};t===void 0&&(t=0),r===void 0&&(r=0);let o=t/(13*e)+Fa,a=r/(13*e)+Ka,i=w.Y*(e<=8?e/Q:Math.pow((e+16)/116,3)),l=i*(9*o)/(4*a),d=i*(12-3*o-20*a)/(4*a),p={mode:"xyz50",x:l,y:i,z:d};return n!==void 0&&(p.alpha=n),p},qe=Ua;var Va=e=>rr(Ne(j(e))),Qa=e=>D(qe(or(e))),ei={mode:"lchuv",toMode:{luv:or,rgb:Qa},fromMode:{rgb:Va,luv:rr},channels:["l","c","h","alpha"],parse:["--lchuv"],serialize:"--lchuv",ranges:{l:[0,100],c:[0,176.956],h:[0,360]},interpolate:{h:{use:f,fixup:L},c:f,l:f,alpha:{use:f,fixup:m}},difference:{h:F},average:{h:R}},To=ei;var ti=M(y({},N),{mode:"lrgb",toMode:{rgb:$},fromMode:{rgb:q},parse:["srgb-linear"],serialize:"srgb-linear"}),ko=ti;var ri={mode:"luv",toMode:{xyz50:qe,rgb:e=>D(qe(e))},fromMode:{xyz50:Ne,rgb:e=>Ne(j(e))},channels:["l","u","v","alpha"],parse:["--luv"],serialize:"--luv",ranges:{l:[0,100],u:[-84.936,175.042],v:[-125.882,87.243]},interpolate:{l:f,u:f,v:f,alpha:{use:f,fixup:m}}},zo=ri;var oi=({r:e,g:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.cbrt(.41222147079999993*e+.5363325363*t+.0514459929*r),a=Math.cbrt(.2119034981999999*e+.6806995450999999*t+.1073969566*r),i=Math.cbrt(.08830246189999998*e+.2817188376*t+.6299787005000002*r),l={mode:"oklab",l:.2104542553*o+.793617785*a-.0040720468*i,a:1.9779984951*o-2.428592205*a+.4505937099*i,b:.0259040371*o+.7827717662*a-.808675766*i};return n!==void 0&&(l.alpha=n),l},st=oi;var ni=e=>{let t=st(q(e));return e.r===e.b&&e.b===e.g&&(t.a=t.b=0),t},ee=ni;var ai=({l:e,a:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=Math.pow(e*.9999999984505198+.39633779217376786*t+.2158037580607588*r,3),a=Math.pow(e*1.0000000088817609-.10556134232365635*t-.06385417477170591*r,3),i=Math.pow(e*1.0000000546724108-.08948418209496575*t-1.2914855378640917*r,3),l={mode:"lrgb",r:4.076741661347994*o-3.307711590408193*a+.230969928729428*i,g:-1.2684380040921763*o+2.6097574006633715*a-.3413193963102197*i,b:-.004196086541837188*o-.7034186144594493*a+1.7076147009309444*i};return n!==void 0&&(l.alpha=n),l},J=ai;var ii=e=>$(J(e)),te=ii;function $e(e){let n=1.170873786407767;return .5*(n*e-.206+Math.sqrt((n*e-.206)*(n*e-.206)+4*.03*n*e))}function ie(e){return(e*e+.206*e)/(1.170873786407767*(e+.03))}function li(e,t){let r,n,o,a,i,l,d,p;-1.88170328*e-.80936493*t>1?(r=1.19086277,n=1.76576728,o=.59662641,a=.75515197,i=.56771245,l=4.0767416621,d=-3.3077115913,p=.2309699292):1.81444104*e-1.19445276*t>1?(r=.73956515,n=-.45954404,o=.08285427,a=.1254107,i=.14503204,l=-1.2684380046,d=2.6097574011,p=-.3413193965):(r=1.35733652,n=-.00915799,o=-1.1513021,a=-.50559606,i=.00692167,l=-.0041960863,d=-.7034186147,p=1.707614701);let c=r+n*e+o*t+a*e*e+i*e*t,b=.3963377774*e+.2158037573*t,h=-.1055613458*e-.0638541728*t,v=-.0894841775*e-1.291485548*t;{let k=1+c*b,X=1+c*h,z=1+c*v,S=k*k*k,H=X*X*X,W=z*z*z,ye=3*b*k*k,Me=3*h*X*X,we=3*v*z*z,Te=6*b*b*k,ke=6*h*h*X,ze=6*v*v*z,le=l*S+d*H+p*W,re=l*ye+d*Me+p*we,Le=l*Te+d*ke+p*ze;c=c-le*re/(re*re-.5*le*Le)}return c}function nr(e,t){let r=li(e,t),n=J({l:1,a:r*e,b:r*t}),o=Math.cbrt(1/Math.max(n.r,n.g,n.b)),a=o*r;return[o,a]}function si(e,t,r,n,o,a=null){a||(a=nr(e,t));let i;if((r-o)*a[1]-(a[0]-o)*n<=0)i=a[1]*o/(n*a[0]+a[1]*(o-r));else{i=a[1]*(o-1)/(n*(a[0]-1)+a[1]*(o-r));{let l=r-o,d=n,p=.3963377774*e+.2158037573*t,c=-.1055613458*e-.0638541728*t,b=-.0894841775*e-1.291485548*t,h=l+d*p,v=l+d*c,k=l+d*b;{let X=o*(1-i)+i*r,z=i*n,S=X+z*p,H=X+z*c,W=X+z*b,ye=S*S*S,Me=H*H*H,we=W*W*W,Te=3*h*S*S,ke=3*v*H*H,ze=3*k*W*W,le=6*h*h*S,re=6*v*v*H,Le=6*k*k*W,vr=4.0767416621*ye-3.3077115913*Me+.2309699292*we-1,bt=4.0767416621*Te-3.3077115913*ke+.2309699292*ze,Ko=4.0767416621*le-3.3077115913*re+.2309699292*Le,yr=bt/(bt*bt-.5*vr*Ko),gt=-vr*yr,Mr=-1.2684380046*ye+2.6097574011*Me-.3413193965*we-1,xt=-1.2684380046*Te+2.6097574011*ke-.3413193965*ze,Uo=-1.2684380046*le+2.6097574011*re-.3413193965*Le,wr=xt/(xt*xt-.5*Mr*Uo),vt=-Mr*wr,Tr=-.0041960863*ye-.7034186147*Me+1.707614701*we-1,yt=-.0041960863*Te-.7034186147*ke+1.707614701*ze,Vo=-.0041960863*le-.7034186147*re+1.707614701*Le,kr=yt/(yt*yt-.5*Tr*Vo),Mt=-Tr*kr;gt=yr>=0?gt:1e6,vt=wr>=0?vt:1e6,Mt=kr>=0?Mt:1e6,i+=Math.min(gt,Math.min(vt,Mt))}}}return i}function Ae(e,t,r=null){r||(r=nr(e,t));let n=r[0],o=r[1];return[o/n,o/(1-n)]}function ft(e,t,r){let n=nr(t,r),o=si(t,r,e,1,e,n),a=Ae(t,r,n),i=.11516993+1/(7.4477897+4.1590124*r+t*(-2.19557347+1.75198401*r+t*(-2.13704948-10.02301043*r+t*(-4.24894561+5.38770819*r+4.69891013*t)))),l=.11239642+1/(1.6132032-.68124379*r+t*(.40370612+.90148123*r+t*(-.27087943+.6122399*r+t*(.00299215-.45399568*r-.14661872*t)))),d=o/Math.min(e*a[0],(1-e)*a[1]),p=e*i,c=(1-e)*l,b=.9*d*Math.sqrt(Math.sqrt(1/(1/(p*p*p*p)+1/(c*c*c*c))));return p=e*.4,c=(1-e)*.8,[Math.sqrt(1/(1/(p*p)+1/(c*c))),b,o]}function dt(e){let t=e.l!==void 0?e.l:0,r=e.a!==void 0?e.a:0,n=e.b!==void 0?e.b:0,o={mode:"okhsl",l:$e(t)};e.alpha!==void 0&&(o.alpha=e.alpha);let a=Math.sqrt(r*r+n*n);if(!a)return o.s=0,o;let[i,l,d]=ft(t,r/a,n/a),p;if(a<l){let c=0,b=.8*i,h=1-b/l;p=(a-c)/(b+h*(a-c))*.8}else{let c=l,b=.2*l*l*1.25*1.25/i,h=1-b/(d-l);p=.8+.2*((a-c)/(b+h*(a-c)))}return p&&(o.s=p,o.h=x(Math.atan2(n,r)*180/Math.PI)),o}function ut(e){let t=e.h!==void 0?e.h:0,r=e.s!==void 0?e.s:0,n=e.l!==void 0?e.l:0,o={mode:"oklab",l:ie(n)};if(e.alpha!==void 0&&(o.alpha=e.alpha),!r||n===1)return o.a=o.b=0,o;let a=Math.cos(t/180*Math.PI),i=Math.sin(t/180*Math.PI),[l,d,p]=ft(o.l,a,i),c,b,h,v;r<.8?(c=1.25*r,b=0,h=.8*l,v=1-h/d):(c=5*(r-.8),b=d,h=.2*d*d*1.25*1.25/l,v=1-h/(p-d));let k=b+c*h/(1-v*c);return o.a=k*a,o.b=k*i,o}var fi=M(y({},Ve),{mode:"okhsl",channels:["h","s","l","alpha"],parse:["--okhsl"],serialize:"--okhsl",fromMode:{oklab:dt,rgb:e=>dt(ee(e))},toMode:{oklab:ut,rgb:e=>te(ut(e))}}),Lo=fi;function pt(e){let t=e.l!==void 0?e.l:0,r=e.a!==void 0?e.a:0,n=e.b!==void 0?e.b:0,o=Math.sqrt(r*r+n*n),a=o?r/o:1,i=o?n/o:1,[l,d]=Ae(a,i),p=.5,c=1-p/l,b=d/(o+t*d),h=b*t,v=b*o,k=ie(h),X=v*k/h,z=J({l:k,a:a*X,b:i*X}),S=Math.cbrt(1/Math.max(z.r,z.g,z.b,0));t=t/S,o=o/S*$e(t)/t,t=$e(t);let H={mode:"okhsv",s:o?(p+d)*v/(d*p+d*c*v):0,v:t?t/h:0};return H.s&&(H.h=x(Math.atan2(n,r)*180/Math.PI)),e.alpha!==void 0&&(H.alpha=e.alpha),H}function ct(e){let t={mode:"oklab"};e.alpha!==void 0&&(t.alpha=e.alpha);let r=e.h!==void 0?e.h:0,n=e.s!==void 0?e.s:0,o=e.v!==void 0?e.v:0,a=Math.cos(r/180*Math.PI),i=Math.sin(r/180*Math.PI),[l,d]=Ae(a,i),p=.5,c=1-p/l,b=1-n*p/(p+d-d*c*n),h=n*d*p/(p+d-d*c*n),v=ie(b),k=h*v/b,X=J({l:v,a:a*k,b:i*k}),z=Math.cbrt(1/Math.max(X.r,X.g,X.b,0)),S=ie(o*b),H=h*S/b;return t.l=S*z,t.a=H*a*z,t.b=H*i*z,t}var di=M(y({},Qe),{mode:"okhsv",channels:["h","s","v","alpha"],parse:["--okhsv"],serialize:"--okhsv",fromMode:{oklab:pt,rgb:e=>pt(ee(e))},toMode:{oklab:ct,rgb:e=>te(ct(e))}}),Ro=di;function ui(e,t){if(!t||t[0]!=="oklab")return;let r={mode:"oklab"},[,n,o,a,i]=t;if(!(n.type===s.Hue||o.type===s.Hue||a.type===s.Hue))return n.type!==s.None&&(r.l=Math.min(Math.max(0,n.type===s.Number?n.value:n.value/100),1)),o.type!==s.None&&(r.a=o.type===s.Number?o.value:o.value*.4/100),a.type!==s.None&&(r.b=a.type===s.Number?a.value:a.value*.4/100),i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var Xo=ui;var pi=M(y({},ge),{mode:"oklab",toMode:{lrgb:J,rgb:te},fromMode:{lrgb:st,rgb:ee},ranges:{l:[0,1],a:[-.4,.4],b:[-.4,.4]},parse:[Xo],serialize:e=>`oklab(${e.l!==void 0?e.l:"none"} ${e.a!==void 0?e.a:"none"} ${e.b!==void 0?e.b:"none"}${e.alpha<1?` / ${e.alpha}`:""})`}),Ho=pi;function ci(e,t){if(!t||t[0]!=="oklch")return;let r={mode:"oklch"},[,n,o,a,i]=t;if(n.type!==s.None){if(n.type===s.Hue)return;r.l=Math.min(Math.max(0,n.type===s.Number?n.value:n.value/100),1)}if(o.type!==s.None&&(r.c=Math.max(0,o.type===s.Number?o.value:o.value*.4/100)),a.type!==s.None){if(a.type===s.Percentage)return;r.h=a.value}return i.type!==s.None&&(r.alpha=Math.min(1,Math.max(0,i.type===s.Number?i.value:i.value/100))),r}var _o=ci;var mi=M(y({},xe),{mode:"oklch",toMode:{oklab:e=>O(e,"oklab"),rgb:e=>te(O(e,"oklab"))},fromMode:{rgb:e=>C(ee(e),"oklch"),oklab:e=>C(e,"oklch")},parse:[_o],serialize:e=>`oklch(${e.l!==void 0?e.l:"none"} ${e.c!==void 0?e.c:"none"} ${e.h!==void 0?e.h:"none"}${e.alpha<1?` / ${e.alpha}`:""})`,ranges:{l:[0,1],c:[0,.4],h:[0,360]}}),So=mi;var hi=e=>{let{r:t,g:r,b:n,alpha:o}=q(e),a={mode:"xyz65",x:.486570948648216*t+.265667693169093*r+.1982172852343625*n,y:.2289745640697487*t+.6917385218365062*r+.079286914093745*n,z:0*t+.0451133818589026*r+1.043944368900976*n};return o!==void 0&&(a.alpha=o),a},ar=hi;var bi=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=$({r:e*2.4934969119414263-t*.9313836179191242-.402710784450717*r,g:e*-.8294889695615749+t*1.7626640603183465+.0236246858419436*r,b:e*.0358458302437845-t*.0761723892680418+.9568845240076871*r},"p3");return n!==void 0&&(o.alpha=n),o},ir=bi;var gi=M(y({},N),{mode:"p3",parse:["display-p3"],serialize:"display-p3",fromMode:{rgb:e=>ir(I(e)),xyz65:ir},toMode:{rgb:e=>P(ar(e)),xyz65:ar}}),Io=gi;var lr=e=>{let t=Math.abs(e);return t>=.001953125?Math.sign(e)*Math.pow(t,.5555555555555556):16*e},xi=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o={mode:"prophoto",r:lr(e*1.3457868816471585-t*.2555720873797946-.0511018649755453*r),g:lr(e*-.5446307051249019+t*1.5082477428451466+.0205274474364214*r),b:lr(e*0+t*0+1.2119675456389452*r)};return n!==void 0&&(o.alpha=n),o},sr=xi;var fr=(e=0)=>{let t=Math.abs(e);return t>=.03125?Math.sign(e)*Math.pow(t,1.8):e/16},vi=e=>{let t=fr(e.r),r=fr(e.g),n=fr(e.b),o={mode:"xyz50",x:.7977666449006423*t+.1351812974005331*r+.0313477341283922*n,y:.2880748288194013*t+.7118352342418731*r+899369387256e-16*n,z:0*t+0*r+.8251046025104602*n};return e.alpha!==void 0&&(o.alpha=e.alpha),o},dr=vi;var yi=M(y({},N),{mode:"prophoto",parse:["prophoto-rgb"],serialize:"prophoto-rgb",fromMode:{xyz50:sr,rgb:e=>sr(j(e))},toMode:{xyz50:dr,rgb:e=>D(dr(e))}}),Po=yi;var Co=1.09929682680944,Mi=.018053968510807,ur=e=>{let t=Math.abs(e);return t>Mi?(Math.sign(e)||1)*(Co*Math.pow(t,.45)-(Co-1)):4.5*e},wi=({x:e,y:t,z:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o={mode:"rec2020",r:ur(e*1.7166511879712683-t*.3556707837763925-.2533662813736599*r),g:ur(e*-.6666843518324893+t*1.6164812366349395+.0157685458139111*r),b:ur(e*.0176398574453108-t*.0427706132578085+.9421031212354739*r)};return n!==void 0&&(o.alpha=n),o},pr=wi;var Oo=1.09929682680944,Ti=.018053968510807,cr=(e=0)=>{let t=Math.abs(e);return t<Ti*4.5?e/4.5:(Math.sign(e)||1)*Math.pow((t+Oo-1)/Oo,1/.45)},ki=e=>{let t=cr(e.r),r=cr(e.g),n=cr(e.b),o={mode:"xyz65",x:.6369580483012911*t+.1446169035862083*r+.1688809751641721*n,y:.262700212011267*t+.6779980715188708*r+.059301716469862*n,z:0*t+.0280726930490874*r+1.0609850577107909*n};return e.alpha!==void 0&&(o.alpha=e.alpha),o},mr=ki;var zi=M(y({},N),{mode:"rec2020",fromMode:{xyz65:pr,rgb:e=>pr(I(e))},toMode:{xyz65:mr,rgb:e=>P(mr(e))},parse:["rec2020"],serialize:"rec2020"}),No=zi;var Y=.0037930732552754493,mt=Math.cbrt(Y);var hr=e=>Math.cbrt(e)-mt,Li=e=>{let{r:t,g:r,b:n,alpha:o}=q(e),a=hr(.3*t+.622*r+.078*n+Y),i=hr(.23*t+.692*r+.078*n+Y),l=hr(.2434226892454782*t+.2047674442449682*r+.5518098665095535*n+Y),d={mode:"xyb",x:(a-i)/2,y:(a+i)/2,b:l-(a+i)/2};return o!==void 0&&(d.alpha=o),d},qo=Li;var br=e=>Math.pow(e+mt,3),Ri=({x:e,y:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o=br(e+t)-Y,a=br(t-e)-Y,i=br(r+t)-Y,l=$({r:11.031566904639861*o-9.866943908131562*a-.16462299650829934*i,g:-3.2541473810744237*o+4.418770377582723*a-.16462299650829934*i,b:-3.6588512867136815*o+2.7129230459360922*a+1.9459282407775895*i});return n!==void 0&&(l.alpha=n),l},$o=Ri;var Xi={mode:"xyb",channels:["x","y","b","alpha"],parse:["--xyb"],serialize:"--xyb",toMode:{rgb:$o},fromMode:{rgb:qo},ranges:{x:[-.0154,.0281],y:[0,.8453],b:[-.2778,.388]},interpolate:{x:f,y:f,b:f,alpha:{use:f,fixup:m}}},Ao=Xi;var Hi={mode:"xyz50",parse:["xyz-d50"],serialize:"xyz-d50",toMode:{rgb:D,lab:be},fromMode:{rgb:j,lab:he},channels:["x","y","z","alpha"],ranges:{x:[0,.964],y:[0,.999],z:[0,.825]},interpolate:{x:f,y:f,z:f,alpha:{use:f,fixup:m}}},Do=Hi;var _i=e=>{let{x:t,y:r,z:n,alpha:o}=e;t===void 0&&(t=0),r===void 0&&(r=0),n===void 0&&(n=0);let a={mode:"xyz50",x:1.0479298208405488*t+.0229467933410191*r-.0501922295431356*n,y:.0296278156881593*t+.990434484573249*r-.0170738250293851*n,z:-.0092430581525912*t+.0150551448965779*r+.7518742899580008*n};return o!==void 0&&(a.alpha=o),a},jo=_i;var Si=e=>{let{x:t,y:r,z:n,alpha:o}=e;t===void 0&&(t=0),r===void 0&&(r=0),n===void 0&&(n=0);let a={mode:"xyz65",x:.9554734527042182*t-.0230985368742614*r+.0632593086610217*n,y:-.0283697069632081*t+1.0099954580058226*r+.021041398966943*n,z:.0123140016883199*t-.0205076964334779*r+1.3303659366080753*n};return o!==void 0&&(a.alpha=o),a},Jo=Si;var Ii={mode:"xyz65",toMode:{rgb:P,xyz50:jo},fromMode:{rgb:I,xyz50:Jo},ranges:{x:[0,.95],y:[0,1],z:[0,1.088]},channels:["x","y","z","alpha"],parse:["xyz","xyz-d65"],serialize:"xyz-d65",interpolate:{x:f,y:f,z:f,alpha:{use:f,fixup:m}}},Eo=Ii;var Pi=({r:e,g:t,b:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o={mode:"yiq",y:.29889531*e+.58662247*t+.11448223*r,i:.59597799*e-.2741761*t-.32180189*r,q:.21147017*e-.52261711*t+.31114694*r};return n!==void 0&&(o.alpha=n),o},Yo=Pi;var Ci=({y:e,i:t,q:r,alpha:n})=>{e===void 0&&(e=0),t===void 0&&(t=0),r===void 0&&(r=0);let o={mode:"rgb",r:e+.95608445*t+.6208885*r,g:e-.27137664*t-.6486059*r,b:e-1.10561724*t+1.70250126*r};return n!==void 0&&(o.alpha=n),o},Wo=Ci;var Oi={mode:"yiq",toMode:{rgb:Wo},fromMode:{rgb:Yo},channels:["y","i","q","alpha"],parse:["--yiq"],serialize:"--yiq",ranges:{i:[-.595,.595],q:[-.522,.522]},interpolate:{y:f,i:f,q:f,alpha:{use:f,fixup:m}}},Go=Oi;function gr(e){let t=Z("lrgb")(e);return .2126*t.r+.7152*t.g+.0722*t.b}function ht(e,t){let r=gr(e),n=gr(t);return(Math.max(r,n)+.05)/(Math.min(r,n)+.05)}var bm=g(Wr),gm=g(eo),xm=g(oo),vm=g(no),ym=g(ao),Mm=g(Ve),wm=g(Qe),Tm=g(uo),km=g(co),zm=g(ho),Lm=g(bo),Rm=g(ge),Xm=g(xo),Hm=g(xe),_m=g(yo),Sm=g(To),Im=g(ko),Pm=g(zo),Cm=g(Lo),Om=g(Ro),Nm=g(Ho),qm=g(So),$m=g(Io),Am=g(Po),Dm=g(No),jm=g(N),Jm=g(Ao),Em=g(Do),Ym=g(Eo),Wm=g(Go);var Zo={descriptions:[{criteria:{hsl:{h:null,s:[.75,1],l:[.4,.55]}},descriptive:["saturated","strong","lush","ablaze","beaming","bold","brilliant","flamboyant","vibrant","vivid","loud"]},{criteria:{hsl:{h:null,s:null,l:[0,.07]}},descriptive:["dark","ashy","somber","bleak","muddy","sooty"]},{criteria:{hsl:{h:null,s:null,l:[0,.3]}},descriptive:["dark","dim","gloomy","dull"]},{criteria:{hsl:{h:null,s:[.1,.7],l:[.15,.5]}},descriptive:["bleak","muted","matte","dusty"]},{criteria:{hsl:{h:null,s:[.12,1],l:[.7,1]}},descriptive:["tinted"]},{criteria:{hsl:{h:null,s:[.2,1],l:[.75,.95]}},descriptive:["pastel"]},{criteria:{hsl:{h:null,s:null,l:[.88,1]}},descriptive:["pale","light","faded","delicate","glistening","bleached"]},{criteria:{hsl:{h:null,s:[.5,1],l:[.7,.9]}},descriptive:["fresh","sparkling","glittering","glowing","jazzy","opalescent"]},{criteria:{hsl:{h:null,s:null,l:[.9,1]}},descriptive:["neutral"]},{criteria:{hsl:{h:null,s:[.74,1],l:[.9,1]}},descriptive:["muted"]},{criteria:{hsl:{h:null,s:null,l:1}},descriptive:["colorless","bright","brilliant","high"]},{criteria:{hsl:{h:null,s:null,l:0}},descriptive:["colorless","low","dark"]},{criteria:{hsl:{h:null,s:[0,.01],l:null}},descriptive:["colorless","neutral"]},{criteria:{hsl:{h:null,s:null,l:[.01,.3]}},descriptive:["shady"]},{criteria:{hsl:{h:null,s:[0,.4],l:null}},descriptive:["ashy","dusty"]},{criteria:{hsl:{h:null,s:null,l:[.01,.08]}},descriptive:["almost black"]},{criteria:{hsl:{h:null,s:null,l:[0,.02]}},descriptive:["black"]},{criteria:{hsl:{h:null,s:null,l:[0,.09]}},descriptive:["very dark"]},{criteria:{hsl:{h:null,s:[0,.4],l:[0,.22]}},descriptive:["dark"]},{criteria:{hsl:{h:null,s:[.1,.4],l:[0,.6]}},descriptive:["dark","inky","dim","gloomy"]},{criteria:{hsl:{h:null,s:[0,.04],l:[.1,.99]}},descriptive:["grey"],nouns:["grey"],description:["Grey is a color often linked with neutrality, balance, and calm. It sits between black and white on the color spectrum, giving it a muted, understated quality. When you think of grey, you might picture misty mornings, smooth stone, or the quiet stillness of a cloudy day. It's a versatile color, fitting equally well in minimalist designs or more somber settings. Grey can evoke feelings of tranquility, contemplation, and sophistication. Close your eyes and imagine grey\u2014it might appear as a soft shadow or a subtle haze that wraps the world in a calm, muted tone."]},{criteria:{hsl:{h:null,s:[.04,.1],l:[.17,.99]}},descriptive:["almost grey"]},{criteria:{hsl:{h:null,s:[.1,.3],l:[.17,.99]}},descriptive:["very unsaturated"]},{criteria:{hsl:{h:null,s:[.3,.46],l:null}},descriptive:["unsaturated"]},{criteria:{hsl:{h:null,s:[.46,.6],l:[.4,.55]}},descriptive:["rather unsaturated"]},{criteria:{hsl:{h:null,s:[.601,.8],l:[.45,.6]}},descriptive:["saturated"]},{criteria:{hsl:{h:null,s:[.801,.94],l:[.45,.6]}},descriptive:["rather saturated"]},{criteria:{hsl:{h:null,s:[.941,1],l:[.45,.6]}},descriptive:["very saturated"]},{criteria:{hsl:{h:[0,90],s:[.3,1],l:[.1,1]}},descriptive:["warm","mellow"]},{criteria:{hsl:{h:[270,360],s:[.3,1],l:[.1,1]}},descriptive:["warm","mellow"]},{criteria:{hsl:{h:[90.01,269.99],s:null,l:[.1,1]}},descriptive:["cold","cool"]},{criteria:{hsl:{h:null,s:null,l:[.98,1]}},nouns:["white"],description:["White is a color that is often associated with purity, innocence, and cleanliness. It is the lightest color on the visible spectrum and is often described as having a bright, luminous quality. When you think of white, you might imagine a freshly fallen snow, a blank canvas, or a cloudless sky. It is a versatile color that can be used in a wide range of settings and contexts, from formal to casual. If you close your eyes and picture white, you might imagine a bright, radiant light that illuminates everything around it."],meanings:["purity","cleanliness","simplicity","innocence","freshness","light","goodness","virtue","safety","peace","tranquility","wholeness","perfection","honesty","truth","sincerity"],usage:["health","hospital","sanitary"]},{criteria:{hsl:{h:null,s:null,l:[0,.08]}},nouns:["black"],description:["Black is a color that is often associated with power, elegance, and sophistication. It is a color that is often used to create a sense of mystery, depth, and contrast, and it is often described as a color that can be both bold and elegant. In art and design, black is often used to create a sense of sophistication and drama, and it is often used in fashion to create a sense of sophistication and refinement."],meanings:["power","control","authority","discipline","discretion","secrecy","elegance","mystery"],usage:["intimidate","create fear","authority","luxury"]},{criteria:{hsl:{h:[0,15],s:[.1,1],l:[.07,.99]}},descriptive:["red","reddish"],nouns:["red"],description:["Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages."],meanings:["excitement","energy","passion","courage","attention","lust","power","love","speed","anger","lust","excitement","danger","ferocity","violence","fury","anger","vigor","urgency"],usage:["stimulate","create urgency","draw attention","caution","encourage","excite"]},{criteria:{hsl:{h:[15,45],s:[.1,1],l:[.4,.99]}},descriptive:["orange"],nouns:["orange"],description:["Orange is a vibrant and playful color that is often associated with creativity, energy, and warmth. It is a secondary color that is made by combining red and yellow, and it is often described as a warm and friendly color that can be both invigorating and calming. It is often associated with joy, enthusiasm, and warmth, and it is often used in art and design to create a sense of excitement and playfulness."],meanings:["optimism","independence","adventure","creativity","fun"],usage:["stimulate","draw attention","express freedom","fascinate"]},{criteria:{hsl:{h:[15,45],s:[.1,1],l:[.07,.4]}},descriptive:["brown"],nouns:["brown"],description:["Brown is a warm and earthy color that is often associated with nature, stability, and reliability. It is a secondary color that is made by combining red, blue, and yellow in different proportions, and it is often described as a rich and luxurious color that can be both comforting and grounding. It is often associated with wood, soil, and the natural world, and it is often used in art and design to create a sense of warmth and permanence."],meanings:["strength","reliability","resilience","loneliness","sadness","isolation","warmth","comfort","security"],usage:["agriculture","legal","food","tobacco","alcohol"]},{criteria:{hsl:{h:[45,70],s:[.1,1],l:[.07,.99]}},descriptive:["yellow"],nouns:["yellow"],description:["Yellow is a bright and cheerful color that is often associated with sunshine, happiness, and warmth. It is a primary color that is made by combining red and green light, and it is usually described as a warm and vibrant color that can be both calming and energizing. It is often associated with joy, happiness, and friendship, and it is often used in art and design to create a sense of cheerfulness and playfulness."],meanings:["enthusiasm","opportunity","spontaneity","happiness","positivity"],usage:["stimulate","relax","awake awareness","energize","affect mood","sale","cheap","budget","construction","convey competence"]},{criteria:{hsl:{h:[70,79],s:[.1,1],l:[.07,.99]}},descriptive:["lime"],nouns:["lime"],description:["Lime is a bright, vibrant color that is often associated with freshness, energy, and youth. It is a pale shade of green that is similar to chartreuse, but it is slightly lighter and more vibrant. Some people may associate the color lime with feelings of playfulness and excitement, while others may associate it with feelings of rejuvenation and renewal. In terms of wavelength, lime is a mixture of green and yellow light, and it is often used in art and design to create a sense of energy and vitality. Overall, lime is a lively and refreshing color that can be used to create a wide range of moods and atmospheres."],meanings:["growth","harmony","fertility","kindness","dependability"],usage:["restore energy","promote growth","awake awareness","rejuvenate","nature"]},{criteria:{hsl:{h:[79,163],s:[.1,1],l:[.07,.99]}},descriptive:["green","greenish"],nouns:["green"],description:["Green is a cool, refreshing color that is often associated with nature, growth, and freshness. It is the color of grass, leaves, and trees, and it is often used to create a sense of harmony and balance. Some people may associate the color green with feelings of jealousy or envy, while others may associate it with feelings of peace and tranquility. In terms of wavelength, green is a primary color of light, and it is located between blue and yellow on the visible light spectrum. It is often used in art and design to create a sense of growth and renewal. Overall, green is a versatile and popular color that can be used to create a wide range of moods and atmospheres."],meanings:["safety","harmony","stability","reliability","balance"],usage:["relax","ballance","revitalize","encourage","posses"]},{criteria:{hsl:{h:[163,193],s:[.1,1],l:[.07,.99]}},descriptive:["cyan"],nouns:["cyan","sky blue"],description:["Cyan is a bright, fresh color that is often associated with the ocean, the sky, and the natural world. It is a pale shade of blue that is similar to teal, but it is slightly lighter and more muted. Some people may associate the color cyan with feelings of peace and serenity, while others may associate it with feelings of youth and playfulness. In terms of wavelength, cyan is a mixture of blue and green light, and it is often used in art and design to create a sense of freshness and vitality. Overall, cyan is a versatile and refreshing color that can be used to create a wide range of moods and atmospheres."],meanings:["freedom","trust","wisdom","joy","refreshing","consciousness","stimulating"],usage:["self expression","communication","children products","technology","aerospace","entertainment","productivity"]},{criteria:{hsl:{h:[193,240],s:[.1,1],l:[.07,.99]}},descriptive:["blue","blueish"],nouns:["blue"],description:["Blue is a cool, calming color that is often associated with trust, reliability, and intelligence. It is the color of the sky and the ocean, and it is often used to create a sense of peace and tranquility. Some people may associate the color blue with feelings of sadness or melancholy, while others may associate it with feelings of calm and relaxation. In terms of wavelength, blue is a primary color of light, and it is located between green and violet on the visible light spectrum. It is often used in art and design to create a sense of balance and harmony. Overall, blue is a versatile and popular color that can be used to create a wide range of moods and atmospheres."],meanings:["trust","responsibility","honesty","loyalty","security","relying","calmness","control"],usage:["security","finance","technology","health care","accounting"]},{criteria:{hsl:{h:[240,260],s:[.1,1],l:[.07,.99]}},descriptive:["indigo"],nouns:["indigo"],description:["Indigo is a deep, rich color that is often associated with spirituality, intuition, and wisdom. It is a dark shade of blue that is similar to navy, but it is slightly lighter and more muted. Some people may associate the color indigo with feelings of calm and relaxation, while others may associate it with feelings of mystery and intrigue. In terms of wavelength, indigo is a deep blue color that is located between blue and violet on the visible light spectrum. It is often used in art and design to add a touch of depth and complexity. Overall, indigo is a beautiful and versatile color that can be used to create a wide range of moods and atmospheres."],meanings:["spirituality","structure","compassion","sensitivity","mystery","tolerance","integrity","order","wisdom","inspiration"],usage:["luxury","religion","psychic"]},{criteria:{hsl:{h:[260,270],s:[.1,1],l:[.07,.99]}},descriptive:["violet"],nouns:["violet"],description:["Violet is a rich, regal color that is often associated with luxury, royalty, and sophistication. It is a deep shade of purple that is similar to lavender, but it is slightly darker and more intense. Some people may associate the color violet with feelings of mystery and spirituality, while others may associate it with feelings of calm and tranquility. In terms of wavelength, violet is a mixture of blue and red light, and it is often used in art and design to add a touch of elegance and refinement. Overall, violet is a beautiful and sophisticated color that can be used to create a calm and peaceful atmosphere."],meanings:["spirituality","structure","compassion","sensitivity","mystery","tolerance","integrity","order","wisdom","inspiration"],usage:["luxury","religion","psychic"]},{criteria:{hsl:{h:[270,291],s:[.1,1],l:[.07,.99]}},descriptive:["purple","purplish"],nouns:["purple"],description:["Purple is a rich and vibrant color that is often associated with royalty, luxury, and creativity. It is a combination of blue and red, with more red than blue, giving it a warm and passionate quality. The shade of purple can vary from a deep, dark hue to a light, almost lavender color, and each shade can evoke different emotions and meanings. Some people may associate purple with spirituality and mysticism, while others may see it as a symbol of extravagance and decadence. In terms of wavelength, purple is located between blue and violet on the visible light spectrum and has a shorter wavelength than most other colors. Because of its striking and eye-catching nature, purple is frequently used in fashion, art, and design to add a pop of color and flair. Overall, purple is a captivating and dynamic color that can express a wide range of moods and emotions, making it a favorite among many people."],meanings:["spirituality","structure","compassion","sensitivity","mystery","tolerance","integrity","order","wisdom","inspiration"],usage:["luxury","religion","psychic","royalty"]},{criteria:{hsl:{h:[291,327],s:[.1,1],l:[.07,.99]}},descriptive:["magenta"],nouns:["magenta"],description:["Magenta is a deep, rich color that is often associated with creativity, passion, and intensity. It is a vibrant shade of pink that is similar to fuchsia, but it is slightly darker and more muted. Some people may associate the color magenta with feelings of excitement and energy, while others may associate it with feelings of love and romance. In terms of wavelength, magenta is a mixture of red and blue light, and it is often used in art and design to add a bold and striking touch. Overall, magenta is a vibrant and lively color that can be used to add drama and excitement to any setting."],meanings:["support","kind","change","harmony","kink","charm","politeness","sensitivity","tenderness","sweetness","femininity","romance","seductiveness","sexiness"],usage:["children products",,"erotica"]},{criteria:{hsl:{h:[327,344],s:[.1,1],l:[.07,.99]}},descriptive:["pink"],nouns:["pink"],description:["Pink is a light, delicate color that is often associated with femininity, romance, and sweetness. It is a pale shade of red, and it is often described as a softer, more gentle version of the color. Some people may associate the color pink with feelings of happiness and playfulness, while others may associate it with feelings of warmth and comfort. In terms of wavelength, pink is a mixture of red and white light, and it is often used in decorations and clothing to add a touch of whimsy and fun. Overall, pink is a cheerful and playful color that can be used to create a warm and inviting atmosphere."],meanings:["support","kindness","change","harmony","kink","charm","politeness","sensitivity","tenderness","sweetness","femininity","romance","seductiveness","sexiness"],usage:["children products","erotica"]},{criteria:{hsl:{h:[344,360],s:[.1,1],l:[.07,.99]}},descriptive:["red","reddish"],nouns:["red"],description:["Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages."],meanings:["excitement","energy","passion","courage","attention","lust","power","love","speed","anger","lust","excitement","danger","ferocity","violence","fury","anger","vigor","urgency"],usage:["stimulate","create urgency","draw attention","caution","encourage"]}],temperatures:[{value:1800,descriptive:["ultra warm"]},{value:2400,descriptive:["very warm"]},{value:2700,descriptive:["warm"]},{value:3e3,descriptive:["warm white"]},{value:4e3,descriptive:["cool or cold"]},{value:6500,descriptive:["cool"]}],percentWords:[{maxPercentile:.06,word:"a dash of"},{maxPercentile:.16,word:"a little bit of"},{maxPercentile:.31,word:"some"},{maxPercentile:.56,word:"a good bit of"},{maxPercentile:.71,word:"a lot of"},{maxPercentile:.86,word:"a whole lot of"},{maxPercentile:.99,word:"neatly entirely"},{maxPercentile:1,word:"entirely"}]};var Bo={rgb:Z("rgb"),hsl:Z("hsl")},Ni={rgb:["r","g","b"],cmyk:["c","m","y","k"],hsl:["h","s","l"]},E,Fo,ve,xr=class{constructor(t,r=Zo){Xr(this,E);Tt(this,"formats",{});Tt(this,"currentColor",null);this.color=t,this.descriptions=r.descriptions,this.temperatures=r.temperatures,this.percentWords=r.percentWords}set color(t){this.currentColor=oe(this,E,Fo).call(this,t);let r=Bo.rgb(this.currentColor);this.formats.rgb=r,this.formats.hsl=Bo.hsl(this.currentColor),this.formats.cmyk=Sr(r)}get color(){return this.currentColor}get temperatureWords(){let t=Hr(this.formats.rgb);return this.temperatures.reduce((r,n)=>Math.abs(n.value-t)<Math.abs(r.value-t)?n:r,{value:0})}percentages(t="rgb"){if(!["rgb","cmyk"].includes(t))throw new TypeError('Invalid color model. Use "rgb" or "cmyk" for percentages.');let r=this.formats[t],n=Ni[t].map(a=>r[a]),o=n.reduce((a,i)=>a+i,0);return n.map(a=>o?a/o:0)}percentageWords(t="rgb"){return this.percentages(t).map(r=>this.percentWords.find(n=>n.maxPercentile>=r).word)}get descriptiveWords(){return oe(this,E,ve).call(this,"descriptive")}get nouns(){return oe(this,E,ve).call(this,"nouns")}get meanings(){return oe(this,E,ve).call(this,"meanings")}get usage(){return oe(this,E,ve).call(this,"usage")}get description(){return oe(this,E,ve).call(this,"description")}get bestContrast(){return ht(this.color,"black")>ht(this.color,"white")?"black":"white"}getDescriptiveList(t,r){let n=[...this.descriptiveWords];if(t&&(n=zt(n)),r&&(n=n.slice(0,r)),n.length>1){let o=n.pop();return`${n.join(", ")} and ${o}`}else return n[0]}};E=new WeakSet,Fo=function(t){try{return Xe(t)}catch(r){throw new TypeError("Invalid color. Check the chroma-js documentation.")}},ve=function(t="descriptive",r=!1,n){let o=this.descriptions.reduce((a,i)=>i.hasOwnProperty(t)&&Object.keys(i.criteria).every(p=>{let c=this.formats[p];return Object.entries(i.criteria[p]).every(([b,h])=>{if(!(b in c)||c[b]===void 0||c[b]===null||h===null)return!0;let v=c[b];return Array.isArray(h)?_r(v,h[0],h[1]):isNaN(h)?!1:v===h})})?[...new Set([...a,...i[t]])]:a,[]);return r?zt(o).slice(0,n):o.slice(0,n)};var qi=xr;return ln($i);})();
+var ColorDescription = (() => {
+  var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __typeError = (msg) => {
+    throw TypeError(msg);
+  };
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+  var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
+  var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+  var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
+
+  // src/index.js
+  var src_exports = {};
+  __export(src_exports, {
+    default: () => src_default
+  });
+
+  // src/utils.js
+  var { round, min, max, log, floor, random } = Math;
+  var temperature2rgb = (kelvin) => {
+    const temp = kelvin / 100;
+    let r, g, b;
+    if (temp < 66) {
+      r = 1;
+      g = temp < 6 ? 0 : (-155.25485562709179 - 0.44596950469579133 * (g = temp - 2) + 104.49216199393888 * log(g)) / 255;
+      b = temp < 20 ? 0 : (-254.76935184120902 + 0.8274096064007395 * (b = temp - 10) + 115.67994401066147 * log(b)) / 255;
+    } else {
+      r = (351.97690566805693 + 0.114206453784165 * (r = temp - 55) - 40.25366309332127 * log(r)) / 255;
+      g = (325.4494125711974 + 0.07943456536662342 * (g = temp - 50) - 28.0852963507957 * log(g)) / 255;
+      b = 1;
+    }
+    return {
+      r: max(0, min(1, r)),
+      g: max(0, min(1, g)),
+      b: max(0, min(1, b)),
+      a: 1
+    };
+  };
+  var rgb2temperature = (rgb2) => {
+    const { r, g, b } = rgb2;
+    let minTemp = 1e3;
+    let maxTemp = 4e4;
+    const eps = 0.4;
+    let temp;
+    while (maxTemp - minTemp > eps) {
+      temp = (maxTemp + minTemp) * 0.5;
+      const rgbFromTemp = temperature2rgb(temp);
+      if (rgbFromTemp.b / rgbFromTemp.r >= b / r) {
+        maxTemp = temp;
+      } else {
+        minTemp = temp;
+      }
+    }
+    return round(temp);
+  };
+  var isInRange = (x, rMin, rMax) => x >= rMin && x <= rMax;
+  var randomizeArr = (arr) => {
+    let newArr = [...arr];
+    for (let i = newArr.length - 1; i > 0; i--) {
+      const j = floor(random() * (i + 1));
+      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    }
+    return newArr;
+  };
+  var rgbToCMYK = (rgb2) => {
+    const { r, g, b } = rgb2;
+    const k4 = 1 - max(r, g, b);
+    const kInverted = 1 - k4;
+    return {
+      mode: "cmyk",
+      c: kInverted && (kInverted - r) / kInverted,
+      m: kInverted && (kInverted - g) / kInverted,
+      y: kInverted && (kInverted - b) / kInverted,
+      k: k4
+    };
+  };
+
+  // node_modules/culori/src/rgb/parseNumber.js
+  var parseNumber = (color, len) => {
+    if (typeof color !== "number") return;
+    if (len === 3) {
+      return {
+        mode: "rgb",
+        r: (color >> 8 & 15 | color >> 4 & 240) / 255,
+        g: (color >> 4 & 15 | color & 240) / 255,
+        b: (color & 15 | color << 4 & 240) / 255
+      };
+    }
+    if (len === 4) {
+      return {
+        mode: "rgb",
+        r: (color >> 12 & 15 | color >> 8 & 240) / 255,
+        g: (color >> 8 & 15 | color >> 4 & 240) / 255,
+        b: (color >> 4 & 15 | color & 240) / 255,
+        alpha: (color & 15 | color << 4 & 240) / 255
+      };
+    }
+    if (len === 6) {
+      return {
+        mode: "rgb",
+        r: (color >> 16 & 255) / 255,
+        g: (color >> 8 & 255) / 255,
+        b: (color & 255) / 255
+      };
+    }
+    if (len === 8) {
+      return {
+        mode: "rgb",
+        r: (color >> 24 & 255) / 255,
+        g: (color >> 16 & 255) / 255,
+        b: (color >> 8 & 255) / 255,
+        alpha: (color & 255) / 255
+      };
+    }
+  };
+  var parseNumber_default = parseNumber;
+
+  // node_modules/culori/src/colors/named.js
+  var named = {
+    aliceblue: 15792383,
+    antiquewhite: 16444375,
+    aqua: 65535,
+    aquamarine: 8388564,
+    azure: 15794175,
+    beige: 16119260,
+    bisque: 16770244,
+    black: 0,
+    blanchedalmond: 16772045,
+    blue: 255,
+    blueviolet: 9055202,
+    brown: 10824234,
+    burlywood: 14596231,
+    cadetblue: 6266528,
+    chartreuse: 8388352,
+    chocolate: 13789470,
+    coral: 16744272,
+    cornflowerblue: 6591981,
+    cornsilk: 16775388,
+    crimson: 14423100,
+    cyan: 65535,
+    darkblue: 139,
+    darkcyan: 35723,
+    darkgoldenrod: 12092939,
+    darkgray: 11119017,
+    darkgreen: 25600,
+    darkgrey: 11119017,
+    darkkhaki: 12433259,
+    darkmagenta: 9109643,
+    darkolivegreen: 5597999,
+    darkorange: 16747520,
+    darkorchid: 10040012,
+    darkred: 9109504,
+    darksalmon: 15308410,
+    darkseagreen: 9419919,
+    darkslateblue: 4734347,
+    darkslategray: 3100495,
+    darkslategrey: 3100495,
+    darkturquoise: 52945,
+    darkviolet: 9699539,
+    deeppink: 16716947,
+    deepskyblue: 49151,
+    dimgray: 6908265,
+    dimgrey: 6908265,
+    dodgerblue: 2003199,
+    firebrick: 11674146,
+    floralwhite: 16775920,
+    forestgreen: 2263842,
+    fuchsia: 16711935,
+    gainsboro: 14474460,
+    ghostwhite: 16316671,
+    gold: 16766720,
+    goldenrod: 14329120,
+    gray: 8421504,
+    green: 32768,
+    greenyellow: 11403055,
+    grey: 8421504,
+    honeydew: 15794160,
+    hotpink: 16738740,
+    indianred: 13458524,
+    indigo: 4915330,
+    ivory: 16777200,
+    khaki: 15787660,
+    lavender: 15132410,
+    lavenderblush: 16773365,
+    lawngreen: 8190976,
+    lemonchiffon: 16775885,
+    lightblue: 11393254,
+    lightcoral: 15761536,
+    lightcyan: 14745599,
+    lightgoldenrodyellow: 16448210,
+    lightgray: 13882323,
+    lightgreen: 9498256,
+    lightgrey: 13882323,
+    lightpink: 16758465,
+    lightsalmon: 16752762,
+    lightseagreen: 2142890,
+    lightskyblue: 8900346,
+    lightslategray: 7833753,
+    lightslategrey: 7833753,
+    lightsteelblue: 11584734,
+    lightyellow: 16777184,
+    lime: 65280,
+    limegreen: 3329330,
+    linen: 16445670,
+    magenta: 16711935,
+    maroon: 8388608,
+    mediumaquamarine: 6737322,
+    mediumblue: 205,
+    mediumorchid: 12211667,
+    mediumpurple: 9662683,
+    mediumseagreen: 3978097,
+    mediumslateblue: 8087790,
+    mediumspringgreen: 64154,
+    mediumturquoise: 4772300,
+    mediumvioletred: 13047173,
+    midnightblue: 1644912,
+    mintcream: 16121850,
+    mistyrose: 16770273,
+    moccasin: 16770229,
+    navajowhite: 16768685,
+    navy: 128,
+    oldlace: 16643558,
+    olive: 8421376,
+    olivedrab: 7048739,
+    orange: 16753920,
+    orangered: 16729344,
+    orchid: 14315734,
+    palegoldenrod: 15657130,
+    palegreen: 10025880,
+    paleturquoise: 11529966,
+    palevioletred: 14381203,
+    papayawhip: 16773077,
+    peachpuff: 16767673,
+    peru: 13468991,
+    pink: 16761035,
+    plum: 14524637,
+    powderblue: 11591910,
+    purple: 8388736,
+    // Added in CSS Colors Level 4:
+    // https://drafts.csswg.org/css-color/#changes-from-3
+    rebeccapurple: 6697881,
+    red: 16711680,
+    rosybrown: 12357519,
+    royalblue: 4286945,
+    saddlebrown: 9127187,
+    salmon: 16416882,
+    sandybrown: 16032864,
+    seagreen: 3050327,
+    seashell: 16774638,
+    sienna: 10506797,
+    silver: 12632256,
+    skyblue: 8900331,
+    slateblue: 6970061,
+    slategray: 7372944,
+    slategrey: 7372944,
+    snow: 16775930,
+    springgreen: 65407,
+    steelblue: 4620980,
+    tan: 13808780,
+    teal: 32896,
+    thistle: 14204888,
+    tomato: 16737095,
+    turquoise: 4251856,
+    violet: 15631086,
+    wheat: 16113331,
+    white: 16777215,
+    whitesmoke: 16119285,
+    yellow: 16776960,
+    yellowgreen: 10145074
+  };
+  var named_default = named;
+
+  // node_modules/culori/src/rgb/parseNamed.js
+  var parseNamed = (color) => {
+    return parseNumber_default(named_default[color.toLowerCase()], 6);
+  };
+  var parseNamed_default = parseNamed;
+
+  // node_modules/culori/src/rgb/parseHex.js
+  var hex = /^#?([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})$/i;
+  var parseHex = (color) => {
+    let match;
+    return (match = color.match(hex)) ? parseNumber_default(parseInt(match[1], 16), match[1].length) : void 0;
+  };
+  var parseHex_default = parseHex;
+
+  // node_modules/culori/src/util/regex.js
+  var num = "([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)";
+  var num_none = `(?:${num}|none)`;
+  var per = `${num}%`;
+  var per_none = `(?:${num}%|none)`;
+  var num_per = `(?:${num}%|${num})`;
+  var num_per_none = `(?:${num}%|${num}|none)`;
+  var hue = `(?:${num}(deg|grad|rad|turn)|${num})`;
+  var hue_none = `(?:${num}(deg|grad|rad|turn)|${num}|none)`;
+  var c = `\\s*,\\s*`;
+  var rx_num_per_none = new RegExp("^" + num_per_none + "$");
+
+  // node_modules/culori/src/rgb/parseRgbLegacy.js
+  var rgb_num_old = new RegExp(
+    `^rgba?\\(\\s*${num}${c}${num}${c}${num}\\s*(?:,\\s*${num_per}\\s*)?\\)$`
+  );
+  var rgb_per_old = new RegExp(
+    `^rgba?\\(\\s*${per}${c}${per}${c}${per}\\s*(?:,\\s*${num_per}\\s*)?\\)$`
+  );
+  var parseRgbLegacy = (color) => {
+    let res = { mode: "rgb" };
+    let match;
+    if (match = color.match(rgb_num_old)) {
+      if (match[1] !== void 0) {
+        res.r = match[1] / 255;
+      }
+      if (match[2] !== void 0) {
+        res.g = match[2] / 255;
+      }
+      if (match[3] !== void 0) {
+        res.b = match[3] / 255;
+      }
+    } else if (match = color.match(rgb_per_old)) {
+      if (match[1] !== void 0) {
+        res.r = match[1] / 100;
+      }
+      if (match[2] !== void 0) {
+        res.g = match[2] / 100;
+      }
+      if (match[3] !== void 0) {
+        res.b = match[3] / 100;
+      }
+    } else {
+      return void 0;
+    }
+    if (match[4] !== void 0) {
+      res.alpha = Math.max(0, Math.min(1, match[4] / 100));
+    } else if (match[5] !== void 0) {
+      res.alpha = Math.max(0, Math.min(1, +match[5]));
+    }
+    return res;
+  };
+  var parseRgbLegacy_default = parseRgbLegacy;
+
+  // node_modules/culori/src/_prepare.js
+  var prepare = (color, mode) => color === void 0 ? void 0 : typeof color !== "object" ? parse_default(color) : color.mode !== void 0 ? color : mode ? __spreadProps(__spreadValues({}, color), { mode }) : void 0;
+  var prepare_default = prepare;
+
+  // node_modules/culori/src/converter.js
+  var converter = (target_mode = "rgb") => (color) => (color = prepare_default(color, target_mode)) !== void 0 ? (
+    // if the color's mode corresponds to our target mode
+    color.mode === target_mode ? (
+      // then just return the color
+      color
+    ) : (
+      // otherwise check to see if we have a dedicated
+      // converter for the target mode
+      converters[color.mode][target_mode] ? (
+        // and return its result...
+        converters[color.mode][target_mode](color)
+      ) : (
+        // ...otherwise pass through RGB as an intermediary step.
+        // if the target mode is RGB...
+        target_mode === "rgb" ? (
+          // just return the RGB
+          converters[color.mode].rgb(color)
+        ) : (
+          // otherwise convert color.mode -> RGB -> target_mode
+          converters.rgb[target_mode](converters[color.mode].rgb(color))
+        )
+      )
+    )
+  ) : void 0;
+  var converter_default = converter;
+
+  // node_modules/culori/src/modes.js
+  var converters = {};
+  var modes = {};
+  var parsers = [];
+  var colorProfiles = {};
+  var identity = (v) => v;
+  var useMode = (definition29) => {
+    converters[definition29.mode] = __spreadValues(__spreadValues({}, converters[definition29.mode]), definition29.toMode);
+    Object.keys(definition29.fromMode || {}).forEach((k4) => {
+      if (!converters[k4]) {
+        converters[k4] = {};
+      }
+      converters[k4][definition29.mode] = definition29.fromMode[k4];
+    });
+    if (!definition29.ranges) {
+      definition29.ranges = {};
+    }
+    if (!definition29.difference) {
+      definition29.difference = {};
+    }
+    definition29.channels.forEach((channel) => {
+      if (definition29.ranges[channel] === void 0) {
+        definition29.ranges[channel] = [0, 1];
+      }
+      if (!definition29.interpolate[channel]) {
+        throw new Error(`Missing interpolator for: ${channel}`);
+      }
+      if (typeof definition29.interpolate[channel] === "function") {
+        definition29.interpolate[channel] = {
+          use: definition29.interpolate[channel]
+        };
+      }
+      if (!definition29.interpolate[channel].fixup) {
+        definition29.interpolate[channel].fixup = identity;
+      }
+    });
+    modes[definition29.mode] = definition29;
+    (definition29.parse || []).forEach((parser) => {
+      useParser(parser, definition29.mode);
+    });
+    return converter_default(definition29.mode);
+  };
+  var getMode = (mode) => modes[mode];
+  var useParser = (parser, mode) => {
+    if (typeof parser === "string") {
+      if (!mode) {
+        throw new Error(`'mode' required when 'parser' is a string`);
+      }
+      colorProfiles[parser] = mode;
+    } else if (typeof parser === "function") {
+      if (parsers.indexOf(parser) < 0) {
+        parsers.push(parser);
+      }
+    }
+  };
+
+  // node_modules/culori/src/parse.js
+  var IdentStartCodePoint = /[^\x00-\x7F]|[a-zA-Z_]/;
+  var IdentCodePoint = /[^\x00-\x7F]|[-\w]/;
+  var Tok = {
+    Function: "function",
+    Ident: "ident",
+    Number: "number",
+    Percentage: "percentage",
+    ParenClose: ")",
+    None: "none",
+    Hue: "hue",
+    Alpha: "alpha"
+  };
+  var _i = 0;
+  function is_num(chars) {
+    let ch = chars[_i];
+    let ch1 = chars[_i + 1];
+    if (ch === "-" || ch === "+") {
+      return /\d/.test(ch1) || ch1 === "." && /\d/.test(chars[_i + 2]);
+    }
+    if (ch === ".") {
+      return /\d/.test(ch1);
+    }
+    return /\d/.test(ch);
+  }
+  function is_ident(chars) {
+    if (_i >= chars.length) {
+      return false;
+    }
+    let ch = chars[_i];
+    if (IdentStartCodePoint.test(ch)) {
+      return true;
+    }
+    if (ch === "-") {
+      if (chars.length - _i < 2) {
+        return false;
+      }
+      let ch1 = chars[_i + 1];
+      if (ch1 === "-" || IdentStartCodePoint.test(ch1)) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  }
+  var huenits = {
+    deg: 1,
+    rad: 180 / Math.PI,
+    grad: 9 / 10,
+    turn: 360
+  };
+  function num2(chars) {
+    let value = "";
+    if (chars[_i] === "-" || chars[_i] === "+") {
+      value += chars[_i++];
+    }
+    value += digits(chars);
+    if (chars[_i] === "." && /\d/.test(chars[_i + 1])) {
+      value += chars[_i++] + digits(chars);
+    }
+    if (chars[_i] === "e" || chars[_i] === "E") {
+      if ((chars[_i + 1] === "-" || chars[_i + 1] === "+") && /\d/.test(chars[_i + 2])) {
+        value += chars[_i++] + chars[_i++] + digits(chars);
+      } else if (/\d/.test(chars[_i + 1])) {
+        value += chars[_i++] + digits(chars);
+      }
+    }
+    if (is_ident(chars)) {
+      let id = ident(chars);
+      if (id === "deg" || id === "rad" || id === "turn" || id === "grad") {
+        return { type: Tok.Hue, value: value * huenits[id] };
+      }
+      return void 0;
+    }
+    if (chars[_i] === "%") {
+      _i++;
+      return { type: Tok.Percentage, value: +value };
+    }
+    return { type: Tok.Number, value: +value };
+  }
+  function digits(chars) {
+    let v = "";
+    while (/\d/.test(chars[_i])) {
+      v += chars[_i++];
+    }
+    return v;
+  }
+  function ident(chars) {
+    let v = "";
+    while (_i < chars.length && IdentCodePoint.test(chars[_i])) {
+      v += chars[_i++];
+    }
+    return v;
+  }
+  function identlike(chars) {
+    let v = ident(chars);
+    if (chars[_i] === "(") {
+      _i++;
+      return { type: Tok.Function, value: v };
+    }
+    if (v === "none") {
+      return { type: Tok.None, value: void 0 };
+    }
+    return { type: Tok.Ident, value: v };
+  }
+  function tokenize(str = "") {
+    let chars = str.trim();
+    let tokens = [];
+    let ch;
+    _i = 0;
+    while (_i < chars.length) {
+      ch = chars[_i++];
+      if (ch === "\n" || ch === "	" || ch === " ") {
+        while (_i < chars.length && (chars[_i] === "\n" || chars[_i] === "	" || chars[_i] === " ")) {
+          _i++;
+        }
+        continue;
+      }
+      if (ch === ",") {
+        return void 0;
+      }
+      if (ch === ")") {
+        tokens.push({ type: Tok.ParenClose });
+        continue;
+      }
+      if (ch === "+") {
+        _i--;
+        if (is_num(chars)) {
+          tokens.push(num2(chars));
+          continue;
+        }
+        return void 0;
+      }
+      if (ch === "-") {
+        _i--;
+        if (is_num(chars)) {
+          tokens.push(num2(chars));
+          continue;
+        }
+        if (is_ident(chars)) {
+          tokens.push({ type: Tok.Ident, value: ident(chars) });
+          continue;
+        }
+        return void 0;
+      }
+      if (ch === ".") {
+        _i--;
+        if (is_num(chars)) {
+          tokens.push(num2(chars));
+          continue;
+        }
+        return void 0;
+      }
+      if (ch === "/") {
+        while (_i < chars.length && (chars[_i] === "\n" || chars[_i] === "	" || chars[_i] === " ")) {
+          _i++;
+        }
+        let alpha;
+        if (is_num(chars)) {
+          alpha = num2(chars);
+          if (alpha.type !== Tok.Hue) {
+            tokens.push({ type: Tok.Alpha, value: alpha });
+            continue;
+          }
+        }
+        if (is_ident(chars)) {
+          if (ident(chars) === "none") {
+            tokens.push({
+              type: Tok.Alpha,
+              value: { type: Tok.None, value: void 0 }
+            });
+            continue;
+          }
+        }
+        return void 0;
+      }
+      if (/\d/.test(ch)) {
+        _i--;
+        tokens.push(num2(chars));
+        continue;
+      }
+      if (IdentStartCodePoint.test(ch)) {
+        _i--;
+        tokens.push(identlike(chars));
+        continue;
+      }
+      return void 0;
+    }
+    return tokens;
+  }
+  function parseColorSyntax(tokens) {
+    tokens._i = 0;
+    let token = tokens[tokens._i++];
+    if (!token || token.type !== Tok.Function || token.value !== "color") {
+      return void 0;
+    }
+    token = tokens[tokens._i++];
+    if (token.type !== Tok.Ident) {
+      return void 0;
+    }
+    const mode = colorProfiles[token.value];
+    if (!mode) {
+      return void 0;
+    }
+    const res = { mode };
+    const coords = consumeCoords(tokens, false);
+    if (!coords) {
+      return void 0;
+    }
+    const channels = getMode(mode).channels;
+    for (let ii = 0, c2, ch; ii < channels.length; ii++) {
+      c2 = coords[ii];
+      ch = channels[ii];
+      if (c2.type !== Tok.None) {
+        res[ch] = c2.type === Tok.Number ? c2.value : c2.value / 100;
+        if (ch === "alpha") {
+          res[ch] = Math.max(0, Math.min(1, res[ch]));
+        }
+      }
+    }
+    return res;
+  }
+  function consumeCoords(tokens, includeHue) {
+    const coords = [];
+    let token;
+    while (tokens._i < tokens.length) {
+      token = tokens[tokens._i++];
+      if (token.type === Tok.None || token.type === Tok.Number || token.type === Tok.Alpha || token.type === Tok.Percentage || includeHue && token.type === Tok.Hue) {
+        coords.push(token);
+        continue;
+      }
+      if (token.type === Tok.ParenClose) {
+        if (tokens._i < tokens.length) {
+          return void 0;
+        }
+        continue;
+      }
+      return void 0;
+    }
+    if (coords.length < 3 || coords.length > 4) {
+      return void 0;
+    }
+    if (coords.length === 4) {
+      if (coords[3].type !== Tok.Alpha) {
+        return void 0;
+      }
+      coords[3] = coords[3].value;
+    }
+    if (coords.length === 3) {
+      coords.push({ type: Tok.None, value: void 0 });
+    }
+    return coords.every((c2) => c2.type !== Tok.Alpha) ? coords : void 0;
+  }
+  function parseModernSyntax(tokens, includeHue) {
+    tokens._i = 0;
+    let token = tokens[tokens._i++];
+    if (!token || token.type !== Tok.Function) {
+      return void 0;
+    }
+    let coords = consumeCoords(tokens, includeHue);
+    if (!coords) {
+      return void 0;
+    }
+    coords.unshift(token.value);
+    return coords;
+  }
+  var parse = (color) => {
+    if (typeof color !== "string") {
+      return void 0;
+    }
+    const tokens = tokenize(color);
+    const parsed = tokens ? parseModernSyntax(tokens, true) : void 0;
+    let result = void 0;
+    let i = 0;
+    let len = parsers.length;
+    while (i < len) {
+      if ((result = parsers[i++](color, parsed)) !== void 0) {
+        return result;
+      }
+    }
+    return tokens ? parseColorSyntax(tokens) : void 0;
+  };
+  var parse_default = parse;
+
+  // node_modules/culori/src/rgb/parseRgb.js
+  function parseRgb(color, parsed) {
+    if (!parsed || parsed[0] !== "rgb" && parsed[0] !== "rgba") {
+      return void 0;
+    }
+    const res = { mode: "rgb" };
+    const [, r, g, b, alpha] = parsed;
+    if (r.type === Tok.Hue || g.type === Tok.Hue || b.type === Tok.Hue) {
+      return void 0;
+    }
+    if (r.type !== Tok.None) {
+      res.r = r.type === Tok.Number ? r.value / 255 : r.value / 100;
+    }
+    if (g.type !== Tok.None) {
+      res.g = g.type === Tok.Number ? g.value / 255 : g.value / 100;
+    }
+    if (b.type !== Tok.None) {
+      res.b = b.type === Tok.Number ? b.value / 255 : b.value / 100;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseRgb_default = parseRgb;
+
+  // node_modules/culori/src/rgb/parseTransparent.js
+  var parseTransparent = (c2) => c2 === "transparent" ? { mode: "rgb", r: 0, g: 0, b: 0, alpha: 0 } : void 0;
+  var parseTransparent_default = parseTransparent;
+
+  // node_modules/culori/src/interpolate/lerp.js
+  var lerp = (a, b, t) => a + t * (b - a);
+
+  // node_modules/culori/src/interpolate/piecewise.js
+  var get_classes = (arr) => {
+    let classes = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+      let a = arr[i];
+      let b = arr[i + 1];
+      if (a === void 0 && b === void 0) {
+        classes.push(void 0);
+      } else if (a !== void 0 && b !== void 0) {
+        classes.push([a, b]);
+      } else {
+        classes.push(a !== void 0 ? [a, a] : [b, b]);
+      }
+    }
+    return classes;
+  };
+  var interpolatorPiecewise = (interpolator) => (arr) => {
+    let classes = get_classes(arr);
+    return (t) => {
+      let cls = t * classes.length;
+      let idx = t >= 1 ? classes.length - 1 : Math.max(Math.floor(cls), 0);
+      let pair = classes[idx];
+      return pair === void 0 ? void 0 : interpolator(pair[0], pair[1], cls - idx);
+    };
+  };
+
+  // node_modules/culori/src/interpolate/linear.js
+  var interpolatorLinear = interpolatorPiecewise(lerp);
+
+  // node_modules/culori/src/fixup/alpha.js
+  var fixupAlpha = (arr) => {
+    let some_defined = false;
+    let res = arr.map((v) => {
+      if (v !== void 0) {
+        some_defined = true;
+        return v;
+      }
+      return 1;
+    });
+    return some_defined ? res : arr;
+  };
+
+  // node_modules/culori/src/rgb/definition.js
+  var definition = {
+    mode: "rgb",
+    channels: ["r", "g", "b", "alpha"],
+    parse: [
+      parseRgb_default,
+      parseHex_default,
+      parseRgbLegacy_default,
+      parseNamed_default,
+      parseTransparent_default,
+      "srgb"
+    ],
+    serialize: "srgb",
+    interpolate: {
+      r: interpolatorLinear,
+      g: interpolatorLinear,
+      b: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    gamut: true,
+    white: { r: 1, g: 1, b: 1 },
+    black: { r: 0, g: 0, b: 0 }
+  };
+  var definition_default = definition;
+
+  // node_modules/culori/src/a98/convertA98ToXyz65.js
+  var linearize = (v = 0) => Math.pow(Math.abs(v), 563 / 256) * Math.sign(v);
+  var convertA98ToXyz65 = (a982) => {
+    let r = linearize(a982.r);
+    let g = linearize(a982.g);
+    let b = linearize(a982.b);
+    let res = {
+      mode: "xyz65",
+      x: 0.5766690429101305 * r + 0.1855582379065463 * g + 0.1882286462349947 * b,
+      y: 0.297344975250536 * r + 0.6273635662554661 * g + 0.0752914584939979 * b,
+      z: 0.0270313613864123 * r + 0.0706888525358272 * g + 0.9913375368376386 * b
+    };
+    if (a982.alpha !== void 0) {
+      res.alpha = a982.alpha;
+    }
+    return res;
+  };
+  var convertA98ToXyz65_default = convertA98ToXyz65;
+
+  // node_modules/culori/src/a98/convertXyz65ToA98.js
+  var gamma = (v) => Math.pow(Math.abs(v), 256 / 563) * Math.sign(v);
+  var convertXyz65ToA98 = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = {
+      mode: "a98",
+      r: gamma(
+        x * 2.0415879038107465 - y * 0.5650069742788597 - 0.3447313507783297 * z
+      ),
+      g: gamma(
+        x * -0.9692436362808798 + y * 1.8759675015077206 + 0.0415550574071756 * z
+      ),
+      b: gamma(
+        x * 0.0134442806320312 - y * 0.1183623922310184 + 1.0151749943912058 * z
+      )
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToA98_default = convertXyz65ToA98;
+
+  // node_modules/culori/src/lrgb/convertRgbToLrgb.js
+  var fn = (c2 = 0) => {
+    const abs2 = Math.abs(c2);
+    if (abs2 <= 0.04045) {
+      return c2 / 12.92;
+    }
+    return (Math.sign(c2) || 1) * Math.pow((abs2 + 0.055) / 1.055, 2.4);
+  };
+  var convertRgbToLrgb = ({ r, g, b, alpha }) => {
+    let res = {
+      mode: "lrgb",
+      r: fn(r),
+      g: fn(g),
+      b: fn(b)
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertRgbToLrgb_default = convertRgbToLrgb;
+
+  // node_modules/culori/src/xyz65/convertRgbToXyz65.js
+  var convertRgbToXyz65 = (rgb2) => {
+    let { r, g, b, alpha } = convertRgbToLrgb_default(rgb2);
+    let res = {
+      mode: "xyz65",
+      x: 0.4123907992659593 * r + 0.357584339383878 * g + 0.1804807884018343 * b,
+      y: 0.2126390058715102 * r + 0.715168678767756 * g + 0.0721923153607337 * b,
+      z: 0.0193308187155918 * r + 0.119194779794626 * g + 0.9505321522496607 * b
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertRgbToXyz65_default = convertRgbToXyz65;
+
+  // node_modules/culori/src/lrgb/convertLrgbToRgb.js
+  var fn2 = (c2 = 0) => {
+    const abs2 = Math.abs(c2);
+    if (abs2 > 31308e-7) {
+      return (Math.sign(c2) || 1) * (1.055 * Math.pow(abs2, 1 / 2.4) - 0.055);
+    }
+    return c2 * 12.92;
+  };
+  var convertLrgbToRgb = ({ r, g, b, alpha }, mode = "rgb") => {
+    let res = {
+      mode,
+      r: fn2(r),
+      g: fn2(g),
+      b: fn2(b)
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertLrgbToRgb_default = convertLrgbToRgb;
+
+  // node_modules/culori/src/xyz65/convertXyz65ToRgb.js
+  var convertXyz65ToRgb = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = convertLrgbToRgb_default({
+      r: x * 3.2409699419045226 - y * 1.537383177570094 - 0.4986107602930034 * z,
+      g: x * -0.9692436362808796 + y * 1.8759675015077204 + 0.0415550574071756 * z,
+      b: x * 0.0556300796969936 - y * 0.2039769588889765 + 1.0569715142428784 * z
+    });
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToRgb_default = convertXyz65ToRgb;
+
+  // node_modules/culori/src/a98/definition.js
+  var definition2 = __spreadProps(__spreadValues({}, definition_default), {
+    mode: "a98",
+    parse: ["a98-rgb"],
+    serialize: "a98-rgb",
+    fromMode: {
+      rgb: (color) => convertXyz65ToA98_default(convertRgbToXyz65_default(color)),
+      xyz65: convertXyz65ToA98_default
+    },
+    toMode: {
+      rgb: (color) => convertXyz65ToRgb_default(convertA98ToXyz65_default(color)),
+      xyz65: convertA98ToXyz65_default
+    }
+  });
+  var definition_default2 = definition2;
+
+  // node_modules/culori/src/util/normalizeHue.js
+  var normalizeHue = (hue3) => (hue3 = hue3 % 360) < 0 ? hue3 + 360 : hue3;
+  var normalizeHue_default = normalizeHue;
+
+  // node_modules/culori/src/fixup/hue.js
+  var hue2 = (hues, fn5) => {
+    return hues.map((hue3, idx, arr) => {
+      if (hue3 === void 0) {
+        return hue3;
+      }
+      let normalized = normalizeHue_default(hue3);
+      if (idx === 0 || hues[idx - 1] === void 0) {
+        return normalized;
+      }
+      return fn5(normalized - normalizeHue_default(arr[idx - 1]));
+    }).reduce((acc, curr) => {
+      if (!acc.length || curr === void 0 || acc[acc.length - 1] === void 0) {
+        acc.push(curr);
+        return acc;
+      }
+      acc.push(curr + acc[acc.length - 1]);
+      return acc;
+    }, []);
+  };
+  var fixupHueShorter = (arr) => hue2(arr, (d) => Math.abs(d) <= 180 ? d : d - 360 * Math.sign(d));
+
+  // node_modules/culori/src/cubehelix/constants.js
+  var M = [-0.14861, 1.78277, -0.29227, -0.90649, 1.97294, 0];
+  var degToRad = Math.PI / 180;
+  var radToDeg = 180 / Math.PI;
+
+  // node_modules/culori/src/cubehelix/convertRgbToCubehelix.js
+  var DE = M[3] * M[4];
+  var BE = M[1] * M[4];
+  var BCAD = M[1] * M[2] - M[0] * M[3];
+  var convertRgbToCubehelix = ({ r, g, b, alpha }) => {
+    if (r === void 0) r = 0;
+    if (g === void 0) g = 0;
+    if (b === void 0) b = 0;
+    let l = (BCAD * b + r * DE - g * BE) / (BCAD + DE - BE);
+    let x = b - l;
+    let y = (M[4] * (g - l) - M[2] * x) / M[3];
+    let res = {
+      mode: "cubehelix",
+      l,
+      s: l === 0 || l === 1 ? void 0 : Math.sqrt(x * x + y * y) / (M[4] * l * (1 - l))
+    };
+    if (res.s) res.h = Math.atan2(y, x) * radToDeg - 120;
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertRgbToCubehelix_default = convertRgbToCubehelix;
+
+  // node_modules/culori/src/cubehelix/convertCubehelixToRgb.js
+  var convertCubehelixToRgb = ({ h, s, l, alpha }) => {
+    let res = { mode: "rgb" };
+    h = (h === void 0 ? 0 : h + 120) * degToRad;
+    if (l === void 0) l = 0;
+    let amp = s === void 0 ? 0 : s * l * (1 - l);
+    let cosh = Math.cos(h);
+    let sinh = Math.sin(h);
+    res.r = l + amp * (M[0] * cosh + M[1] * sinh);
+    res.g = l + amp * (M[2] * cosh + M[3] * sinh);
+    res.b = l + amp * (M[4] * cosh + M[5] * sinh);
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertCubehelixToRgb_default = convertCubehelixToRgb;
+
+  // node_modules/culori/src/difference.js
+  var differenceHueSaturation = (std, smp) => {
+    if (std.h === void 0 || smp.h === void 0 || !std.s || !smp.s) {
+      return 0;
+    }
+    let std_h = normalizeHue_default(std.h);
+    let smp_h = normalizeHue_default(smp.h);
+    let dH = Math.sin((smp_h - std_h + 360) / 2 * Math.PI / 180);
+    return 2 * Math.sqrt(std.s * smp.s) * dH;
+  };
+  var differenceHueNaive = (std, smp) => {
+    if (std.h === void 0 || smp.h === void 0) {
+      return 0;
+    }
+    let std_h = normalizeHue_default(std.h);
+    let smp_h = normalizeHue_default(smp.h);
+    if (Math.abs(smp_h - std_h) > 180) {
+      return std_h - (smp_h - 360 * Math.sign(smp_h - std_h));
+    }
+    return smp_h - std_h;
+  };
+  var differenceHueChroma = (std, smp) => {
+    if (std.h === void 0 || smp.h === void 0 || !std.c || !smp.c) {
+      return 0;
+    }
+    let std_h = normalizeHue_default(std.h);
+    let smp_h = normalizeHue_default(smp.h);
+    let dH = Math.sin((smp_h - std_h + 360) / 2 * Math.PI / 180);
+    return 2 * Math.sqrt(std.c * smp.c) * dH;
+  };
+
+  // node_modules/culori/src/average.js
+  var averageAngle = (val) => {
+    let sum = val.reduce(
+      (sum2, val2) => {
+        if (val2 !== void 0) {
+          let rad = val2 * Math.PI / 180;
+          sum2.sin += Math.sin(rad);
+          sum2.cos += Math.cos(rad);
+        }
+        return sum2;
+      },
+      { sin: 0, cos: 0 }
+    );
+    let angle = Math.atan2(sum.sin, sum.cos) * 180 / Math.PI;
+    return angle < 0 ? 360 + angle : angle;
+  };
+
+  // node_modules/culori/src/cubehelix/definition.js
+  var definition3 = {
+    mode: "cubehelix",
+    channels: ["h", "s", "l", "alpha"],
+    parse: ["--cubehelix"],
+    serialize: "--cubehelix",
+    ranges: {
+      h: [0, 360],
+      s: [0, 4.614],
+      l: [0, 1]
+    },
+    fromMode: {
+      rgb: convertRgbToCubehelix_default
+    },
+    toMode: {
+      rgb: convertCubehelixToRgb_default
+    },
+    interpolate: {
+      h: {
+        use: interpolatorLinear,
+        fixup: fixupHueShorter
+      },
+      s: interpolatorLinear,
+      l: interpolatorLinear,
+      alpha: {
+        use: interpolatorLinear,
+        fixup: fixupAlpha
+      }
+    },
+    difference: {
+      h: differenceHueSaturation
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default3 = definition3;
+
+  // node_modules/culori/src/lch/convertLabToLch.js
+  var convertLabToLch = ({ l, a, b, alpha }, mode = "lch") => {
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let c2 = Math.sqrt(a * a + b * b);
+    let res = { mode, l, c: c2 };
+    if (c2) res.h = normalizeHue_default(Math.atan2(b, a) * 180 / Math.PI);
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertLabToLch_default = convertLabToLch;
+
+  // node_modules/culori/src/lch/convertLchToLab.js
+  var convertLchToLab = ({ l, c: c2, h, alpha }, mode = "lab") => {
+    if (h === void 0) h = 0;
+    let res = {
+      mode,
+      l,
+      a: c2 ? c2 * Math.cos(h / 180 * Math.PI) : 0,
+      b: c2 ? c2 * Math.sin(h / 180 * Math.PI) : 0
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertLchToLab_default = convertLchToLab;
+
+  // node_modules/culori/src/xyz65/constants.js
+  var k = Math.pow(29, 3) / Math.pow(3, 3);
+  var e = Math.pow(6, 3) / Math.pow(29, 3);
+
+  // node_modules/culori/src/constants.js
+  var D50 = {
+    X: 0.3457 / 0.3585,
+    Y: 1,
+    Z: (1 - 0.3457 - 0.3585) / 0.3585
+  };
+  var D65 = {
+    X: 0.3127 / 0.329,
+    Y: 1,
+    Z: (1 - 0.3127 - 0.329) / 0.329
+  };
+  var k2 = Math.pow(29, 3) / Math.pow(3, 3);
+  var e2 = Math.pow(6, 3) / Math.pow(29, 3);
+
+  // node_modules/culori/src/lab65/convertLab65ToXyz65.js
+  var fn3 = (v) => Math.pow(v, 3) > e ? Math.pow(v, 3) : (116 * v - 16) / k;
+  var convertLab65ToXyz65 = ({ l, a, b, alpha }) => {
+    if (l === void 0) l = 0;
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let fy = (l + 16) / 116;
+    let fx = a / 500 + fy;
+    let fz = fy - b / 200;
+    let res = {
+      mode: "xyz65",
+      x: fn3(fx) * D65.X,
+      y: fn3(fy) * D65.Y,
+      z: fn3(fz) * D65.Z
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertLab65ToXyz65_default = convertLab65ToXyz65;
+
+  // node_modules/culori/src/lab65/convertLab65ToRgb.js
+  var convertLab65ToRgb = (lab2) => convertXyz65ToRgb_default(convertLab65ToXyz65_default(lab2));
+  var convertLab65ToRgb_default = convertLab65ToRgb;
+
+  // node_modules/culori/src/lab65/convertXyz65ToLab65.js
+  var f = (value) => value > e ? Math.cbrt(value) : (k * value + 16) / 116;
+  var convertXyz65ToLab65 = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let f0 = f(x / D65.X);
+    let f1 = f(y / D65.Y);
+    let f22 = f(z / D65.Z);
+    let res = {
+      mode: "lab65",
+      l: 116 * f1 - 16,
+      a: 500 * (f0 - f1),
+      b: 200 * (f1 - f22)
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToLab65_default = convertXyz65ToLab65;
+
+  // node_modules/culori/src/lab65/convertRgbToLab65.js
+  var convertRgbToLab65 = (rgb2) => {
+    let res = convertXyz65ToLab65_default(convertRgbToXyz65_default(rgb2));
+    if (rgb2.r === rgb2.b && rgb2.b === rgb2.g) {
+      res.a = res.b = 0;
+    }
+    return res;
+  };
+  var convertRgbToLab65_default = convertRgbToLab65;
+
+  // node_modules/culori/src/dlch/constants.js
+  var kE = 1;
+  var kCH = 1;
+  var \u03B8 = 26 / 180 * Math.PI;
+  var cos\u03B8 = Math.cos(\u03B8);
+  var sin\u03B8 = Math.sin(\u03B8);
+  var factor = 100 / Math.log(139 / 100);
+
+  // node_modules/culori/src/dlch/convertDlchToLab65.js
+  var convertDlchToLab65 = ({ l, c: c2, h, alpha }) => {
+    if (l === void 0) l = 0;
+    if (c2 === void 0) c2 = 0;
+    if (h === void 0) h = 0;
+    let res = {
+      mode: "lab65",
+      l: (Math.exp(l * kE / factor) - 1) / 39e-4
+    };
+    let G = (Math.exp(0.0435 * c2 * kCH * kE) - 1) / 0.075;
+    let e4 = G * Math.cos(h / 180 * Math.PI - \u03B8);
+    let f3 = G * Math.sin(h / 180 * Math.PI - \u03B8);
+    res.a = e4 * cos\u03B8 - f3 / 0.83 * sin\u03B8;
+    res.b = e4 * sin\u03B8 + f3 / 0.83 * cos\u03B8;
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertDlchToLab65_default = convertDlchToLab65;
+
+  // node_modules/culori/src/dlch/convertLab65ToDlch.js
+  var convertLab65ToDlch = ({ l, a, b, alpha }) => {
+    if (l === void 0) l = 0;
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let e4 = a * cos\u03B8 + b * sin\u03B8;
+    let f3 = 0.83 * (b * cos\u03B8 - a * sin\u03B8);
+    let G = Math.sqrt(e4 * e4 + f3 * f3);
+    let res = {
+      mode: "dlch",
+      l: factor / kE * Math.log(1 + 39e-4 * l),
+      c: Math.log(1 + 0.075 * G) / (0.0435 * kCH * kE)
+    };
+    if (res.c) {
+      res.h = normalizeHue_default((Math.atan2(f3, e4) + \u03B8) / Math.PI * 180);
+    }
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertLab65ToDlch_default = convertLab65ToDlch;
+
+  // node_modules/culori/src/dlab/definition.js
+  var convertDlabToLab65 = (c2) => convertDlchToLab65_default(convertLabToLch_default(c2, "dlch"));
+  var convertLab65ToDlab = (c2) => convertLchToLab_default(convertLab65ToDlch_default(c2), "dlab");
+  var definition4 = {
+    mode: "dlab",
+    parse: ["--din99o-lab"],
+    serialize: "--din99o-lab",
+    toMode: {
+      lab65: convertDlabToLab65,
+      rgb: (c2) => convertLab65ToRgb_default(convertDlabToLab65(c2))
+    },
+    fromMode: {
+      lab65: convertLab65ToDlab,
+      rgb: (c2) => convertLab65ToDlab(convertRgbToLab65_default(c2))
+    },
+    channels: ["l", "a", "b", "alpha"],
+    ranges: {
+      l: [0, 100],
+      a: [-40.09, 45.501],
+      b: [-40.469, 44.344]
+    },
+    interpolate: {
+      l: interpolatorLinear,
+      a: interpolatorLinear,
+      b: interpolatorLinear,
+      alpha: {
+        use: interpolatorLinear,
+        fixup: fixupAlpha
+      }
+    }
+  };
+  var definition_default4 = definition4;
+
+  // node_modules/culori/src/dlch/definition.js
+  var definition5 = {
+    mode: "dlch",
+    parse: ["--din99o-lch"],
+    serialize: "--din99o-lch",
+    toMode: {
+      lab65: convertDlchToLab65_default,
+      dlab: (c2) => convertLchToLab_default(c2, "dlab"),
+      rgb: (c2) => convertLab65ToRgb_default(convertDlchToLab65_default(c2))
+    },
+    fromMode: {
+      lab65: convertLab65ToDlch_default,
+      dlab: (c2) => convertLabToLch_default(c2, "dlch"),
+      rgb: (c2) => convertLab65ToDlch_default(convertRgbToLab65_default(c2))
+    },
+    channels: ["l", "c", "h", "alpha"],
+    ranges: {
+      l: [0, 100],
+      c: [0, 51.484],
+      h: [0, 360]
+    },
+    interpolate: {
+      l: interpolatorLinear,
+      c: interpolatorLinear,
+      h: {
+        use: interpolatorLinear,
+        fixup: fixupHueShorter
+      },
+      alpha: {
+        use: interpolatorLinear,
+        fixup: fixupAlpha
+      }
+    },
+    difference: {
+      h: differenceHueChroma
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default5 = definition5;
+
+  // node_modules/culori/src/hsi/convertHsiToRgb.js
+  function convertHsiToRgb({ h, s, i, alpha }) {
+    h = normalizeHue_default(h !== void 0 ? h : 0);
+    if (s === void 0) s = 0;
+    if (i === void 0) i = 0;
+    let f3 = Math.abs(h / 60 % 2 - 1);
+    let res;
+    switch (Math.floor(h / 60)) {
+      case 0:
+        res = {
+          r: i * (1 + s * (3 / (2 - f3) - 1)),
+          g: i * (1 + s * (3 * (1 - f3) / (2 - f3) - 1)),
+          b: i * (1 - s)
+        };
+        break;
+      case 1:
+        res = {
+          r: i * (1 + s * (3 * (1 - f3) / (2 - f3) - 1)),
+          g: i * (1 + s * (3 / (2 - f3) - 1)),
+          b: i * (1 - s)
+        };
+        break;
+      case 2:
+        res = {
+          r: i * (1 - s),
+          g: i * (1 + s * (3 / (2 - f3) - 1)),
+          b: i * (1 + s * (3 * (1 - f3) / (2 - f3) - 1))
+        };
+        break;
+      case 3:
+        res = {
+          r: i * (1 - s),
+          g: i * (1 + s * (3 * (1 - f3) / (2 - f3) - 1)),
+          b: i * (1 + s * (3 / (2 - f3) - 1))
+        };
+        break;
+      case 4:
+        res = {
+          r: i * (1 + s * (3 * (1 - f3) / (2 - f3) - 1)),
+          g: i * (1 - s),
+          b: i * (1 + s * (3 / (2 - f3) - 1))
+        };
+        break;
+      case 5:
+        res = {
+          r: i * (1 + s * (3 / (2 - f3) - 1)),
+          g: i * (1 - s),
+          b: i * (1 + s * (3 * (1 - f3) / (2 - f3) - 1))
+        };
+        break;
+      default:
+        res = { r: i * (1 - s), g: i * (1 - s), b: i * (1 - s) };
+    }
+    res.mode = "rgb";
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/hsi/convertRgbToHsi.js
+  function convertRgbToHsi({ r, g, b, alpha }) {
+    if (r === void 0) r = 0;
+    if (g === void 0) g = 0;
+    if (b === void 0) b = 0;
+    let M3 = Math.max(r, g, b), m = Math.min(r, g, b);
+    let res = {
+      mode: "hsi",
+      s: r + g + b === 0 ? 0 : 1 - 3 * m / (r + g + b),
+      i: (r + g + b) / 3
+    };
+    if (M3 - m !== 0)
+      res.h = (M3 === r ? (g - b) / (M3 - m) + (g < b) * 6 : M3 === g ? (b - r) / (M3 - m) + 2 : (r - g) / (M3 - m) + 4) * 60;
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/hsi/definition.js
+  var definition6 = {
+    mode: "hsi",
+    toMode: {
+      rgb: convertHsiToRgb
+    },
+    parse: ["--hsi"],
+    serialize: "--hsi",
+    fromMode: {
+      rgb: convertRgbToHsi
+    },
+    channels: ["h", "s", "i", "alpha"],
+    ranges: {
+      h: [0, 360]
+    },
+    gamut: "rgb",
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      s: interpolatorLinear,
+      i: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueSaturation
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default6 = definition6;
+
+  // node_modules/culori/src/hsl/convertHslToRgb.js
+  function convertHslToRgb({ h, s, l, alpha }) {
+    h = normalizeHue_default(h !== void 0 ? h : 0);
+    if (s === void 0) s = 0;
+    if (l === void 0) l = 0;
+    let m1 = l + s * (l < 0.5 ? l : 1 - l);
+    let m2 = m1 - (m1 - l) * 2 * Math.abs(h / 60 % 2 - 1);
+    let res;
+    switch (Math.floor(h / 60)) {
+      case 0:
+        res = { r: m1, g: m2, b: 2 * l - m1 };
+        break;
+      case 1:
+        res = { r: m2, g: m1, b: 2 * l - m1 };
+        break;
+      case 2:
+        res = { r: 2 * l - m1, g: m1, b: m2 };
+        break;
+      case 3:
+        res = { r: 2 * l - m1, g: m2, b: m1 };
+        break;
+      case 4:
+        res = { r: m2, g: 2 * l - m1, b: m1 };
+        break;
+      case 5:
+        res = { r: m1, g: 2 * l - m1, b: m2 };
+        break;
+      default:
+        res = { r: 2 * l - m1, g: 2 * l - m1, b: 2 * l - m1 };
+    }
+    res.mode = "rgb";
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/hsl/convertRgbToHsl.js
+  function convertRgbToHsl({ r, g, b, alpha }) {
+    if (r === void 0) r = 0;
+    if (g === void 0) g = 0;
+    if (b === void 0) b = 0;
+    let M3 = Math.max(r, g, b), m = Math.min(r, g, b);
+    let res = {
+      mode: "hsl",
+      s: M3 === m ? 0 : (M3 - m) / (1 - Math.abs(M3 + m - 1)),
+      l: 0.5 * (M3 + m)
+    };
+    if (M3 - m !== 0)
+      res.h = (M3 === r ? (g - b) / (M3 - m) + (g < b) * 6 : M3 === g ? (b - r) / (M3 - m) + 2 : (r - g) / (M3 - m) + 4) * 60;
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/util/hue.js
+  var hueToDeg = (val, unit) => {
+    switch (unit) {
+      case "deg":
+        return +val;
+      case "rad":
+        return val / Math.PI * 180;
+      case "grad":
+        return val / 10 * 9;
+      case "turn":
+        return val * 360;
+    }
+  };
+  var hue_default = hueToDeg;
+
+  // node_modules/culori/src/hsl/parseHslLegacy.js
+  var hsl_old = new RegExp(
+    `^hsla?\\(\\s*${hue}${c}${per}${c}${per}\\s*(?:,\\s*${num_per}\\s*)?\\)$`
+  );
+  var parseHslLegacy = (color) => {
+    let match = color.match(hsl_old);
+    if (!match) return;
+    let res = { mode: "hsl" };
+    if (match[3] !== void 0) {
+      res.h = +match[3];
+    } else if (match[1] !== void 0 && match[2] !== void 0) {
+      res.h = hue_default(match[1], match[2]);
+    }
+    if (match[4] !== void 0) {
+      res.s = Math.min(Math.max(0, match[4] / 100), 1);
+    }
+    if (match[5] !== void 0) {
+      res.l = Math.min(Math.max(0, match[5] / 100), 1);
+    }
+    if (match[6] !== void 0) {
+      res.alpha = Math.max(0, Math.min(1, match[6] / 100));
+    } else if (match[7] !== void 0) {
+      res.alpha = Math.max(0, Math.min(1, +match[7]));
+    }
+    return res;
+  };
+  var parseHslLegacy_default = parseHslLegacy;
+
+  // node_modules/culori/src/hsl/parseHsl.js
+  function parseHsl(color, parsed) {
+    if (!parsed || parsed[0] !== "hsl" && parsed[0] !== "hsla") {
+      return void 0;
+    }
+    const res = { mode: "hsl" };
+    const [, h, s, l, alpha] = parsed;
+    if (h.type !== Tok.None) {
+      if (h.type === Tok.Percentage) {
+        return void 0;
+      }
+      res.h = h.value;
+    }
+    if (s.type !== Tok.None) {
+      if (s.type === Tok.Hue) {
+        return void 0;
+      }
+      res.s = s.value / 100;
+    }
+    if (l.type !== Tok.None) {
+      if (l.type === Tok.Hue) {
+        return void 0;
+      }
+      res.l = l.value / 100;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseHsl_default = parseHsl;
+
+  // node_modules/culori/src/hsl/definition.js
+  var definition7 = {
+    mode: "hsl",
+    toMode: {
+      rgb: convertHslToRgb
+    },
+    fromMode: {
+      rgb: convertRgbToHsl
+    },
+    channels: ["h", "s", "l", "alpha"],
+    ranges: {
+      h: [0, 360]
+    },
+    gamut: "rgb",
+    parse: [parseHsl_default, parseHslLegacy_default],
+    serialize: (c2) => `hsl(${c2.h !== void 0 ? c2.h : "none"} ${c2.s !== void 0 ? c2.s * 100 + "%" : "none"} ${c2.l !== void 0 ? c2.l * 100 + "%" : "none"}${c2.alpha < 1 ? ` / ${c2.alpha}` : ""})`,
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      s: interpolatorLinear,
+      l: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueSaturation
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default7 = definition7;
+
+  // node_modules/culori/src/hsv/convertHsvToRgb.js
+  function convertHsvToRgb({ h, s, v, alpha }) {
+    h = normalizeHue_default(h !== void 0 ? h : 0);
+    if (s === void 0) s = 0;
+    if (v === void 0) v = 0;
+    let f3 = Math.abs(h / 60 % 2 - 1);
+    let res;
+    switch (Math.floor(h / 60)) {
+      case 0:
+        res = { r: v, g: v * (1 - s * f3), b: v * (1 - s) };
+        break;
+      case 1:
+        res = { r: v * (1 - s * f3), g: v, b: v * (1 - s) };
+        break;
+      case 2:
+        res = { r: v * (1 - s), g: v, b: v * (1 - s * f3) };
+        break;
+      case 3:
+        res = { r: v * (1 - s), g: v * (1 - s * f3), b: v };
+        break;
+      case 4:
+        res = { r: v * (1 - s * f3), g: v * (1 - s), b: v };
+        break;
+      case 5:
+        res = { r: v, g: v * (1 - s), b: v * (1 - s * f3) };
+        break;
+      default:
+        res = { r: v * (1 - s), g: v * (1 - s), b: v * (1 - s) };
+    }
+    res.mode = "rgb";
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/hsv/convertRgbToHsv.js
+  function convertRgbToHsv({ r, g, b, alpha }) {
+    if (r === void 0) r = 0;
+    if (g === void 0) g = 0;
+    if (b === void 0) b = 0;
+    let M3 = Math.max(r, g, b), m = Math.min(r, g, b);
+    let res = {
+      mode: "hsv",
+      s: M3 === 0 ? 0 : 1 - m / M3,
+      v: M3
+    };
+    if (M3 - m !== 0)
+      res.h = (M3 === r ? (g - b) / (M3 - m) + (g < b) * 6 : M3 === g ? (b - r) / (M3 - m) + 2 : (r - g) / (M3 - m) + 4) * 60;
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/hsv/definition.js
+  var definition8 = {
+    mode: "hsv",
+    toMode: {
+      rgb: convertHsvToRgb
+    },
+    parse: ["--hsv"],
+    serialize: "--hsv",
+    fromMode: {
+      rgb: convertRgbToHsv
+    },
+    channels: ["h", "s", "v", "alpha"],
+    ranges: {
+      h: [0, 360]
+    },
+    gamut: "rgb",
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      s: interpolatorLinear,
+      v: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueSaturation
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default8 = definition8;
+
+  // node_modules/culori/src/hwb/convertHwbToRgb.js
+  function convertHwbToRgb({ h, w, b, alpha }) {
+    if (w === void 0) w = 0;
+    if (b === void 0) b = 0;
+    if (w + b > 1) {
+      let s = w + b;
+      w /= s;
+      b /= s;
+    }
+    return convertHsvToRgb({
+      h,
+      s: b === 1 ? 1 : 1 - w / (1 - b),
+      v: 1 - b,
+      alpha
+    });
+  }
+
+  // node_modules/culori/src/hwb/convertRgbToHwb.js
+  function convertRgbToHwb(rgba) {
+    let hsv2 = convertRgbToHsv(rgba);
+    if (hsv2 === void 0) return void 0;
+    let s = hsv2.s !== void 0 ? hsv2.s : 0;
+    let v = hsv2.v !== void 0 ? hsv2.v : 0;
+    let res = {
+      mode: "hwb",
+      w: (1 - s) * v,
+      b: 1 - v
+    };
+    if (hsv2.h !== void 0) res.h = hsv2.h;
+    if (hsv2.alpha !== void 0) res.alpha = hsv2.alpha;
+    return res;
+  }
+
+  // node_modules/culori/src/hwb/parseHwb.js
+  function ParseHwb(color, parsed) {
+    if (!parsed || parsed[0] !== "hwb") {
+      return void 0;
+    }
+    const res = { mode: "hwb" };
+    const [, h, w, b, alpha] = parsed;
+    if (h.type !== Tok.None) {
+      if (h.type === Tok.Percentage) {
+        return void 0;
+      }
+      res.h = h.value;
+    }
+    if (w.type !== Tok.None) {
+      if (w.type === Tok.Hue) {
+        return void 0;
+      }
+      res.w = w.value / 100;
+    }
+    if (b.type !== Tok.None) {
+      if (b.type === Tok.Hue) {
+        return void 0;
+      }
+      res.b = b.value / 100;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseHwb_default = ParseHwb;
+
+  // node_modules/culori/src/hwb/definition.js
+  var definition9 = {
+    mode: "hwb",
+    toMode: {
+      rgb: convertHwbToRgb
+    },
+    fromMode: {
+      rgb: convertRgbToHwb
+    },
+    channels: ["h", "w", "b", "alpha"],
+    ranges: {
+      h: [0, 360]
+    },
+    gamut: "rgb",
+    parse: [parseHwb_default],
+    serialize: (c2) => `hwb(${c2.h !== void 0 ? c2.h : "none"} ${c2.w !== void 0 ? c2.w * 100 + "%" : "none"} ${c2.b !== void 0 ? c2.b * 100 + "%" : "none"}${c2.alpha < 1 ? ` / ${c2.alpha}` : ""})`,
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      w: interpolatorLinear,
+      b: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueNaive
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default9 = definition9;
+
+  // node_modules/culori/src/hdr/constants.js
+  var YW = 203;
+
+  // node_modules/culori/src/hdr/transfer.js
+  var M1 = 0.1593017578125;
+  var M2 = 78.84375;
+  var C1 = 0.8359375;
+  var C2 = 18.8515625;
+  var C3 = 18.6875;
+  function transferPqDecode(v) {
+    if (v < 0) return 0;
+    const c2 = Math.pow(v, 1 / M2);
+    return 1e4 * Math.pow(Math.max(0, c2 - C1) / (C2 - C3 * c2), 1 / M1);
+  }
+  function transferPqEncode(v) {
+    if (v < 0) return 0;
+    const c2 = Math.pow(v / 1e4, M1);
+    return Math.pow((C1 + C2 * c2) / (1 + C3 * c2), M2);
+  }
+
+  // node_modules/culori/src/itp/convertItpToXyz65.js
+  var toRel = (c2) => Math.max(c2 / YW, 0);
+  var convertItpToXyz65 = ({ i, t, p: p4, alpha }) => {
+    if (i === void 0) i = 0;
+    if (t === void 0) t = 0;
+    if (p4 === void 0) p4 = 0;
+    const l = transferPqDecode(
+      i + 0.008609037037932761 * t + 0.11102962500302593 * p4
+    );
+    const m = transferPqDecode(
+      i - 0.00860903703793275 * t - 0.11102962500302599 * p4
+    );
+    const s = transferPqDecode(
+      i + 0.5600313357106791 * t - 0.32062717498731885 * p4
+    );
+    const res = {
+      mode: "xyz65",
+      x: toRel(
+        2.070152218389422 * l - 1.3263473389671556 * m + 0.2066510476294051 * s
+      ),
+      y: toRel(
+        0.3647385209748074 * l + 0.680566024947227 * m - 0.0453045459220346 * s
+      ),
+      z: toRel(
+        -0.049747207535812 * l - 0.0492609666966138 * m + 1.1880659249923042 * s
+      )
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertItpToXyz65_default = convertItpToXyz65;
+
+  // node_modules/culori/src/itp/convertXyz65ToItp.js
+  var toAbs = (c2 = 0) => Math.max(c2 * YW, 0);
+  var convertXyz65ToItp = ({ x, y, z, alpha }) => {
+    const absX = toAbs(x);
+    const absY = toAbs(y);
+    const absZ = toAbs(z);
+    const l = transferPqEncode(
+      0.3592832590121217 * absX + 0.6976051147779502 * absY - 0.0358915932320289 * absZ
+    );
+    const m = transferPqEncode(
+      -0.1920808463704995 * absX + 1.1004767970374323 * absY + 0.0753748658519118 * absZ
+    );
+    const s = transferPqEncode(
+      0.0070797844607477 * absX + 0.0748396662186366 * absY + 0.8433265453898765 * absZ
+    );
+    const i = 0.5 * l + 0.5 * m;
+    const t = 1.61376953125 * l - 3.323486328125 * m + 1.709716796875 * s;
+    const p4 = 4.378173828125 * l - 4.24560546875 * m - 0.132568359375 * s;
+    const res = { mode: "itp", i, t, p: p4 };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToItp_default = convertXyz65ToItp;
+
+  // node_modules/culori/src/itp/definition.js
+  var definition10 = {
+    mode: "itp",
+    channels: ["i", "t", "p", "alpha"],
+    parse: ["--ictcp"],
+    serialize: "--ictcp",
+    toMode: {
+      xyz65: convertItpToXyz65_default,
+      rgb: (color) => convertXyz65ToRgb_default(convertItpToXyz65_default(color))
+    },
+    fromMode: {
+      xyz65: convertXyz65ToItp_default,
+      rgb: (color) => convertXyz65ToItp_default(convertRgbToXyz65_default(color))
+    },
+    ranges: {
+      i: [0, 0.581],
+      t: [-0.369, 0.272],
+      p: [-0.164, 0.331]
+    },
+    interpolate: {
+      i: interpolatorLinear,
+      t: interpolatorLinear,
+      p: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default10 = definition10;
+
+  // node_modules/culori/src/jab/convertXyz65ToJab.js
+  var p = 134.03437499999998;
+  var d0 = 16295499532821565e-27;
+  var jabPqEncode = (v) => {
+    if (v < 0) return 0;
+    let vn3 = Math.pow(v / 1e4, M1);
+    return Math.pow((C1 + C2 * vn3) / (1 + C3 * vn3), p);
+  };
+  var abs = (v = 0) => Math.max(v * 203, 0);
+  var convertXyz65ToJab = ({ x, y, z, alpha }) => {
+    x = abs(x);
+    y = abs(y);
+    z = abs(z);
+    let xp = 1.15 * x - 0.15 * z;
+    let yp = 0.66 * y + 0.34 * x;
+    let l = jabPqEncode(0.41478972 * xp + 0.579999 * yp + 0.014648 * z);
+    let m = jabPqEncode(-0.20151 * xp + 1.120649 * yp + 0.0531008 * z);
+    let s = jabPqEncode(-0.0166008 * xp + 0.2648 * yp + 0.6684799 * z);
+    let i = (l + m) / 2;
+    let res = {
+      mode: "jab",
+      j: 0.44 * i / (1 - 0.56 * i) - d0,
+      a: 3.524 * l - 4.066708 * m + 0.542708 * s,
+      b: 0.199076 * l + 1.096799 * m - 1.295875 * s
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToJab_default = convertXyz65ToJab;
+
+  // node_modules/culori/src/jab/convertJabToXyz65.js
+  var p2 = 134.03437499999998;
+  var d02 = 16295499532821565e-27;
+  var jabPqDecode = (v) => {
+    if (v < 0) return 0;
+    let vp = Math.pow(v, 1 / p2);
+    return 1e4 * Math.pow((C1 - vp) / (C3 * vp - C2), 1 / M1);
+  };
+  var rel = (v) => v / 203;
+  var convertJabToXyz65 = ({ j, a, b, alpha }) => {
+    if (j === void 0) j = 0;
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let i = (j + d02) / (0.44 + 0.56 * (j + d02));
+    let l = jabPqDecode(i + 0.13860504 * a + 0.058047316 * b);
+    let m = jabPqDecode(i - 0.13860504 * a - 0.058047316 * b);
+    let s = jabPqDecode(i - 0.096019242 * a - 0.8118919 * b);
+    let res = {
+      mode: "xyz65",
+      x: rel(
+        1.661373024652174 * l - 0.914523081304348 * m + 0.23136208173913045 * s
+      ),
+      y: rel(
+        -0.3250758611844533 * l + 1.571847026732543 * m - 0.21825383453227928 * s
+      ),
+      z: rel(-0.090982811 * l - 0.31272829 * m + 1.5227666 * s)
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertJabToXyz65_default = convertJabToXyz65;
+
+  // node_modules/culori/src/jab/convertRgbToJab.js
+  var convertRgbToJab = (rgb2) => {
+    let res = convertXyz65ToJab_default(convertRgbToXyz65_default(rgb2));
+    if (rgb2.r === rgb2.b && rgb2.b === rgb2.g) {
+      res.a = res.b = 0;
+    }
+    return res;
+  };
+  var convertRgbToJab_default = convertRgbToJab;
+
+  // node_modules/culori/src/jab/convertJabToRgb.js
+  var convertJabToRgb = (color) => convertXyz65ToRgb_default(convertJabToXyz65_default(color));
+  var convertJabToRgb_default = convertJabToRgb;
+
+  // node_modules/culori/src/jab/definition.js
+  var definition11 = {
+    mode: "jab",
+    channels: ["j", "a", "b", "alpha"],
+    parse: ["--jzazbz"],
+    serialize: "--jzazbz",
+    fromMode: {
+      rgb: convertRgbToJab_default,
+      xyz65: convertXyz65ToJab_default
+    },
+    toMode: {
+      rgb: convertJabToRgb_default,
+      xyz65: convertJabToXyz65_default
+    },
+    ranges: {
+      j: [0, 0.222],
+      a: [-0.109, 0.129],
+      b: [-0.185, 0.134]
+    },
+    interpolate: {
+      j: interpolatorLinear,
+      a: interpolatorLinear,
+      b: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default11 = definition11;
+
+  // node_modules/culori/src/jch/convertJabToJch.js
+  var convertJabToJch = ({ j, a, b, alpha }) => {
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let c2 = Math.sqrt(a * a + b * b);
+    let res = {
+      mode: "jch",
+      j,
+      c: c2
+    };
+    if (c2) {
+      res.h = normalizeHue_default(Math.atan2(b, a) * 180 / Math.PI);
+    }
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertJabToJch_default = convertJabToJch;
+
+  // node_modules/culori/src/jch/convertJchToJab.js
+  var convertJchToJab = ({ j, c: c2, h, alpha }) => {
+    if (h === void 0) h = 0;
+    let res = {
+      mode: "jab",
+      j,
+      a: c2 ? c2 * Math.cos(h / 180 * Math.PI) : 0,
+      b: c2 ? c2 * Math.sin(h / 180 * Math.PI) : 0
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertJchToJab_default = convertJchToJab;
+
+  // node_modules/culori/src/jch/definition.js
+  var definition12 = {
+    mode: "jch",
+    parse: ["--jzczhz"],
+    serialize: "--jzczhz",
+    toMode: {
+      jab: convertJchToJab_default,
+      rgb: (c2) => convertJabToRgb_default(convertJchToJab_default(c2))
+    },
+    fromMode: {
+      rgb: (c2) => convertJabToJch_default(convertRgbToJab_default(c2)),
+      jab: convertJabToJch_default
+    },
+    channels: ["j", "c", "h", "alpha"],
+    ranges: {
+      j: [0, 0.221],
+      c: [0, 0.19],
+      h: [0, 360]
+    },
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      c: interpolatorLinear,
+      j: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueChroma
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default12 = definition12;
+
+  // node_modules/culori/src/xyz50/constants.js
+  var k3 = Math.pow(29, 3) / Math.pow(3, 3);
+  var e3 = Math.pow(6, 3) / Math.pow(29, 3);
+
+  // node_modules/culori/src/lab/convertLabToXyz50.js
+  var fn4 = (v) => Math.pow(v, 3) > e3 ? Math.pow(v, 3) : (116 * v - 16) / k3;
+  var convertLabToXyz50 = ({ l, a, b, alpha }) => {
+    if (l === void 0) l = 0;
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let fy = (l + 16) / 116;
+    let fx = a / 500 + fy;
+    let fz = fy - b / 200;
+    let res = {
+      mode: "xyz50",
+      x: fn4(fx) * D50.X,
+      y: fn4(fy) * D50.Y,
+      z: fn4(fz) * D50.Z
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertLabToXyz50_default = convertLabToXyz50;
+
+  // node_modules/culori/src/xyz50/convertXyz50ToRgb.js
+  var convertXyz50ToRgb = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = convertLrgbToRgb_default({
+      r: x * 3.1341359569958707 - y * 1.6173863321612538 - 0.4906619460083532 * z,
+      g: x * -0.978795502912089 + y * 1.916254567259524 + 0.03344273116131949 * z,
+      b: x * 0.07195537988411677 - y * 0.2289768264158322 + 1.405386058324125 * z
+    });
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz50ToRgb_default = convertXyz50ToRgb;
+
+  // node_modules/culori/src/lab/convertLabToRgb.js
+  var convertLabToRgb = (lab2) => convertXyz50ToRgb_default(convertLabToXyz50_default(lab2));
+  var convertLabToRgb_default = convertLabToRgb;
+
+  // node_modules/culori/src/xyz50/convertRgbToXyz50.js
+  var convertRgbToXyz50 = (rgb2) => {
+    let { r, g, b, alpha } = convertRgbToLrgb_default(rgb2);
+    let res = {
+      mode: "xyz50",
+      x: 0.436065742824811 * r + 0.3851514688337912 * g + 0.14307845442264197 * b,
+      y: 0.22249319175623702 * r + 0.7168870538238823 * g + 0.06061979053616537 * b,
+      z: 0.013923904500943465 * r + 0.09708128566574634 * g + 0.7140993584005155 * b
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertRgbToXyz50_default = convertRgbToXyz50;
+
+  // node_modules/culori/src/lab/convertXyz50ToLab.js
+  var f2 = (value) => value > e3 ? Math.cbrt(value) : (k3 * value + 16) / 116;
+  var convertXyz50ToLab = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let f0 = f2(x / D50.X);
+    let f1 = f2(y / D50.Y);
+    let f22 = f2(z / D50.Z);
+    let res = {
+      mode: "lab",
+      l: 116 * f1 - 16,
+      a: 500 * (f0 - f1),
+      b: 200 * (f1 - f22)
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz50ToLab_default = convertXyz50ToLab;
+
+  // node_modules/culori/src/lab/convertRgbToLab.js
+  var convertRgbToLab = (rgb2) => {
+    let res = convertXyz50ToLab_default(convertRgbToXyz50_default(rgb2));
+    if (rgb2.r === rgb2.b && rgb2.b === rgb2.g) {
+      res.a = res.b = 0;
+    }
+    return res;
+  };
+  var convertRgbToLab_default = convertRgbToLab;
+
+  // node_modules/culori/src/lab/parseLab.js
+  function parseLab(color, parsed) {
+    if (!parsed || parsed[0] !== "lab") {
+      return void 0;
+    }
+    const res = { mode: "lab" };
+    const [, l, a, b, alpha] = parsed;
+    if (l.type === Tok.Hue || a.type === Tok.Hue || b.type === Tok.Hue) {
+      return void 0;
+    }
+    if (l.type !== Tok.None) {
+      res.l = Math.min(Math.max(0, l.value), 100);
+    }
+    if (a.type !== Tok.None) {
+      res.a = a.type === Tok.Number ? a.value : a.value * 125 / 100;
+    }
+    if (b.type !== Tok.None) {
+      res.b = b.type === Tok.Number ? b.value : b.value * 125 / 100;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseLab_default = parseLab;
+
+  // node_modules/culori/src/lab/definition.js
+  var definition13 = {
+    mode: "lab",
+    toMode: {
+      xyz50: convertLabToXyz50_default,
+      rgb: convertLabToRgb_default
+    },
+    fromMode: {
+      xyz50: convertXyz50ToLab_default,
+      rgb: convertRgbToLab_default
+    },
+    channels: ["l", "a", "b", "alpha"],
+    ranges: {
+      l: [0, 100],
+      a: [-100, 100],
+      b: [-100, 100]
+    },
+    parse: [parseLab_default],
+    serialize: (c2) => `lab(${c2.l !== void 0 ? c2.l : "none"} ${c2.a !== void 0 ? c2.a : "none"} ${c2.b !== void 0 ? c2.b : "none"}${c2.alpha < 1 ? ` / ${c2.alpha}` : ""})`,
+    interpolate: {
+      l: interpolatorLinear,
+      a: interpolatorLinear,
+      b: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default13 = definition13;
+
+  // node_modules/culori/src/lab65/definition.js
+  var definition14 = __spreadProps(__spreadValues({}, definition_default13), {
+    mode: "lab65",
+    parse: ["--lab-d65"],
+    serialize: "--lab-d65",
+    toMode: {
+      xyz65: convertLab65ToXyz65_default,
+      rgb: convertLab65ToRgb_default
+    },
+    fromMode: {
+      xyz65: convertXyz65ToLab65_default,
+      rgb: convertRgbToLab65_default
+    },
+    ranges: {
+      l: [0, 100],
+      a: [-86.182, 98.234],
+      b: [-107.86, 94.477]
+    }
+  });
+  var definition_default14 = definition14;
+
+  // node_modules/culori/src/lch/parseLch.js
+  function parseLch(color, parsed) {
+    if (!parsed || parsed[0] !== "lch") {
+      return void 0;
+    }
+    const res = { mode: "lch" };
+    const [, l, c2, h, alpha] = parsed;
+    if (l.type !== Tok.None) {
+      if (l.type === Tok.Hue) {
+        return void 0;
+      }
+      res.l = Math.min(Math.max(0, l.value), 100);
+    }
+    if (c2.type !== Tok.None) {
+      res.c = Math.max(
+        0,
+        c2.type === Tok.Number ? c2.value : c2.value * 150 / 100
+      );
+    }
+    if (h.type !== Tok.None) {
+      if (h.type === Tok.Percentage) {
+        return void 0;
+      }
+      res.h = h.value;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseLch_default = parseLch;
+
+  // node_modules/culori/src/lch/definition.js
+  var definition15 = {
+    mode: "lch",
+    toMode: {
+      lab: convertLchToLab_default,
+      rgb: (c2) => convertLabToRgb_default(convertLchToLab_default(c2))
+    },
+    fromMode: {
+      rgb: (c2) => convertLabToLch_default(convertRgbToLab_default(c2)),
+      lab: convertLabToLch_default
+    },
+    channels: ["l", "c", "h", "alpha"],
+    ranges: {
+      l: [0, 100],
+      c: [0, 150],
+      h: [0, 360]
+    },
+    parse: [parseLch_default],
+    serialize: (c2) => `lch(${c2.l !== void 0 ? c2.l : "none"} ${c2.c !== void 0 ? c2.c : "none"} ${c2.h !== void 0 ? c2.h : "none"}${c2.alpha < 1 ? ` / ${c2.alpha}` : ""})`,
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      c: interpolatorLinear,
+      l: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueChroma
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default15 = definition15;
+
+  // node_modules/culori/src/lch65/definition.js
+  var definition16 = __spreadProps(__spreadValues({}, definition_default15), {
+    mode: "lch65",
+    parse: ["--lch-d65"],
+    serialize: "--lch-d65",
+    toMode: {
+      lab65: (c2) => convertLchToLab_default(c2, "lab65"),
+      rgb: (c2) => convertLab65ToRgb_default(convertLchToLab_default(c2, "lab65"))
+    },
+    fromMode: {
+      rgb: (c2) => convertLabToLch_default(convertRgbToLab65_default(c2), "lch65"),
+      lab65: (c2) => convertLabToLch_default(c2, "lch65")
+    },
+    ranges: {
+      l: [0, 100],
+      c: [0, 133.807],
+      h: [0, 360]
+    }
+  });
+  var definition_default16 = definition16;
+
+  // node_modules/culori/src/lchuv/convertLuvToLchuv.js
+  var convertLuvToLchuv = ({ l, u, v, alpha }) => {
+    if (u === void 0) u = 0;
+    if (v === void 0) v = 0;
+    let c2 = Math.sqrt(u * u + v * v);
+    let res = {
+      mode: "lchuv",
+      l,
+      c: c2
+    };
+    if (c2) {
+      res.h = normalizeHue_default(Math.atan2(v, u) * 180 / Math.PI);
+    }
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertLuvToLchuv_default = convertLuvToLchuv;
+
+  // node_modules/culori/src/lchuv/convertLchuvToLuv.js
+  var convertLchuvToLuv = ({ l, c: c2, h, alpha }) => {
+    if (h === void 0) h = 0;
+    let res = {
+      mode: "luv",
+      l,
+      u: c2 ? c2 * Math.cos(h / 180 * Math.PI) : 0,
+      v: c2 ? c2 * Math.sin(h / 180 * Math.PI) : 0
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertLchuvToLuv_default = convertLchuvToLuv;
+
+  // node_modules/culori/src/luv/convertXyz50ToLuv.js
+  var u_fn = (x, y, z) => 4 * x / (x + 15 * y + 3 * z);
+  var v_fn = (x, y, z) => 9 * y / (x + 15 * y + 3 * z);
+  var un = u_fn(D50.X, D50.Y, D50.Z);
+  var vn = v_fn(D50.X, D50.Y, D50.Z);
+  var l_fn = (value) => value <= e3 ? k3 * value : 116 * Math.cbrt(value) - 16;
+  var convertXyz50ToLuv = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let l = l_fn(y / D50.Y);
+    let u = u_fn(x, y, z);
+    let v = v_fn(x, y, z);
+    if (!isFinite(u) || !isFinite(v)) {
+      l = u = v = 0;
+    } else {
+      u = 13 * l * (u - un);
+      v = 13 * l * (v - vn);
+    }
+    let res = {
+      mode: "luv",
+      l,
+      u,
+      v
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz50ToLuv_default = convertXyz50ToLuv;
+
+  // node_modules/culori/src/luv/convertLuvToXyz50.js
+  var u_fn2 = (x, y, z) => 4 * x / (x + 15 * y + 3 * z);
+  var v_fn2 = (x, y, z) => 9 * y / (x + 15 * y + 3 * z);
+  var un2 = u_fn2(D50.X, D50.Y, D50.Z);
+  var vn2 = v_fn2(D50.X, D50.Y, D50.Z);
+  var convertLuvToXyz50 = ({ l, u, v, alpha }) => {
+    if (l === void 0) l = 0;
+    if (l === 0) {
+      return { mode: "xyz50", x: 0, y: 0, z: 0 };
+    }
+    if (u === void 0) u = 0;
+    if (v === void 0) v = 0;
+    let up = u / (13 * l) + un2;
+    let vp = v / (13 * l) + vn2;
+    let y = D50.Y * (l <= 8 ? l / k3 : Math.pow((l + 16) / 116, 3));
+    let x = y * (9 * up) / (4 * vp);
+    let z = y * (12 - 3 * up - 20 * vp) / (4 * vp);
+    let res = { mode: "xyz50", x, y, z };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertLuvToXyz50_default = convertLuvToXyz50;
+
+  // node_modules/culori/src/lchuv/definition.js
+  var convertRgbToLchuv = (rgb2) => convertLuvToLchuv_default(convertXyz50ToLuv_default(convertRgbToXyz50_default(rgb2)));
+  var convertLchuvToRgb = (lchuv2) => convertXyz50ToRgb_default(convertLuvToXyz50_default(convertLchuvToLuv_default(lchuv2)));
+  var definition17 = {
+    mode: "lchuv",
+    toMode: {
+      luv: convertLchuvToLuv_default,
+      rgb: convertLchuvToRgb
+    },
+    fromMode: {
+      rgb: convertRgbToLchuv,
+      luv: convertLuvToLchuv_default
+    },
+    channels: ["l", "c", "h", "alpha"],
+    parse: ["--lchuv"],
+    serialize: "--lchuv",
+    ranges: {
+      l: [0, 100],
+      c: [0, 176.956],
+      h: [0, 360]
+    },
+    interpolate: {
+      h: { use: interpolatorLinear, fixup: fixupHueShorter },
+      c: interpolatorLinear,
+      l: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    },
+    difference: {
+      h: differenceHueChroma
+    },
+    average: {
+      h: averageAngle
+    }
+  };
+  var definition_default17 = definition17;
+
+  // node_modules/culori/src/lrgb/definition.js
+  var definition18 = __spreadProps(__spreadValues({}, definition_default), {
+    mode: "lrgb",
+    toMode: {
+      rgb: convertLrgbToRgb_default
+    },
+    fromMode: {
+      rgb: convertRgbToLrgb_default
+    },
+    parse: ["srgb-linear"],
+    serialize: "srgb-linear"
+  });
+  var definition_default18 = definition18;
+
+  // node_modules/culori/src/luv/definition.js
+  var definition19 = {
+    mode: "luv",
+    toMode: {
+      xyz50: convertLuvToXyz50_default,
+      rgb: (luv2) => convertXyz50ToRgb_default(convertLuvToXyz50_default(luv2))
+    },
+    fromMode: {
+      xyz50: convertXyz50ToLuv_default,
+      rgb: (rgb2) => convertXyz50ToLuv_default(convertRgbToXyz50_default(rgb2))
+    },
+    channels: ["l", "u", "v", "alpha"],
+    parse: ["--luv"],
+    serialize: "--luv",
+    ranges: {
+      l: [0, 100],
+      u: [-84.936, 175.042],
+      v: [-125.882, 87.243]
+    },
+    interpolate: {
+      l: interpolatorLinear,
+      u: interpolatorLinear,
+      v: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default19 = definition19;
+
+  // node_modules/culori/src/oklab/convertLrgbToOklab.js
+  var convertLrgbToOklab = ({ r, g, b, alpha }) => {
+    if (r === void 0) r = 0;
+    if (g === void 0) g = 0;
+    if (b === void 0) b = 0;
+    let L = Math.cbrt(
+      0.41222147079999993 * r + 0.5363325363 * g + 0.0514459929 * b
+    );
+    let M3 = Math.cbrt(
+      0.2119034981999999 * r + 0.6806995450999999 * g + 0.1073969566 * b
+    );
+    let S = Math.cbrt(
+      0.08830246189999998 * r + 0.2817188376 * g + 0.6299787005000002 * b
+    );
+    let res = {
+      mode: "oklab",
+      l: 0.2104542553 * L + 0.793617785 * M3 - 0.0040720468 * S,
+      a: 1.9779984951 * L - 2.428592205 * M3 + 0.4505937099 * S,
+      b: 0.0259040371 * L + 0.7827717662 * M3 - 0.808675766 * S
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertLrgbToOklab_default = convertLrgbToOklab;
+
+  // node_modules/culori/src/oklab/convertRgbToOklab.js
+  var convertRgbToOklab = (rgb2) => {
+    let res = convertLrgbToOklab_default(convertRgbToLrgb_default(rgb2));
+    if (rgb2.r === rgb2.b && rgb2.b === rgb2.g) {
+      res.a = res.b = 0;
+    }
+    return res;
+  };
+  var convertRgbToOklab_default = convertRgbToOklab;
+
+  // node_modules/culori/src/oklab/convertOklabToLrgb.js
+  var convertOklabToLrgb = ({ l, a, b, alpha }) => {
+    if (l === void 0) l = 0;
+    if (a === void 0) a = 0;
+    if (b === void 0) b = 0;
+    let L = Math.pow(
+      l * 0.9999999984505198 + 0.39633779217376786 * a + 0.2158037580607588 * b,
+      3
+    );
+    let M3 = Math.pow(
+      l * 1.0000000088817609 - 0.10556134232365635 * a - 0.06385417477170591 * b,
+      3
+    );
+    let S = Math.pow(
+      l * 1.0000000546724108 - 0.08948418209496575 * a - 1.2914855378640917 * b,
+      3
+    );
+    let res = {
+      mode: "lrgb",
+      r: 4.076741661347994 * L - 3.307711590408193 * M3 + 0.230969928729428 * S,
+      g: -1.2684380040921763 * L + 2.6097574006633715 * M3 - 0.3413193963102197 * S,
+      b: -0.004196086541837188 * L - 0.7034186144594493 * M3 + 1.7076147009309444 * S
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertOklabToLrgb_default = convertOklabToLrgb;
+
+  // node_modules/culori/src/oklab/convertOklabToRgb.js
+  var convertOklabToRgb = (c2) => convertLrgbToRgb_default(convertOklabToLrgb_default(c2));
+  var convertOklabToRgb_default = convertOklabToRgb;
+
+  // node_modules/culori/src/okhsl/helpers.js
+  function toe(x) {
+    const k_1 = 0.206;
+    const k_2 = 0.03;
+    const k_3 = (1 + k_1) / (1 + k_2);
+    return 0.5 * (k_3 * x - k_1 + Math.sqrt((k_3 * x - k_1) * (k_3 * x - k_1) + 4 * k_2 * k_3 * x));
+  }
+  function toe_inv(x) {
+    const k_1 = 0.206;
+    const k_2 = 0.03;
+    const k_3 = (1 + k_1) / (1 + k_2);
+    return (x * x + k_1 * x) / (k_3 * (x + k_2));
+  }
+  function compute_max_saturation(a, b) {
+    let k0, k1, k22, k32, k4, wl, wm, ws;
+    if (-1.88170328 * a - 0.80936493 * b > 1) {
+      k0 = 1.19086277;
+      k1 = 1.76576728;
+      k22 = 0.59662641;
+      k32 = 0.75515197;
+      k4 = 0.56771245;
+      wl = 4.0767416621;
+      wm = -3.3077115913;
+      ws = 0.2309699292;
+    } else if (1.81444104 * a - 1.19445276 * b > 1) {
+      k0 = 0.73956515;
+      k1 = -0.45954404;
+      k22 = 0.08285427;
+      k32 = 0.1254107;
+      k4 = 0.14503204;
+      wl = -1.2684380046;
+      wm = 2.6097574011;
+      ws = -0.3413193965;
+    } else {
+      k0 = 1.35733652;
+      k1 = -915799e-8;
+      k22 = -1.1513021;
+      k32 = -0.50559606;
+      k4 = 692167e-8;
+      wl = -0.0041960863;
+      wm = -0.7034186147;
+      ws = 1.707614701;
+    }
+    let S = k0 + k1 * a + k22 * b + k32 * a * a + k4 * a * b;
+    let k_l = 0.3963377774 * a + 0.2158037573 * b;
+    let k_m = -0.1055613458 * a - 0.0638541728 * b;
+    let k_s = -0.0894841775 * a - 1.291485548 * b;
+    {
+      let l_ = 1 + S * k_l;
+      let m_ = 1 + S * k_m;
+      let s_ = 1 + S * k_s;
+      let l = l_ * l_ * l_;
+      let m = m_ * m_ * m_;
+      let s = s_ * s_ * s_;
+      let l_dS = 3 * k_l * l_ * l_;
+      let m_dS = 3 * k_m * m_ * m_;
+      let s_dS = 3 * k_s * s_ * s_;
+      let l_dS2 = 6 * k_l * k_l * l_;
+      let m_dS2 = 6 * k_m * k_m * m_;
+      let s_dS2 = 6 * k_s * k_s * s_;
+      let f3 = wl * l + wm * m + ws * s;
+      let f1 = wl * l_dS + wm * m_dS + ws * s_dS;
+      let f22 = wl * l_dS2 + wm * m_dS2 + ws * s_dS2;
+      S = S - f3 * f1 / (f1 * f1 - 0.5 * f3 * f22);
+    }
+    return S;
+  }
+  function find_cusp(a, b) {
+    let S_cusp = compute_max_saturation(a, b);
+    let rgb2 = convertOklabToLrgb_default({ l: 1, a: S_cusp * a, b: S_cusp * b });
+    let L_cusp = Math.cbrt(1 / Math.max(rgb2.r, rgb2.g, rgb2.b));
+    let C_cusp = L_cusp * S_cusp;
+    return [L_cusp, C_cusp];
+  }
+  function find_gamut_intersection(a, b, L1, C12, L0, cusp = null) {
+    if (!cusp) {
+      cusp = find_cusp(a, b);
+    }
+    let t;
+    if ((L1 - L0) * cusp[1] - (cusp[0] - L0) * C12 <= 0) {
+      t = cusp[1] * L0 / (C12 * cusp[0] + cusp[1] * (L0 - L1));
+    } else {
+      t = cusp[1] * (L0 - 1) / (C12 * (cusp[0] - 1) + cusp[1] * (L0 - L1));
+      {
+        let dL = L1 - L0;
+        let dC = C12;
+        let k_l = 0.3963377774 * a + 0.2158037573 * b;
+        let k_m = -0.1055613458 * a - 0.0638541728 * b;
+        let k_s = -0.0894841775 * a - 1.291485548 * b;
+        let l_dt = dL + dC * k_l;
+        let m_dt = dL + dC * k_m;
+        let s_dt = dL + dC * k_s;
+        {
+          let L = L0 * (1 - t) + t * L1;
+          let C = t * C12;
+          let l_ = L + C * k_l;
+          let m_ = L + C * k_m;
+          let s_ = L + C * k_s;
+          let l = l_ * l_ * l_;
+          let m = m_ * m_ * m_;
+          let s = s_ * s_ * s_;
+          let ldt = 3 * l_dt * l_ * l_;
+          let mdt = 3 * m_dt * m_ * m_;
+          let sdt = 3 * s_dt * s_ * s_;
+          let ldt2 = 6 * l_dt * l_dt * l_;
+          let mdt2 = 6 * m_dt * m_dt * m_;
+          let sdt2 = 6 * s_dt * s_dt * s_;
+          let r = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s - 1;
+          let r1 = 4.0767416621 * ldt - 3.3077115913 * mdt + 0.2309699292 * sdt;
+          let r2 = 4.0767416621 * ldt2 - 3.3077115913 * mdt2 + 0.2309699292 * sdt2;
+          let u_r = r1 / (r1 * r1 - 0.5 * r * r2);
+          let t_r = -r * u_r;
+          let g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s - 1;
+          let g1 = -1.2684380046 * ldt + 2.6097574011 * mdt - 0.3413193965 * sdt;
+          let g2 = -1.2684380046 * ldt2 + 2.6097574011 * mdt2 - 0.3413193965 * sdt2;
+          let u_g = g1 / (g1 * g1 - 0.5 * g * g2);
+          let t_g = -g * u_g;
+          let b2 = -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s - 1;
+          let b1 = -0.0041960863 * ldt - 0.7034186147 * mdt + 1.707614701 * sdt;
+          let b22 = -0.0041960863 * ldt2 - 0.7034186147 * mdt2 + 1.707614701 * sdt2;
+          let u_b = b1 / (b1 * b1 - 0.5 * b2 * b22);
+          let t_b = -b2 * u_b;
+          t_r = u_r >= 0 ? t_r : 1e6;
+          t_g = u_g >= 0 ? t_g : 1e6;
+          t_b = u_b >= 0 ? t_b : 1e6;
+          t += Math.min(t_r, Math.min(t_g, t_b));
+        }
+      }
+    }
+    return t;
+  }
+  function get_ST_max(a_, b_, cusp = null) {
+    if (!cusp) {
+      cusp = find_cusp(a_, b_);
+    }
+    let L = cusp[0];
+    let C = cusp[1];
+    return [C / L, C / (1 - L)];
+  }
+  function get_Cs(L, a_, b_) {
+    let cusp = find_cusp(a_, b_);
+    let C_max = find_gamut_intersection(a_, b_, L, 1, L, cusp);
+    let ST_max = get_ST_max(a_, b_, cusp);
+    let S_mid = 0.11516993 + 1 / (7.4477897 + 4.1590124 * b_ + a_ * (-2.19557347 + 1.75198401 * b_ + a_ * (-2.13704948 - 10.02301043 * b_ + a_ * (-4.24894561 + 5.38770819 * b_ + 4.69891013 * a_))));
+    let T_mid = 0.11239642 + 1 / (1.6132032 - 0.68124379 * b_ + a_ * (0.40370612 + 0.90148123 * b_ + a_ * (-0.27087943 + 0.6122399 * b_ + a_ * (299215e-8 - 0.45399568 * b_ - 0.14661872 * a_))));
+    let k4 = C_max / Math.min(L * ST_max[0], (1 - L) * ST_max[1]);
+    let C_a = L * S_mid;
+    let C_b = (1 - L) * T_mid;
+    let C_mid = 0.9 * k4 * Math.sqrt(
+      Math.sqrt(
+        1 / (1 / (C_a * C_a * C_a * C_a) + 1 / (C_b * C_b * C_b * C_b))
+      )
+    );
+    C_a = L * 0.4;
+    C_b = (1 - L) * 0.8;
+    let C_0 = Math.sqrt(1 / (1 / (C_a * C_a) + 1 / (C_b * C_b)));
+    return [C_0, C_mid, C_max];
+  }
+
+  // node_modules/culori/src/okhsl/convertOklabToOkhsl.js
+  function convertOklabToOkhsl(lab2) {
+    const l = lab2.l !== void 0 ? lab2.l : 0;
+    const a = lab2.a !== void 0 ? lab2.a : 0;
+    const b = lab2.b !== void 0 ? lab2.b : 0;
+    const ret = { mode: "okhsl", l: toe(l) };
+    if (lab2.alpha !== void 0) {
+      ret.alpha = lab2.alpha;
+    }
+    let c2 = Math.sqrt(a * a + b * b);
+    if (!c2) {
+      ret.s = 0;
+      return ret;
+    }
+    let [C_0, C_mid, C_max] = get_Cs(l, a / c2, b / c2);
+    let s;
+    if (c2 < C_mid) {
+      let k_0 = 0;
+      let k_1 = 0.8 * C_0;
+      let k_2 = 1 - k_1 / C_mid;
+      let t = (c2 - k_0) / (k_1 + k_2 * (c2 - k_0));
+      s = t * 0.8;
+    } else {
+      let k_0 = C_mid;
+      let k_1 = 0.2 * C_mid * C_mid * 1.25 * 1.25 / C_0;
+      let k_2 = 1 - k_1 / (C_max - C_mid);
+      let t = (c2 - k_0) / (k_1 + k_2 * (c2 - k_0));
+      s = 0.8 + 0.2 * t;
+    }
+    if (s) {
+      ret.s = s;
+      ret.h = normalizeHue_default(Math.atan2(b, a) * 180 / Math.PI);
+    }
+    return ret;
+  }
+
+  // node_modules/culori/src/okhsl/convertOkhslToOklab.js
+  function convertOkhslToOklab(hsl2) {
+    let h = hsl2.h !== void 0 ? hsl2.h : 0;
+    let s = hsl2.s !== void 0 ? hsl2.s : 0;
+    let l = hsl2.l !== void 0 ? hsl2.l : 0;
+    const ret = { mode: "oklab", l: toe_inv(l) };
+    if (hsl2.alpha !== void 0) {
+      ret.alpha = hsl2.alpha;
+    }
+    if (!s || l === 1) {
+      ret.a = ret.b = 0;
+      return ret;
+    }
+    let a_ = Math.cos(h / 180 * Math.PI);
+    let b_ = Math.sin(h / 180 * Math.PI);
+    let [C_0, C_mid, C_max] = get_Cs(ret.l, a_, b_);
+    let t, k_0, k_1, k_2;
+    if (s < 0.8) {
+      t = 1.25 * s;
+      k_0 = 0;
+      k_1 = 0.8 * C_0;
+      k_2 = 1 - k_1 / C_mid;
+    } else {
+      t = 5 * (s - 0.8);
+      k_0 = C_mid;
+      k_1 = 0.2 * C_mid * C_mid * 1.25 * 1.25 / C_0;
+      k_2 = 1 - k_1 / (C_max - C_mid);
+    }
+    let C = k_0 + t * k_1 / (1 - k_2 * t);
+    ret.a = C * a_;
+    ret.b = C * b_;
+    return ret;
+  }
+
+  // node_modules/culori/src/okhsl/modeOkhsl.js
+  var modeOkhsl = __spreadProps(__spreadValues({}, definition_default7), {
+    mode: "okhsl",
+    channels: ["h", "s", "l", "alpha"],
+    parse: ["--okhsl"],
+    serialize: "--okhsl",
+    fromMode: {
+      oklab: convertOklabToOkhsl,
+      rgb: (c2) => convertOklabToOkhsl(convertRgbToOklab_default(c2))
+    },
+    toMode: {
+      oklab: convertOkhslToOklab,
+      rgb: (c2) => convertOklabToRgb_default(convertOkhslToOklab(c2))
+    }
+  });
+  var modeOkhsl_default = modeOkhsl;
+
+  // node_modules/culori/src/okhsv/convertOklabToOkhsv.js
+  function convertOklabToOkhsv(lab2) {
+    let l = lab2.l !== void 0 ? lab2.l : 0;
+    let a = lab2.a !== void 0 ? lab2.a : 0;
+    let b = lab2.b !== void 0 ? lab2.b : 0;
+    let c2 = Math.sqrt(a * a + b * b);
+    let a_ = c2 ? a / c2 : 1;
+    let b_ = c2 ? b / c2 : 1;
+    let [S_max, T] = get_ST_max(a_, b_);
+    let S_0 = 0.5;
+    let k4 = 1 - S_0 / S_max;
+    let t = T / (c2 + l * T);
+    let L_v = t * l;
+    let C_v = t * c2;
+    let L_vt = toe_inv(L_v);
+    let C_vt = C_v * L_vt / L_v;
+    let rgb_scale = convertOklabToLrgb_default({ l: L_vt, a: a_ * C_vt, b: b_ * C_vt });
+    let scale_L = Math.cbrt(
+      1 / Math.max(rgb_scale.r, rgb_scale.g, rgb_scale.b, 0)
+    );
+    l = l / scale_L;
+    c2 = c2 / scale_L * toe(l) / l;
+    l = toe(l);
+    const ret = {
+      mode: "okhsv",
+      s: c2 ? (S_0 + T) * C_v / (T * S_0 + T * k4 * C_v) : 0,
+      v: l ? l / L_v : 0
+    };
+    if (ret.s) {
+      ret.h = normalizeHue_default(Math.atan2(b, a) * 180 / Math.PI);
+    }
+    if (lab2.alpha !== void 0) {
+      ret.alpha = lab2.alpha;
+    }
+    return ret;
+  }
+
+  // node_modules/culori/src/okhsv/convertOkhsvToOklab.js
+  function convertOkhsvToOklab(hsv2) {
+    const ret = { mode: "oklab" };
+    if (hsv2.alpha !== void 0) {
+      ret.alpha = hsv2.alpha;
+    }
+    const h = hsv2.h !== void 0 ? hsv2.h : 0;
+    const s = hsv2.s !== void 0 ? hsv2.s : 0;
+    const v = hsv2.v !== void 0 ? hsv2.v : 0;
+    const a_ = Math.cos(h / 180 * Math.PI);
+    const b_ = Math.sin(h / 180 * Math.PI);
+    const [S_max, T] = get_ST_max(a_, b_);
+    const S_0 = 0.5;
+    const k4 = 1 - S_0 / S_max;
+    const L_v = 1 - s * S_0 / (S_0 + T - T * k4 * s);
+    const C_v = s * T * S_0 / (S_0 + T - T * k4 * s);
+    const L_vt = toe_inv(L_v);
+    const C_vt = C_v * L_vt / L_v;
+    const rgb_scale = convertOklabToLrgb_default({
+      l: L_vt,
+      a: a_ * C_vt,
+      b: b_ * C_vt
+    });
+    const scale_L = Math.cbrt(
+      1 / Math.max(rgb_scale.r, rgb_scale.g, rgb_scale.b, 0)
+    );
+    const L_new = toe_inv(v * L_v);
+    const C = C_v * L_new / L_v;
+    ret.l = L_new * scale_L;
+    ret.a = C * a_ * scale_L;
+    ret.b = C * b_ * scale_L;
+    return ret;
+  }
+
+  // node_modules/culori/src/okhsv/modeOkhsv.js
+  var modeOkhsv = __spreadProps(__spreadValues({}, definition_default8), {
+    mode: "okhsv",
+    channels: ["h", "s", "v", "alpha"],
+    parse: ["--okhsv"],
+    serialize: "--okhsv",
+    fromMode: {
+      oklab: convertOklabToOkhsv,
+      rgb: (c2) => convertOklabToOkhsv(convertRgbToOklab_default(c2))
+    },
+    toMode: {
+      oklab: convertOkhsvToOklab,
+      rgb: (c2) => convertOklabToRgb_default(convertOkhsvToOklab(c2))
+    }
+  });
+  var modeOkhsv_default = modeOkhsv;
+
+  // node_modules/culori/src/oklab/parseOklab.js
+  function parseOklab(color, parsed) {
+    if (!parsed || parsed[0] !== "oklab") {
+      return void 0;
+    }
+    const res = { mode: "oklab" };
+    const [, l, a, b, alpha] = parsed;
+    if (l.type === Tok.Hue || a.type === Tok.Hue || b.type === Tok.Hue) {
+      return void 0;
+    }
+    if (l.type !== Tok.None) {
+      res.l = Math.min(
+        Math.max(0, l.type === Tok.Number ? l.value : l.value / 100),
+        1
+      );
+    }
+    if (a.type !== Tok.None) {
+      res.a = a.type === Tok.Number ? a.value : a.value * 0.4 / 100;
+    }
+    if (b.type !== Tok.None) {
+      res.b = b.type === Tok.Number ? b.value : b.value * 0.4 / 100;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseOklab_default = parseOklab;
+
+  // node_modules/culori/src/oklab/definition.js
+  var definition20 = __spreadProps(__spreadValues({}, definition_default13), {
+    mode: "oklab",
+    toMode: {
+      lrgb: convertOklabToLrgb_default,
+      rgb: convertOklabToRgb_default
+    },
+    fromMode: {
+      lrgb: convertLrgbToOklab_default,
+      rgb: convertRgbToOklab_default
+    },
+    ranges: {
+      l: [0, 1],
+      a: [-0.4, 0.4],
+      b: [-0.4, 0.4]
+    },
+    parse: [parseOklab_default],
+    serialize: (c2) => `oklab(${c2.l !== void 0 ? c2.l : "none"} ${c2.a !== void 0 ? c2.a : "none"} ${c2.b !== void 0 ? c2.b : "none"}${c2.alpha < 1 ? ` / ${c2.alpha}` : ""})`
+  });
+  var definition_default20 = definition20;
+
+  // node_modules/culori/src/oklch/parseOklch.js
+  function parseOklch(color, parsed) {
+    if (!parsed || parsed[0] !== "oklch") {
+      return void 0;
+    }
+    const res = { mode: "oklch" };
+    const [, l, c2, h, alpha] = parsed;
+    if (l.type !== Tok.None) {
+      if (l.type === Tok.Hue) {
+        return void 0;
+      }
+      res.l = Math.min(
+        Math.max(0, l.type === Tok.Number ? l.value : l.value / 100),
+        1
+      );
+    }
+    if (c2.type !== Tok.None) {
+      res.c = Math.max(
+        0,
+        c2.type === Tok.Number ? c2.value : c2.value * 0.4 / 100
+      );
+    }
+    if (h.type !== Tok.None) {
+      if (h.type === Tok.Percentage) {
+        return void 0;
+      }
+      res.h = h.value;
+    }
+    if (alpha.type !== Tok.None) {
+      res.alpha = Math.min(
+        1,
+        Math.max(
+          0,
+          alpha.type === Tok.Number ? alpha.value : alpha.value / 100
+        )
+      );
+    }
+    return res;
+  }
+  var parseOklch_default = parseOklch;
+
+  // node_modules/culori/src/oklch/definition.js
+  var definition21 = __spreadProps(__spreadValues({}, definition_default15), {
+    mode: "oklch",
+    toMode: {
+      oklab: (c2) => convertLchToLab_default(c2, "oklab"),
+      rgb: (c2) => convertOklabToRgb_default(convertLchToLab_default(c2, "oklab"))
+    },
+    fromMode: {
+      rgb: (c2) => convertLabToLch_default(convertRgbToOklab_default(c2), "oklch"),
+      oklab: (c2) => convertLabToLch_default(c2, "oklch")
+    },
+    parse: [parseOklch_default],
+    serialize: (c2) => `oklch(${c2.l !== void 0 ? c2.l : "none"} ${c2.c !== void 0 ? c2.c : "none"} ${c2.h !== void 0 ? c2.h : "none"}${c2.alpha < 1 ? ` / ${c2.alpha}` : ""})`,
+    ranges: {
+      l: [0, 1],
+      c: [0, 0.4],
+      h: [0, 360]
+    }
+  });
+  var definition_default21 = definition21;
+
+  // node_modules/culori/src/p3/convertP3ToXyz65.js
+  var convertP3ToXyz65 = (rgb2) => {
+    let { r, g, b, alpha } = convertRgbToLrgb_default(rgb2);
+    let res = {
+      mode: "xyz65",
+      x: 0.486570948648216 * r + 0.265667693169093 * g + 0.1982172852343625 * b,
+      y: 0.2289745640697487 * r + 0.6917385218365062 * g + 0.079286914093745 * b,
+      z: 0 * r + 0.0451133818589026 * g + 1.043944368900976 * b
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertP3ToXyz65_default = convertP3ToXyz65;
+
+  // node_modules/culori/src/p3/convertXyz65ToP3.js
+  var convertXyz65ToP3 = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = convertLrgbToRgb_default(
+      {
+        r: x * 2.4934969119414263 - y * 0.9313836179191242 - 0.402710784450717 * z,
+        g: x * -0.8294889695615749 + y * 1.7626640603183465 + 0.0236246858419436 * z,
+        b: x * 0.0358458302437845 - y * 0.0761723892680418 + 0.9568845240076871 * z
+      },
+      "p3"
+    );
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToP3_default = convertXyz65ToP3;
+
+  // node_modules/culori/src/p3/definition.js
+  var definition22 = __spreadProps(__spreadValues({}, definition_default), {
+    mode: "p3",
+    parse: ["display-p3"],
+    serialize: "display-p3",
+    fromMode: {
+      rgb: (color) => convertXyz65ToP3_default(convertRgbToXyz65_default(color)),
+      xyz65: convertXyz65ToP3_default
+    },
+    toMode: {
+      rgb: (color) => convertXyz65ToRgb_default(convertP3ToXyz65_default(color)),
+      xyz65: convertP3ToXyz65_default
+    }
+  });
+  var definition_default22 = definition22;
+
+  // node_modules/culori/src/prophoto/convertXyz50ToProphoto.js
+  var gamma2 = (v) => {
+    let abs2 = Math.abs(v);
+    if (abs2 >= 1 / 512) {
+      return Math.sign(v) * Math.pow(abs2, 1 / 1.8);
+    }
+    return 16 * v;
+  };
+  var convertXyz50ToProphoto = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = {
+      mode: "prophoto",
+      r: gamma2(
+        x * 1.3457868816471585 - y * 0.2555720873797946 - 0.0511018649755453 * z
+      ),
+      g: gamma2(
+        x * -0.5446307051249019 + y * 1.5082477428451466 + 0.0205274474364214 * z
+      ),
+      b: gamma2(x * 0 + y * 0 + 1.2119675456389452 * z)
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz50ToProphoto_default = convertXyz50ToProphoto;
+
+  // node_modules/culori/src/prophoto/convertProphotoToXyz50.js
+  var linearize2 = (v = 0) => {
+    let abs2 = Math.abs(v);
+    if (abs2 >= 16 / 512) {
+      return Math.sign(v) * Math.pow(abs2, 1.8);
+    }
+    return v / 16;
+  };
+  var convertProphotoToXyz50 = (prophoto2) => {
+    let r = linearize2(prophoto2.r);
+    let g = linearize2(prophoto2.g);
+    let b = linearize2(prophoto2.b);
+    let res = {
+      mode: "xyz50",
+      x: 0.7977666449006423 * r + 0.1351812974005331 * g + 0.0313477341283922 * b,
+      y: 0.2880748288194013 * r + 0.7118352342418731 * g + 899369387256e-16 * b,
+      z: 0 * r + 0 * g + 0.8251046025104602 * b
+    };
+    if (prophoto2.alpha !== void 0) {
+      res.alpha = prophoto2.alpha;
+    }
+    return res;
+  };
+  var convertProphotoToXyz50_default = convertProphotoToXyz50;
+
+  // node_modules/culori/src/prophoto/definition.js
+  var definition23 = __spreadProps(__spreadValues({}, definition_default), {
+    mode: "prophoto",
+    parse: ["prophoto-rgb"],
+    serialize: "prophoto-rgb",
+    fromMode: {
+      xyz50: convertXyz50ToProphoto_default,
+      rgb: (color) => convertXyz50ToProphoto_default(convertRgbToXyz50_default(color))
+    },
+    toMode: {
+      xyz50: convertProphotoToXyz50_default,
+      rgb: (color) => convertXyz50ToRgb_default(convertProphotoToXyz50_default(color))
+    }
+  });
+  var definition_default23 = definition23;
+
+  // node_modules/culori/src/rec2020/convertXyz65ToRec2020.js
+  var \u03B1 = 1.09929682680944;
+  var \u03B2 = 0.018053968510807;
+  var gamma3 = (v) => {
+    const abs2 = Math.abs(v);
+    if (abs2 > \u03B2) {
+      return (Math.sign(v) || 1) * (\u03B1 * Math.pow(abs2, 0.45) - (\u03B1 - 1));
+    }
+    return 4.5 * v;
+  };
+  var convertXyz65ToRec2020 = ({ x, y, z, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = {
+      mode: "rec2020",
+      r: gamma3(
+        x * 1.7166511879712683 - y * 0.3556707837763925 - 0.2533662813736599 * z
+      ),
+      g: gamma3(
+        x * -0.6666843518324893 + y * 1.6164812366349395 + 0.0157685458139111 * z
+      ),
+      b: gamma3(
+        x * 0.0176398574453108 - y * 0.0427706132578085 + 0.9421031212354739 * z
+      )
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToRec2020_default = convertXyz65ToRec2020;
+
+  // node_modules/culori/src/rec2020/convertRec2020ToXyz65.js
+  var \u03B12 = 1.09929682680944;
+  var \u03B22 = 0.018053968510807;
+  var linearize3 = (v = 0) => {
+    let abs2 = Math.abs(v);
+    if (abs2 < \u03B22 * 4.5) {
+      return v / 4.5;
+    }
+    return (Math.sign(v) || 1) * Math.pow((abs2 + \u03B12 - 1) / \u03B12, 1 / 0.45);
+  };
+  var convertRec2020ToXyz65 = (rec20202) => {
+    let r = linearize3(rec20202.r);
+    let g = linearize3(rec20202.g);
+    let b = linearize3(rec20202.b);
+    let res = {
+      mode: "xyz65",
+      x: 0.6369580483012911 * r + 0.1446169035862083 * g + 0.1688809751641721 * b,
+      y: 0.262700212011267 * r + 0.6779980715188708 * g + 0.059301716469862 * b,
+      z: 0 * r + 0.0280726930490874 * g + 1.0609850577107909 * b
+    };
+    if (rec20202.alpha !== void 0) {
+      res.alpha = rec20202.alpha;
+    }
+    return res;
+  };
+  var convertRec2020ToXyz65_default = convertRec2020ToXyz65;
+
+  // node_modules/culori/src/rec2020/definition.js
+  var definition24 = __spreadProps(__spreadValues({}, definition_default), {
+    mode: "rec2020",
+    fromMode: {
+      xyz65: convertXyz65ToRec2020_default,
+      rgb: (color) => convertXyz65ToRec2020_default(convertRgbToXyz65_default(color))
+    },
+    toMode: {
+      xyz65: convertRec2020ToXyz65_default,
+      rgb: (color) => convertXyz65ToRgb_default(convertRec2020ToXyz65_default(color))
+    },
+    parse: ["rec2020"],
+    serialize: "rec2020"
+  });
+  var definition_default24 = definition24;
+
+  // node_modules/culori/src/xyb/constants.js
+  var bias = 0.0037930732552754493;
+  var bias_cbrt = Math.cbrt(bias);
+
+  // node_modules/culori/src/xyb/convertRgbToXyb.js
+  var transfer = (v) => Math.cbrt(v) - bias_cbrt;
+  var convertRgbToXyb = (color) => {
+    const { r, g, b, alpha } = convertRgbToLrgb_default(color);
+    const l = transfer(0.3 * r + 0.622 * g + 0.078 * b + bias);
+    const m = transfer(0.23 * r + 0.692 * g + 0.078 * b + bias);
+    const s = transfer(
+      0.2434226892454782 * r + 0.2047674442449682 * g + 0.5518098665095535 * b + bias
+    );
+    const res = {
+      mode: "xyb",
+      x: (l - m) / 2,
+      y: (l + m) / 2,
+      /* Apply default chroma from luma (subtract Y from B) */
+      b: s - (l + m) / 2
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertRgbToXyb_default = convertRgbToXyb;
+
+  // node_modules/culori/src/xyb/convertXybToRgb.js
+  var transfer2 = (v) => Math.pow(v + bias_cbrt, 3);
+  var convertXybToRgb = ({ x, y, b, alpha }) => {
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (b === void 0) b = 0;
+    const l = transfer2(x + y) - bias;
+    const m = transfer2(y - x) - bias;
+    const s = transfer2(b + y) - bias;
+    const res = convertLrgbToRgb_default({
+      r: 11.031566904639861 * l - 9.866943908131562 * m - 0.16462299650829934 * s,
+      g: -3.2541473810744237 * l + 4.418770377582723 * m - 0.16462299650829934 * s,
+      b: -3.6588512867136815 * l + 2.7129230459360922 * m + 1.9459282407775895 * s
+    });
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertXybToRgb_default = convertXybToRgb;
+
+  // node_modules/culori/src/xyb/definition.js
+  var definition25 = {
+    mode: "xyb",
+    channels: ["x", "y", "b", "alpha"],
+    parse: ["--xyb"],
+    serialize: "--xyb",
+    toMode: {
+      rgb: convertXybToRgb_default
+    },
+    fromMode: {
+      rgb: convertRgbToXyb_default
+    },
+    ranges: {
+      x: [-0.0154, 0.0281],
+      y: [0, 0.8453],
+      b: [-0.2778, 0.388]
+    },
+    interpolate: {
+      x: interpolatorLinear,
+      y: interpolatorLinear,
+      b: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default25 = definition25;
+
+  // node_modules/culori/src/xyz50/definition.js
+  var definition26 = {
+    mode: "xyz50",
+    parse: ["xyz-d50"],
+    serialize: "xyz-d50",
+    toMode: {
+      rgb: convertXyz50ToRgb_default,
+      lab: convertXyz50ToLab_default
+    },
+    fromMode: {
+      rgb: convertRgbToXyz50_default,
+      lab: convertLabToXyz50_default
+    },
+    channels: ["x", "y", "z", "alpha"],
+    ranges: {
+      x: [0, 0.964],
+      y: [0, 0.999],
+      z: [0, 0.825]
+    },
+    interpolate: {
+      x: interpolatorLinear,
+      y: interpolatorLinear,
+      z: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default26 = definition26;
+
+  // node_modules/culori/src/xyz65/convertXyz65ToXyz50.js
+  var convertXyz65ToXyz50 = (xyz652) => {
+    let { x, y, z, alpha } = xyz652;
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = {
+      mode: "xyz50",
+      x: 1.0479298208405488 * x + 0.0229467933410191 * y - 0.0501922295431356 * z,
+      y: 0.0296278156881593 * x + 0.990434484573249 * y - 0.0170738250293851 * z,
+      z: -0.0092430581525912 * x + 0.0150551448965779 * y + 0.7518742899580008 * z
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz65ToXyz50_default = convertXyz65ToXyz50;
+
+  // node_modules/culori/src/xyz65/convertXyz50ToXyz65.js
+  var convertXyz50ToXyz65 = (xyz502) => {
+    let { x, y, z, alpha } = xyz502;
+    if (x === void 0) x = 0;
+    if (y === void 0) y = 0;
+    if (z === void 0) z = 0;
+    let res = {
+      mode: "xyz65",
+      x: 0.9554734527042182 * x - 0.0230985368742614 * y + 0.0632593086610217 * z,
+      y: -0.0283697069632081 * x + 1.0099954580058226 * y + 0.021041398966943 * z,
+      z: 0.0123140016883199 * x - 0.0205076964334779 * y + 1.3303659366080753 * z
+    };
+    if (alpha !== void 0) {
+      res.alpha = alpha;
+    }
+    return res;
+  };
+  var convertXyz50ToXyz65_default = convertXyz50ToXyz65;
+
+  // node_modules/culori/src/xyz65/definition.js
+  var definition27 = {
+    mode: "xyz65",
+    toMode: {
+      rgb: convertXyz65ToRgb_default,
+      xyz50: convertXyz65ToXyz50_default
+    },
+    fromMode: {
+      rgb: convertRgbToXyz65_default,
+      xyz50: convertXyz50ToXyz65_default
+    },
+    ranges: {
+      x: [0, 0.95],
+      y: [0, 1],
+      z: [0, 1.088]
+    },
+    channels: ["x", "y", "z", "alpha"],
+    parse: ["xyz", "xyz-d65"],
+    serialize: "xyz-d65",
+    interpolate: {
+      x: interpolatorLinear,
+      y: interpolatorLinear,
+      z: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default27 = definition27;
+
+  // node_modules/culori/src/yiq/convertRgbToYiq.js
+  var convertRgbToYiq = ({ r, g, b, alpha }) => {
+    if (r === void 0) r = 0;
+    if (g === void 0) g = 0;
+    if (b === void 0) b = 0;
+    const res = {
+      mode: "yiq",
+      y: 0.29889531 * r + 0.58662247 * g + 0.11448223 * b,
+      i: 0.59597799 * r - 0.2741761 * g - 0.32180189 * b,
+      q: 0.21147017 * r - 0.52261711 * g + 0.31114694 * b
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertRgbToYiq_default = convertRgbToYiq;
+
+  // node_modules/culori/src/yiq/convertYiqToRgb.js
+  var convertYiqToRgb = ({ y, i, q, alpha }) => {
+    if (y === void 0) y = 0;
+    if (i === void 0) i = 0;
+    if (q === void 0) q = 0;
+    const res = {
+      mode: "rgb",
+      r: y + 0.95608445 * i + 0.6208885 * q,
+      g: y - 0.27137664 * i - 0.6486059 * q,
+      b: y - 1.10561724 * i + 1.70250126 * q
+    };
+    if (alpha !== void 0) res.alpha = alpha;
+    return res;
+  };
+  var convertYiqToRgb_default = convertYiqToRgb;
+
+  // node_modules/culori/src/yiq/definition.js
+  var definition28 = {
+    mode: "yiq",
+    toMode: {
+      rgb: convertYiqToRgb_default
+    },
+    fromMode: {
+      rgb: convertRgbToYiq_default
+    },
+    channels: ["y", "i", "q", "alpha"],
+    parse: ["--yiq"],
+    serialize: "--yiq",
+    ranges: {
+      i: [-0.595, 0.595],
+      q: [-0.522, 0.522]
+    },
+    interpolate: {
+      y: interpolatorLinear,
+      i: interpolatorLinear,
+      q: interpolatorLinear,
+      alpha: { use: interpolatorLinear, fixup: fixupAlpha }
+    }
+  };
+  var definition_default28 = definition28;
+
+  // node_modules/culori/src/wcag.js
+  function luminance(color) {
+    let c2 = converter_default("lrgb")(color);
+    return 0.2126 * c2.r + 0.7152 * c2.g + 0.0722 * c2.b;
+  }
+  function contrast(a, b) {
+    let L1 = luminance(a);
+    let L2 = luminance(b);
+    return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
+  }
+
+  // node_modules/culori/src/index.js
+  var a98 = useMode(definition_default2);
+  var cubehelix = useMode(definition_default3);
+  var dlab = useMode(definition_default4);
+  var dlch = useMode(definition_default5);
+  var hsi = useMode(definition_default6);
+  var hsl = useMode(definition_default7);
+  var hsv = useMode(definition_default8);
+  var hwb = useMode(definition_default9);
+  var itp = useMode(definition_default10);
+  var jab = useMode(definition_default11);
+  var jch = useMode(definition_default12);
+  var lab = useMode(definition_default13);
+  var lab65 = useMode(definition_default14);
+  var lch = useMode(definition_default15);
+  var lch65 = useMode(definition_default16);
+  var lchuv = useMode(definition_default17);
+  var lrgb = useMode(definition_default18);
+  var luv = useMode(definition_default19);
+  var okhsl = useMode(modeOkhsl_default);
+  var okhsv = useMode(modeOkhsv_default);
+  var oklab = useMode(definition_default20);
+  var oklch = useMode(definition_default21);
+  var p3 = useMode(definition_default22);
+  var prophoto = useMode(definition_default23);
+  var rec2020 = useMode(definition_default24);
+  var rgb = useMode(definition_default);
+  var xyb = useMode(definition_default25);
+  var xyz50 = useMode(definition_default26);
+  var xyz65 = useMode(definition_default27);
+  var yiq = useMode(definition_default28);
+
+  // src/en.js
+  var en_default = {
+    descriptions: [
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.75, 1],
+            l: [0.4, 0.55]
+          }
+        },
+        descriptive: [
+          "saturated",
+          "strong",
+          "lush",
+          "ablaze",
+          "beaming",
+          "bold",
+          "brilliant",
+          "flamboyant",
+          "vibrant",
+          "vivid",
+          "loud"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0, 0.07]
+          }
+        },
+        descriptive: ["dark", "ashy", "somber", "bleak", "muddy", "sooty"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0, 0.3]
+          }
+        },
+        descriptive: ["dark", "dim", "gloomy", "dull"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.1, 0.7],
+            l: [0.15, 0.5]
+          }
+        },
+        descriptive: ["bleak", "muted", "matte", "dusty"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.12, 1],
+            l: [0.7, 1]
+          }
+        },
+        descriptive: ["tinted"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.2, 1],
+            l: [0.75, 0.95]
+          }
+        },
+        descriptive: ["pastel"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0.88, 1]
+          }
+        },
+        descriptive: [
+          "pale",
+          "light",
+          "faded",
+          "delicate",
+          "glistening",
+          "bleached"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.5, 1],
+            l: [0.7, 0.9]
+          }
+        },
+        descriptive: [
+          "fresh",
+          "sparkling",
+          "glittering",
+          "glowing",
+          "jazzy",
+          "opalescent"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0.9, 1]
+          }
+        },
+        descriptive: ["neutral"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.74, 1],
+            l: [0.9, 1]
+          }
+        },
+        descriptive: ["muted"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: 1
+          }
+        },
+        descriptive: ["colorless", "bright", "brilliant", "high"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: 0
+          }
+        },
+        descriptive: ["colorless", "low", "dark"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0, 0.01],
+            l: null
+          }
+        },
+        descriptive: ["colorless", "neutral"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0.01, 0.3]
+          }
+        },
+        descriptive: ["shady"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0, 0.4],
+            l: null
+          }
+        },
+        descriptive: ["ashy", "dusty"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0.01, 0.08]
+          }
+        },
+        descriptive: ["almost black"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0, 0.02]
+          }
+        },
+        descriptive: ["black"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0, 0.09]
+          }
+        },
+        descriptive: ["very dark"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0, 0.4],
+            l: [0, 0.22]
+          }
+        },
+        descriptive: ["dark"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.1, 0.4],
+            l: [0, 0.6]
+          }
+        },
+        descriptive: ["dark", "inky", "dim", "gloomy"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0, 0.04],
+            l: [0.1, 0.99]
+          }
+        },
+        descriptive: ["grey"],
+        nouns: ["grey"],
+        description: [
+          "Grey is a color often linked with neutrality, balance, and calm. It sits between black and white on the color spectrum, giving it a muted, understated quality. When you think of grey, you might picture misty mornings, smooth stone, or the quiet stillness of a cloudy day. It's a versatile color, fitting equally well in minimalist designs or more somber settings. Grey can evoke feelings of tranquility, contemplation, and sophistication. Close your eyes and imagine grey\u2014it might appear as a soft shadow or a subtle haze that wraps the world in a calm, muted tone."
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.04, 0.1],
+            l: [0.17, 0.99]
+          }
+        },
+        descriptive: ["almost grey"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.1, 0.3],
+            l: [0.17, 0.99]
+          }
+        },
+        descriptive: ["very unsaturated"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.3, 0.46],
+            l: null
+          }
+        },
+        descriptive: ["unsaturated"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.46, 0.6],
+            l: [0.4, 0.55]
+          }
+        },
+        descriptive: ["rather unsaturated"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.601, 0.8],
+            l: [0.45, 0.6]
+          }
+        },
+        descriptive: ["saturated"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.801, 0.94],
+            l: [0.45, 0.6]
+          }
+        },
+        descriptive: ["rather saturated"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: [0.941, 1],
+            l: [0.45, 0.6]
+          }
+        },
+        descriptive: ["very saturated"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [0, 90],
+            s: [0.3, 1],
+            l: [0.1, 1]
+          }
+        },
+        descriptive: ["warm", "mellow"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [270, 360],
+            s: [0.3, 1],
+            l: [0.1, 1]
+          }
+        },
+        descriptive: ["warm", "mellow"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [90.01, 269.99],
+            s: null,
+            l: [0.1, 1]
+          }
+        },
+        descriptive: ["cold", "cool"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0.98, 1]
+          }
+        },
+        nouns: ["white"],
+        description: [
+          "White is a color that is often associated with purity, innocence, and cleanliness. It is the lightest color on the visible spectrum and is often described as having a bright, luminous quality. When you think of white, you might imagine a freshly fallen snow, a blank canvas, or a cloudless sky. It is a versatile color that can be used in a wide range of settings and contexts, from formal to casual. If you close your eyes and picture white, you might imagine a bright, radiant light that illuminates everything around it."
+        ],
+        meanings: [
+          "purity",
+          "cleanliness",
+          "simplicity",
+          "innocence",
+          "freshness",
+          "light",
+          "goodness",
+          "virtue",
+          "safety",
+          "peace",
+          "tranquility",
+          "wholeness",
+          "perfection",
+          "honesty",
+          "truth",
+          "sincerity"
+        ],
+        usage: ["health", "hospital", "sanitary"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: null,
+            s: null,
+            l: [0, 0.08]
+          }
+        },
+        nouns: ["black"],
+        description: [
+          "Black is a color that is often associated with power, elegance, and sophistication. It is a color that is often used to create a sense of mystery, depth, and contrast, and it is often described as a color that can be both bold and elegant. In art and design, black is often used to create a sense of sophistication and drama, and it is often used in fashion to create a sense of sophistication and refinement."
+        ],
+        meanings: [
+          "power",
+          "control",
+          "authority",
+          "discipline",
+          "discretion",
+          "secrecy",
+          "elegance",
+          "mystery"
+        ],
+        usage: ["intimidate", "create fear", "authority", "luxury"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [0, 15],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["red", "reddish"],
+        nouns: ["red"],
+        description: [
+          "Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages."
+        ],
+        meanings: [
+          "excitement",
+          "energy",
+          "passion",
+          "courage",
+          "attention",
+          "lust",
+          "power",
+          "love",
+          "speed",
+          "anger",
+          "lust",
+          "excitement",
+          "danger",
+          "ferocity",
+          "violence",
+          "fury",
+          "anger",
+          "vigor",
+          "urgency"
+        ],
+        usage: [
+          "stimulate",
+          "create urgency",
+          "draw attention",
+          "caution",
+          "encourage",
+          "excite"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [15, 45],
+            s: [0.1, 1],
+            l: [0.4, 0.99]
+          }
+        },
+        descriptive: ["orange"],
+        nouns: ["orange"],
+        description: [
+          "Orange is a vibrant and playful color that is often associated with creativity, energy, and warmth. It is a secondary color that is made by combining red and yellow, and it is often described as a warm and friendly color that can be both invigorating and calming. It is often associated with joy, enthusiasm, and warmth, and it is often used in art and design to create a sense of excitement and playfulness."
+        ],
+        meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
+        usage: ["stimulate", "draw attention", "express freedom", "fascinate"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [15, 45],
+            s: [0.1, 1],
+            l: [0.07, 0.4]
+          }
+        },
+        descriptive: ["brown"],
+        nouns: ["brown"],
+        description: [
+          "Brown is a warm and earthy color that is often associated with nature, stability, and reliability. It is a secondary color that is made by combining red, blue, and yellow in different proportions, and it is often described as a rich and luxurious color that can be both comforting and grounding. It is often associated with wood, soil, and the natural world, and it is often used in art and design to create a sense of warmth and permanence."
+        ],
+        meanings: [
+          "strength",
+          "reliability",
+          "resilience",
+          "loneliness",
+          "sadness",
+          "isolation",
+          "warmth",
+          "comfort",
+          "security"
+        ],
+        usage: ["agriculture", "legal", "food", "tobacco", "alcohol"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [45, 70],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["yellow"],
+        nouns: ["yellow"],
+        description: [
+          "Yellow is a bright and cheerful color that is often associated with sunshine, happiness, and warmth. It is a primary color that is made by combining red and green light, and it is usually described as a warm and vibrant color that can be both calming and energizing. It is often associated with joy, happiness, and friendship, and it is often used in art and design to create a sense of cheerfulness and playfulness."
+        ],
+        meanings: [
+          "enthusiasm",
+          "opportunity",
+          "spontaneity",
+          "happiness",
+          "positivity"
+        ],
+        usage: [
+          "stimulate",
+          "relax",
+          "awake awareness",
+          "energize",
+          "affect mood",
+          "sale",
+          "cheap",
+          "budget",
+          "construction",
+          "convey competence"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [70, 79],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["lime"],
+        nouns: ["lime"],
+        description: [
+          "Lime is a bright, vibrant color that is often associated with freshness, energy, and youth. It is a pale shade of green that is similar to chartreuse, but it is slightly lighter and more vibrant. Some people may associate the color lime with feelings of playfulness and excitement, while others may associate it with feelings of rejuvenation and renewal. In terms of wavelength, lime is a mixture of green and yellow light, and it is often used in art and design to create a sense of energy and vitality. Overall, lime is a lively and refreshing color that can be used to create a wide range of moods and atmospheres."
+        ],
+        meanings: ["growth", "harmony", "fertility", "kindness", "dependability"],
+        usage: [
+          "restore energy",
+          "promote growth",
+          "awake awareness",
+          "rejuvenate",
+          "nature"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [79, 163],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["green", "greenish"],
+        nouns: ["green"],
+        description: [
+          "Green is a cool, refreshing color that is often associated with nature, growth, and freshness. It is the color of grass, leaves, and trees, and it is often used to create a sense of harmony and balance. Some people may associate the color green with feelings of jealousy or envy, while others may associate it with feelings of peace and tranquility. In terms of wavelength, green is a primary color of light, and it is located between blue and yellow on the visible light spectrum. It is often used in art and design to create a sense of growth and renewal. Overall, green is a versatile and popular color that can be used to create a wide range of moods and atmospheres."
+        ],
+        meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+        usage: ["relax", "ballance", "revitalize", "encourage", "posses"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [163, 193],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["cyan"],
+        nouns: ["cyan", "sky blue"],
+        description: [
+          "Cyan is a bright, fresh color that is often associated with the ocean, the sky, and the natural world. It is a pale shade of blue that is similar to teal, but it is slightly lighter and more muted. Some people may associate the color cyan with feelings of peace and serenity, while others may associate it with feelings of youth and playfulness. In terms of wavelength, cyan is a mixture of blue and green light, and it is often used in art and design to create a sense of freshness and vitality. Overall, cyan is a versatile and refreshing color that can be used to create a wide range of moods and atmospheres."
+        ],
+        meanings: [
+          "freedom",
+          "trust",
+          "wisdom",
+          "joy",
+          "refreshing",
+          "consciousness",
+          "stimulating"
+        ],
+        usage: [
+          "self expression",
+          "communication",
+          "children products",
+          "technology",
+          "aerospace",
+          "entertainment",
+          "productivity"
+        ]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [193, 240],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["blue", "blueish"],
+        nouns: ["blue"],
+        description: [
+          "Blue is a cool, calming color that is often associated with trust, reliability, and intelligence. It is the color of the sky and the ocean, and it is often used to create a sense of peace and tranquility. Some people may associate the color blue with feelings of sadness or melancholy, while others may associate it with feelings of calm and relaxation. In terms of wavelength, blue is a primary color of light, and it is located between green and violet on the visible light spectrum. It is often used in art and design to create a sense of balance and harmony. Overall, blue is a versatile and popular color that can be used to create a wide range of moods and atmospheres."
+        ],
+        meanings: [
+          "trust",
+          "responsibility",
+          "honesty",
+          "loyalty",
+          "security",
+          "relying",
+          "calmness",
+          "control"
+        ],
+        usage: ["security", "finance", "technology", "health care", "accounting"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [240, 260],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["indigo"],
+        nouns: ["indigo"],
+        description: [
+          "Indigo is a deep, rich color that is often associated with spirituality, intuition, and wisdom. It is a dark shade of blue that is similar to navy, but it is slightly lighter and more muted. Some people may associate the color indigo with feelings of calm and relaxation, while others may associate it with feelings of mystery and intrigue. In terms of wavelength, indigo is a deep blue color that is located between blue and violet on the visible light spectrum. It is often used in art and design to add a touch of depth and complexity. Overall, indigo is a beautiful and versatile color that can be used to create a wide range of moods and atmospheres."
+        ],
+        meanings: [
+          "spirituality",
+          "structure",
+          "compassion",
+          "sensitivity",
+          "mystery",
+          "tolerance",
+          "integrity",
+          "order",
+          "wisdom",
+          "inspiration"
+        ],
+        usage: ["luxury", "religion", "psychic"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [260, 270],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["violet"],
+        nouns: ["violet"],
+        description: [
+          "Violet is a rich, regal color that is often associated with luxury, royalty, and sophistication. It is a deep shade of purple that is similar to lavender, but it is slightly darker and more intense. Some people may associate the color violet with feelings of mystery and spirituality, while others may associate it with feelings of calm and tranquility. In terms of wavelength, violet is a mixture of blue and red light, and it is often used in art and design to add a touch of elegance and refinement. Overall, violet is a beautiful and sophisticated color that can be used to create a calm and peaceful atmosphere."
+        ],
+        meanings: [
+          "spirituality",
+          "structure",
+          "compassion",
+          "sensitivity",
+          "mystery",
+          "tolerance",
+          "integrity",
+          "order",
+          "wisdom",
+          "inspiration"
+        ],
+        usage: ["luxury", "religion", "psychic"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [270, 291],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["purple", "purplish"],
+        nouns: ["purple"],
+        description: [
+          "Purple is a rich and vibrant color that is often associated with royalty, luxury, and creativity. It is a combination of blue and red, with more red than blue, giving it a warm and passionate quality. The shade of purple can vary from a deep, dark hue to a light, almost lavender color, and each shade can evoke different emotions and meanings. Some people may associate purple with spirituality and mysticism, while others may see it as a symbol of extravagance and decadence. In terms of wavelength, purple is located between blue and violet on the visible light spectrum and has a shorter wavelength than most other colors. Because of its striking and eye-catching nature, purple is frequently used in fashion, art, and design to add a pop of color and flair. Overall, purple is a captivating and dynamic color that can express a wide range of moods and emotions, making it a favorite among many people."
+        ],
+        meanings: [
+          "spirituality",
+          "structure",
+          "compassion",
+          "sensitivity",
+          "mystery",
+          "tolerance",
+          "integrity",
+          "order",
+          "wisdom",
+          "inspiration"
+        ],
+        usage: ["luxury", "religion", "psychic", "royalty"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [291, 327],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["magenta"],
+        nouns: ["magenta"],
+        description: [
+          "Magenta is a deep, rich color that is often associated with creativity, passion, and intensity. It is a vibrant shade of pink that is similar to fuchsia, but it is slightly darker and more muted. Some people may associate the color magenta with feelings of excitement and energy, while others may associate it with feelings of love and romance. In terms of wavelength, magenta is a mixture of red and blue light, and it is often used in art and design to add a bold and striking touch. Overall, magenta is a vibrant and lively color that can be used to add drama and excitement to any setting."
+        ],
+        meanings: [
+          "support",
+          "kind",
+          "change",
+          "harmony",
+          "kink",
+          "charm",
+          "politeness",
+          "sensitivity",
+          "tenderness",
+          "sweetness",
+          "femininity",
+          "romance",
+          "seductiveness",
+          "sexiness"
+        ],
+        usage: ["children products", , "erotica"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [327, 344],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["pink"],
+        nouns: ["pink"],
+        description: [
+          "Pink is a light, delicate color that is often associated with femininity, romance, and sweetness. It is a pale shade of red, and it is often described as a softer, more gentle version of the color. Some people may associate the color pink with feelings of happiness and playfulness, while others may associate it with feelings of warmth and comfort. In terms of wavelength, pink is a mixture of red and white light, and it is often used in decorations and clothing to add a touch of whimsy and fun. Overall, pink is a cheerful and playful color that can be used to create a warm and inviting atmosphere."
+        ],
+        meanings: [
+          "support",
+          "kindness",
+          "change",
+          "harmony",
+          "kink",
+          "charm",
+          "politeness",
+          "sensitivity",
+          "tenderness",
+          "sweetness",
+          "femininity",
+          "romance",
+          "seductiveness",
+          "sexiness"
+        ],
+        usage: ["children products", "erotica"]
+      },
+      {
+        criteria: {
+          hsl: {
+            h: [344, 360],
+            s: [0.1, 1],
+            l: [0.07, 0.99]
+          }
+        },
+        descriptive: ["red", "reddish"],
+        nouns: ["red"],
+        description: [
+          "Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages."
+        ],
+        meanings: [
+          "excitement",
+          "energy",
+          "passion",
+          "courage",
+          "attention",
+          "lust",
+          "power",
+          "love",
+          "speed",
+          "anger",
+          "lust",
+          "excitement",
+          "danger",
+          "ferocity",
+          "violence",
+          "fury",
+          "anger",
+          "vigor",
+          "urgency"
+        ],
+        usage: [
+          "stimulate",
+          "create urgency",
+          "draw attention",
+          "caution",
+          "encourage"
+        ]
+      }
+    ],
+    temperatures: [
+      {
+        value: 1800,
+        descriptive: ["ultra warm"]
+      },
+      {
+        value: 2400,
+        descriptive: ["very warm"]
+      },
+      {
+        value: 2700,
+        descriptive: ["warm"]
+      },
+      {
+        value: 3e3,
+        descriptive: ["warm white"]
+      },
+      {
+        value: 4e3,
+        descriptive: ["cool or cold"]
+      },
+      {
+        value: 6500,
+        descriptive: ["cool"]
+      }
+    ],
+    percentWords: [
+      {
+        maxPercentile: 0.06,
+        word: "a dash of"
+      },
+      {
+        maxPercentile: 0.16,
+        word: "a little bit of"
+      },
+      {
+        maxPercentile: 0.31,
+        word: "some"
+      },
+      {
+        maxPercentile: 0.56,
+        word: "a good bit of"
+      },
+      {
+        maxPercentile: 0.71,
+        word: "a lot of"
+      },
+      {
+        maxPercentile: 0.86,
+        word: "a whole lot of"
+      },
+      {
+        maxPercentile: 0.99,
+        word: "neatly entirely"
+      },
+      {
+        maxPercentile: 1,
+        word: "entirely"
+      }
+    ]
+  };
+
+  // src/index.js
+  var converters2 = {
+    rgb: converter_default("rgb"),
+    hsl: converter_default("hsl")
+  };
+  var formatComponents = {
+    rgb: ["r", "g", "b"],
+    cmyk: ["c", "m", "y", "k"],
+    hsl: ["h", "s", "l"]
+  };
+  var _ColorDescription_instances, parseColor_fn, getWords_fn;
+  var ColorDescription = class {
+    constructor(color, words = en_default) {
+      __privateAdd(this, _ColorDescription_instances);
+      __publicField(this, "formats", {});
+      __publicField(this, "currentColor", null);
+      this.color = color;
+      this.descriptions = words.descriptions;
+      this.temperatures = words.temperatures;
+      this.percentWords = words.percentWords;
+    }
+    set color(color) {
+      this.currentColor = __privateMethod(this, _ColorDescription_instances, parseColor_fn).call(this, color);
+      const rgb2 = converters2["rgb"](this.currentColor);
+      this.formats.rgb = rgb2;
+      this.formats.hsl = converters2["hsl"](this.currentColor);
+      this.formats.cmyk = rgbToCMYK(rgb2);
+    }
+    get color() {
+      return this.currentColor;
+    }
+    /**
+     * @returns {Array} descriptive words describing the color temperature
+     */
+    get temperatureWords() {
+      const goal = rgb2temperature(this.formats.rgb);
+      return this.temperatures.reduce(
+        (prev, curr) => Math.abs(curr.value - goal) < Math.abs(prev.value - goal) ? curr : prev,
+        { value: 0 }
+      );
+    }
+    /**
+     * @param {string} model color model in which the components are measured
+     *                 possible values: "rgb", "cmyk"
+     * @returns {Array} color component mix in percent
+     */
+    percentages(model = "rgb") {
+      if (!["rgb", "cmyk"].includes(model)) {
+        throw new TypeError(
+          'Invalid color model. Use "rgb" or "cmyk" for percentages.'
+        );
+      }
+      const color = this.formats[model];
+      const props = formatComponents[model].map((c2) => color[c2]);
+      const total = props.reduce((r, d) => r + d, 0);
+      return props.map((c2) => total ? c2 / total : 0);
+    }
+    /**
+     * @param {string} model color model in which the components are measured
+     * @returns {Array} descriptive words for color percentages
+     */
+    percentageWords(model = "rgb") {
+      return this.percentages(model).map(
+        (component) => this.percentWords.find((words) => words.maxPercentile >= component).word
+      );
+    }
+    get descriptiveWords() {
+      return __privateMethod(this, _ColorDescription_instances, getWords_fn).call(this, "descriptive");
+    }
+    get nouns() {
+      return __privateMethod(this, _ColorDescription_instances, getWords_fn).call(this, "nouns");
+    }
+    get meanings() {
+      return __privateMethod(this, _ColorDescription_instances, getWords_fn).call(this, "meanings");
+    }
+    get usage() {
+      return __privateMethod(this, _ColorDescription_instances, getWords_fn).call(this, "usage");
+    }
+    /**
+     * @returns {string} a description of the color
+     */
+    get description() {
+      return __privateMethod(this, _ColorDescription_instances, getWords_fn).call(this, "description");
+    }
+    get bestContrast() {
+      return contrast(this.color, "black") > contrast(this.color, "white") ? "black" : "white";
+    }
+    /**
+     * @param {Boolean} random randomizes sentence of descriptive
+     * @param {Integer} limit maximum descriptive to return
+     * @returns {String} descriptive describing the color
+     */
+    getDescriptiveList(random2, limit) {
+      let arr = [...this.descriptiveWords];
+      if (random2) {
+        arr = randomizeArr(arr);
+      }
+      if (limit) {
+        arr = arr.slice(0, limit);
+      }
+      if (arr.length > 1) {
+        const last = arr.pop();
+        return `${arr.join(", ")} and ${last}`;
+      } else {
+        return arr[0];
+      }
+    }
+  };
+  _ColorDescription_instances = new WeakSet();
+  /**
+   * @param {string} color culori-js compatible color string
+   * @returns {object} culori-js instance
+   * @throws {TypeError} if the color is not valid
+   */
+  parseColor_fn = function(color) {
+    try {
+      return parse_default(color);
+    } catch (error) {
+      throw new TypeError("Invalid color. Check the chroma-js documentation.");
+    }
+  };
+  /**
+   * @param {string} scope the scope of words to retrieve
+   * @param {boolean} randomize whether to randomize the words
+   * @param {number} wordLimit the maximum number of words to retrieve
+   * @returns {Array} words matching the criteria
+   */
+  getWords_fn = function(scope = "descriptive", randomize = false, wordLimit) {
+    const words = this.descriptions.reduce((rem, current) => {
+      if (!current.hasOwnProperty(scope)) {
+        return rem;
+      }
+      const colorModels = Object.keys(current.criteria);
+      const matchesEveryCriteria = colorModels.every((colorModel) => {
+        const colorAsModel = this.formats[colorModel];
+        return Object.entries(current.criteria[colorModel]).every(
+          ([key, criterium]) => {
+            if (!(key in colorAsModel) || colorAsModel[key] === void 0 || colorAsModel[key] === null || criterium === null)
+              return true;
+            const value = colorAsModel[key];
+            if (Array.isArray(criterium)) {
+              return isInRange(value, criterium[0], criterium[1]);
+            } else if (!isNaN(criterium)) {
+              return value === criterium;
+            } else {
+              return false;
+            }
+          }
+        );
+      });
+      if (matchesEveryCriteria) {
+        return [.../* @__PURE__ */ new Set([...rem, ...current[scope]])];
+      } else {
+        return rem;
+      }
+    }, []);
+    if (randomize) {
+      return randomizeArr(words).slice(0, wordLimit);
+    }
+    return words.slice(0, wordLimit);
+  };
+  var src_default = ColorDescription;
+  return __toCommonJS(src_exports);
+})();

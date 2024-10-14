@@ -21,24 +21,34 @@
         font-family: "Inter", sans-serif;
         color: #202124;
         line-height: 1.5;
+        font-size: 0.9rem;
         /*background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='8px' height='8px' viewBox='0 0 8 8' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 42 %2836781%29 - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EArtboard 2%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill='%23eee'%3E%3Cpath d='M7.5,8 L8,8 L8,-3.55271368e-15 L7,-3.55271368e-15 L7,7 L1.77635684e-15,7 L1.77635684e-15,8 L7.5,8 Z' transform='translate%284.000000, 4.000000%29 rotate%28-180.000000%29 translate%28-4.000000, -4.000000%29 '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");*/
       }
       h1,
       h2,
       h3 {
         font-weight: 300;
-        font-size: 2.5rem;
+        font-size: 2.7rem;
         margin-top: 0;
         font-family: "Playfair Display", serif;
       }
       h1 {
-        font-size: 4rem;
+        font-size: 4.2rem;
         line-height: 0.9;
         position: relative;
       }
       h3 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 0.5em;
+      }
+      .colorname::before {
+        content: " ";
+        display: inline-block;
+        width: .75em;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--color);
+        margin-right: .25em;
       }
       .IroColorPicker {
         position: sticky;
@@ -128,26 +138,12 @@
         left: 2px;
         right: 2px;
         top: 0.2em;
-        background: linear-gradient(
-          -92deg,
-          #ee7752,
-          #e73c7e,
-          #23a6d5,
-          #23d5ab,
-          #ee7752
-        );
-        background-size: 400% 100%;
-        animation: gradient 15s ease infinite;
+        background: var(--color, #202124);
         border: 2px solid #202124;
         border-radius: 18px;
         z-index: 1;
       }
 
-      @keyframes gradient {
-        100% {
-          background-position: 400% 50%;
-        }
-      }
 
       .intro {
         font-size: 2rem;
@@ -163,7 +159,7 @@
         min-height: 20rem;
         margin-bottom: 2rem;
         display: flex;
-        padding: 2rem;
+        padding: 4rem 2rem;
         margin-top: -1.5rem;
         border-radius: 15px;
         border: 2px solid #202124;
@@ -218,7 +214,7 @@
         white-space: nowrap;
         width: 1px;
       }
-      code {
+      .example {
         position: relative;
         display: block;
         margin-top: 4rem;
@@ -230,11 +226,24 @@
         z-index: -1;
         border-radius: 15px;
       }
-      pre {
+      .example pre {
         font-size: 1.2rem;
       }
-      pre i {
+      .example pre i {
         color: var(--color, "#fff");
+      }
+
+      .t {
+        margin-top: 3em;
+      }
+
+      .currentColor code {
+        background: #202124;
+        padding: 0.25em 1em;
+        color: #fff;
+        font-size: .7rem;
+        display: inline-block;
+        margin-bottom: 1rem;
       }
     </style>
   </head>
@@ -273,20 +282,20 @@
       hreflang="en-us"
       >Github Project</a
     >
-    <code data-label="code example">
+    <code data-label="code example" class="example">
       <pre data-code>
 const cd = new ColorDescription('#b40404');
-cd.getDescriptiveList();
     </pre
       >
     </code>
     <div class="currentColor">
       <div aria-hidden data-picker></div>
       <article class="result">
-        <h2 data-colorname aria-live="polite"></h2>
+        <h2 data-colorname aria-live="polite" class="colorname"></h2>
         <div data-result aria-live="polite"></div>
         <aside>
-          <h3>Similar Colors</h3>
+          <div class="t">
+          <h3>Similar Colors</h3></div>
           <div data-neighbors></div>
         </aside>
       </article>
@@ -336,7 +345,7 @@ cd.getDescriptiveList();
           .then((response) => response.json())
           .then((data) => {
             let colors = [...data.colors];
-            $colorname.innerHTML = `<span>Color Name:</span> ${colors.shift().name}`;
+            $colorname.innerHTML = `${colors.shift().name}`;
             $neighbors.innerHTML = colors.reduce(
               (r, c) =>
                 `${r}<button class="similar" style="--c: ${c.hex}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`,
@@ -358,8 +367,7 @@ cd.getDescriptiveList();
         $input.value = value;
         const glPercentages = cd.percentageWords("rgb");
         const cmykPercentageWords = cd.percentageWords("cmyk");
-        $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');
-cd.getDescriptiveList();`;
+        $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');`;
         const temperature = cd.temperatureWords;
         const meanings = cd.meanings;
         const usage = cd.usage;
@@ -370,50 +378,63 @@ cd.getDescriptiveList();`;
         $body.style.setProperty("--color", value);
 
         $result.innerHTML = `
-            <h3>Description Paragraph</h3>
+            <div class="t">
+              <h3>Description Paragraph</h3>
+              <code>cd.description()</code>
+            </div>
             <p>${cd.description}</p>
-
+            
+            <div class="t">
             <h3>Description</h3>
+            <code>cd.getDescriptiveList()</code>
+            </div>
             <p>${cd.getDescriptiveList()}</p>
+            
             
             ${
               meanings.length
-                ? `<h3>Meanings</h3><p>${meanings.join(", ")}</p>`
+                ? `<div class="t"><h3>Meanings</h3><code>cd.meanings()</code></div><p>${meanings.join(", ")}</p>`
                 : ""
             }
 
-            ${usage.length ? `<h3>Usage</h3><p>${usage.join(", ")}</p>` : ""}
+            ${usage.length ? `<div class="t"><h3>Usage</h3><code>cd.usage()</code></div><p>${usage.join(", ")}</p>` : ""}
 
-            <h3>Contrast Information</h3>
+            
+            <div class="t"><h3>Contrast Information</h3><code>cd.bestContrast()</code></div>
             <p>If used as background ${
               cd.bestContrast
             } would be the most readable text color.</p>
             
+            
 
-            <h3>Light Temperature</h3>
+            <div class="t"><h3>Light Temperature</h3><code>cd.temperature(); cd.temperatureWords();</code></div>
             <p>It has a temperature of <strong>${
               temperature.value
             }</strong><abbr title="kelvin">K</abbr> this is considered to be ${temperature.descriptive.join(
               ", ",
             )}</p>
             
-            <h3>RGB Mix</h3>
+            <div class="t">
+              <h3>RGB Mix</h3>
+              <code>cd.percentageWords("rgb")</code>
+            </div>
             <p>An LCD screen needs ${glPercentages[0]} red, ${
               glPercentages[1]
             } green and ${glPercentages[2]} blue to produce this color.</p>
             
+            <div class="t">
             <h3>CMYK Mix</h3>
+            <code>cd.percentageWords("cmyk")</code>
+            </div>
             <p>To print this color you would could mix ${
               cmykPercentageWords[0]
             } cyan, ${cmykPercentageWords[1]} magenta, ${
               cmykPercentageWords[2]
             } yellow and ${cmykPercentageWords[3]} black.</p>
-            <br />
+            
           `;
         document.querySelector("[data-picker]").dataset.hsl =
           '' /*chroma(value).css("hsl")*/;
-        $currentColor.style.backgroundColor = value;
-        $currentColor.style.color = cd.bestContrast;
 
         $colorname.innerHTML = "…";
         $neighbors.innerHTML = "…";
