@@ -719,7 +719,7 @@ export default {
         "seductiveness",
         "sexiness",
       ],
-      usage: ["children products", , "erotica"],
+      usage: ["children products", "erotica"],
     },
     {
       criteria: {

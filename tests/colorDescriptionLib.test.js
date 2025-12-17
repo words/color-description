@@ -1,4 +1,5 @@
 import ColorDescription from "../src/index";
+import wordsEN from "../src/en";
 
 describe("ColorDescription Library", () => {
   let colorDesc;
@@ -108,5 +109,27 @@ describe("ColorDescription Library", () => {
     const list1 = colorDesc.getDescriptiveList(true, 5);
     const list2 = colorDesc.getDescriptiveList(true, 5);
     expect(list1).not.toBe(list2); // This might occasionally fail due to randomness
+  });
+
+  test("English dataset contains only non-empty strings", () => {
+    const listScopes = [
+      "descriptive",
+      "nouns",
+      "meanings",
+      "usage",
+      "description",
+    ];
+
+    wordsEN.descriptions.forEach((entry) => {
+      listScopes.forEach((scope) => {
+        if (!Object.prototype.hasOwnProperty.call(entry, scope)) return;
+
+        expect(Array.isArray(entry[scope])).toBe(true);
+        entry[scope].forEach((item) => {
+          expect(typeof item).toBe("string");
+          expect(item.trim().length).toBeGreaterThan(0);
+        });
+      });
+    });
   });
 });

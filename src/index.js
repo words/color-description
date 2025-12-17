@@ -43,15 +43,17 @@ class ColorDescription {
    * @throws {TypeError} if the color is not valid
    */
   #parseColor(color) {
-    try {
-      return parse(color);
-    } catch (error) {
-      throw new TypeError("Invalid color. Check the chroma-js documentation.");
+    const parsed = parse(color);
+
+    if (!parsed) {
+      throw new TypeError("Invalid color. Check the culori documentation.");
     }
+
+    return parsed;
   }
 
   /**
-   * @returns {Array} descriptive words describing the color temperature
+   * @returns {{value: number, descriptive?: string[]}} closest color temperature bucket
    */
   get temperatureWords() {
     const goal = rgb2temperature(this.formats.rgb);
@@ -104,6 +106,12 @@ class ColorDescription {
         return rem;
       }
 
+      const scopeWords = Array.isArray(current[scope])
+        ? current[scope].filter(
+            (w) => typeof w === "string" && w.trim().length > 0,
+          )
+        : [];
+
       const colorModels = Object.keys(current.criteria);
 
       const matchesEveryCriteria = colorModels.every((colorModel) => {
@@ -139,7 +147,7 @@ class ColorDescription {
       });
 
       if (matchesEveryCriteria) {
-        return [...new Set([...rem, ...current[scope]])];
+        return [...new Set([...rem, ...scopeWords])];
       } else {
         return rem;
       }
