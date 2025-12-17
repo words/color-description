@@ -21,7 +21,11 @@ class ColorDescription {
     this.color = color;
     this.descriptions = words.descriptions;
     this.temperatures = words.temperatures;
-    this.percentWords = words.percentWords;
+    this.percentWords = words.percentWords
+      ? [...words.percentWords].sort(
+          (a, b) => a.maxPercentile - b.maxPercentile,
+        )
+      : [];
   }
 
   set color(color) {
@@ -125,6 +129,10 @@ class ColorDescription {
 
       const matchesEveryCriteria = colorModels.every((colorModel) => {
         const colorAsModel = this.formats[colorModel];
+
+        if (!colorAsModel) {
+          return false;
+        }
 
         return Object.entries(current.criteria[colorModel]).every(
           ([key, criterium]) => {
