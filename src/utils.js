@@ -70,6 +70,12 @@ export const randomizeArr = (arr) => {
   return newArr;
 };
 
+/**
+ * Convert RGB to CMYK color space
+ * @param {object} rgb - RGB color object with r, g, b values (0-1 range)
+ * @returns {object} CMYK color object with c, m, y, k values
+ * @note When kInverted is 0 (pure white), c, m, y will be 0 by design
+ */
 export const rgbToCMYK = (rgb) => {
   const { r, g, b } = rgb;
   const k = 1 - max(r, g, b);

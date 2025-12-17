@@ -46,7 +46,9 @@ class ColorDescription {
     const parsed = parse(color);
 
     if (!parsed) {
-      throw new TypeError("Invalid color. Check the culori documentation.");
+      throw new TypeError(
+        `Invalid color: "${color}". Check the culori documentation.`,
+      );
     }
 
     return parsed;
@@ -76,6 +78,11 @@ class ColorDescription {
         'Invalid color model. Use "rgb" or "cmyk" for percentages.',
       );
     }
+    if (!this.formats[model]) {
+      throw new TypeError(
+        `Color format "${model}" is not available. Ensure color is set.`,
+      );
+    }
     const color = this.formats[model];
     const props = formatComponents[model].map((c) => color[c]);
     const total = props.reduce((r, d) => r + d, 0);
@@ -87,11 +94,12 @@ class ColorDescription {
    * @returns {Array} descriptive words for color percentages
    */
   percentageWords(model = "rgb") {
-    return this.percentages(model).map(
-      (component) =>
-        this.percentWords.find((words) => words.maxPercentile >= component)
-          .word,
-    );
+    return this.percentages(model).map((component) => {
+      const found = this.percentWords.find(
+        (words) => words.maxPercentile >= component,
+      );
+      return found ? found.word : "entirely";
+    });
   }
 
   /**
@@ -99,6 +107,7 @@ class ColorDescription {
    * @param {boolean} randomize whether to randomize the words
    * @param {number} wordLimit the maximum number of words to retrieve
    * @returns {Array} words matching the criteria
+   * @note null criteria values are treated as wildcards (match any value)
    */
   #getWords(scope = "descriptive", randomize = false, wordLimit) {
     const words = this.descriptions.reduce((rem, current) => {
@@ -177,7 +186,7 @@ class ColorDescription {
   }
 
   /**
-   * @returns {string} a description of the color
+   * @returns {Array<string>} an array of descriptions for the color
    */
   get description() {
     return this.#getWords("description");
@@ -190,9 +199,9 @@ class ColorDescription {
   }
 
   /**
-   * @param {Boolean} random randomizes sentence of descriptive
-   * @param {Integer} limit maximum descriptive to return
-   * @returns {String} descriptive describing the color
+   * @param {boolean} random - if true, randomizes the order of descriptive words
+   * @param {number} limit - maximum number of descriptive words to return (optional)
+   * @returns {string} a formatted string of descriptive words joined with commas and "and"
    */
   getDescriptiveList(random, limit) {
     let arr = [...this.descriptiveWords];
@@ -203,6 +212,10 @@ class ColorDescription {
 
     if (limit) {
       arr = arr.slice(0, limit);
+    }
+
+    if (arr.length === 0) {
+      return "";
     }
 
     if (arr.length > 1) {

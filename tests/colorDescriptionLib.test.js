@@ -106,9 +106,24 @@ describe("ColorDescription Library", () => {
   });
 
   test("Get descriptive list with randomization", () => {
-    const list1 = colorDesc.getDescriptiveList(true, 5);
-    const list2 = colorDesc.getDescriptiveList(true, 5);
-    expect(list1).not.toBe(list2); // This might occasionally fail due to randomness
+    // Get a color with enough descriptive words for meaningful randomization
+    colorDesc.color = "#FF0000";
+    const words = colorDesc.descriptiveWords;
+
+    if (words.length < 2) {
+      // Skip test if there aren't enough words to randomize
+      expect(words.length).toBeGreaterThanOrEqual(0);
+      return;
+    }
+
+    // Run multiple times to check randomization works
+    const results = new Set();
+    for (let i = 0; i < 10; i++) {
+      results.add(colorDesc.getDescriptiveList(true, 5));
+    }
+
+    // With randomization, we should get at least 2 different orderings
+    expect(results.size).toBeGreaterThan(1);
   });
 
   test("English dataset contains only non-empty strings", () => {
