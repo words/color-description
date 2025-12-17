@@ -239,6 +239,24 @@ export default {
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
     },
     {
       criteria: {
@@ -550,7 +568,7 @@ export default {
         "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and “safe/ok” signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
       ],
       meanings: ["safety", "harmony", "stability", "reliability", "balance"],
-      usage: ["relax", "ballance", "revitalize", "encourage", "posses"],
+      usage: ["relax", "balance", "revitalize", "encourage"],
     },
     {
       criteria: {
@@ -575,9 +593,9 @@ export default {
         "stimulating",
       ],
       usage: [
-        "self expression",
+        "self-expression",
         "communication",
-        "children products",
+        "children's products",
         "technology",
         "aerospace",
         "entertainment",
@@ -603,11 +621,11 @@ export default {
         "honesty",
         "loyalty",
         "security",
-        "relying",
+        "reliability",
         "calmness",
         "control",
       ],
-      usage: ["security", "finance", "technology", "health care", "accounting"],
+      usage: ["security", "finance", "technology", "healthcare", "accounting"],
     },
     {
       criteria: {
@@ -719,7 +737,7 @@ export default {
         "seductiveness",
         "sexiness",
       ],
-      usage: ["children products", "erotica"],
+      usage: ["children's products", "erotica"],
     },
     {
       criteria: {
@@ -750,7 +768,7 @@ export default {
         "seductiveness",
         "sexiness",
       ],
-      usage: ["children products", "erotica"],
+      usage: ["children's products", "erotica"],
     },
     {
       criteria: {
@@ -849,7 +867,7 @@ export default {
     },
     {
       maxPercentile: 0.99,
-      word: "neatly entirely",
+      word: "nearly entirely",
     },
     {
       maxPercentile: 1,
