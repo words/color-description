@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Color-Description Demo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -263,25 +264,45 @@
     <div class="visually-hidden">
       <nav class="color-buttons">
         <h3>Set color to</h3>
-        <button data-setcolor="#ff0000"><span>Red</span></button>
-        <button data-setcolor="#00ff00"><span>Green</span></button>
-        <button data-setcolor="#0000ff"><span>Blue</span></button>
-        <button data-setcolor="#ffff00"><span>Yellow</span></button>
-        <button data-setcolor="#ff00ff"><span>Magenta</span></button>
-        <button data-setcolor="#00ffff"><span>Cyan</span></button>
-        <button data-setcolor="#ff7f00"><span>Orange</span></button>
-        <button data-setcolor="#7f00ff"><span>Violet</span></button>
-        <button data-setcolor="#007fff"><span>Azure</span></button>
-        <button data-setcolor="#000000"><span>Black</span></button>
-        <button data-setcolor="#c0c0c0"><span>Silver</span></button>
-        <button data-setcolor="#ffffff"><span>White</span></button>
+        <button type="button" data-setcolor="#ff0000"><span>Red</span></button>
+        <button type="button" data-setcolor="#00ff00">
+          <span>Green</span>
+        </button>
+        <button type="button" data-setcolor="#0000ff"><span>Blue</span></button>
+        <button type="button" data-setcolor="#ffff00">
+          <span>Yellow</span>
+        </button>
+        <button type="button" data-setcolor="#ff00ff">
+          <span>Magenta</span>
+        </button>
+        <button type="button" data-setcolor="#00ffff"><span>Cyan</span></button>
+        <button type="button" data-setcolor="#ff7f00">
+          <span>Orange</span>
+        </button>
+        <button type="button" data-setcolor="#7f00ff">
+          <span>Violet</span>
+        </button>
+        <button type="button" data-setcolor="#007fff">
+          <span>Azure</span>
+        </button>
+        <button type="button" data-setcolor="#000000">
+          <span>Black</span>
+        </button>
+        <button type="button" data-setcolor="#c0c0c0">
+          <span>Silver</span>
+        </button>
+        <button type="button" data-setcolor="#ffffff">
+          <span>White</span>
+        </button>
       </nav>
       <label class="color-buttons__picker">
         <span>Freely choose color (system color picker)</span>
-        <input type="color" value="#b40404" />
+        <input type="color" value="#b40404" aria-label="Color picker" />
       </label>
     </div>
-    <button data-random><span>Randomize Color</span></button>
+    <button type="button" data-random aria-label="Randomize color">
+      <span>Randomize Color</span>
+    </button>
     <a
       class="link-project"
       href="https://github.com/words/color-description"
@@ -326,7 +347,6 @@ const cd = new ColorDescription('#b40404');
       //import ColorDescription from './index.esm.js';
       const cd = new ColorDescription.default("#b40404");
       const $result = document.querySelector("[data-result]");
-      const $currentColor = document.querySelector(".currentColor");
       const $input = document.querySelector("input");
       const $randomButton = document.querySelector("[data-random]");
       const $code = document.querySelector("[data-code]");
@@ -355,12 +375,14 @@ const cd = new ColorDescription('#b40404');
             $colorname.innerHTML = `${colors.shift().name}`;
             $neighbors.innerHTML = colors.reduce(
               (r, c) =>
-                `${r}<button class="similar" style="--c: ${c.hex}; --t: ${c.bestContrast}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`,
+                `${r}<button type="button" class="similar" style="--c: ${c.hex}; --t: ${c.bestContrast}" data-setcolor="${c.hex}"><span>${c.name}</span></button>`,
               "",
             );
           })
           .catch((error) => {
-            throw new Error(`API ${error}`);
+            console.warn("Color name API error", error);
+            $colorname.innerHTML = "Unknown";
+            $neighbors.innerHTML = "";
           });
       }
 
@@ -379,7 +401,6 @@ const cd = new ColorDescription('#b40404');
         const meanings = cd.meanings;
         const usage = cd.usage;
         const nouns = cd.nouns;
-        const adjectives = cd.adjectives;
 
         if (!fromPicker) {
           colorPicker.color.hexString = value;
