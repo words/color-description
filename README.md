@@ -33,6 +33,48 @@ console.log(cd.getDescriptiveList());
 The default dataset that is written in english so the "Emotions" and "Usage" very subjective and are written from a western perspective:
 https://github.com/words/color-description/blob/21ffa6b522f1751b471907aac4173acdc5c92fae/src/en.js
 
+## API
+
+### `ColorDescription`
+
+#### Constructor
+
+```js
+const cd = new ColorDescription(color);
+```
+
+- `color` (string | object): A color representation (hex, rgb, hsl, or similar)
+
+#### Methods
+
+- `getDescriptiveList()`: Returns an array of descriptive words for the color
+- `getColorFamily()`: Returns the color family/category (e.g., "red", "blue")
+
+#### Properties
+
+- `color`: Get or set the current color
+
+## Module Formats
+
+This package supports multiple module formats:
+
+- **ESM** (modern): `dist/index.esm.js`
+- **CommonJS** (Node.js): `dist/index.js`
+- **IIFE** (browser): `dist/index.iife.js`
+
+## Development
+
+```bash
+# Build all formats
+npm run build
+
+# Run tests
+npm run test
+
+# Development with watch mode
+npm run dev
+```
+
 ## Data Sources
 
 ### Color Psychology
@@ -54,3 +96,7 @@ https://github.com/words/color-description/blob/21ffa6b522f1751b471907aac4173acd
 ### Descriptions
 
 - [color meanings](https://www.canva.com/colors/color-meanings/)
+
+## License
+
+MIT
