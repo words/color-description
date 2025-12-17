@@ -1,5 +1,22 @@
 import ColorDescription from "../src/index";
 
+const HUE_NOUNS = new Set([
+  "red",
+  "orange",
+  "brown",
+  "yellow",
+  "lime",
+  "green",
+  "cyan",
+  "sky blue",
+  "blue",
+  "indigo",
+  "violet",
+  "purple",
+  "magenta",
+  "pink",
+]);
+
 test("parses color corectly", () => {
   const cd = new ColorDescription("red");
 
@@ -61,4 +78,29 @@ test("get best contrast color, using WCAG formula", () => {
 
   expect(cd).toHaveProperty("bestContrast");
   expect(cd.bestContrast).toBe("white");
+});
+
+test("no hue naming deadzones across typical chromatic s/l", () => {
+  // Hue nouns in the dataset are defined for s in [0.1, 1] and l in [0.07, 0.99].
+  // We sample a small grid well inside those bounds to detect gaps.
+  const saturations = [0.2, 0.5, 0.9];
+  const lightnesses = [0.15, 0.5, 0.85];
+
+  const uncovered = [];
+
+  for (let h = 0; h < 360; h += 1) {
+    for (const s of saturations) {
+      for (const l of lightnesses) {
+        const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
+        const nouns = cd.nouns;
+        const hasHueNoun = nouns.some((n) => HUE_NOUNS.has(n));
+
+        if (!hasHueNoun) {
+          uncovered.push({ h, s, l, nouns });
+        }
+      }
+    }
+  }
+
+  expect(uncovered).toEqual([]);
 });
