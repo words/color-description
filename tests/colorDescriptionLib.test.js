@@ -132,4 +132,20 @@ describe("ColorDescription Library", () => {
       });
     });
   });
+
+  test("English dataset: every noun has a description", () => {
+    wordsEN.descriptions.forEach((entry) => {
+      if (!Object.prototype.hasOwnProperty.call(entry, "nouns")) return;
+
+      expect(Array.isArray(entry.nouns)).toBe(true);
+      expect(entry.nouns.length).toBeGreaterThan(0);
+
+      expect(Array.isArray(entry.description)).toBe(true);
+      expect(entry.description.length).toBeGreaterThan(0);
+      entry.description.forEach((desc) => {
+        expect(typeof desc).toBe("string");
+        expect(desc.trim().length).toBeGreaterThan(0);
+      });
+    });
+  });
 });

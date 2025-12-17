@@ -237,7 +237,7 @@ export default {
       descriptive: ["grey"],
       nouns: ["grey"],
       description: [
-        "Grey is a color often linked with neutrality, balance, and calm. It sits between black and white on the color spectrum, giving it a muted, understated quality. When you think of grey, you might picture misty mornings, smooth stone, or the quiet stillness of a cloudy day. It's a versatile color, fitting equally well in minimalist designs or more somber settings. Grey can evoke feelings of tranquility, contemplation, and sophistication. Close your eyes and imagine grey—it might appear as a soft shadow or a subtle haze that wraps the world in a calm, muted tone.",
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
     },
     {
@@ -350,7 +350,7 @@ export default {
       },
       nouns: ["white"],
       description: [
-        "White is a color that is often associated with purity, innocence, and cleanliness. It is the lightest color on the visible spectrum and is often described as having a bright, luminous quality. When you think of white, you might imagine a freshly fallen snow, a blank canvas, or a cloudless sky. It is a versatile color that can be used in a wide range of settings and contexts, from formal to casual. If you close your eyes and picture white, you might imagine a bright, radiant light that illuminates everything around it.",
+        "White is commonly associated with clarity, simplicity, and cleanliness. It can evoke fresh snow, bright daylight, a blank page, or crisp fabric—space that feels open and breathable. In design, white creates room for content, improves legibility, and helps other colors feel more vivid by contrast. It can communicate honesty and calm, but in excess it may also feel sterile or impersonal. Picture white as a clean, bright backdrop that makes everything around it feel sharper and lighter.",
       ],
       meanings: [
         "purity",
@@ -382,7 +382,7 @@ export default {
       },
       nouns: ["black"],
       description: [
-        "Black is a color that is often associated with power, elegance, and sophistication. It is a color that is often used to create a sense of mystery, depth, and contrast, and it is often described as a color that can be both bold and elegant. In art and design, black is often used to create a sense of sophistication and drama, and it is often used in fashion to create a sense of sophistication and refinement.",
+        "Black often reads as bold, serious, and refined. It brings strong contrast, visual weight, and a sense of depth—like night sky, ink, or polished stone. In design and fashion, black can signal luxury and confidence, while also suggesting mystery or formality. Used carefully, it makes layouts feel crisp and intentional; used heavily, it can feel severe or intimidating. Imagine black as a deep backdrop that sharpens silhouettes and pulls focus to what matters.",
       ],
       meanings: [
         "power",
@@ -407,7 +407,7 @@ export default {
       descriptive: ["red", "reddish"],
       nouns: ["red"],
       description: [
-        "Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages.",
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
       ],
       meanings: [
         "excitement",
@@ -450,7 +450,7 @@ export default {
       descriptive: ["orange"],
       nouns: ["orange"],
       description: [
-        "Orange is a vibrant and playful color that is often associated with creativity, energy, and warmth. It is a secondary color that is made by combining red and yellow, and it is often described as a warm and friendly color that can be both invigorating and calming. It is often associated with joy, enthusiasm, and warmth, and it is often used in art and design to create a sense of excitement and playfulness.",
+        "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
       ],
       meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
       usage: ["stimulate", "draw attention", "express freedom", "fascinate"],
@@ -466,7 +466,7 @@ export default {
       descriptive: ["brown"],
       nouns: ["brown"],
       description: [
-        "Brown is a warm and earthy color that is often associated with nature, stability, and reliability. It is a secondary color that is made by combining red, blue, and yellow in different proportions, and it is often described as a rich and luxurious color that can be both comforting and grounding. It is often associated with wood, soil, and the natural world, and it is often used in art and design to create a sense of warmth and permanence.",
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
       meanings: [
         "strength",
@@ -492,7 +492,7 @@ export default {
       descriptive: ["yellow"],
       nouns: ["yellow"],
       description: [
-        "Yellow is a bright and cheerful color that is often associated with sunshine, happiness, and warmth. It is a primary color that is made by combining red and green light, and it is usually described as a warm and vibrant color that can be both calming and energizing. It is often associated with joy, happiness, and friendship, and it is often used in art and design to create a sense of cheerfulness and playfulness.",
+        "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
       ],
       meanings: [
         "enthusiasm",
@@ -525,7 +525,7 @@ export default {
       descriptive: ["lime"],
       nouns: ["lime"],
       description: [
-        "Lime is a bright, vibrant color that is often associated with freshness, energy, and youth. It is a pale shade of green that is similar to chartreuse, but it is slightly lighter and more vibrant. Some people may associate the color lime with feelings of playfulness and excitement, while others may associate it with feelings of rejuvenation and renewal. In terms of wavelength, lime is a mixture of green and yellow light, and it is often used in art and design to create a sense of energy and vitality. Overall, lime is a lively and refreshing color that can be used to create a wide range of moods and atmospheres.",
+        "Lime is a sharp, zesty green-yellow that feels fresh and high-energy. It can evoke citrus, neon signs, sportswear, or new leaves—bright, youthful, and a little electric. In design, lime is often used to signal novelty, motion, and visibility, especially as an accent or highlight. It can read as playful and modern, but it can also feel loud if overused. Picture lime as a vivid splash that wakes up a palette instantly.",
       ],
       meanings: ["growth", "harmony", "fertility", "kindness", "dependability"],
       usage: [
@@ -547,7 +547,7 @@ export default {
       descriptive: ["green", "greenish"],
       nouns: ["green"],
       description: [
-        "Green is a cool, refreshing color that is often associated with nature, growth, and freshness. It is the color of grass, leaves, and trees, and it is often used to create a sense of harmony and balance. Some people may associate the color green with feelings of jealousy or envy, while others may associate it with feelings of peace and tranquility. In terms of wavelength, green is a primary color of light, and it is located between blue and yellow on the visible light spectrum. It is often used in art and design to create a sense of growth and renewal. Overall, green is a versatile and popular color that can be used to create a wide range of moods and atmospheres.",
+        "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and “safe/ok” signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
       ],
       meanings: ["safety", "harmony", "stability", "reliability", "balance"],
       usage: ["relax", "ballance", "revitalize", "encourage", "posses"],
@@ -563,7 +563,7 @@ export default {
       descriptive: ["cyan"],
       nouns: ["cyan", "sky blue"],
       description: [
-        "Cyan is a bright, fresh color that is often associated with the ocean, the sky, and the natural world. It is a pale shade of blue that is similar to teal, but it is slightly lighter and more muted. Some people may associate the color cyan with feelings of peace and serenity, while others may associate it with feelings of youth and playfulness. In terms of wavelength, cyan is a mixture of blue and green light, and it is often used in art and design to create a sense of freshness and vitality. Overall, cyan is a versatile and refreshing color that can be used to create a wide range of moods and atmospheres.",
+        "Cyan is crisp and cool, often evoking clear water, bright skies, and clean air. It tends to feel refreshing and modern—light enough to be friendly, but cool enough to be precise. In design, cyan can suggest clarity, communication, and technology, and it works well for bright accents on dark backgrounds. Depending on context, it can feel playful and youthful or sleek and professional. Picture cyan as a splash of cold water: sharp, energizing, and clean.",
       ],
       meanings: [
         "freedom",
@@ -595,7 +595,7 @@ export default {
       descriptive: ["blue", "blueish"],
       nouns: ["blue"],
       description: [
-        "Blue is a cool, calming color that is often associated with trust, reliability, and intelligence. It is the color of the sky and the ocean, and it is often used to create a sense of peace and tranquility. Some people may associate the color blue with feelings of sadness or melancholy, while others may associate it with feelings of calm and relaxation. In terms of wavelength, blue is a primary color of light, and it is located between green and violet on the visible light spectrum. It is often used in art and design to create a sense of balance and harmony. Overall, blue is a versatile and popular color that can be used to create a wide range of moods and atmospheres.",
+        "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It’s widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
       ],
       meanings: [
         "trust",
@@ -620,7 +620,7 @@ export default {
       descriptive: ["indigo"],
       nouns: ["indigo"],
       description: [
-        "Indigo is a deep, rich color that is often associated with spirituality, intuition, and wisdom. It is a dark shade of blue that is similar to navy, but it is slightly lighter and more muted. Some people may associate the color indigo with feelings of calm and relaxation, while others may associate it with feelings of mystery and intrigue. In terms of wavelength, indigo is a deep blue color that is located between blue and violet on the visible light spectrum. It is often used in art and design to add a touch of depth and complexity. Overall, indigo is a beautiful and versatile color that can be used to create a wide range of moods and atmospheres.",
+        "Indigo is deep and contemplative, sitting between blue’s steadiness and purple’s imagination. It can evoke twilight, ink, denim, and night skies—quiet, thoughtful, and a little mysterious. In design, indigo often feels sophisticated and layered, adding depth without the starkness of pure black. It can suggest introspection, tradition, or spirituality depending on context. Picture indigo as dusk settling in: calm, rich, and full of hidden detail.",
       ],
       meanings: [
         "spirituality",
@@ -647,7 +647,7 @@ export default {
       descriptive: ["violet"],
       nouns: ["violet"],
       description: [
-        "Violet is a rich, regal color that is often associated with luxury, royalty, and sophistication. It is a deep shade of purple that is similar to lavender, but it is slightly darker and more intense. Some people may associate the color violet with feelings of mystery and spirituality, while others may associate it with feelings of calm and tranquility. In terms of wavelength, violet is a mixture of blue and red light, and it is often used in art and design to add a touch of elegance and refinement. Overall, violet is a beautiful and sophisticated color that can be used to create a calm and peaceful atmosphere.",
+        "Violet feels expressive and luminous, often associated with imagination, ritual, and luxury. It can bring to mind wildflowers, velvet fabric, and stage lighting—dramatic but elegant. In design, violet can signal creativity and uniqueness, standing out without the urgency of red. Depending on saturation, it can feel mystical and dreamy or bold and theatrical. Imagine violet as a colored spotlight that turns the ordinary into something a little more magical.",
       ],
       meanings: [
         "spirituality",
@@ -674,7 +674,7 @@ export default {
       descriptive: ["purple", "purplish"],
       nouns: ["purple"],
       description: [
-        "Purple is a rich and vibrant color that is often associated with royalty, luxury, and creativity. It is a combination of blue and red, with more red than blue, giving it a warm and passionate quality. The shade of purple can vary from a deep, dark hue to a light, almost lavender color, and each shade can evoke different emotions and meanings. Some people may associate purple with spirituality and mysticism, while others may see it as a symbol of extravagance and decadence. In terms of wavelength, purple is located between blue and violet on the visible light spectrum and has a shorter wavelength than most other colors. Because of its striking and eye-catching nature, purple is frequently used in fashion, art, and design to add a pop of color and flair. Overall, purple is a captivating and dynamic color that can express a wide range of moods and emotions, making it a favorite among many people.",
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
       meanings: [
         "spirituality",
@@ -701,7 +701,7 @@ export default {
       descriptive: ["magenta"],
       nouns: ["magenta"],
       description: [
-        "Magenta is a deep, rich color that is often associated with creativity, passion, and intensity. It is a vibrant shade of pink that is similar to fuchsia, but it is slightly darker and more muted. Some people may associate the color magenta with feelings of excitement and energy, while others may associate it with feelings of love and romance. In terms of wavelength, magenta is a mixture of red and blue light, and it is often used in art and design to add a bold and striking touch. Overall, magenta is a vibrant and lively color that can be used to add drama and excitement to any setting.",
+        "Magenta is bold and expressive, often associated with creativity, intensity, and modern flair. It can feel like neon signage, stage lights, or vivid flowers—lively and unapologetic. In design, magenta is often used as a punchy accent to add energy and personality, especially in contemporary or playful palettes. It can read as romantic and warm, but also edgy and unconventional. Imagine magenta as a bright pulse that makes a layout feel instantly more alive.",
       ],
       meanings: [
         "support",
@@ -732,7 +732,7 @@ export default {
       descriptive: ["pink"],
       nouns: ["pink"],
       description: [
-        "Pink is a light, delicate color that is often associated with femininity, romance, and sweetness. It is a pale shade of red, and it is often described as a softer, more gentle version of the color. Some people may associate the color pink with feelings of happiness and playfulness, while others may associate it with feelings of warmth and comfort. In terms of wavelength, pink is a mixture of red and white light, and it is often used in decorations and clothing to add a touch of whimsy and fun. Overall, pink is a cheerful and playful color that can be used to create a warm and inviting atmosphere.",
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
       meanings: [
         "support",
@@ -763,7 +763,7 @@ export default {
       descriptive: ["red", "reddish"],
       nouns: ["red"],
       description: [
-        "Red is a warm, vibrant color that is often associated with passion and excitement. It is the color of fire, and it is often used to grab attention and convey a sense of urgency or danger. In terms of wavelength, red is the color that is associated with the longest wavelengths of visible light, and it is one of the primary colors of light, along with blue and green. Some people may associate the color red with feelings of love and warmth, while others may associate it with anger or danger. Overall, red is a bold and striking color that can be used to convey a wide range of emotions and messages.",
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
       ],
       meanings: [
         "excitement",
