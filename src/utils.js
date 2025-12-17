@@ -40,7 +40,10 @@ const temperature2rgb = (kelvin) => {
   };
 };
 
-/** chroma-js temperature function */
+/**
+ * Calculate color temperature from RGB
+ * Based on standard algorithms for CCT (Correlated Color Temperature)
+ */
 export const rgb2temperature = (rgb) => {
   const { r, g, b } = rgb;
   let minTemp = 1000;
