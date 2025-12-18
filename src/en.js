@@ -21,6 +21,8 @@ export default {
         "vivid",
         "loud",
       ],
+      meanings: ["energy", "intensity", "excitement", "attention"],
+      usage: ["highlights", "calls to action", "accents"],
     },
     {
       criteria: {
@@ -31,6 +33,8 @@ export default {
         },
       },
       descriptive: ["dark", "ashy", "somber", "bleak", "muddy", "sooty"],
+      meanings: ["mystery", "seriousness", "depth", "gloom"],
+      usage: ["backgrounds", "contrast", "moody designs"],
     },
     {
       criteria: {
@@ -41,6 +45,8 @@ export default {
         },
       },
       descriptive: ["dark", "dim", "gloomy", "dull"],
+      meanings: ["mystery", "seriousness", "depth", "gloom"],
+      usage: ["backgrounds", "contrast", "moody designs"],
     },
     {
       criteria: {
@@ -51,6 +57,8 @@ export default {
         },
       },
       descriptive: ["bleak", "muted", "matte", "dusty"],
+      meanings: ["subtlety", "calm", "understatement"],
+      usage: ["backgrounds", "supporting elements"],
     },
     {
       criteria: {
@@ -71,6 +79,8 @@ export default {
         },
       },
       descriptive: ["pastel"],
+      meanings: ["softness", "peace", "gentleness", "youth"],
+      usage: ["backgrounds", "spring themes", "baby products"],
     },
     {
       criteria: {
@@ -88,6 +98,8 @@ export default {
         "glistening",
         "bleached",
       ],
+      meanings: ["delicacy", "fragility", "cleanliness", "airiness"],
+      usage: ["backgrounds", "minimalism", "open space"],
     },
     {
       criteria: {
@@ -499,6 +511,22 @@ export default {
     {
       criteria: {
         hsl: {
+          h: [40, 60],
+          s: [0.2, 0.6],
+          l: [0.8, 0.95],
+        },
+      },
+      descriptive: ["beige"],
+      nouns: ["beige"],
+      description: [
+        "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
+      ],
+      meanings: ["warmth", "elegance", "neutrality", "calm"],
+      usage: ["backgrounds", "interiors", "fashion", "neutral accents"],
+    },
+    {
+      criteria: {
+        hsl: {
           h: [45, 70],
           s: [0.1, 1],
           l: [0.07, 0.99],
@@ -766,6 +794,34 @@ export default {
         "sexiness",
       ],
       usage: ["children's products", "erotica"],
+    },
+    {
+      criteria: {
+        hsl: {
+          h: [345, 360],
+          s: [0.4, 0.6],
+          l: [0.4, 0.6],
+        },
+      },
+      descriptive: ["brick red", "terracotta"],
+      nouns: ["brick red"],
+      description: [
+        "Brick red is a warm, earthy shade that sits between red and brown. Its connection to natural clay and masonry gives it a sense of groundedness and stability, while its red undertones retain a touch of boldness. In design, it evokes rustic charm, autumn warmth, and traditional craftsmanship.",
+      ],
+      meanings: [
+        "groundedness",
+        "boldness",
+        "confidence",
+        "warmth",
+        "stability",
+        "rustic",
+      ],
+      usage: [
+        "rustic design",
+        "autumn themes",
+        "traditional aesthetics",
+        "warm accents",
+      ],
     },
     {
       criteria: {
