@@ -46,6 +46,13 @@ const temperature2rgb = (kelvin) => {
  */
 export const rgb2temperature = (rgb) => {
   const { r, g, b } = rgb;
+
+  // When r is 0 or near-zero, the b/r ratio is undefined or infinite.
+  // Return boundary temperatures for these degenerate cases.
+  if (r < 1e-10) {
+    return b > r ? 40000 : 1000;
+  }
+
   let minTemp = 1000;
   let maxTemp = 40000;
   const eps = 0.4;

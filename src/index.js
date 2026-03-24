@@ -137,13 +137,18 @@ class ColorDescription {
         return Object.entries(current.criteria[colorModel]).every(
           ([key, criterium]) => {
             // Check if the key exists in colorAsModel
+            // null criteria = wildcard, always matches
+            if (criterium === null) return true;
+
+            // If the criterion requires a specific value but the color
+            // doesn't have this component (e.g. hue on achromatic colors),
+            // this entry should NOT match.
             if (
               !(key in colorAsModel) ||
               colorAsModel[key] === undefined ||
-              colorAsModel[key] === null ||
-              criterium === null
+              colorAsModel[key] === null
             )
-              return true; // Skip if the component doesn't exist
+              return false;
 
             let value = colorAsModel[key];
 
