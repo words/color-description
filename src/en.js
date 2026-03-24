@@ -1,11 +1,23 @@
+// Hue boundaries informed by:
+// "Color Names Across Languages: Salient Colors and Term Translation in
+// Multilingual Color Naming Models" — Kim, Thayer, Gorsky & Heer (EuroVis 2019)
+// https://github.com/uwdata/color-naming-in-different-languages
+//
+// Boundaries are placed at midpoints between adjacent survey-term centroids
+// in OKLCH hue space, cross-validated against ~49K English-language responses.
+
 export default {
   descriptions: [
+    // ===========================
+    // Character words (hue-agnostic, based on OKLCH lightness & chroma)
+    // Survey-informed L/C ranges from compound terms (dark X, pale X, etc.)
+    // ===========================
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.75, 1],
-          l: [0.4, 0.55],
+          c: [0.15, 0.5],
+          l: [0.45, 0.75],
         },
       },
       descriptive: [
@@ -26,10 +38,10 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0, 0.07],
+          c: null,
+          l: [0, 0.18],
         },
       },
       descriptive: ["dark", "ashy", "somber", "bleak", "muddy", "sooty"],
@@ -37,11 +49,12 @@ export default {
       usage: ["backgrounds", "contrast", "moody designs"],
     },
     {
+      // Survey: "dark X" terms span L 0.34–0.66 (p10–p90)
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0, 0.3],
+          c: null,
+          l: [0, 0.50],
         },
       },
       descriptive: ["dark", "dim", "gloomy", "dull"],
@@ -50,10 +63,10 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.1, 0.7],
-          l: [0.15, 0.5],
+          c: [0.02, 0.12],
+          l: [0.25, 0.65],
         },
       },
       descriptive: ["bleak", "muted", "matte", "dusty"],
@@ -62,20 +75,21 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.12, 1],
-          l: [0.7, 1],
+          c: [0.02, 0.5],
+          l: [0.75, 1],
         },
       },
       descriptive: ["tinted"],
     },
     {
+      // Survey: "pastel X" terms span L 0.70–0.85, C 0.08–0.13
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.2, 1],
-          l: [0.75, 0.95],
+          c: [0.04, 0.13],
+          l: [0.70, 0.96],
         },
       },
       descriptive: ["pastel"],
@@ -83,11 +97,12 @@ export default {
       usage: ["backgrounds", "spring themes", "baby products"],
     },
     {
+      // Survey: "pale X" terms span L 0.68–0.92, C 0.07–0.12
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0.88, 1],
+          c: null,
+          l: [0.80, 1.001],
         },
       },
       descriptive: [
@@ -103,10 +118,10 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.5, 1],
-          l: [0.7, 0.9],
+          c: [0.08, 0.5],
+          l: [0.75, 0.92],
         },
       },
       descriptive: [
@@ -120,49 +135,49 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0, 0.12],
-          l: [0.9, 1],
+          c: [0, 0.02],
+          l: [0.92, 1],
         },
       },
       descriptive: ["neutral"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.74, 1],
-          l: [0.9, 1],
+          c: [0.02, 0.5],
+          l: [0.92, 1],
         },
       },
       descriptive: ["luminous"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: 1,
+          c: null,
+          l: [0.999, 1.001],
         },
       },
       descriptive: ["colorless", "bright", "brilliant", "high"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: 0,
+          c: null,
+          l: [0, 0.001],
         },
       },
       descriptive: ["colorless", "low", "dark"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0, 0.01],
+          c: [0, 0.01],
           l: null,
         },
       },
@@ -170,80 +185,81 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0.01, 0.3],
+          c: null,
+          l: [0.09, 0.50],
         },
       },
       descriptive: ["shady"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0, 0.4],
-          l: null,
+          c: [0, 0.08],
+          l: [0, 0.85],
         },
       },
       descriptive: ["ashy", "dusty"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0.01, 0.08],
+          c: null,
+          l: [0.05, 0.18],
         },
       },
       descriptive: ["almost black"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0.0, 0.02],
+          c: null,
+          l: [0.0, 0.10],
         },
       },
       descriptive: ["black"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0, 0.09],
+          c: null,
+          l: [0, 0.20],
         },
       },
       descriptive: ["very dark"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0, 0.4],
-          l: [0, 0.22],
+          c: [0, 0.06],
+          l: [0, 0.38],
         },
       },
       descriptive: ["dark"],
     },
     {
+      // Survey: "deep X" terms at L 0.39–0.42, C 0.09–0.21
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.1, 0.4],
-          l: [0, 0.6],
+          c: [0.02, 0.10],
+          l: [0, 0.55],
         },
       },
       descriptive: ["dark", "inky", "dim", "gloomy"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0, 0.04],
-          l: [0.1, 0.99],
+          c: [0, 0.01],
+          l: [0.15, 0.98],
         },
       },
       descriptive: ["grey"],
@@ -272,29 +288,29 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.04, 0.1],
-          l: [0.17, 0.99],
+          c: [0.01, 0.035],
+          l: [0.22, 0.99],
         },
       },
       descriptive: ["almost grey"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.1, 0.3],
-          l: [0.17, 0.99],
+          c: [0.035, 0.07],
+          l: [0.22, 0.99],
         },
       },
       descriptive: ["very unsaturated"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.3, 0.46],
+          c: [0.07, 0.11],
           l: null,
         },
       },
@@ -302,80 +318,88 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.46, 0.6],
-          l: [0.4, 0.55],
+          c: [0.11, 0.14],
+          l: [0.45, 0.70],
         },
       },
       descriptive: ["rather unsaturated"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.601, 0.8],
-          l: [0.45, 0.6],
+          c: [0.14, 0.19],
+          l: [0.45, 0.75],
         },
       },
       descriptive: ["fairly saturated"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.801, 0.94],
-          l: [0.45, 0.6],
+          c: [0.19, 0.25],
+          l: [0.45, 0.75],
         },
       },
       descriptive: ["saturated"],
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: [0.941, 1],
-          l: [0.45, 0.6],
+          c: [0.25, 0.5],
+          l: [0.45, 0.75],
         },
       },
       descriptive: ["highly saturated"],
     },
+
+    // ===========================
+    // Warm / Cool (OKLCH hue-based)
+    // ===========================
     {
       criteria: {
-        hsl: {
-          h: [0, 70],
-          s: [0.3, 1],
-          l: [0.1, 1],
+        oklch: {
+          h: [0, 120],
+          c: [0.05, 0.5],
+          l: [0.15, 1],
         },
       },
       descriptive: ["warm", "mellow"],
     },
     {
       criteria: {
-        hsl: {
-          h: [310, 360],
-          s: [0.3, 1],
-          l: [0.1, 1],
+        oklch: {
+          h: [345, 360],
+          c: [0.05, 0.5],
+          l: [0.15, 1],
         },
       },
       descriptive: ["warm", "mellow"],
     },
     {
       criteria: {
-        hsl: {
-          h: [165, 310],
-          s: [0.3, 1],
-          l: [0.1, 1],
+        oklch: {
+          h: [163, 327],
+          c: [0.05, 0.5],
+          l: [0.15, 1],
         },
       },
       descriptive: ["cold", "cool"],
     },
+
+    // ===========================
+    // White & Black nouns
+    // ===========================
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0.98, 1],
+          c: null,
+          l: [0.97, 1.001],
         },
       },
       nouns: ["white"],
@@ -404,10 +428,10 @@ export default {
     },
     {
       criteria: {
-        hsl: {
+        oklch: {
           h: null,
-          s: null,
-          l: [0.0, 0.08],
+          c: null,
+          l: [0.0, 0.15],
         },
       },
       nouns: ["black"],
@@ -426,12 +450,19 @@ export default {
       ],
       usage: ["intimidate", "create fear", "authority", "luxury"],
     },
+
+    // ===========================
+    // Hue names — survey-informed OKLCH boundaries
+    // Centroids and boundaries from ~49K English responses (Kim et al. 2019)
+    // ===========================
+
+    // Red — survey centroid H=25°, 3811 responses
     {
       criteria: {
-        hsl: {
-          h: [0, 15],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [7, 40],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["red", "reddish"],
@@ -466,12 +497,14 @@ export default {
         "excite",
       ],
     },
+
+    // Orange — survey centroid H=55°, 3126 responses
     {
       criteria: {
-        hsl: {
-          h: [15, 45],
-          s: [0.1, 1],
-          l: [0.4, 0.99],
+        oklch: {
+          h: [40, 80],
+          c: [0.01, 0.5],
+          l: [0.50, 0.99],
         },
       },
       descriptive: ["orange"],
@@ -482,12 +515,14 @@ export default {
       meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
       usage: ["stimulate", "draw attention", "express freedom", "fascinate"],
     },
+
+    // Brown — survey centroid H=58°, L=0.50, C=0.08, 4605 responses
     {
       criteria: {
-        hsl: {
-          h: [15, 45],
-          s: [0.1, 1],
-          l: [0.07, 0.4],
+        oklch: {
+          h: [40, 80],
+          c: [0.01, 0.5],
+          l: [0.15, 0.55],
         },
       },
       descriptive: ["brown"],
@@ -508,12 +543,14 @@ export default {
       ],
       usage: ["agriculture", "legal", "food", "tobacco", "alcohol"],
     },
+
+    // Beige — survey centroid H=84°, L=0.80, C=0.065, 914 responses
     {
       criteria: {
-        hsl: {
-          h: [40, 60],
-          s: [0.2, 0.6],
-          l: [0.8, 0.95],
+        oklch: {
+          h: [70, 105],
+          c: [0.02, 0.08],
+          l: [0.78, 0.97],
         },
       },
       descriptive: ["beige"],
@@ -524,12 +561,14 @@ export default {
       meanings: ["warmth", "elegance", "neutrality", "calm"],
       usage: ["backgrounds", "interiors", "fashion", "neutral accents"],
     },
+
+    // Yellow — survey centroid H=106°, 2633 responses
     {
       criteria: {
-        hsl: {
-          h: [45, 70],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [80, 120],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["yellow"],
@@ -557,12 +596,14 @@ export default {
         "convey competence",
       ],
     },
+
+    // Lime — survey centroid H=134°, 768 responses
     {
       criteria: {
-        hsl: {
-          h: [70, 79],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [120, 138],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["lime"],
@@ -579,28 +620,63 @@ export default {
         "nature",
       ],
     },
+
+    // Green — survey centroid H=143°, 11902 responses
     {
       criteria: {
-        hsl: {
-          h: [79, 163],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [138, 163],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["green", "greenish"],
       nouns: ["green"],
       description: [
-        "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and “safe/ok” signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
+        "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and \"safe/ok\" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
       ],
       meanings: ["safety", "harmony", "stability", "reliability", "balance"],
       usage: ["relax", "balance", "revitalize", "encourage"],
     },
+
+    // Teal — survey centroid H=183°, 2646 responses
     {
       criteria: {
-        hsl: {
-          h: [163, 193],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [163, 190],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
+        },
+      },
+      descriptive: ["teal"],
+      nouns: ["teal"],
+      description: [
+        "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
+      ],
+      meanings: [
+        "sophistication",
+        "clarity",
+        "calm",
+        "balance",
+        "refreshing",
+        "trust",
+      ],
+      usage: [
+        "healthcare",
+        "wellness",
+        "technology",
+        "communication",
+        "hospitality",
+      ],
+    },
+
+    // Cyan — survey centroid H=198°, 878 responses
+    {
+      criteria: {
+        oklch: {
+          h: [190, 228],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["cyan"],
@@ -627,18 +703,20 @@ export default {
         "productivity",
       ],
     },
+
+    // Blue — survey centroid H=257°, 9554 responses
     {
       criteria: {
-        hsl: {
-          h: [193, 240],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [228, 271],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["blue", "blueish"],
       nouns: ["blue"],
       description: [
-        "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It’s widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
+        "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
       ],
       meanings: [
         "trust",
@@ -652,18 +730,20 @@ export default {
       ],
       usage: ["security", "finance", "technology", "healthcare", "accounting"],
     },
+
+    // Indigo — survey centroid H=285°, 845 responses
     {
       criteria: {
-        hsl: {
-          h: [240, 260],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [271, 285],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["indigo"],
       nouns: ["indigo"],
       description: [
-        "Indigo is deep and contemplative, sitting between blue’s steadiness and purple’s imagination. It can evoke twilight, ink, denim, and night skies—quiet, thoughtful, and a little mysterious. In design, indigo often feels sophisticated and layered, adding depth without the starkness of pure black. It can suggest introspection, tradition, or spirituality depending on context. Picture indigo as dusk settling in: calm, rich, and full of hidden detail.",
+        "Indigo is deep and contemplative, sitting between blue's steadiness and purple's imagination. It can evoke twilight, ink, denim, and night skies—quiet, thoughtful, and a little mysterious. In design, indigo often feels sophisticated and layered, adding depth without the starkness of pure black. It can suggest introspection, tradition, or spirituality depending on context. Picture indigo as dusk settling in: calm, rich, and full of hidden detail.",
       ],
       meanings: [
         "spirituality",
@@ -679,42 +759,17 @@ export default {
       ],
       usage: ["luxury", "religion", "psychic"],
     },
+
+    // Purple — survey centroid H=312°, 9896 responses (absorbs violet at H=309°)
     {
       criteria: {
-        hsl: {
-          h: [260, 270],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [285, 327],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
-      descriptive: ["violet"],
-      nouns: ["violet"],
-      description: [
-        "Violet feels expressive and luminous, often associated with imagination, ritual, and luxury. It can bring to mind wildflowers, velvet fabric, and stage lighting—dramatic but elegant. In design, violet can signal creativity and uniqueness, standing out without the urgency of red. Depending on saturation, it can feel mystical and dreamy or bold and theatrical. Imagine violet as a colored spotlight that turns the ordinary into something a little more magical.",
-      ],
-      meanings: [
-        "spirituality",
-        "structure",
-        "compassion",
-        "sensitivity",
-        "mystery",
-        "tolerance",
-        "integrity",
-        "order",
-        "wisdom",
-        "inspiration",
-      ],
-      usage: ["luxury", "religion", "psychic"],
-    },
-    {
-      criteria: {
-        hsl: {
-          h: [270, 291],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
-        },
-      },
-      descriptive: ["purple", "purplish"],
+      descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
@@ -733,12 +788,14 @@ export default {
       ],
       usage: ["luxury", "religion", "psychic", "royalty"],
     },
+
+    // Magenta — survey centroid H=341°, 2673 responses
     {
       criteria: {
-        hsl: {
-          h: [291, 327],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [327, 345],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["magenta"],
@@ -764,12 +821,14 @@ export default {
       ],
       usage: ["children's products", "erotica"],
     },
+
+    // Pink — survey centroid H=349°, 5958 responses (wraps around 0°)
     {
       criteria: {
-        hsl: {
-          h: [327, 344],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [345, 360],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -797,10 +856,43 @@ export default {
     },
     {
       criteria: {
-        hsl: {
-          h: [345, 360],
-          s: [0.4, 0.6],
-          l: [0.4, 0.6],
+        oklch: {
+          h: [0, 7],
+          c: [0.01, 0.5],
+          l: [0.15, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: ["children's products", "erotica"],
+    },
+
+    // Brick red — terracotta tones in the red range
+    {
+      criteria: {
+        oklch: {
+          h: [10, 35],
+          c: [0.10, 0.17],
+          l: [0.45, 0.65],
         },
       },
       descriptive: ["brick red", "terracotta"],
@@ -823,43 +915,135 @@ export default {
         "warm accents",
       ],
     },
+
+    // Maroon — survey centroid H=13°, L=0.42, C=0.13, 1424 responses
+    // Dark red, like brown is dark orange
     {
       criteria: {
-        hsl: {
-          h: [344, 360],
-          s: [0.1, 1],
-          l: [0.07, 0.99],
+        oklch: {
+          h: [7, 40],
+          c: [0.05, 0.5],
+          l: [0.15, 0.45],
         },
       },
-      descriptive: ["red", "reddish"],
-      nouns: ["red"],
+      descriptive: ["maroon"],
+      nouns: ["maroon"],
       description: [
-        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
+        "Maroon is a dark, rich red that feels grounded and dignified. It evokes aged wine, dark leather, and autumn foliage—warm but restrained. In design, maroon carries the intensity of red with added depth and formality, making it a popular choice for institutions, luxury branding, and elegant print. It can communicate tradition, confidence, and seriousness without the aggressiveness of brighter reds. Picture maroon as a deep ember that glows with quiet authority.",
       ],
       meanings: [
-        "excitement",
-        "energy",
-        "passion",
+        "strength",
         "courage",
-        "attention",
-        "lust",
-        "power",
-        "love",
-        "speed",
-        "anger",
-        "danger",
-        "ferocity",
-        "violence",
-        "fury",
-        "vigor",
-        "urgency",
+        "warmth",
+        "intensity",
+        "ambition",
+        "confidence",
+        "tradition",
       ],
       usage: [
-        "stimulate",
-        "create urgency",
-        "draw attention",
-        "caution",
-        "encourage",
+        "luxury",
+        "academic",
+        "formal design",
+        "autumn themes",
+        "wine branding",
+      ],
+    },
+
+    // Navy — survey centroid H=268°, L=0.35, C=0.11, 865 responses
+    // Dark blue
+    {
+      criteria: {
+        oklch: {
+          h: [228, 285],
+          c: [0.05, 0.5],
+          l: [0.15, 0.42],
+        },
+      },
+      descriptive: ["navy"],
+      nouns: ["navy"],
+      description: [
+        "Navy is a dark, authoritative blue that feels professional and dependable. It evokes naval uniforms, deep ocean water, and twilight sky—serious but approachable. In design, navy is a versatile near-neutral that works as a softer alternative to black, lending depth and formality without harshness. It pairs well with almost any accent color and reads as classic and timeless. Picture navy as the deep blue of a clear night sky just after sunset.",
+      ],
+      meanings: [
+        "authority",
+        "trust",
+        "stability",
+        "professionalism",
+        "tradition",
+        "confidence",
+        "reliability",
+      ],
+      usage: [
+        "corporate",
+        "finance",
+        "uniforms",
+        "formal design",
+        "nautical themes",
+      ],
+    },
+
+    // Olive — survey centroid H=117°, L=0.63, C=0.11, 736 responses
+    // Dark/muted yellow-green
+    {
+      criteria: {
+        oklch: {
+          h: [80, 138],
+          c: [0.03, 0.13],
+          l: [0.35, 0.68],
+        },
+      },
+      descriptive: ["olive"],
+      nouns: ["olive"],
+      description: [
+        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
+      ],
+      meanings: [
+        "nature",
+        "earthiness",
+        "peace",
+        "resilience",
+        "tradition",
+        "humility",
+      ],
+      usage: [
+        "military",
+        "outdoor brands",
+        "organic products",
+        "nature themes",
+        "fashion",
+      ],
+    },
+
+    // Lavender — survey centroid H=307°, L=0.70, C=0.11, 1591 responses
+    // Light/pale purple
+    {
+      criteria: {
+        oklch: {
+          h: [285, 327],
+          c: [0.03, 0.14],
+          l: [0.62, 0.88],
+        },
+      },
+      descriptive: ["lavender"],
+      nouns: ["lavender"],
+      description: [
+        "Lavender is a soft, light purple that feels gentle and refined. It evokes lavender fields, spring blossoms, and soft fabric—calm, romantic, and slightly whimsical. In design, lavender adds a feminine, soothing touch without the intensity of deeper purples. It works well for wellness brands, cosmetics, and any context that wants to feel approachable and delicate. Picture lavender as a light haze of purple that softens everything it touches.",
+      ],
+      meanings: [
+        "grace",
+        "elegance",
+        "calm",
+        "femininity",
+        "youth",
+        "serenity",
+        "refinement",
+      ],
+      usage: [
+        "cosmetics",
+        "wellness",
+        "spring themes",
+        "weddings",
+        "children's products",
       ],
     },
   ],

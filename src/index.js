@@ -5,6 +5,7 @@ import wordsEN from "./en";
 const converters = {
   rgb: converter("rgb"),
   hsl: converter("hsl"),
+  oklch: converter("oklch"),
 };
 
 const formatComponents = {
@@ -34,6 +35,7 @@ class ColorDescription {
     const rgb = converters["rgb"](this.currentColor);
     this.formats.rgb = rgb;
     this.formats.hsl = converters["hsl"](this.currentColor);
+    this.formats.oklch = converters["oklch"](this.currentColor);
     this.formats.cmyk = rgbToCMYK(rgb);
   }
 

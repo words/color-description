@@ -3,17 +3,21 @@ import { rgb2temperature, rgbToCMYK, isInRange } from "../src/utils";
 
 const HUE_NOUNS = new Set([
   "red",
+  "maroon",
   "orange",
   "brown",
   "yellow",
+  "olive",
   "lime",
   "green",
+  "teal",
   "cyan",
   "sky blue",
   "blue",
+  "navy",
   "indigo",
-  "violet",
   "purple",
+  "lavender",
   "magenta",
   "pink",
 ]);

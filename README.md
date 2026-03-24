@@ -75,6 +75,15 @@ npm run test
 npm run dev
 ```
 
+## Perceptually Accurate Color Matching
+
+All color matching is performed in **OKLCH** color space, which provides perceptually uniform lightness, chroma, and hue — unlike HSL where identical saturation/lightness values can look dramatically different across hues.
+
+Hue name boundaries are empirically grounded using data from **~49,000 English-language color naming responses** collected via the [Many Languages, Many Colors](https://uwdata.github.io/color-naming-in-different-languages) project. Boundaries are placed at midpoints between adjacent survey-term centroids in OKLCH hue space, ensuring that each color is labeled with the name most English speakers would use.
+
+> Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). *Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models.* EuroVis 2019.
+> https://github.com/uwdata/color-naming-in-different-languages
+
 ## Data Sources
 
 ### Color Psychology
