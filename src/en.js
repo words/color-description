@@ -318,7 +318,7 @@ export default {
           l: [0.45, 0.6],
         },
       },
-      descriptive: ["saturated"],
+      descriptive: ["fairly saturated"],
     },
     {
       criteria: {
@@ -328,7 +328,7 @@ export default {
           l: [0.45, 0.6],
         },
       },
-      descriptive: ["rather saturated"],
+      descriptive: ["saturated"],
     },
     {
       criteria: {
@@ -338,12 +338,12 @@ export default {
           l: [0.45, 0.6],
         },
       },
-      descriptive: ["very saturated"],
+      descriptive: ["highly saturated"],
     },
     {
       criteria: {
         hsl: {
-          h: [0, 90],
+          h: [0, 70],
           s: [0.3, 1],
           l: [0.1, 1],
         },
@@ -353,7 +353,7 @@ export default {
     {
       criteria: {
         hsl: {
-          h: [270, 360],
+          h: [310, 360],
           s: [0.3, 1],
           l: [0.1, 1],
         },
@@ -363,8 +363,8 @@ export default {
     {
       criteria: {
         hsl: {
-          h: [90.01, 269.99],
-          s: null,
+          h: [165, 310],
+          s: [0.3, 1],
           l: [0.1, 1],
         },
       },
