@@ -52,7 +52,7 @@
     }
   },
   "dependencies": {
-    "culori": "^4.0.1"
+    "culori": "^4.0.2"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
