@@ -122,7 +122,7 @@ export default {
       criteria: {
         hsl: {
           h: null,
-          s: null,
+          s: [0, 0.12],
           l: [0.9, 1],
         },
       },
@@ -136,7 +136,7 @@ export default {
           l: [0.9, 1],
         },
       },
-      descriptive: ["muted"],
+      descriptive: ["luminous"],
     },
     {
       criteria: {

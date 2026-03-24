@@ -2,9 +2,20 @@ import ColorDescription from "../src/index";
 import { rgb2temperature, rgbToCMYK, isInRange } from "../src/utils";
 
 const HUE_NOUNS = new Set([
-  "red", "orange", "brown", "yellow", "lime", "green",
-  "cyan", "sky blue", "blue", "indigo", "violet", "purple",
-  "magenta", "pink",
+  "red",
+  "orange",
+  "brown",
+  "yellow",
+  "lime",
+  "green",
+  "cyan",
+  "sky blue",
+  "blue",
+  "indigo",
+  "violet",
+  "purple",
+  "magenta",
+  "pink",
 ]);
 
 describe("Systematic hue sweep", () => {
@@ -13,70 +24,66 @@ describe("Systematic hue sweep", () => {
   const saturations = [0.2, 0.5, 0.8, 1.0];
   const lightnesses = [0.15, 0.3, 0.5, 0.7, 0.85];
 
-  test.each(
-    saturations.flatMap((s) =>
-      lightnesses.map((l) => [s, l])
-    )
-  )("every 5° hue has a hue noun at s=%f l=%f", (s, l) => {
-    const missing = [];
-    for (let h = 0; h < 360; h += 5) {
-      const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
-      const hasHueNoun = cd.nouns.some((n) => HUE_NOUNS.has(n));
-      if (!hasHueNoun) {
-        missing.push(h);
+  test.each(saturations.flatMap((s) => lightnesses.map((l) => [s, l])))(
+    "every 5° hue has a hue noun at s=%f l=%f",
+    (s, l) => {
+      const missing = [];
+      for (let h = 0; h < 360; h += 5) {
+        const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
+        const hasHueNoun = cd.nouns.some((n) => HUE_NOUNS.has(n));
+        if (!hasHueNoun) {
+          missing.push(h);
+        }
       }
-    }
-    expect(missing).toEqual([]);
-  });
+      expect(missing).toEqual([]);
+    },
+  );
 
-  test.each(
-    saturations.flatMap((s) =>
-      lightnesses.map((l) => [s, l])
-    )
-  )("every 5° hue returns descriptive words at s=%f l=%f", (s, l) => {
-    const missing = [];
-    for (let h = 0; h < 360; h += 5) {
-      const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
-      if (cd.descriptiveWords.length === 0) {
-        missing.push(h);
+  test.each(saturations.flatMap((s) => lightnesses.map((l) => [s, l])))(
+    "every 5° hue returns descriptive words at s=%f l=%f",
+    (s, l) => {
+      const missing = [];
+      for (let h = 0; h < 360; h += 5) {
+        const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
+        if (cd.descriptiveWords.length === 0) {
+          missing.push(h);
+        }
       }
-    }
-    expect(missing).toEqual([]);
-  });
+      expect(missing).toEqual([]);
+    },
+  );
 
-  test.each(
-    saturations.flatMap((s) =>
-      lightnesses.map((l) => [s, l])
-    )
-  )("every 5° hue returns a description at s=%f l=%f", (s, l) => {
-    const missing = [];
-    for (let h = 0; h < 360; h += 5) {
-      const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
-      if (cd.description.length === 0) {
-        missing.push(h);
+  test.each(saturations.flatMap((s) => lightnesses.map((l) => [s, l])))(
+    "every 5° hue returns a description at s=%f l=%f",
+    (s, l) => {
+      const missing = [];
+      for (let h = 0; h < 360; h += 5) {
+        const cd = new ColorDescription(`hsl(${h} ${s * 100}% ${l * 100}%)`);
+        if (cd.description.length === 0) {
+          missing.push(h);
+        }
       }
-    }
-    expect(missing).toEqual([]);
-  });
+      expect(missing).toEqual([]);
+    },
+  );
 });
 
 describe("Saturation and lightness boundaries", () => {
   const boundaryS = [0, 0.01, 0.1, 0.5, 0.99, 1.0];
   const boundaryL = [0, 0.01, 0.07, 0.5, 0.93, 0.99, 1.0];
 
-  test.each(
-    boundaryS.flatMap((s) =>
-      boundaryL.map((l) => [s, l])
-    )
-  )("s=%f l=%f produces valid output without errors", (s, l) => {
-    const cd = new ColorDescription(`hsl(180 ${s * 100}% ${l * 100}%)`);
-    // Should never throw — always returns arrays
-    expect(Array.isArray(cd.descriptiveWords)).toBe(true);
-    expect(Array.isArray(cd.nouns)).toBe(true);
-    expect(Array.isArray(cd.meanings)).toBe(true);
-    expect(Array.isArray(cd.usage)).toBe(true);
-    expect(Array.isArray(cd.description)).toBe(true);
-  });
+  test.each(boundaryS.flatMap((s) => boundaryL.map((l) => [s, l])))(
+    "s=%f l=%f produces valid output without errors",
+    (s, l) => {
+      const cd = new ColorDescription(`hsl(180 ${s * 100}% ${l * 100}%)`);
+      // Should never throw — always returns arrays
+      expect(Array.isArray(cd.descriptiveWords)).toBe(true);
+      expect(Array.isArray(cd.nouns)).toBe(true);
+      expect(Array.isArray(cd.meanings)).toBe(true);
+      expect(Array.isArray(cd.usage)).toBe(true);
+      expect(Array.isArray(cd.description)).toBe(true);
+    },
+  );
 
   test("pure black (l=0) gets descriptive words", () => {
     const cd = new ColorDescription("hsl(0 0% 0%)");
@@ -92,13 +99,32 @@ describe("Saturation and lightness boundaries", () => {
     const cd = new ColorDescription("hsl(0 0% 50%)");
     expect(cd.descriptiveWords.length).toBeGreaterThan(0);
   });
+
+  test("high-saturation near-white colors are not labeled neutral or muted", () => {
+    const cd = new ColorDescription("hsl(0 100% 95%)");
+    expect(cd.descriptiveWords).not.toContain("neutral");
+    expect(cd.descriptiveWords).not.toContain("muted");
+    expect(cd.descriptiveWords).toContain("luminous");
+  });
+
+  test("near-white low-saturation colors can still be labeled neutral", () => {
+    const cd = new ColorDescription("hsl(0 5% 95%)");
+    expect(cd.descriptiveWords).toContain("neutral");
+  });
 });
 
 describe("Achromatic colors", () => {
   const greys = [
-    "#000000", "#111111", "#333333", "#555555",
-    "#777777", "#999999", "#bbbbbb", "#dddddd",
-    "#eeeeee", "#ffffff",
+    "#000000",
+    "#111111",
+    "#333333",
+    "#555555",
+    "#777777",
+    "#999999",
+    "#bbbbbb",
+    "#dddddd",
+    "#eeeeee",
+    "#ffffff",
   ];
 
   test.each(greys)("%s returns descriptive words", (hex) => {
@@ -242,7 +268,9 @@ describe("Invalid inputs", () => {
 
   test("throws TypeError when setting invalid color", () => {
     const cd = new ColorDescription("#ff0000");
-    expect(() => { cd.color = "garbage"; }).toThrow(TypeError);
+    expect(() => {
+      cd.color = "garbage";
+    }).toThrow(TypeError);
   });
 
   test("throws TypeError for invalid percentage model", () => {
@@ -264,16 +292,11 @@ describe("isInRange utility", () => {
 });
 
 describe("Multiple color formats accepted", () => {
-  const sameRed = [
-    "#ff0000",
-    "rgb(255, 0, 0)",
-    "hsl(0, 100%, 50%)",
-    "red",
-  ];
+  const sameRed = ["#ff0000", "rgb(255, 0, 0)", "hsl(0, 100%, 50%)", "red"];
 
   test("all formats for red produce the same nouns", () => {
-    const nounSets = sameRed.map(
-      (c) => new ColorDescription(c).nouns.sort().join(",")
+    const nounSets = sameRed.map((c) =>
+      new ColorDescription(c).nouns.sort().join(","),
     );
     // All should be identical
     for (const ns of nounSets) {
@@ -282,9 +305,7 @@ describe("Multiple color formats accepted", () => {
   });
 
   test("all formats for red produce the same bestContrast", () => {
-    const contrasts = sameRed.map(
-      (c) => new ColorDescription(c).bestContrast
-    );
+    const contrasts = sameRed.map((c) => new ColorDescription(c).bestContrast);
     for (const c of contrasts) {
       expect(c).toBe(contrasts[0]);
     }
