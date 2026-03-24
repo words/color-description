@@ -459,7 +459,17 @@ export default {
         "truth",
         "sincerity",
       ],
-      usage: ["health", "hospital", "sanitary"],
+      usage: [
+        "health",
+        "hospital",
+        "sanitary",
+        "weddings",
+        "bridal",
+        "minimalism",
+        "dairy",
+        "clean beauty",
+        "winter themes",
+      ],
     },
     {
       criteria: {
@@ -483,7 +493,17 @@ export default {
         "elegance",
         "mystery",
       ],
-      usage: ["intimidate", "create fear", "authority", "luxury"],
+      usage: [
+        "intimidate",
+        "authority",
+        "luxury",
+        "fashion",
+        "elegance",
+        "formal wear",
+        "premium branding",
+        "editorial",
+        "typography",
+      ],
     },
 
     // ===========================
@@ -530,6 +550,12 @@ export default {
         "caution",
         "encourage",
         "excite",
+        "food industry",
+        "sports",
+        "sales",
+        "entertainment",
+        "romance",
+        "emergency services",
       ],
     },
 
@@ -548,7 +574,18 @@ export default {
         "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
       ],
       meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
-      usage: ["stimulate", "draw attention", "express freedom", "fascinate"],
+      usage: [
+        "stimulate",
+        "draw attention",
+        "express freedom",
+        "fascinate",
+        "food and beverages",
+        "sports",
+        "construction safety",
+        "youth marketing",
+        "autumn themes",
+        "Halloween",
+      ],
     },
 
     // Brown — survey centroid H=58°, L=0.50, C=0.08, 4605 responses
@@ -576,7 +613,18 @@ export default {
         "comfort",
         "security",
       ],
-      usage: ["agriculture", "legal", "food", "tobacco", "alcohol"],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
     },
 
     // Beige — survey centroid H=84°, L=0.80, C=0.065, 914 responses
@@ -594,7 +642,16 @@ export default {
         "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
       ],
       meanings: ["warmth", "elegance", "neutrality", "calm"],
-      usage: ["backgrounds", "interiors", "fashion", "neutral accents"],
+      usage: [
+        "backgrounds",
+        "interiors",
+        "fashion",
+        "neutral accents",
+        "cosmetics",
+        "luxury packaging",
+        "spa and wellness",
+        "stationery",
+      ],
     },
 
     // Yellow — survey centroid H=106°, 2633 responses
@@ -653,6 +710,9 @@ export default {
         "awake awareness",
         "rejuvenate",
         "nature",
+        "energy drinks",
+        "sports",
+        "gaming",
       ],
     },
 
@@ -671,7 +731,18 @@ export default {
         "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and \"safe/ok\" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
       ],
       meanings: ["safety", "harmony", "stability", "reliability", "balance"],
-      usage: ["relax", "balance", "revitalize", "encourage"],
+      usage: [
+        "relax",
+        "balance",
+        "revitalize",
+        "encourage",
+        "sustainability",
+        "organic and natural",
+        "finance",
+        "pharmacy",
+        "gardening",
+        "eco",
+      ],
     },
 
     // Teal — survey centroid H=183°, 2646 responses
@@ -763,7 +834,16 @@ export default {
         "calmness",
         "control",
       ],
-      usage: ["security", "finance", "technology", "healthcare", "accounting"],
+      usage: [
+        "security",
+        "finance",
+        "technology",
+        "healthcare",
+        "accounting",
+        "social media",
+        "government",
+        "law enforcement",
+      ],
     },
 
     // Indigo — survey centroid H=285°, 845 responses
@@ -792,7 +872,16 @@ export default {
         "wisdom",
         "inspiration",
       ],
-      usage: ["luxury", "religion", "psychic"],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "spirituality",
+        "meditation",
+        "denim",
+        "night sky themes",
+        "creative industries",
+      ],
     },
 
     // Purple — survey centroid H=312°, 9896 responses (absorbs violet at H=309°)
@@ -821,7 +910,17 @@ export default {
         "wisdom",
         "inspiration",
       ],
-      usage: ["luxury", "religion", "psychic", "royalty"],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
     },
 
     // Magenta — survey centroid H=341°, 2673 responses
@@ -854,7 +953,17 @@ export default {
         "seductiveness",
         "sexiness",
       ],
-      usage: ["children's products", "erotica"],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "nightlife",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
     },
 
     // Pink — survey centroid H=349°, 5958 responses (wraps around 0°)
@@ -887,7 +996,16 @@ export default {
         "seductiveness",
         "sexiness",
       ],
-      usage: ["children's products", "erotica"],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
     },
     {
       criteria: {
@@ -918,7 +1036,17 @@ export default {
         "seductiveness",
         "sexiness",
       ],
-      usage: ["children's products", "erotica"],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "nightlife",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
     },
 
     // Brick red — terracotta tones in the red range
