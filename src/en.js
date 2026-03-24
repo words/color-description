@@ -357,6 +357,41 @@ export default {
       descriptive: ["highly saturated"],
     },
 
+    // Survey-informed character words: deep, bright, neon
+    {
+      // Survey: "deep X" at L 0.39–0.42, C 0.09–0.21
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.08, 0.5],
+          l: [0.25, 0.45],
+        },
+      },
+      descriptive: ["deep"],
+    },
+    {
+      // Survey: "bright X" at L 0.58–0.82, C 0.17–0.24
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.15, 0.5],
+          l: [0.55, 0.85],
+        },
+      },
+      descriptive: ["bright"],
+    },
+    {
+      // Survey: "neon X" at L 0.60–0.93, C 0.14–0.26
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.14, 0.5],
+          l: [0.70, 0.95],
+        },
+      },
+      descriptive: ["neon"],
+    },
+
     // ===========================
     // Warm / Cool (OKLCH hue-based)
     // ===========================
@@ -1067,11 +1102,19 @@ export default {
     },
     {
       value: 4000,
-      descriptive: ["cool or cold"],
+      descriptive: ["neutral white"],
+    },
+    {
+      value: 5000,
+      descriptive: ["cool white"],
     },
     {
       value: 6500,
-      descriptive: ["cool"],
+      descriptive: ["cool daylight"],
+    },
+    {
+      value: 10000,
+      descriptive: ["very cool"],
     },
   ],
   percentWords: [
