@@ -20,18 +20,43 @@ console.log(cd.getDescriptiveList());
  * pale, light, faded, delicate, glistening, bleached, neutral colorless, bright, briliant and high
  **/
 
+console.log(cd.meanings);
+console.log(cd.effects);
+console.log(cd.usage);
+
 cd.color = "red";
 
 console.log(cd.getDescriptiveList());
 /**
  * saturated, strong, lush, ablaze, beaming, bold, brilliant, flamboyant, vibrant, vivid, loud, very saturated, warm, mellow, red and reddish
  **/
+
+console.log(cd.meanings);
+/**
+ * ["excitement", "energy", "passion", ...]
+ **/
+
+console.log(cd.effects);
+/**
+ * ["stimulate", "create urgency", "draw attention", ...]
+ **/
+
+console.log(cd.usage);
+/**
+ * ["caution", "food industry", "sports", ...]
+ **/
 ```
 
 ## Color Meaning & Translation
 
-The default dataset that is written in english so the "Emotions" and "Usage" very subjective and are written from a western perspective:
-https://github.com/words/color-description/blob/21ffa6b522f1751b471907aac4173acdc5c92fae/src/en.js
+The default dataset is written in English, and its meanings, effects, and usage labels are subjective and written from a western perspective:
+[English dataset](https://github.com/words/color-description/blob/21ffa6b522f1751b471907aac4173acdc5c92fae/src/en.js)
+
+Interpretation model used by the dataset:
+
+- `meanings` are symbolic associations
+- `effects` are perceptual or behavioral effects
+- `usage` is contextual fit such as industries, themes, and applications
 
 ## API
 
@@ -53,6 +78,9 @@ const cd = new ColorDescription(color);
 #### Properties
 
 - `color`: Get or set the current color
+- `meanings`: Symbolic or emotional associations
+- `effects`: Typical effects or signals the color can create
+- `usage`: Contexts, industries, themes, or applications where the color fits
 
 ## Module Formats
 
@@ -82,7 +110,7 @@ All color matching is performed in **OKLCH** color space, which provides percept
 Hue name boundaries are empirically grounded using data from **~49,000 English-language color naming responses** collected via the [Many Languages, Many Colors](https://uwdata.github.io/color-naming-in-different-languages) project. Boundaries are placed at midpoints between adjacent survey-term centroids in OKLCH hue space, ensuring that each color is labeled with the name most English speakers would use.
 
 > Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). *Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models.* EuroVis 2019.
-> https://github.com/uwdata/color-naming-in-different-languages
+> [Project repository](https://github.com/uwdata/color-naming-in-different-languages)
 
 ## Data Sources
 

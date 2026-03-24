@@ -399,6 +399,7 @@ const cd = new ColorDescription('#b40404');
         $code.innerHTML = `const cd = new ColorDescription('<i>${value}</i>');`;
         const temperature = cd.temperatureWords;
         const meanings = cd.meanings;
+        const effects = cd.effects;
         const usage = cd.usage;
         const nouns = cd.nouns;
 
@@ -426,6 +427,12 @@ const cd = new ColorDescription('#b40404');
             ${
               meanings.length
                 ? `<div class="t"><h3>Meanings</h3><code>cd.meanings</code></div><p>${meanings.join(", ")}</p>`
+                : ""
+            }
+
+            ${
+              effects.length
+                ? `<div class="t"><h3>Effects</h3><code>cd.effects</code></div><p>${effects.join(", ")}</p>`
                 : ""
             }
 

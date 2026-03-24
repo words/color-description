@@ -121,11 +121,9 @@ class ColorDescription {
         return rem;
       }
 
-      const scopeWords = Array.isArray(current[scope])
-        ? current[scope].filter(
-            (w) => typeof w === "string" && w.trim().length > 0,
-          )
-        : [];
+      const scopeWords = current[scope].filter(
+        (w) => typeof w === "string" && w.trim().length > 0,
+      );
 
       const colorModels = Object.keys(current.criteria);
 
@@ -194,6 +192,10 @@ class ColorDescription {
 
   get meanings() {
     return this.#getWords("meanings");
+  }
+
+  get effects() {
+    return this.#getWords("effects");
   }
 
   get usage() {

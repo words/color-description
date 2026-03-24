@@ -77,6 +77,14 @@ describe("ColorDescription Library", () => {
     });
   });
 
+  test("Effects", () => {
+    const effects = colorDesc.effects;
+    expect(Array.isArray(effects)).toBe(true);
+    effects.forEach((effect) => {
+      expect(typeof effect).toBe("string");
+    });
+  });
+
   test("Usage", () => {
     const usage = colorDesc.usage;
     expect(Array.isArray(usage)).toBe(true);
@@ -131,6 +139,7 @@ describe("ColorDescription Library", () => {
       "descriptive",
       "nouns",
       "meanings",
+      "effects",
       "usage",
       "description",
     ];
@@ -162,5 +171,17 @@ describe("ColorDescription Library", () => {
         expect(desc.trim().length).toBeGreaterThan(0);
       });
     });
+  });
+
+  test("effect-oriented terms are separated from contextual usage", () => {
+    const red = new ColorDescription("red");
+    const blue = new ColorDescription("blue");
+
+    expect(red.effects).toContain("stimulate");
+    expect(red.usage).not.toContain("stimulate");
+    expect(red.usage).toContain("food industry");
+
+    expect(blue.effects).toContain("calm");
+    expect(blue.usage).toContain("nautical");
   });
 });

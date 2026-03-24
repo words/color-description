@@ -493,9 +493,8 @@ export default {
         "elegance",
         "mystery",
       ],
+      effects: ["intimidate", "signal authority"],
       usage: [
-        "intimidate",
-        "authority",
         "luxury",
         "fashion",
         "elegance",
@@ -543,13 +542,16 @@ export default {
         "vigor",
         "urgency",
       ],
-      usage: [
+      effects: [
         "stimulate",
         "create urgency",
         "draw attention",
-        "caution",
         "encourage",
         "excite",
+        "heighten arousal",
+      ],
+      usage: [
+        "caution",
         "food industry",
         "sports",
         "sales",
@@ -574,11 +576,8 @@ export default {
         "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
       ],
       meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
+      effects: ["stimulate", "draw attention", "express freedom", "fascinate"],
       usage: [
-        "stimulate",
-        "draw attention",
-        "express freedom",
-        "fascinate",
         "food and beverages",
         "sports",
         "construction safety",
@@ -675,17 +674,19 @@ export default {
         "happiness",
         "positivity",
       ],
-      usage: [
+      effects: [
         "stimulate",
         "relax",
         "awake awareness",
         "energize",
         "affect mood",
+        "convey competence",
+      ],
+      usage: [
         "sale",
         "cheap",
         "budget",
         "construction",
-        "convey competence",
       ],
     },
 
@@ -704,11 +705,13 @@ export default {
         "Lime is a sharp, zesty green-yellow that feels fresh and high-energy. It can evoke citrus, neon signs, sportswear, or new leaves—bright, youthful, and a little electric. In design, lime is often used to signal novelty, motion, and visibility, especially as an accent or highlight. It can read as playful and modern, but it can also feel loud if overused. Picture lime as a vivid splash that wakes up a palette instantly.",
       ],
       meanings: ["growth", "harmony", "fertility", "kindness", "dependability"],
-      usage: [
+      effects: [
         "restore energy",
         "promote growth",
         "awake awareness",
         "rejuvenate",
+      ],
+      usage: [
         "nature",
         "energy drinks",
         "sports",
@@ -731,11 +734,8 @@ export default {
         "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and \"safe/ok\" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
       ],
       meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+      effects: ["relax", "balance", "revitalize", "encourage"],
       usage: [
-        "relax",
-        "balance",
-        "revitalize",
-        "encourage",
         "sustainability",
         "organic and natural",
         "finance",
@@ -767,6 +767,7 @@ export default {
         "refreshing",
         "trust",
       ],
+      effects: ["soothe"],
       usage: [
         "healthcare",
         "wellness",
@@ -799,8 +800,8 @@ export default {
         "consciousness",
         "stimulating",
       ],
+      effects: ["self-expression", "refresh"],
       usage: [
-        "self-expression",
         "communication",
         "children's products",
         "technology",
@@ -834,6 +835,7 @@ export default {
         "calmness",
         "control",
       ],
+      effects: ["calm", "reassure"],
       usage: [
         "security",
         "finance",
@@ -843,6 +845,7 @@ export default {
         "social media",
         "government",
         "law enforcement",
+        "nautical",
       ],
     },
 
