@@ -1,6 +1,6 @@
 {
   "name": "color-description",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "Textual color description",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
