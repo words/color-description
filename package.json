@@ -4,10 +4,12 @@
   "description": "Textual color description",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
+  "types": "index.d.ts",
   "browser": "dist/index.iife.js",
   "type": "module",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs",
       "default": "./dist/index.esm.js"
@@ -15,7 +17,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "scripts": {
     "build": "npm run build:esm && npm run build:browser && npm run build:node",
