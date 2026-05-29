@@ -171,7 +171,7 @@ export default {
           l: [0.999, 1.001],
         },
       },
-      descriptive: ["colorless", "bright", "brilliant", "high"],
+      descriptive: ["colorless", "bright", "brilliant"],
     },
     {
       criteria: {
@@ -181,7 +181,7 @@ export default {
           l: [0, 0.001],
         },
       },
-      descriptive: ["colorless", "low", "dark"],
+      descriptive: ["colorless", "dark"],
     },
     {
       criteria: {
@@ -310,10 +310,15 @@ export default {
       descriptive: ["almost grey"],
     },
     {
+      // Absolute-chroma "unsaturated" bands also need a relative-saturation
+      // ceiling: low-max-chroma hues (teal, cyan) reach the sRGB gamut edge at
+      // a low absolute C, so without relC a fully-saturated teal (#007590,
+      // relC≈1.0) would be wrongly called "unsaturated".
       criteria: {
         oklch: {
           h: null,
           c: [0.035, 0.07],
+          relC: [0, 0.45],
           l: [0.22, 0.99],
         },
       },
@@ -324,6 +329,7 @@ export default {
         oklch: {
           h: null,
           c: [0.07, 0.11],
+          relC: [0, 0.65],
           l: null,
         },
       },
@@ -334,6 +340,7 @@ export default {
         oklch: {
           h: null,
           c: [0.11, 0.14],
+          relC: [0, 0.7],
           l: [0.45, 0.70],
         },
       },
@@ -416,7 +423,7 @@ export default {
           l: [0.15, 1],
         },
       },
-      descriptive: ["warm", "mellow"],
+      descriptive: ["warm"],
     },
     {
       criteria: {
@@ -426,7 +433,7 @@ export default {
           l: [0.15, 1],
         },
       },
-      descriptive: ["warm", "mellow"],
+      descriptive: ["warm"],
     },
     {
       criteria: {
