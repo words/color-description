@@ -62,10 +62,14 @@ export default {
       usage: ["backgrounds", "contrast", "moody designs"],
     },
     {
+      // Muted = low *relative* saturation, not just low absolute chroma.
+      // Absolute C alone collapses a clear teal (#007590) and a dull brown
+      // (#8c724f) together; relC separates them (teal ≈1.0 vs brown ≈0.50).
       criteria: {
         oklch: {
           h: null,
           c: [0.02, 0.12],
+          relC: [0, 0.55],
           l: [0.25, 0.65],
         },
       },
@@ -74,10 +78,13 @@ export default {
       usage: ["backgrounds", "supporting elements"],
     },
     {
+      // A faint wash of color over a near-white base: low absolute chroma AND
+      // low relative chroma so vivid light colors (e.g. #ffe737) don't qualify.
       criteria: {
         oklch: {
           h: null,
-          c: [0.02, 0.5],
+          c: [0.02, 0.12],
+          relC: [0, 0.5],
           l: [0.75, 1],
         },
       },
@@ -97,11 +104,14 @@ export default {
       usage: ["backgrounds", "spring themes", "baby products"],
     },
     {
-      // Survey: "pale X" terms span L 0.68–0.92, C 0.07–0.12
+      // Survey: "pale X" terms span L 0.68–0.92, C 0.07–0.12.
+      // Cap absolute chroma (the comment knew!) and require low relative
+      // saturation so vivid light colors fall through to the "fresh" entry.
       criteria: {
         oklch: {
           h: null,
-          c: null,
+          c: [0, 0.12],
+          relC: [0, 0.5],
           l: [0.80, 1.001],
         },
       },
@@ -244,11 +254,14 @@ export default {
       descriptive: ["dark"],
     },
     {
-      // Survey: "deep X" terms at L 0.39–0.42, C 0.09–0.21
+      // Survey: "deep X" terms at L 0.39–0.42, C 0.09–0.21.
+      // Require low relative saturation so a clear mid-lightness teal isn't
+      // tagged inky/gloomy alongside genuinely dull dark colors.
       criteria: {
         oklch: {
           h: null,
           c: [0.02, 0.10],
+          relC: [0, 0.45],
           l: [0, 0.55],
         },
       },

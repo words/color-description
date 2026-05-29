@@ -1,11 +1,39 @@
 import { rgb2temperature, isInRange, randomizeArr, rgbToCMYK } from "./utils";
-import { wcagContrast, parse, converter, formatHex } from "culori";
+import { wcagContrast, parse, converter, clampChroma } from "culori";
 import wordsEN from "./en";
 
 const converters = {
   rgb: converter("rgb"),
   hsl: converter("hsl"),
   oklch: converter("oklch"),
+};
+
+// Contradictory descriptive groups. Within each axis only the words from the
+// bucket that matches the color's computed saturation may survive — this stops
+// e.g. "pale" and "vivid" (or "muted" and "saturated") both appearing when
+// entry ranges overlap. Order is muted -> vivid.
+const SATURATION_CONFLICT_GROUPS = [
+  ["pale", "faded", "bleached"],
+  ["muted", "matte", "dusty", "bleak"],
+  ["saturated", "vivid", "vibrant", "bold", "brilliant", "lush", "ablaze"],
+];
+
+// Maximum in-gamut OKLCH chroma is far below this for sRGB at every hue/L,
+// so it is a safe upper probe value for clampChroma.
+const OKLCH_CHROMA_PROBE = 0.5;
+
+/**
+ * Maximum sRGB-displayable OKLCH chroma for a given lightness + hue.
+ * Found by asking culori to clamp an over-saturated color back into gamut.
+ * @param {number} l OKLCH lightness
+ * @param {number} h OKLCH hue (degrees); may be undefined for achromatic
+ * @returns {number} gamut-boundary chroma (Cmax)
+ */
+const maxChroma = (l, h) => {
+  const clamped = converters.oklch(
+    clampChroma({ mode: "oklch", l, c: OKLCH_CHROMA_PROBE, h: h || 0 }, "oklch"),
+  );
+  return clamped && typeof clamped.c === "number" ? clamped.c : 0;
 };
 
 const formatComponents = {
@@ -37,6 +65,17 @@ class ColorDescription {
     this.formats.hsl = converters["hsl"](this.currentColor);
     this.formats.oklch = converters["oklch"](this.currentColor);
     this.formats.cmyk = rgbToCMYK(rgb);
+
+    // Relative saturation: absolute OKLCH chroma normalized against the most
+    // saturated in-gamut color of the same lightness + hue (Cmax). Absolute C
+    // is not perceptually uniform — Cmax differs a lot across hues/lightness —
+    // so muted-vs-vivid bucketing uses this 0..1 ratio (`relC`) instead.
+    // Criteria entries can reference `relC` on the oklch model.
+    const oklch = this.formats.oklch;
+    if (oklch && typeof oklch.c === "number") {
+      const cmax = maxChroma(oklch.l, oklch.h);
+      oklch.relC = cmax > 0 ? Math.min(1, oklch.c / cmax) : 0;
+    }
   }
 
   get color() {
@@ -175,11 +214,57 @@ class ColorDescription {
       }
     }, []);
 
+    const resolved =
+      scope === "descriptive" ? this.#resolveConflicts(words) : words;
+
     if (randomize) {
-      return randomizeArr(words).slice(0, wordLimit);
+      return randomizeArr(resolved).slice(0, wordLimit);
     }
 
-    return words.slice(0, wordLimit);
+    return resolved.slice(0, wordLimit);
+  }
+
+  /**
+   * Remove contradictory saturation adjectives from a descriptive word list.
+   * If words from more than one conflicting saturation group are present, keep
+   * only the group whose saturation bucket matches the color's relative chroma
+   * and drop the others.
+   * @param {string[]} words deduped descriptive words
+   * @returns {string[]} words with conflicting saturation groups resolved
+   */
+  #resolveConflicts(words) {
+    const oklch = this.formats.oklch;
+    const relC = oklch && typeof oklch.relC === "number" ? oklch.relC : 0;
+
+    // Which saturation bucket does the color actually belong to?
+    // 0 = pale/muted (low relative chroma), last = vivid (high).
+    let bucket;
+    if (relC < 0.35) {
+      bucket = 0; // pale / faded / bleached
+    } else if (relC < 0.6) {
+      bucket = 1; // muted / dusty / matte
+    } else {
+      bucket = 2; // saturated / vivid
+    }
+
+    const present = SATURATION_CONFLICT_GROUPS.map((group) =>
+      group.some((w) => words.includes(w)),
+    );
+    const presentCount = present.filter(Boolean).length;
+
+    // No conflict if at most one group contributed words.
+    if (presentCount <= 1) {
+      return words;
+    }
+
+    const drop = new Set();
+    SATURATION_CONFLICT_GROUPS.forEach((group, i) => {
+      if (i !== bucket) {
+        group.forEach((w) => drop.add(w));
+      }
+    });
+
+    return words.filter((w) => !drop.has(w));
   }
 
   get descriptiveWords() {
