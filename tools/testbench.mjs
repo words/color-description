@@ -317,7 +317,16 @@ for (const [h, list] of byHue) {
       const was = cell.changed
         ? `<s>${esc(cell.changed.join(" ") || "∅")}</s>`
         : "";
-      rows += `<td class="${cls}" style="background:${cell.hex};color:${textOn(cell.hex)}" title="${esc(title)}">${was}<span>${esc(cell.nouns.join(" ") || "∅")}</span><small>${esc(cell.expected)}</small></td>`;
+      const data = [
+        `data-hex="${cell.hex}"`,
+        `data-oklch="${esc(`oklch(${l} ${c} ${h})`)}"`,
+        `data-was="${esc((cell.changed || cell.nouns).join(", ") || "—")}"`,
+        `data-now="${esc(cell.nouns.join(", ") || "—")}"`,
+        `data-expected="${esc(cell.expected)}"`,
+        `data-words="${esc(cell.words.join(", "))}"`,
+        `data-fg="${textOn(cell.hex)}"`,
+      ].join(" ");
+      rows += `<td class="${cls}" ${data} tabindex="0" style="background:${cell.hex};color:${textOn(cell.hex)}" title="${esc(title)}">${was}<span>${esc(cell.nouns.join(" ") || "∅")}</span><small>${esc(cell.expected)}</small></td>`;
     }
     rows += `</tr>`;
   }
@@ -370,12 +379,30 @@ const html = `<!doctype html>
   .legend i { display: inline-block; width: 12px; height: 12px; border: 2px solid; vertical-align: -2px; margin-right: 3px; }
   .terms td { width: auto; height: auto; border: 0; border-bottom: 1px solid var(--line); padding: 3px 10px 3px 0; font-size: 12px; }
   .grid { display: flex; flex-wrap: wrap; gap: 0 28px; }
+  td[data-hex] { cursor: zoom-in; }
+  td[data-hex]:focus-visible { outline: 3px solid #06f; outline-offset: -3px; }
+  #view { position: fixed; inset: 0; z-index: 10; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 24px; cursor: zoom-out; font-family: inherit; }
+  #view.open { display: flex; }
+  #view .names { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; margin-bottom: 28px; max-width: 100%; }
+  #view .names > div { min-width: 0; }
+  #view .names small { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .65; margin-bottom: 6px; }
+  #view .names b { font-size: clamp(28px, 6vw, 64px); font-weight: 700; line-height: 1.05; text-wrap: balance; }
+  #view .names .was b { text-decoration: line-through; text-decoration-thickness: 3px; opacity: .8; }
+  #view.unchanged .names .was b { text-decoration: none; }
+  #view .names .arrow { font-size: clamp(24px, 4vw, 48px); opacity: .6; }
+  #view .meta { font-size: 15px; opacity: .8; font-variant-numeric: tabular-nums; }
+  #view .meta span { display: inline-block; margin: 0 10px; }
+  #view .words { margin-top: 18px; max-width: 60ch; font-size: 14px; opacity: .75; line-height: 1.5; }
+  #view .hint { position: absolute; bottom: 16px; left: 0; right: 0; font-size: 12px; opacity: .55; }
+  @media (max-width: 600px) { #view .names { grid-template-columns: 1fr; } #view .names .arrow { transform: rotate(90deg); } }
+  @media (prefers-reduced-motion: no-preference) { #view.open { animation: fade .15s ease-out; } }
+  @keyframes fade { from { opacity: 0; } }
   section { overflow-x: auto; }
 </style>
 </head>
 <body>
 <h1>Hue naming testbench</h1>
-<p>Every cell is one sRGB color sampled on an OKLCH grid. Bold text = hue nouns the library returns now. Struck-through text above it = what it returned before (only on changed cells). Small text = nearest English survey centroid (Kim et al. 2019). Hover a cell for details.</p>
+<p>Every cell is one sRGB color sampled on an OKLCH grid. Bold text = hue nouns the library returns now. Struck-through text above it = what it returned before (only on changed cells). Small text = nearest English survey centroid (Kim et al. 2019). Click a cell to see it full screen with its old and new name.</p>
 <div class="summary">
   <div class="stat"><b>${summary.agreePct}%</b><span>agree with survey (${agreeCount}/${total})</span></div>
   <div class="stat"><b>${noNoun}</b><span>cells with no hue noun</span></div>
@@ -386,6 +413,56 @@ ${baselineNote}
 <h2>Per survey term</h2>
 <table class="terms"><thead><tr><th>term</th><th>agree</th><th>%</th><th>top confusions</th></tr></thead><tbody>${termRows}</tbody></table>
 <div class="grid">${panels}</div>
+<div id="view" role="dialog" aria-modal="true" aria-label="Swatch detail">
+  <div class="names">
+    <div class="was"><small>Before</small><b id="v-was"></b></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="now"><small>Now</small><b id="v-now"></b></div>
+  </div>
+  <div class="meta"><span id="v-hex"></span><span id="v-oklch"></span><span id="v-expected"></span></div>
+  <div class="words" id="v-words"></div>
+  <div class="hint">Click anywhere or press Esc to close. Arrow keys move to the next swatch.</div>
+</div>
+<script>
+(function () {
+  var view = document.getElementById("view");
+  var cells = Array.prototype.slice.call(document.querySelectorAll("td[data-hex]"));
+  var current = -1;
+  function show(i) {
+    var td = cells[i];
+    if (!td) return;
+    current = i;
+    var d = td.dataset;
+    view.style.background = d.hex;
+    view.style.color = d.fg;
+    document.getElementById("v-was").textContent = d.was;
+    document.getElementById("v-now").textContent = d.now;
+    document.getElementById("v-hex").textContent = d.hex;
+    document.getElementById("v-oklch").textContent = d.oklch;
+    document.getElementById("v-expected").textContent = "survey: " + d.expected;
+    document.getElementById("v-words").textContent = d.words;
+    view.classList.toggle("unchanged", d.was === d.now);
+    view.classList.add("open");
+  }
+  function close() {
+    view.classList.remove("open");
+    if (cells[current]) cells[current].focus();
+  }
+  cells.forEach(function (td, i) {
+    td.addEventListener("click", function () { show(i); });
+    td.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(i); }
+    });
+  });
+  view.addEventListener("click", close);
+  document.addEventListener("keydown", function (e) {
+    if (!view.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); show(Math.min(current + 1, cells.length - 1)); }
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); show(Math.max(current - 1, 0)); }
+  });
+})();
+</script>
 </body>
 </html>`;
 
