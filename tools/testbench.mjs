@@ -119,6 +119,7 @@ const HUE_NOUNS = new Set([
   "lavender",
   "magenta",
   "pink",
+  "black",
 ]);
 
 // ---------------------------------------------------------------------------
@@ -164,7 +165,9 @@ for (const h of HUES) {
       const nouns = cd.nouns.filter((n) => HUE_NOUNS.has(n));
       const expected = nearestSurvey(l, c, h);
       const accept = ACCEPT[expected.term];
-      const agree = nouns.some((n) => accept.includes(n));
+      // The survey has no "black" centroid; near-black is a matcher rule.
+      const agree =
+        nouns.includes("black") || nouns.some((n) => accept.includes(n));
       const flags = [];
       if (nouns.length === 0) flags.push("no-noun");
       if (nouns.length > 2) flags.push("many-nouns");
