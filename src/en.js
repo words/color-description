@@ -579,105 +579,6 @@ export default {
         "emergency services",
       ],
     },
-    {
-      criteria: {
-        oklch: {
-          h: [0, 7],
-          c: [0.01, 0.5],
-          l: [0.15, 0.55],
-        },
-      },
-      descriptive: ["red", "reddish"],
-      nouns: ["red"],
-      description: [
-        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
-      ],
-      meanings: [
-        "excitement",
-        "energy",
-        "passion",
-        "courage",
-        "attention",
-        "lust",
-        "power",
-        "love",
-        "speed",
-        "anger",
-        "danger",
-        "ferocity",
-        "violence",
-        "fury",
-        "vigor",
-        "urgency",
-      ],
-      effects: [
-        "stimulate",
-        "create urgency",
-        "draw attention",
-        "encourage",
-        "excite",
-        "heighten arousal",
-      ],
-      usage: [
-        "caution",
-        "food industry",
-        "sports",
-        "sales",
-        "entertainment",
-        "romance",
-        "emergency services",
-      ],
-    },
-    // Dark colors of the pink hues (burgundy, wine) read as red, not pink.
-    {
-      criteria: {
-        oklch: {
-          h: [345, 360],
-          c: [0.01, 0.5],
-          l: [0.15, 0.55],
-        },
-      },
-      descriptive: ["red", "reddish"],
-      nouns: ["red"],
-      description: [
-        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
-      ],
-      meanings: [
-        "excitement",
-        "energy",
-        "passion",
-        "courage",
-        "attention",
-        "lust",
-        "power",
-        "love",
-        "speed",
-        "anger",
-        "danger",
-        "ferocity",
-        "violence",
-        "fury",
-        "vigor",
-        "urgency",
-      ],
-      effects: [
-        "stimulate",
-        "create urgency",
-        "draw attention",
-        "encourage",
-        "excite",
-        "heighten arousal",
-      ],
-      usage: [
-        "caution",
-        "food industry",
-        "sports",
-        "sales",
-        "entertainment",
-        "romance",
-        "emergency services",
-      ],
-    },
     // Red, light but saturated (coral).
     {
       criteria: {
@@ -1519,7 +1420,7 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.01, 0.5],
-          l: [0.5, 0.99],
+          l: [0.45, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -1722,7 +1623,7 @@ export default {
         oklch: {
           h: [0, 7],
           c: [0.01, 0.5],
-          l: [0.5, 0.99],
+          l: [0.45, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -1825,7 +1726,7 @@ export default {
       criteria: {
         oklch: {
           h: [0, 7],
-          c: [0.055, 0.5],
+          c: [0.01, 0.5],
           l: [0.15, 0.45],
         },
       },
@@ -1851,12 +1752,12 @@ export default {
         "wine branding",
       ],
     },
-    // Dark pink hues (burgundy).
+    // Dark pink hues (burgundy, wine, plum). These are not red.
     {
       criteria: {
         oklch: {
           h: [345, 360],
-          c: [0.055, 0.5],
+          c: [0.01, 0.5],
           l: [0.15, 0.45],
         },
       },
