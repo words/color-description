@@ -529,12 +529,13 @@ export default {
 
     // Red — survey centroid H=25°, L=0.59, C=0.22, 3811 responses
     // Pale colors of this hue read as pink (salmon, peach), so red stops at
-    // L 0.65 unless it is saturated (coral), and never goes above L 0.8.
+    // L 0.65 unless it is saturated (coral), and never goes above L 0.75.
+    // Muted colors (C < 0.09) are taupe, dusty rose or maroon, not red.
     {
       criteria: {
         oklch: {
           h: [7, 40],
-          c: [0.01, 0.5],
+          c: [0.09, 0.5],
           l: [0.15, 0.65],
         },
       },
@@ -720,12 +721,51 @@ export default {
         "vintage and retro",
       ],
     },
-    // Muted red hues (rosy brown, taupe) read as brown as much as red.
+    // Red-orange hues below L 0.6 (rust, chocolate, terracotta) are brown
+    // as much as red. Vivid ones (C > 0.16) are just red.
     {
       criteria: {
         oklch: {
-          h: [20, 40],
-          c: [0.01, 0.055],
+          h: [30, 40],
+          c: [0.01, 0.16],
+          l: [0.15, 0.6],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    // Muted red hues (rosy brown, taupe) read as brown.
+    {
+      criteria: {
+        oklch: {
+          h: [7, 40],
+          c: [0.01, 0.09],
           l: [0.15, 0.72],
         },
       },
@@ -797,14 +837,52 @@ export default {
       ],
     },
 
-    // Dark, muted ochre hues (H 80–95) read as brown as much as olive, so
-    // both nouns are returned there ("olive brown").
+    // Ochre hues (H 80–88) below L 0.66 are brown (ochre, golden brown),
+    // not olive.
     {
       criteria: {
         oklch: {
-          h: [80, 95],
+          h: [80, 88],
+          c: [0.01, 0.5],
+          l: [0.15, 0.66],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    // Muted khaki hues (H 88–95) read as brown as much as olive ("olive brown").
+    {
+      criteria: {
+        oklch: {
+          h: [88, 95],
           c: [0.01, 0.08],
-          l: [0.15, 0.55],
+          l: [0.15, 0.66],
         },
       },
       descriptive: ["brown"],
@@ -843,8 +921,8 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [40, 120],
-          c: [0.01, 0.09],
+          h: [40, 115],
+          c: [0.01, 0.1],
           l: [0.66, 0.97],
         },
       },
@@ -901,13 +979,13 @@ export default {
       usage: ["sale", "cheap", "budget", "construction"],
     },
 
-    // Mid-light yellow: saturated only (gold, mustard). Below C=0.09 it is
-    // beige.
+    // Mid-light yellow: saturated only (gold, mustard). Below C=0.1 it is
+    // beige (khaki).
     {
       criteria: {
         oklch: {
           h: [80, 120],
-          c: [0.09, 0.5],
+          c: [0.1, 0.5],
           l: [0.66, 0.78],
         },
       },
@@ -991,7 +1069,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [120, 138],
+          h: [115, 138],
           c: [0.01, 0.11],
           l: [0.66, 0.99],
         },
@@ -1459,8 +1537,8 @@ export default {
       criteria: {
         oklch: {
           h: [0, 20],
-          c: [0.01, 0.08],
-          l: [0.4, 0.65],
+          c: [0.01, 0.09],
+          l: [0.45, 0.65],
         },
       },
       descriptive: ["pink"],
@@ -1500,8 +1578,8 @@ export default {
       criteria: {
         oklch: {
           h: [327, 360],
-          c: [0.01, 0.08],
-          l: [0.4, 0.65],
+          c: [0.01, 0.09],
+          l: [0.45, 0.65],
         },
       },
       descriptive: ["pink"],
@@ -1695,7 +1773,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [7, 40],
+          h: [7, 30],
           c: [0.055, 0.5],
           l: [0.15, 0.45],
         },
@@ -1790,7 +1868,7 @@ export default {
       criteria: {
         oklch: {
           h: [215, 285],
-          c: [0.01, 0.5],
+          c: [0.01, 0.2],
           l: [0.15, 0.45],
         },
       },
@@ -1824,7 +1902,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [80, 138],
+          h: [88, 138],
           c: [0.01, 0.5],
           l: [0.15, 0.66],
         },
