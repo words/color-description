@@ -54,7 +54,7 @@ export default {
         oklch: {
           h: null,
           c: null,
-          l: [0, 0.50],
+          l: [0, 0.5],
         },
       },
       descriptive: ["dark", "dim", "gloomy", "dull"],
@@ -89,7 +89,7 @@ export default {
         oklch: {
           h: null,
           c: [0.04, 0.13],
-          l: [0.70, 0.96],
+          l: [0.7, 0.96],
         },
       },
       descriptive: ["pastel"],
@@ -102,7 +102,7 @@ export default {
         oklch: {
           h: null,
           c: null,
-          l: [0.80, 1.001],
+          l: [0.8, 1.001],
         },
       },
       descriptive: [
@@ -188,7 +188,7 @@ export default {
         oklch: {
           h: null,
           c: null,
-          l: [0.09, 0.50],
+          l: [0.09, 0.5],
         },
       },
       descriptive: ["shady"],
@@ -218,7 +218,7 @@ export default {
         oklch: {
           h: null,
           c: null,
-          l: [0.0, 0.10],
+          l: [0.0, 0.1],
         },
       },
       descriptive: ["black"],
@@ -228,7 +228,7 @@ export default {
         oklch: {
           h: null,
           c: null,
-          l: [0, 0.20],
+          l: [0, 0.2],
         },
       },
       descriptive: ["very dark"],
@@ -248,7 +248,7 @@ export default {
       criteria: {
         oklch: {
           h: null,
-          c: [0.02, 0.10],
+          c: [0.02, 0.1],
           l: [0, 0.55],
         },
       },
@@ -321,7 +321,7 @@ export default {
         oklch: {
           h: null,
           c: [0.11, 0.14],
-          l: [0.45, 0.70],
+          l: [0.45, 0.7],
         },
       },
       descriptive: ["rather unsaturated"],
@@ -386,7 +386,7 @@ export default {
         oklch: {
           h: null,
           c: [0.14, 0.5],
-          l: [0.70, 0.95],
+          l: [0.7, 0.95],
         },
       },
       descriptive: ["neon"],
@@ -567,7 +567,7 @@ export default {
         oklch: {
           h: [40, 80],
           c: [0.01, 0.5],
-          l: [0.50, 0.99],
+          l: [0.5, 0.99],
         },
       },
       descriptive: ["orange"],
@@ -626,13 +626,55 @@ export default {
       ],
     },
 
-    // Beige — survey centroid H=84°, L=0.80, C=0.065, 914 responses
+    // Dark, muted ochre hues (H 80–95) read as brown as much as olive, so
+    // both nouns are returned there ("olive brown").
     {
       criteria: {
         oklch: {
-          h: [70, 105],
-          c: [0.02, 0.08],
-          l: [0.78, 0.97],
+          h: [80, 95],
+          c: [0.01, 0.08],
+          l: [0.15, 0.55],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+
+    // Beige — survey centroid H=84°, L=0.80, C=0.065, 914 responses
+    // Also covers the low-chroma yellow hues (khaki, cream, tan) that are too
+    // muted to read as yellow and too light to read as olive.
+    {
+      criteria: {
+        oklch: {
+          h: [70, 120],
+          c: [0.01, 0.09],
+          l: [0.68, 0.97],
         },
       },
       descriptive: ["beige"],
@@ -653,13 +695,16 @@ export default {
       ],
     },
 
-    // Yellow — survey centroid H=106°, 2633 responses
+    // Yellow — survey centroid H=106°, L=0.90, C=0.18, 2633 responses
+    // Yellow only exists at high lightness. Darker or muted colors of this hue
+    // read as olive, khaki or beige, so those are handled by their own entries.
+    // Light yellow: any chroma (pale yellow, cream, lemon).
     {
       criteria: {
         oklch: {
           h: [80, 120],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.78, 0.99],
         },
       },
       descriptive: ["yellow"],
@@ -682,21 +727,52 @@ export default {
         "affect mood",
         "convey competence",
       ],
-      usage: [
-        "sale",
-        "cheap",
-        "budget",
-        "construction",
-      ],
+      usage: ["sale", "cheap", "budget", "construction"],
     },
 
-    // Lime — survey centroid H=134°, 768 responses
+    // Mid-light yellow: saturated only (gold, mustard). Below C=0.09 it is
+    // beige. Overlaps olive between L 0.68 and 0.70 so mustard tones return
+    // both nouns.
+    {
+      criteria: {
+        oklch: {
+          h: [80, 120],
+          c: [0.09, 0.5],
+          l: [0.68, 0.78],
+        },
+      },
+      descriptive: ["yellow"],
+      nouns: ["yellow"],
+      description: [
+        "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
+      ],
+      meanings: [
+        "enthusiasm",
+        "opportunity",
+        "spontaneity",
+        "happiness",
+        "positivity",
+      ],
+      effects: [
+        "stimulate",
+        "relax",
+        "awake awareness",
+        "energize",
+        "affect mood",
+        "convey competence",
+      ],
+      usage: ["sale", "cheap", "budget", "construction"],
+    },
+
+    // Lime — survey centroid H=134°, L=0.86, C=0.21, 768 responses
+    // Lime is light and vivid. Darker colors of this hue are olive (muted) or
+    // olive green (saturated); paler ones are plain green.
     {
       criteria: {
         oklch: {
           h: [120, 138],
-          c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          c: [0.08, 0.5],
+          l: [0.7, 0.99],
         },
       },
       descriptive: ["lime"],
@@ -711,12 +787,7 @@ export default {
         "awake awareness",
         "rejuvenate",
       ],
-      usage: [
-        "nature",
-        "energy drinks",
-        "sports",
-        "gaming",
-      ],
+      usage: ["nature", "energy drinks", "sports", "gaming"],
     },
 
     // Green — survey centroid H=143°, 11902 responses
@@ -731,7 +802,61 @@ export default {
       descriptive: ["green", "greenish"],
       nouns: ["green"],
       description: [
-        "Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and \"safe/ok\" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.",
+        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
+      ],
+      meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+      effects: ["relax", "balance", "revitalize", "encourage"],
+      usage: [
+        "sustainability",
+        "organic and natural",
+        "finance",
+        "pharmacy",
+        "gardening",
+        "eco",
+      ],
+    },
+
+    // Yellow-green, light and muted (sage, pale chartreuse): reads as green,
+    // not lime.
+    {
+      criteria: {
+        oklch: {
+          h: [120, 138],
+          c: [0.01, 0.08],
+          l: [0.7, 0.99],
+        },
+      },
+      descriptive: ["green", "greenish"],
+      nouns: ["green"],
+      description: [
+        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
+      ],
+      meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+      effects: ["relax", "balance", "revitalize", "encourage"],
+      usage: [
+        "sustainability",
+        "organic and natural",
+        "finance",
+        "pharmacy",
+        "gardening",
+        "eco",
+      ],
+    },
+
+    // Yellow-green, dark and saturated: "olive green". Overlaps the olive entry
+    // on purpose so both nouns are returned.
+    {
+      criteria: {
+        oklch: {
+          h: [120, 138],
+          c: [0.1, 0.5],
+          l: [0.15, 0.7],
+        },
+      },
+      descriptive: ["green", "greenish"],
+      nouns: ["green"],
+      description: [
+        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
       ],
       meanings: ["safety", "harmony", "stability", "reliability", "balance"],
       effects: ["relax", "balance", "revitalize", "encourage"],
@@ -1057,7 +1182,7 @@ export default {
       criteria: {
         oklch: {
           h: [10, 35],
-          c: [0.10, 0.17],
+          c: [0.1, 0.17],
           l: [0.45, 0.65],
         },
       },
@@ -1149,13 +1274,15 @@ export default {
     },
 
     // Olive — survey centroid H=117°, L=0.63, C=0.11, 736 responses
-    // Dark/muted yellow-green
+    // Every yellow-green hue below L=0.70. In sRGB these hues cannot reach high
+    // chroma at this lightness, so a chroma cap is not needed; the "dark" and
+    // "muted" adjectives come from the character entries above.
     {
       criteria: {
         oklch: {
           h: [80, 138],
-          c: [0.03, 0.13],
-          l: [0.35, 0.68],
+          c: [0.01, 0.5],
+          l: [0.15, 0.7],
         },
       },
       descriptive: ["olive"],
