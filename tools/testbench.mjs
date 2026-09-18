@@ -4,9 +4,10 @@
  * Hue-naming testbench.
  *
  * Samples the sRGB gamut on an OKLCH grid (hue × lightness × chroma), runs
- * every sample through ColorDescription, and rates the hue nouns against the
- * nearest survey centroid from the UW "Many Languages, Many Colors" English
- * data (Kim et al., EuroVis 2019). Writes an HTML swatch grid for eyeballing
+ * every sample through ColorDescription, and rates the nouns against the
+ * most common answers of the nearest survey responses in the UW "Many
+ * Languages, Many Colors" English data (Kim et al., EuroVis 2019), from
+ * tools/survey-labels.json. Writes an HTML swatch grid for eyeballing
  * plus a JSON summary for diffing between iterations.
  *
  * Usage (run `npm run build` first):
@@ -32,95 +33,25 @@ const BASELINE = opt("--baseline", null);
 const ONLY_HUES = opt("--hues", null); // e.g. "80,90,100" to render a subset
 
 // ---------------------------------------------------------------------------
-// Survey centroids (English, ≥50 responses) in OKLCH. Source:
-// tools/survey-comparison.mjs → basic_colors_info_en.csv
+// Survey labels: for every grid cell, the most common names among the 60
+// nearest survey responses (tools/survey-labels.json, built by
+// tools/survey-finemap.mjs from Kim et al. 2019).
 // ---------------------------------------------------------------------------
-const SURVEY = [
-  ["burgundy", 988, 8.9, 0.404, 0.12],
-  ["maroon", 2130, 11.8, 0.416, 0.124],
-  ["coral", 431, 23.8, 0.69, 0.153],
-  ["salmon", 727, 24.3, 0.708, 0.133],
-  ["red", 4692, 24.8, 0.594, 0.218],
-  ["peach", 1218, 40.6, 0.779, 0.097],
-  ["orange", 4072, 53.5, 0.72, 0.168],
-  ["brown", 6421, 54.1, 0.491, 0.078],
-  ["beige", 1254, 81.4, 0.799, 0.062],
-  ["gold", 695, 91.3, 0.773, 0.144],
-  ["yellow", 3360, 104.9, 0.896, 0.177],
-  ["olive", 950, 118.0, 0.618, 0.105],
-  ["lime", 913, 133.6, 0.859, 0.214],
-  ["green", 14773, 142.9, 0.721, 0.171],
-  ["mint", 718, 156.8, 0.854, 0.142],
-  ["teal", 3233, 184.1, 0.74, 0.114],
-  ["turquoise", 2113, 185.8, 0.783, 0.125],
-  ["aqua", 823, 188.0, 0.815, 0.128],
-  ["cyan", 1329, 197.0, 0.816, 0.123],
-  ["blue", 12192, 257.4, 0.579, 0.174],
-  ["navy", 1002, 267.8, 0.35, 0.114],
-  ["periwinkle", 733, 279.0, 0.683, 0.116],
-  ["indigo", 1256, 284.6, 0.453, 0.181],
-  ["lavender", 2445, 305.6, 0.694, 0.117],
-  ["violet", 3120, 306.5, 0.525, 0.185],
-  ["purple", 13445, 310.5, 0.54, 0.192],
-  ["mauve", 1114, 340.5, 0.598, 0.096],
-  ["magenta", 3696, 340.7, 0.603, 0.226],
-  ["pink", 8657, 347.8, 0.681, 0.195],
-].map(([term, n, h, l, c]) => ({ term, n, h, l, c }));
-
-// Which library nouns count as "agreeing" with a survey term.
-const ACCEPT = {
-  burgundy: ["maroon", "red"],
-  maroon: ["maroon"],
-  coral: ["red", "orange", "pink"],
-  salmon: ["pink", "red", "orange"],
-  red: ["red"],
-  peach: ["orange", "beige"],
-  orange: ["orange"],
-  brown: ["brown"],
-  beige: ["beige"],
-  gold: ["yellow", "beige"],
-  yellow: ["yellow"],
-  olive: ["olive"],
-  lime: ["lime"],
-  green: ["green"],
-  mint: ["green", "teal"],
-  teal: ["teal"],
-  turquoise: ["teal", "cyan"],
-  aqua: ["cyan", "teal"],
-  cyan: ["cyan"],
-  blue: ["blue"],
-  navy: ["navy"],
-  periwinkle: ["indigo", "blue", "lavender"],
-  indigo: ["indigo"],
-  lavender: ["lavender"],
-  violet: ["purple"],
-  purple: ["purple"],
-  mauve: ["magenta", "purple", "pink", "lavender"],
-  magenta: ["magenta"],
-  pink: ["pink"],
+const LABELS = JSON.parse(
+  readFileSync(new URL("./survey-labels.json", import.meta.url), "utf8"),
+);
+// library nouns and survey terms are both mapped onto one vocabulary
+const NORM = {
+  grey: "gray",
+  "sky blue": "sky",
+  lilac: "lavender",
+  fuchsia: "magenta",
+  aqua: "turquoise",
+  burgundy: "maroon",
+  mustard: "gold",
 };
-
-const HUE_NOUNS = new Set([
-  "red",
-  "maroon",
-  "orange",
-  "brown",
-  "beige",
-  "yellow",
-  "olive",
-  "lime",
-  "green",
-  "teal",
-  "cyan",
-  "blue",
-  "navy",
-  "indigo",
-  "purple",
-  "lavender",
-  "magenta",
-  "pink",
-  "black",
-]);
+const norm = (n) => NORM[n] || n;
+const labelKey = (h, l, c) => `${h}/${l.toFixed(2)}/${c.toFixed(2)}`;
 
 // ---------------------------------------------------------------------------
 // Sampling grid
@@ -129,30 +60,10 @@ const HUES = ONLY_HUES
   ? ONLY_HUES.split(",").map(Number)
   : Array.from({ length: 36 }, (_, i) => i * 10);
 const LIGHTS = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
-const CHROMAS = [0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.22, 0.26];
+const CHROMAS = [0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27];
 
 const inSrgb = inGamut("rgb");
 const toRgb = converter("rgb");
-
-// Distance to a survey centroid. Plain OKLab distance is wrong for naming:
-// at low chroma every hue collapses onto the few dark centroids (navy, brown,
-// burgundy). People still name dark colors by hue, so hue is measured as an
-// angle. The divisors are rough per-axis spreads (ΔL 0.25, ΔC 0.08, Δh 25°).
-function nearestSurvey(l, c, h) {
-  let best = null;
-  let bestD = Infinity;
-  for (const s of SURVEY) {
-    let dh = Math.abs(s.h - h);
-    if (dh > 180) dh = 360 - dh;
-    const d =
-      ((s.l - l) / 0.25) ** 2 + ((s.c - c) / 0.08) ** 2 + (dh / 25) ** 2;
-    if (d < bestD) {
-      bestD = d;
-      best = s;
-    }
-  }
-  return { term: best.term, dist: Math.sqrt(bestD) };
-}
 
 const cells = [];
 for (const h of HUES) {
@@ -162,15 +73,25 @@ for (const h of HUES) {
       if (!inSrgb(color)) continue;
       const hex = formatHex(toRgb(color));
       const cd = new ColorDescription(hex);
-      const nouns = cd.nouns.filter((n) => HUE_NOUNS.has(n));
-      const expected = nearestSurvey(l, c, h);
-      const accept = ACCEPT[expected.term];
-      // The survey has no "black" centroid; near-black is a matcher rule.
+      const nouns = cd.nouns;
+      const top = LABELS[labelKey(h, l, c)] || [];
+      const normed = nouns.map(norm);
+      // agree when the library returns the survey's top term, or its second
+      // term if that one has at least a fifth of the votes
       const agree =
-        nouns.includes("black") || nouns.some((n) => accept.includes(n));
+        top.length > 0 &&
+        (normed.includes(norm(top[0][0])) ||
+          (top[1] && top[1][1] >= 0.2 && normed.includes(norm(top[1][0]))));
+      const expectedText = top
+        .slice(0, 2)
+        .map(([t, s]) => `${t} ${Math.round(s * 100)}%`)
+        .join(", ");
       const flags = [];
       if (nouns.length === 0) flags.push("no-noun");
-      if (nouns.length > 2) flags.push("many-nouns");
+      const chromatic = nouns.filter(
+        (n) => !["black", "grey", "white"].includes(n),
+      );
+      if (chromatic.length > 2) flags.push("many-nouns");
       if (!agree) flags.push("disagree");
       cells.push({
         key: `${h}/${l}/${c}`,
@@ -180,8 +101,8 @@ for (const h of HUES) {
         hex,
         nouns,
         words: cd.descriptiveWords,
-        expected: expected.term,
-        expectedDist: +expected.dist.toFixed(3),
+        expected: top[0] ? top[0][0] : "—",
+        expectedText,
         agree,
         flags,
       });
@@ -246,9 +167,7 @@ const summary = {
 };
 
 console.log(`samples: ${total}`);
-console.log(
-  `agree with nearest survey centroid: ${agreeCount} (${summary.agreePct}%)`,
-);
+console.log(`agree with survey vote: ${agreeCount} (${summary.agreePct}%)`);
 console.log(`no hue noun: ${noNoun}   >2 hue nouns: ${manyNouns}`);
 if (baseline) {
   console.log(
@@ -308,7 +227,7 @@ for (const [h, list] of byHue) {
         cell.hex,
         `oklch(${l} ${c} ${h})`,
         `nouns: ${cell.nouns.join(", ") || "—"}`,
-        `expected (survey): ${cell.expected} (Δ${cell.expectedDist})`,
+        `survey: ${cell.expectedText}`,
         cell.changed ? `was: ${cell.changed.join(", ") || "—"}` : "",
         `words: ${cell.words.join(", ")}`,
       ]
@@ -322,11 +241,11 @@ for (const [h, list] of byHue) {
         `data-oklch="${esc(`oklch(${l} ${c} ${h})`)}"`,
         `data-was="${esc((cell.changed || cell.nouns).join(", ") || "—")}"`,
         `data-now="${esc(cell.nouns.join(", ") || "—")}"`,
-        `data-expected="${esc(cell.expected)}"`,
+        `data-expected="${esc(cell.expectedText)}"`,
         `data-words="${esc(cell.words.join(", "))}"`,
         `data-fg="${textOn(cell.hex)}"`,
       ].join(" ");
-      rows += `<td class="${cls}" ${data} tabindex="0" style="background:${cell.hex};color:${textOn(cell.hex)}" title="${esc(title)}">${was}<span>${esc(cell.nouns.join(" ") || "∅")}</span><small>${esc(cell.expected)}</small></td>`;
+      rows += `<td class="${cls}" ${data} tabindex="0" style="background:${cell.hex};color:${textOn(cell.hex)}" title="${esc(title)}">${was}<span>${esc(cell.nouns.join(" ") || "∅")}</span><small>${esc(cell.expectedText)}</small></td>`;
     }
     rows += `</tr>`;
   }
@@ -402,7 +321,7 @@ const html = `<!doctype html>
 </head>
 <body>
 <h1>Hue naming testbench</h1>
-<p>Every cell is one sRGB color sampled on an OKLCH grid. Bold text = hue nouns the library returns now. Struck-through text above it = what it returned before (only on changed cells). Small text = nearest English survey centroid (Kim et al. 2019). Click a cell to see it full screen with its old and new name.</p>
+<p>Every cell is one sRGB color sampled on an OKLCH grid. Bold text = hue nouns the library returns now. Struck-through text above it = what it returned before (only on changed cells). Small text = the most common survey answers for that color and their vote share (Kim et al. 2019). Click a cell to see it full screen with its old and new name.</p>
 <div class="summary">
   <div class="stat"><b>${summary.agreePct}%</b><span>agree with survey (${agreeCount}/${total})</span></div>
   <div class="stat"><b>${noNoun}</b><span>cells with no hue noun</span></div>

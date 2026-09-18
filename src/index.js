@@ -119,7 +119,10 @@ class ColorDescription {
     // Near black: too dark and too grey for a hue to be perceived, so
     // entries that ask for a hue are skipped and the "black" entry applies.
     const oklch = this.formats.oklch;
-    const nearBlack = oklch && oklch.l < 0.22 && oklch.c < 0.04;
+    const nearBlack =
+      oklch &&
+      ((oklch.l < 0.28 && oklch.c < 0.045) ||
+        (oklch.l < 0.25 && oklch.c < 0.075));
 
     const words = this.descriptions.reduce((rem, current) => {
       if (!current.hasOwnProperty(scope)) {

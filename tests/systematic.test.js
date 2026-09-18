@@ -21,6 +21,25 @@ const HUE_NOUNS = new Set([
   "lavender",
   "magenta",
   "pink",
+  // secondary and achromatic names
+  "black",
+  "grey",
+  "white",
+  "peach",
+  "tan",
+  "gold",
+  "mustard",
+  "salmon",
+  "mauve",
+  "mint",
+  "turquoise",
+  "aqua",
+  "periwinkle",
+  "violet",
+  "lilac",
+  "fuchsia",
+  "burgundy",
+  "plum",
 ]);
 
 describe("Systematic hue sweep", () => {
@@ -146,7 +165,10 @@ describe("Achromatic colors", () => {
     const cd = new ColorDescription("#808080");
     const nouns = cd.nouns;
     // Grey shouldn't claim to be "red" or "blue" etc.
-    const chromaticMatch = nouns.filter((n) => HUE_NOUNS.has(n));
+    const ACHROMATIC = new Set(["black", "grey", "white"]);
+    const chromaticMatch = nouns.filter(
+      (n) => HUE_NOUNS.has(n) && !ACHROMATIC.has(n),
+    );
     expect(chromaticMatch).toEqual([]);
   });
 });

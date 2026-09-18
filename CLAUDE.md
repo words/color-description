@@ -33,13 +33,13 @@ Build tool is esbuild, configured inline in package.json scripts. Three output f
 
 **Matching flow:** Color input → culori parses to RGB/HSL/OKLCH → each entry in `en.js` checked via `isInRange` on its criteria components → matching entries' words collected → formatted via `getDescriptiveList(random?, limit?)`. Hue ranges are half-open (`[min, max)`) and the hue is rounded modulo 360; lightness and chroma ranges are inclusive so entries can overlap on purpose (e.g. "olive green"). Near-black colors (OKLCH l < 0.22 and c < 0.04) skip every entry with a hue criterion and get the "black" noun instead.
 
-**Hue nouns** need lightness/chroma floors, not just a hue range: yellow, lime, cyan, indigo, magenta and pink are only real at certain lightness or chroma, and the darker/muted region of each hue belongs to olive, brown, beige, teal, navy, maroon or purple. A name can be split over several entries with the same words and different criteria.
+**Hue nouns are fitted to the survey, not hand-drawn.** `tools/survey-labels.json` holds, for every cell of an OKLCH grid over sRGB, the most common names among the 60 nearest responses of the Kim et al. 2019 English survey. Each noun entry in `en.js` covers the region where its name wins or comes second in that vote, so yellow only exists light, olive is a small mid-toned region, brown owns most dark warm colors, cyan and magenta are only the vivid core of their hues, and low-chroma colors are grey or black first. Primary entries come before secondary ones in the file because nouns are returned in file order. A name can be split over several entries with the same words and different criteria. Regenerate the labels with `tools/survey-fit.mjs` then `tools/survey-finemap.mjs` (see their headers for the data file).
 
 ## Testing
 
 Tests live in `tests/`. Jest with babel-jest transform, node environment. Tests must build first (the test script does this automatically). Key test areas: color parsing, temperature words, descriptive word generation, percentage calculations, WCAG contrast, and hue naming coverage (no deadzones).
 
-**Visual testbench:** `npm run build && node tools/testbench.mjs` samples the sRGB gamut on an OKLCH grid, scores hue nouns against the survey centroids, and writes `tools/testbench.html` (ignored by git). Click a swatch to see it full screen. `--baseline a.json` marks changed cells, `--json out.json` dumps cell data, `--hues 80,100` renders a subset. The survey score is a guide only; judge the swatches by eye before changing a boundary.
+**Visual testbench:** `npm run build && node tools/testbench.mjs` samples the sRGB gamut on an OKLCH grid, scores the nouns against the survey vote in `tools/survey-labels.json`, and writes `tools/testbench.html` (ignored by git). Click a swatch to see it full screen. `--baseline a.json` marks changed cells, `--json out.json` dumps cell data, `--hues 80,100` renders a subset. Agreement should stay near 98%; the cells that disagree are ones where the survey vote itself is split. Judge the swatches by eye before moving a boundary.
 
 ## Key Dependency
 
