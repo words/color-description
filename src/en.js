@@ -223,6 +223,23 @@ export default {
       },
       descriptive: ["black"],
     },
+    // Near black. Below this lightness and chroma no hue is perceived, so
+    // this is the only noun (hue entries are skipped by the matcher).
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0, 0.04],
+          l: [0, 0.22],
+        },
+      },
+      nouns: ["black"],
+      description: [
+        "Black is the absence of light: the deepest, most grounded color there is. It reads as formal, powerful and definitive, and it makes every other color beside it look brighter. Very dark tints of a hue are still black to the eye, with only a faint cast that shows up next to a pure black. In design, black carries weight and authority, from typography and luxury packaging to stage and cinema. Picture black as the velvet backdrop that lets everything else shine.",
+      ],
+      meanings: ["power", "elegance", "formality", "mystery", "authority"],
+      usage: ["luxury", "typography", "fashion", "technology", "backgrounds"],
+    },
     {
       criteria: {
         oklch: {
@@ -667,7 +684,7 @@ export default {
         oklch: {
           h: [7, 40],
           c: [0.09, 0.5],
-          l: [0.65, 0.8],
+          l: [0.65, 0.75],
         },
       },
       descriptive: ["red", "reddish"],
@@ -927,7 +944,7 @@ export default {
         oklch: {
           h: [40, 120],
           c: [0.01, 0.09],
-          l: [0.68, 0.97],
+          l: [0.66, 0.97],
         },
       },
       descriptive: ["beige"],
@@ -984,14 +1001,13 @@ export default {
     },
 
     // Mid-light yellow: saturated only (gold, mustard). Below C=0.09 it is
-    // beige. Overlaps olive between L 0.68 and 0.70 so mustard tones return
-    // both nouns.
+    // beige.
     {
       criteria: {
         oklch: {
           h: [80, 120],
           c: [0.09, 0.5],
-          l: [0.68, 0.78],
+          l: [0.66, 0.78],
         },
       },
       descriptive: ["yellow"],
@@ -1024,8 +1040,8 @@ export default {
       criteria: {
         oklch: {
           h: [120, 138],
-          c: [0.08, 0.5],
-          l: [0.7, 0.99],
+          c: [0.11, 0.5],
+          l: [0.66, 0.99],
         },
       },
       descriptive: ["lime"],
@@ -1075,8 +1091,8 @@ export default {
       criteria: {
         oklch: {
           h: [120, 138],
-          c: [0.01, 0.08],
-          l: [0.7, 0.99],
+          c: [0.01, 0.11],
+          l: [0.66, 0.99],
         },
       },
       descriptive: ["green", "greenish"],
@@ -1103,7 +1119,7 @@ export default {
         oklch: {
           h: [120, 138],
           c: [0.1, 0.5],
-          l: [0.15, 0.7],
+          l: [0.15, 0.66],
         },
       },
       descriptive: ["green", "greenish"],
@@ -1258,14 +1274,52 @@ export default {
         "nautical",
       ],
     },
+    // Pale indigo hues (periwinkle) read as blue.
+    {
+      criteria: {
+        oklch: {
+          h: [271, 285],
+          c: [0.01, 0.5],
+          l: [0.6, 0.99],
+        },
+      },
+      descriptive: ["blue", "blueish"],
+      nouns: ["blue"],
+      description: [
+        "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
+      ],
+      meanings: [
+        "trust",
+        "responsibility",
+        "honesty",
+        "loyalty",
+        "security",
+        "reliability",
+        "calmness",
+        "control",
+      ],
+      effects: ["calm", "reassure"],
+      usage: [
+        "security",
+        "finance",
+        "technology",
+        "healthcare",
+        "accounting",
+        "social media",
+        "government",
+        "law enforcement",
+        "nautical",
+      ],
+    },
 
+    // Indigo is a dark color; paler indigo hues are blue (periwinkle).
     // Indigo — survey centroid H=285°, 845 responses
     {
       criteria: {
         oklch: {
           h: [271, 285],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.15, 0.6],
         },
       },
       descriptive: ["indigo"],
@@ -1379,8 +1433,50 @@ export default {
       criteria: {
         oklch: {
           h: [327, 345],
-          c: [0.01, 0.5],
-          l: [0.35, 0.9],
+          c: [0.06, 0.5],
+          l: [0.35, 0.75],
+        },
+      },
+      descriptive: ["magenta"],
+      nouns: ["magenta"],
+      description: [
+        "Magenta is bold and expressive, often associated with creativity, intensity, and modern flair. It can feel like neon signage, stage lights, or vivid flowers—lively and unapologetic. In design, magenta is often used as a punchy accent to add energy and personality, especially in contemporary or playful palettes. It can read as romantic and warm, but also edgy and unconventional. Imagine magenta as a bright pulse that makes a layout feel instantly more alive.",
+      ],
+      meanings: [
+        "support",
+        "kind",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "nightlife",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    // Light magenta only when vivid (orchid); muted light tones are pink.
+    {
+      criteria: {
+        oklch: {
+          h: [327, 345],
+          c: [0.1, 0.5],
+          l: [0.75, 0.85],
         },
       },
       descriptive: ["magenta"],
@@ -1458,13 +1554,94 @@ export default {
         "floral",
       ],
     },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 20],
+          c: [0.01, 0.08],
+          l: [0.4, 0.65],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    // Greyish mid tones of the pink hues (dusty rose, mauve) read as pink.
+    {
+      criteria: {
+        oklch: {
+          h: [327, 360],
+          c: [0.01, 0.08],
+          l: [0.4, 0.65],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
     // Pale magenta hues (orchid) read as pink.
     {
       criteria: {
         oklch: {
           h: [327, 345],
           c: [0.01, 0.5],
-          l: [0.7, 0.99],
+          l: [0.65, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -1740,7 +1917,7 @@ export default {
     },
 
     // Olive — survey centroid H=117°, L=0.63, C=0.11, 736 responses
-    // Every yellow-green hue below L=0.70. In sRGB these hues cannot reach high
+    // Every yellow-green hue below L=0.66. In sRGB these hues cannot reach high
     // chroma at this lightness, so a chroma cap is not needed; the "dark" and
     // "muted" adjectives come from the character entries above.
     {
@@ -1748,7 +1925,7 @@ export default {
         oklch: {
           h: [80, 138],
           c: [0.01, 0.5],
-          l: [0.15, 0.7],
+          l: [0.15, 0.66],
         },
       },
       descriptive: ["olive"],
@@ -1778,9 +1955,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [285, 327],
+          h: [271, 327],
           c: [0.01, 0.15],
-          l: [0.6, 0.97],
+          l: [0.58, 0.97],
         },
       },
       descriptive: ["lavender"],

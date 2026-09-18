@@ -116,8 +116,17 @@ class ColorDescription {
    * @note null criteria values are treated as wildcards (match any value)
    */
   #getWords(scope = "descriptive", randomize = false, wordLimit) {
+    // Near black: too dark and too grey for a hue to be perceived, so
+    // entries that ask for a hue are skipped and the "black" entry applies.
+    const oklch = this.formats.oklch;
+    const nearBlack = oklch && oklch.l < 0.22 && oklch.c < 0.04;
+
     const words = this.descriptions.reduce((rem, current) => {
       if (!current.hasOwnProperty(scope)) {
+        return rem;
+      }
+
+      if (nearBlack && current.criteria.oklch?.h != null) {
         return rem;
       }
 
