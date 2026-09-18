@@ -22,7 +22,10 @@ const CSV_URL =
 
 // Current library hue ranges (from src/en.js)
 const LIB_RANGES = {
-  pink: [[345, 360], [0, 7]],
+  pink: [
+    [345, 360],
+    [0, 7],
+  ],
   red: [[7, 40]],
   orange: [[40, 80]],
   brown: [[40, 80]], // same hue as orange, distinguished by lightness
@@ -37,20 +40,45 @@ const LIB_RANGES = {
   purple: [[285, 327]],
   magenta: [[327, 345]],
   // Lightness/chroma variants (overlap parent hue ranges)
-  maroon: [[7, 40]],    // dark red
-  navy: [[215, 285]],   // dark cyan/blue/indigo
-  olive: [[80, 138]],   // dark/muted yellow-green
-  lavender: [[285, 327]], // light purple
+  maroon: [[7, 40]], // dark red
+  navy: [[215, 285]], // dark cyan/blue/indigo
+  olive: [[80, 138]], // dark/muted yellow-green
+  lavender: [[271, 327]], // light purple / periwinkle
 };
 
 // Terms to track — the primary hue names used in the library plus
 // high-count survey terms that inform boundary placement
 const TRACKED_TERMS = new Set([
-  "red", "orange", "yellow", "green", "blue", "purple", "pink",
-  "brown", "magenta", "cyan", "teal", "turquoise", "lime",
-  "indigo", "violet", "beige", "aqua", "navy", "maroon",
-  "olive", "coral", "salmon", "lavender", "mint", "peach",
-  "gold", "burgundy", "mauve", "fuchsia", "periwinkle",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "purple",
+  "pink",
+  "brown",
+  "magenta",
+  "cyan",
+  "teal",
+  "turquoise",
+  "lime",
+  "indigo",
+  "violet",
+  "beige",
+  "aqua",
+  "navy",
+  "maroon",
+  "olive",
+  "coral",
+  "salmon",
+  "lavender",
+  "mint",
+  "peach",
+  "gold",
+  "burgundy",
+  "mauve",
+  "fuchsia",
+  "periwinkle",
 ]);
 
 async function main() {
@@ -61,22 +89,33 @@ async function main() {
   const csv = await res.text();
 
   // Parse (handles quoted RGB values with commas inside)
-  const rows = csv.trim().split("\n").slice(1).map((line) => {
-    const parts = [];
-    let inQuote = false,
-      cur = "";
-    for (const ch of line) {
-      if (ch === '"') { inQuote = !inQuote; continue; }
-      if (ch === "," && !inQuote) { parts.push(cur); cur = ""; continue; }
-      cur += ch;
-    }
-    parts.push(cur);
-    return {
-      name: parts[2],
-      fullCount: +parts[6],
-      fullRGB: parts[7],
-    };
-  });
+  const rows = csv
+    .trim()
+    .split("\n")
+    .slice(1)
+    .map((line) => {
+      const parts = [];
+      let inQuote = false,
+        cur = "";
+      for (const ch of line) {
+        if (ch === '"') {
+          inQuote = !inQuote;
+          continue;
+        }
+        if (ch === "," && !inQuote) {
+          parts.push(cur);
+          cur = "";
+          continue;
+        }
+        cur += ch;
+      }
+      parts.push(cur);
+      return {
+        name: parts[2],
+        fullCount: +parts[6],
+        fullRGB: parts[7],
+      };
+    });
 
   // Convert to OKLCH, filter to tracked terms with enough data
   const terms = [];
@@ -123,11 +162,21 @@ async function main() {
 
   // ── Table 2: Survey terms ──
   console.log("");
-  console.log("┌───────────────────────────────────────────────────────────────────────────────┐");
-  console.log("│              Survey Centroids — English (≥50 responses)                       │");
-  console.log("├────────────────┬───────────┬──────────┬─────────┬─────────┬───────────────────┤");
-  console.log("│ Term           │ Responses │ OKLCH H° │ OKLCH L │ OKLCH C │ Lib maps to       │");
-  console.log("├────────────────┼───────────┼──────────┼─────────┼─────────┼───────────────────┤");
+  console.log(
+    "┌───────────────────────────────────────────────────────────────────────────────┐",
+  );
+  console.log(
+    "│              Survey Centroids — English (≥50 responses)                       │",
+  );
+  console.log(
+    "├────────────────┬───────────┬──────────┬─────────┬─────────┬───────────────────┤",
+  );
+  console.log(
+    "│ Term           │ Responses │ OKLCH H° │ OKLCH L │ OKLCH C │ Lib maps to       │",
+  );
+  console.log(
+    "├────────────────┼───────────┼──────────┼─────────┼─────────┼───────────────────┤",
+  );
   for (const t of terms) {
     const hStr = t.h != null ? t.h.toFixed(1) : "none";
     const lib = libRangeFor(t.h);
@@ -136,7 +185,9 @@ async function main() {
       `│ ${t.name.padEnd(14)} │ ${String(t.count).padStart(9)} │ ${hStr.padStart(8)} │ ${String(t.l).padStart(7)} │ ${String(t.c).padStart(7)} │ ${match.padEnd(17)} │`,
     );
   }
-  console.log("└────────────────┴───────────┴──────────┴─────────┴─────────┴───────────────────┘");
+  console.log(
+    "└────────────────┴───────────┴──────────┴─────────┴─────────┴───────────────────┘",
+  );
 }
 
 main().catch((err) => {

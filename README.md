@@ -109,7 +109,9 @@ All color matching is performed in **OKLCH** color space, which provides percept
 
 Hue name boundaries are empirically grounded using data from **~49,000 English-language color naming responses** collected via the [Many Languages, Many Colors](https://uwdata.github.io/color-naming-in-different-languages) project. Boundaries are placed at midpoints between adjacent survey-term centroids in OKLCH hue space, ensuring that each color is labeled with the name most English speakers would use.
 
-> Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). *Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models.* EuroVis 2019.
+Hue names also carry lightness and chroma limits, because a hue alone does not name a color: a dark, muted yellow is olive, a pale red is pink, a muted mid-light orange is brown or beige, a dark cyan is teal. Colors that are nearly black (OKLCH lightness below 0.22 and chroma below 0.04) are named "black" and get no hue noun. `node tools/testbench.mjs` renders every hue across lightness and chroma as an HTML grid (`tools/testbench.html`) for checking these boundaries by eye.
+
+> Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). _Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models._ EuroVis 2019.
 > [Project repository](https://github.com/uwdata/color-naming-in-different-languages)
 
 ## Data Sources

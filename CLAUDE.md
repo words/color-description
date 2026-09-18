@@ -26,16 +26,20 @@ Build tool is esbuild, configured inline in package.json scripts. Three output f
 
 **`src/en.js`** — English language dataset. Array of objects, each with:
 
-- `criteria.hsl` — ranges for `h`, `s`, `l` (null = wildcard). A color matches if all non-null components fall within their ranges.
+- `criteria.oklch` — ranges for `l`, `c`, `h` (null = wildcard). A color matches if all non-null components fall within their ranges.
 - `descriptive`, `meanings`, `usage`, `nouns`, `description` — word arrays returned when criteria match.
 
 **`src/utils.js`** — Utility functions: `rgb2temperature` (CCT algorithm, binary search 1000-40000K), `temperature2rgb`, `rgbToCMYK`, `isInRange`, `randomizeArr` (Fisher-Yates shuffle).
 
-**Matching flow:** Color input → culori parses to RGB/HSL → each entry in `en.js` checked via `isInRange` on HSL components → matching entries' words collected → formatted via `getDescriptiveList(random?, limit?)`.
+**Matching flow:** Color input → culori parses to RGB/HSL/OKLCH → each entry in `en.js` checked via `isInRange` on its criteria components → matching entries' words collected → formatted via `getDescriptiveList(random?, limit?)`. Hue ranges are half-open (`[min, max)`) and the hue is rounded modulo 360; lightness and chroma ranges are inclusive so entries can overlap on purpose (e.g. "olive green"). Near-black colors (OKLCH l < 0.22 and c < 0.04) skip every entry with a hue criterion and get the "black" noun instead.
+
+**Hue nouns** need lightness/chroma floors, not just a hue range: yellow, lime, cyan, indigo, magenta and pink are only real at certain lightness or chroma, and the darker/muted region of each hue belongs to olive, brown, beige, teal, navy, maroon or purple. A name can be split over several entries with the same words and different criteria.
 
 ## Testing
 
 Tests live in `tests/`. Jest with babel-jest transform, node environment. Tests must build first (the test script does this automatically). Key test areas: color parsing, temperature words, descriptive word generation, percentage calculations, WCAG contrast, and hue naming coverage (no deadzones).
+
+**Visual testbench:** `npm run build && node tools/testbench.mjs` samples the sRGB gamut on an OKLCH grid, scores hue nouns against the survey centroids, and writes `tools/testbench.html` (ignored by git). Click a swatch to see it full screen. `--baseline a.json` marks changed cells, `--json out.json` dumps cell data, `--hues 80,100` renders a subset. The survey score is a guide only; judge the swatches by eye before changing a boundary.
 
 ## Key Dependency
 
