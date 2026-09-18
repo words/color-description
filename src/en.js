@@ -510,13 +510,164 @@ export default {
     // Centroids and boundaries from ~49K English responses (Kim et al. 2019)
     // ===========================
 
-    // Red — survey centroid H=25°, 3811 responses
+    // Red — survey centroid H=25°, L=0.59, C=0.22, 3811 responses
+    // Pale colors of this hue read as pink (salmon, peach), so red stops at
+    // L 0.65 unless it is saturated (coral), and never goes above L 0.8.
     {
       criteria: {
         oklch: {
           h: [7, 40],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.15, 0.65],
+        },
+      },
+      descriptive: ["red", "reddish"],
+      nouns: ["red"],
+      description: [
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
+      ],
+      meanings: [
+        "excitement",
+        "energy",
+        "passion",
+        "courage",
+        "attention",
+        "lust",
+        "power",
+        "love",
+        "speed",
+        "anger",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "vigor",
+        "urgency",
+      ],
+      effects: [
+        "stimulate",
+        "create urgency",
+        "draw attention",
+        "encourage",
+        "excite",
+        "heighten arousal",
+      ],
+      usage: [
+        "caution",
+        "food industry",
+        "sports",
+        "sales",
+        "entertainment",
+        "romance",
+        "emergency services",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 7],
+          c: [0.01, 0.5],
+          l: [0.15, 0.55],
+        },
+      },
+      descriptive: ["red", "reddish"],
+      nouns: ["red"],
+      description: [
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
+      ],
+      meanings: [
+        "excitement",
+        "energy",
+        "passion",
+        "courage",
+        "attention",
+        "lust",
+        "power",
+        "love",
+        "speed",
+        "anger",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "vigor",
+        "urgency",
+      ],
+      effects: [
+        "stimulate",
+        "create urgency",
+        "draw attention",
+        "encourage",
+        "excite",
+        "heighten arousal",
+      ],
+      usage: [
+        "caution",
+        "food industry",
+        "sports",
+        "sales",
+        "entertainment",
+        "romance",
+        "emergency services",
+      ],
+    },
+    // Dark colors of the pink hues (burgundy, wine) read as red, not pink.
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.01, 0.5],
+          l: [0.15, 0.55],
+        },
+      },
+      descriptive: ["red", "reddish"],
+      nouns: ["red"],
+      description: [
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
+      ],
+      meanings: [
+        "excitement",
+        "energy",
+        "passion",
+        "courage",
+        "attention",
+        "lust",
+        "power",
+        "love",
+        "speed",
+        "anger",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "vigor",
+        "urgency",
+      ],
+      effects: [
+        "stimulate",
+        "create urgency",
+        "draw attention",
+        "encourage",
+        "excite",
+        "heighten arousal",
+      ],
+      usage: [
+        "caution",
+        "food industry",
+        "sports",
+        "sales",
+        "entertainment",
+        "romance",
+        "emergency services",
+      ],
+    },
+    // Red, light but saturated (coral).
+    {
+      criteria: {
+        oklch: {
+          h: [7, 40],
+          c: [0.09, 0.5],
+          l: [0.65, 0.8],
         },
       },
       descriptive: ["red", "reddish"],
@@ -561,13 +712,39 @@ export default {
       ],
     },
 
-    // Orange — survey centroid H=55°, 3126 responses
+    // Orange — survey centroid H=55°, L=0.72, C=0.17, 3126 responses
+    // Light orange (peach, apricot). Below C 0.08 it is beige.
     {
       criteria: {
         oklch: {
           h: [40, 80],
-          c: [0.01, 0.5],
-          l: [0.5, 0.99],
+          c: [0.08, 0.5],
+          l: [0.7, 0.99],
+        },
+      },
+      descriptive: ["orange"],
+      nouns: ["orange"],
+      description: [
+        "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
+      ],
+      meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
+      effects: ["stimulate", "draw attention", "express freedom", "fascinate"],
+      usage: [
+        "food and beverages",
+        "sports",
+        "construction safety",
+        "youth marketing",
+        "autumn themes",
+        "Halloween",
+      ],
+    },
+    // Mid orange, saturated only (burnt orange). Muted colors here are brown.
+    {
+      criteria: {
+        oklch: {
+          h: [40, 80],
+          c: [0.09, 0.5],
+          l: [0.5, 0.7],
         },
       },
       descriptive: ["orange"],
@@ -593,7 +770,83 @@ export default {
         oklch: {
           h: [40, 80],
           c: [0.01, 0.5],
-          l: [0.15, 0.55],
+          l: [0.15, 0.6],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    // Muted red hues (rosy brown, taupe) read as brown as much as red.
+    {
+      criteria: {
+        oklch: {
+          h: [20, 40],
+          c: [0.01, 0.08],
+          l: [0.15, 0.72],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    // Light muted brown (tan, camel, caramel). Above L 0.68 it is beige.
+    {
+      criteria: {
+        oklch: {
+          h: [40, 80],
+          c: [0.01, 0.13],
+          l: [0.6, 0.68],
         },
       },
       descriptive: ["brown"],
@@ -672,7 +925,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [70, 120],
+          h: [40, 120],
           c: [0.01, 0.09],
           l: [0.68, 0.97],
         },
@@ -901,14 +1154,46 @@ export default {
         "hospitality",
       ],
     },
-
-    // Cyan — survey centroid H=198°, 878 responses
+    // Dark cyan hues (petrol, dark cyan) read as teal.
     {
       criteria: {
         oklch: {
           h: [190, 228],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.15, 0.6],
+        },
+      },
+      descriptive: ["teal"],
+      nouns: ["teal"],
+      description: [
+        "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
+      ],
+      meanings: [
+        "sophistication",
+        "clarity",
+        "calm",
+        "balance",
+        "refreshing",
+        "trust",
+      ],
+      effects: ["soothe"],
+      usage: [
+        "healthcare",
+        "wellness",
+        "technology",
+        "communication",
+        "hospitality",
+      ],
+    },
+
+    // Cyan — survey centroid H=198°, L=0.82, C=0.12, 878 responses
+    // Cyan is a light color. Dark colors of this hue are teal or navy.
+    {
+      criteria: {
+        oklch: {
+          h: [190, 228],
+          c: [0.01, 0.5],
+          l: [0.55, 0.99],
         },
       },
       descriptive: ["cyan"],
@@ -1050,6 +1335,44 @@ export default {
         "counterculture",
       ],
     },
+    // Dark magenta hues (plum) read as purple.
+    {
+      criteria: {
+        oklch: {
+          h: [327, 345],
+          c: [0.01, 0.5],
+          l: [0.15, 0.45],
+        },
+      },
+      descriptive: ["purple", "purplish", "violet"],
+      nouns: ["purple"],
+      description: [
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
+      ],
+      meanings: [
+        "spirituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
+    },
 
     // Magenta — survey centroid H=341°, 2673 responses
     {
@@ -1057,7 +1380,7 @@ export default {
         oklch: {
           h: [327, 345],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.35, 0.9],
         },
       },
       descriptive: ["magenta"],
@@ -1100,7 +1423,89 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.5, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    // Pale magenta hues (orchid) read as pink.
+    {
+      criteria: {
+        oklch: {
+          h: [327, 345],
+          c: [0.01, 0.5],
+          l: [0.7, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    // Pale red hues (salmon, peach, dusty rose) read as pink.
+    {
+      criteria: {
+        oklch: {
+          h: [7, 40],
+          c: [0.01, 0.5],
+          l: [0.65, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -1140,7 +1545,7 @@ export default {
         oklch: {
           h: [0, 7],
           c: [0.01, 0.5],
-          l: [0.15, 0.99],
+          l: [0.5, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -1213,7 +1618,68 @@ export default {
       criteria: {
         oklch: {
           h: [7, 40],
-          c: [0.05, 0.5],
+          c: [0.08, 0.5],
+          l: [0.15, 0.45],
+        },
+      },
+      descriptive: ["maroon"],
+      nouns: ["maroon"],
+      description: [
+        "Maroon is a dark, rich red that feels grounded and dignified. It evokes aged wine, dark leather, and autumn foliage—warm but restrained. In design, maroon carries the intensity of red with added depth and formality, making it a popular choice for institutions, luxury branding, and elegant print. It can communicate tradition, confidence, and seriousness without the aggressiveness of brighter reds. Picture maroon as a deep ember that glows with quiet authority.",
+      ],
+      meanings: [
+        "strength",
+        "courage",
+        "warmth",
+        "intensity",
+        "ambition",
+        "confidence",
+        "tradition",
+      ],
+      usage: [
+        "luxury",
+        "academic",
+        "formal design",
+        "autumn themes",
+        "wine branding",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 7],
+          c: [0.08, 0.5],
+          l: [0.15, 0.45],
+        },
+      },
+      descriptive: ["maroon"],
+      nouns: ["maroon"],
+      description: [
+        "Maroon is a dark, rich red that feels grounded and dignified. It evokes aged wine, dark leather, and autumn foliage—warm but restrained. In design, maroon carries the intensity of red with added depth and formality, making it a popular choice for institutions, luxury branding, and elegant print. It can communicate tradition, confidence, and seriousness without the aggressiveness of brighter reds. Picture maroon as a deep ember that glows with quiet authority.",
+      ],
+      meanings: [
+        "strength",
+        "courage",
+        "warmth",
+        "intensity",
+        "ambition",
+        "confidence",
+        "tradition",
+      ],
+      usage: [
+        "luxury",
+        "academic",
+        "formal design",
+        "autumn themes",
+        "wine branding",
+      ],
+    },
+    // Dark pink hues (burgundy).
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.08, 0.5],
           l: [0.15, 0.45],
         },
       },
@@ -1245,9 +1711,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [228, 285],
-          c: [0.05, 0.5],
-          l: [0.15, 0.42],
+          h: [215, 285],
+          c: [0.01, 0.5],
+          l: [0.15, 0.45],
         },
       },
       descriptive: ["navy"],
@@ -1313,8 +1779,8 @@ export default {
       criteria: {
         oklch: {
           h: [285, 327],
-          c: [0.03, 0.14],
-          l: [0.62, 0.88],
+          c: [0.01, 0.15],
+          l: [0.6, 0.97],
         },
       },
       descriptive: ["lavender"],

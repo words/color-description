@@ -26,7 +26,7 @@ const LIB_RANGES = {
   red: [[7, 40]],
   orange: [[40, 80]],
   brown: [[40, 80]], // same hue as orange, distinguished by lightness
-  beige: [[70, 105]],
+  beige: [[40, 120]],
   yellow: [[80, 120]],
   lime: [[120, 138]],
   green: [[138, 163]],
@@ -38,7 +38,7 @@ const LIB_RANGES = {
   magenta: [[327, 345]],
   // Lightness/chroma variants (overlap parent hue ranges)
   maroon: [[7, 40]],    // dark red
-  navy: [[228, 285]],   // dark blue/indigo
+  navy: [[215, 285]],   // dark cyan/blue/indigo
   olive: [[80, 138]],   // dark/muted yellow-green
   lavender: [[285, 327]], // light purple
 };

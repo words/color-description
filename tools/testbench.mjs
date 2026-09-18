@@ -311,7 +311,10 @@ for (const [h, list] of byHue) {
       ]
         .filter(Boolean)
         .join("\n");
-      rows += `<td class="${cls}" style="background:${cell.hex};color:${textOn(cell.hex)}" title="${esc(title)}"><span>${esc(cell.nouns.join(" ") || "∅")}</span><small>${esc(cell.expected)}</small></td>`;
+      const was = cell.changed
+        ? `<s>${esc(cell.changed.join(" ") || "∅")}</s>`
+        : "";
+      rows += `<td class="${cls}" style="background:${cell.hex};color:${textOn(cell.hex)}" title="${esc(title)}">${was}<span>${esc(cell.nouns.join(" ") || "∅")}</span><small>${esc(cell.expected)}</small></td>`;
     }
     rows += `</tr>`;
   }
@@ -352,9 +355,10 @@ const html = `<!doctype html>
   .stat span { color: var(--muted); font-size: 12px; }
   table { border-collapse: collapse; }
   th { font-weight: normal; color: var(--muted); font-size: 11px; padding: 2px 4px; text-align: left; white-space: nowrap; }
-  td { width: 96px; height: 44px; padding: 3px 5px; vertical-align: top; box-sizing: border-box; border: 2px solid transparent; }
+  td { width: 104px; height: 56px; padding: 3px 5px; vertical-align: top; box-sizing: border-box; border: 2px solid transparent; }
   td span { display: block; font-weight: 600; font-size: 12px; line-height: 1.15; }
   td small { display: block; font-size: 10px; opacity: .75; }
+  td s { display: block; font-size: 10px; opacity: .7; }
   td.oog { background: repeating-linear-gradient(45deg, transparent 0 6px, var(--line) 6px 7px); }
   td.f-disagree { border-color: #e0163b; }
   td.f-no-noun { border-color: #000; border-style: double; }
@@ -368,7 +372,7 @@ const html = `<!doctype html>
 </head>
 <body>
 <h1>Hue naming testbench</h1>
-<p>Every cell is one sRGB color sampled on an OKLCH grid. Big text = hue nouns the library returns. Small text = nearest English survey centroid (Kim et al. 2019). Hover a cell for details.</p>
+<p>Every cell is one sRGB color sampled on an OKLCH grid. Bold text = hue nouns the library returns now. Struck-through text above it = what it returned before (only on changed cells). Small text = nearest English survey centroid (Kim et al. 2019). Hover a cell for details.</p>
 <div class="summary">
   <div class="stat"><b>${summary.agreePct}%</b><span>agree with survey (${agreeCount}/${total})</span></div>
   <div class="stat"><b>${noNoun}</b><span>cells with no hue noun</span></div>

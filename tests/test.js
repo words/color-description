@@ -5,6 +5,7 @@ const HUE_NOUNS = new Set([
   "maroon",
   "orange",
   "brown",
+  "beige",
   "yellow",
   "olive",
   "lime",

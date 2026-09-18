@@ -154,10 +154,17 @@ class ColorDescription {
 
             if (key === "h") {
               // not sure if this is the best way to handle hue since other color models can have a component with the same name
-              value = Math.round(value);
+              value = Math.round(value) % 360;
             }
 
             if (Array.isArray(criterium)) {
+              // Hue is circular and its ranges tile the wheel, so they are
+              // half-open: a color at exactly 40° belongs to [40, 80], not
+              // to [7, 40]. Lightness and chroma ranges stay inclusive so
+              // entries can overlap on purpose.
+              if (key === "h") {
+                return value >= criterium[0] && value < criterium[1];
+              }
               return isInRange(value, criterium[0], criterium[1]);
             } else if (!isNaN(criterium)) {
               return value === criterium;
