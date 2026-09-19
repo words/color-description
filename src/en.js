@@ -425,7 +425,7 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.025, 0.045],
-          l: [0.55, 0.78],
+          l: [0.45, 0.78],
         },
       },
       descriptive: ["grey"],
@@ -458,6 +458,38 @@ export default {
           h: [0, 80],
           c: [0.025, 0.045],
           l: [0.55, 0.78],
+        },
+      },
+      descriptive: ["grey"],
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 15],
+          c: [0.025, 0.045],
+          l: [0.45, 0.55],
         },
       },
       descriptive: ["grey"],
@@ -838,7 +870,7 @@ export default {
         oklch: {
           h: [12, 25],
           c: [0.095, 0.135],
-          l: [0.55, 0.62],
+          l: [0.52, 0.62],
         },
       },
       descriptive: ["pink"],
@@ -1355,7 +1387,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 25],
+          h: [15, 25],
           c: [0.02, 0.1],
           l: [0.15, 0.45],
         },
@@ -1466,7 +1498,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 25],
+          h: [15, 25],
           c: [0.02, 0.075],
           l: [0.45, 0.55],
         },
@@ -1504,7 +1536,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 25],
+          h: [15, 25],
           c: [0.02, 0.095],
           l: [0.55, 0.66],
         },
@@ -1689,13 +1721,14 @@ export default {
         "vintage and retro",
       ],
     },
-    // Dark muted pink hues are brown too.
+    // Pink hues (345–15) are brown only when nearly grey; the dusky ones are
+    // plum, mauve and maroon.
     {
       criteria: {
         oklch: {
           h: [345, 360],
-          c: [0.02, 0.07],
-          l: [0.25, 0.5],
+          c: [0.02, 0.045],
+          l: [0.25, 0.45],
         },
       },
       descriptive: ["brown"],
@@ -1751,6 +1784,43 @@ export default {
         "luxury packaging",
         "spa and wellness",
         "stationery",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 15],
+          c: [0.02, 0.045],
+          l: [0.15, 0.45],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
       ],
     },
     // Beige — light, low-chroma warm hues (sand, cream, khaki).
@@ -2415,13 +2485,13 @@ export default {
         "counterculture",
       ],
     },
-    // Mid-dark muted pink hues (plum, wine) read as purple.
+    // Dark greyish pink hues read as purple (the rest are plum or maroon).
     {
       criteria: {
         oklch: {
           h: [345, 360],
-          c: [0.02, 0.1],
-          l: [0.22, 0.58],
+          c: [0.02, 0.05],
+          l: [0.22, 0.45],
         },
       },
       descriptive: ["purple", "purplish", "violet"],
@@ -2456,9 +2526,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [345, 360],
-          c: [0.1, 0.17],
-          l: [0.22, 0.48],
+          h: [0, 15],
+          c: [0.02, 0.05],
+          l: [0.22, 0.45],
         },
       },
       descriptive: ["purple", "purplish", "violet"],
@@ -2525,7 +2595,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [350, 360],
+          h: [345, 360],
           c: [0.07, 0.18],
           l: [0.22, 0.48],
         },
@@ -2699,13 +2769,13 @@ export default {
       meanings: ["warmth", "health", "appetite", "friendliness"],
       usage: ["food", "wellness", "summer", "fashion"],
     },
-    // Mauve: greyish pinks.
+    // Mauve: greyish and dusky pinks, down to L 0.45.
     {
       criteria: {
         oklch: {
           h: [345, 360],
-          c: [0.02, 0.075],
-          l: [0.55, 0.72],
+          c: [0.02, 0.1],
+          l: [0.45, 0.72],
         },
       },
       descriptive: ["mauve"],
@@ -2720,8 +2790,8 @@ export default {
       criteria: {
         oklch: {
           h: [0, 25],
-          c: [0.02, 0.075],
-          l: [0.55, 0.72],
+          c: [0.02, 0.1],
+          l: [0.45, 0.72],
         },
       },
       descriptive: ["mauve"],
@@ -2967,6 +3037,39 @@ export default {
           h: [325, 345],
           c: [0.05, 0.18],
           l: [0.25, 0.5],
+        },
+      },
+      descriptive: ["plum"],
+      nouns: ["plum"],
+      description: [
+        "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
+      ],
+      meanings: ["luxury", "depth", "maturity", "drama"],
+      usage: ["fashion", "wine", "interiors", "cosmetics"],
+    },
+    // Dark dusky pink hues (wine, plum) are plum.
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.05, 0.12],
+          l: [0.24, 0.48],
+        },
+      },
+      descriptive: ["plum"],
+      nouns: ["plum"],
+      description: [
+        "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
+      ],
+      meanings: ["luxury", "depth", "maturity", "drama"],
+      usage: ["fashion", "wine", "interiors", "cosmetics"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 15],
+          c: [0.05, 0.12],
+          l: [0.24, 0.48],
         },
       },
       descriptive: ["plum"],
