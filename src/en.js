@@ -72,6 +72,12 @@ export default {
         },
       },
       nouns: ["black"],
+      effects: [
+        "intimidate",
+        "signal authority",
+        "add contrast",
+        "focus attention",
+      ],
       description: [
         "Black is the absence of light: the deepest, most grounded color there is. It reads as formal, powerful and definitive, and it makes every other color beside it look brighter. Very dark tints of a hue are still black to the eye, with only a faint cast that shows up next to a pure black. In design, black carries weight and authority, from typography and luxury packaging to stage and cinema. Picture black as the velvet backdrop that lets everything else shine.",
       ],
@@ -89,6 +95,12 @@ export default {
         },
       },
       nouns: ["black"],
+      effects: [
+        "intimidate",
+        "signal authority",
+        "add contrast",
+        "focus attention",
+      ],
       description: [
         "Black is the absence of light: the deepest, most grounded color there is. It reads as formal, powerful and definitive, and it makes every other color beside it look brighter. Very dark tints of a hue are still black to the eye, with only a faint cast that shows up next to a pure black. In design, black carries weight and authority, from typography and luxury packaging to stage and cinema. Picture black as the velvet backdrop that lets everything else shine.",
       ],
@@ -518,6 +530,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -549,6 +562,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -580,6 +594,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -611,6 +626,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -642,6 +658,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -673,6 +690,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -738,6 +756,7 @@ export default {
         },
       },
       nouns: ["white"],
+      effects: ["clarify", "open up space", "clean", "lighten"],
       description: [
         "White is commonly associated with clarity, simplicity, and cleanliness. It can evoke fresh snow, bright daylight, a blank page, or crisp fabric—space that feels open and breathable. In design, white creates room for content, improves legibility, and helps other colors feel more vivid by contrast. It can communicate honesty and calm, but in excess it may also feel sterile or impersonal. Picture white as a clean, bright backdrop that makes everything around it feel sharper and lighter.",
       ],
@@ -783,26 +802,14 @@ export default {
       description: [
         "Black is the absence of light: the deepest, most grounded color there is. It reads as formal, powerful and definitive, and it makes every other color beside it look brighter. Very dark tints of a hue are still black to the eye, with only a faint cast that shows up next to a pure black. In design, black carries weight and authority, from typography and luxury packaging to stage and cinema. Picture black as the velvet backdrop that lets everything else shine.",
       ],
-      meanings: [
-        "power",
-        "control",
-        "authority",
-        "discipline",
-        "discretion",
-        "secrecy",
-        "elegance",
-        "mystery",
+      meanings: ["power", "elegance", "formality", "mystery", "authority"],
+      effects: [
+        "intimidate",
+        "signal authority",
+        "add contrast",
+        "focus attention",
       ],
-      effects: ["intimidate", "signal authority"],
-      usage: [
-        "luxury",
-        "fashion",
-        "elegance",
-        "formal wear",
-        "premium branding",
-        "editorial",
-        "typography",
-      ],
+      usage: ["luxury", "typography", "fashion", "technology", "backgrounds"],
     },
 
     // ===========================
@@ -817,6 +824,7 @@ export default {
         },
       },
       nouns: ["grey"],
+      effects: ["neutralize", "calm", "recede", "balance"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
       ],
@@ -856,6 +864,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -896,6 +905,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -937,6 +947,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -978,6 +989,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1019,6 +1031,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1060,6 +1073,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1100,6 +1114,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1141,6 +1156,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1183,6 +1199,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1223,6 +1240,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1264,6 +1282,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1304,6 +1323,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1345,6 +1365,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1386,6 +1407,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1427,6 +1449,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1468,6 +1491,7 @@ export default {
       },
       descriptive: ["pink"],
       nouns: ["pink"],
+      effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
         "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
       ],
@@ -1790,6 +1814,7 @@ export default {
       },
       descriptive: ["olive"],
       nouns: ["olive"],
+      effects: ["ground", "calm", "reassure"],
       description: [
         "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
       ],
@@ -1819,6 +1844,7 @@ export default {
       },
       descriptive: ["olive"],
       nouns: ["olive"],
+      effects: ["ground", "calm", "reassure"],
       description: [
         "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
       ],
@@ -1848,6 +1874,7 @@ export default {
       },
       descriptive: ["olive"],
       nouns: ["olive"],
+      effects: ["ground", "calm", "reassure"],
       description: [
         "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
       ],
@@ -1878,6 +1905,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -1915,6 +1943,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -1952,6 +1981,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -1989,6 +2019,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2026,6 +2057,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2063,6 +2095,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2100,6 +2133,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2138,6 +2172,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2176,6 +2211,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2215,6 +2251,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2252,6 +2289,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2289,6 +2327,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2327,6 +2366,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2366,6 +2406,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2404,6 +2445,7 @@ export default {
       },
       descriptive: ["beige"],
       nouns: ["beige"],
+      effects: ["calm", "soften", "recede"],
       description: [
         "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
       ],
@@ -2429,6 +2471,7 @@ export default {
       },
       descriptive: ["brown"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
       ],
@@ -2467,6 +2510,7 @@ export default {
       },
       descriptive: ["beige"],
       nouns: ["beige"],
+      effects: ["calm", "soften", "recede"],
       description: [
         "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
       ],
@@ -2492,6 +2536,7 @@ export default {
       },
       descriptive: ["beige"],
       nouns: ["beige"],
+      effects: ["calm", "soften", "recede"],
       description: [
         "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
       ],
@@ -2517,6 +2562,7 @@ export default {
       },
       descriptive: ["beige"],
       nouns: ["beige"],
+      effects: ["calm", "soften", "recede"],
       description: [
         "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
       ],
@@ -3143,6 +3189,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3181,6 +3228,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3219,6 +3267,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3257,6 +3306,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3295,6 +3345,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3333,6 +3384,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3370,6 +3422,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -3408,6 +3461,7 @@ export default {
       },
       descriptive: ["navy"],
       nouns: ["navy"],
+      effects: ["reassure", "signal authority", "steady"],
       description: [
         "Navy is a dark, authoritative blue that feels professional and dependable. It evokes naval uniforms, deep ocean water, and twilight sky—serious but approachable. In design, navy is a versatile near-neutral that works as a softer alternative to black, lending depth and formality without harshness. It pairs well with almost any accent color and reads as classic and timeless. Picture navy as the deep blue of a clear night sky just after sunset.",
       ],
@@ -3439,6 +3493,7 @@ export default {
       },
       descriptive: ["navy"],
       nouns: ["navy"],
+      effects: ["reassure", "signal authority", "steady"],
       description: [
         "Navy is a dark, authoritative blue that feels professional and dependable. It evokes naval uniforms, deep ocean water, and twilight sky—serious but approachable. In design, navy is a versatile near-neutral that works as a softer alternative to black, lending depth and formality without harshness. It pairs well with almost any accent color and reads as classic and timeless. Picture navy as the deep blue of a clear night sky just after sunset.",
       ],
@@ -3470,6 +3525,7 @@ export default {
       },
       descriptive: ["navy"],
       nouns: ["navy"],
+      effects: ["reassure", "signal authority", "steady"],
       description: [
         "Navy is a dark, authoritative blue that feels professional and dependable. It evokes naval uniforms, deep ocean water, and twilight sky—serious but approachable. In design, navy is a versatile near-neutral that works as a softer alternative to black, lending depth and formality without harshness. It pairs well with almost any accent color and reads as classic and timeless. Picture navy as the deep blue of a clear night sky just after sunset.",
       ],
@@ -3501,6 +3557,7 @@ export default {
       },
       descriptive: ["maroon", "burgundy"],
       nouns: ["maroon"],
+      effects: ["ground", "warm", "signal seriousness"],
       description: [
         "Maroon is a dark, rich red that feels grounded and dignified. It evokes aged wine, dark leather, and autumn foliage—warm but restrained. In design, maroon carries the intensity of red with added depth and formality, making it a popular choice for institutions, luxury branding, and elegant print. It can communicate tradition, confidence, and seriousness without the aggressiveness of brighter reds. Picture maroon as a deep ember that glows with quiet authority.",
       ],
@@ -3531,6 +3588,7 @@ export default {
       },
       descriptive: ["maroon", "burgundy"],
       nouns: ["maroon"],
+      effects: ["ground", "warm", "signal seriousness"],
       description: [
         "Maroon is a dark, rich red that feels grounded and dignified. It evokes aged wine, dark leather, and autumn foliage—warm but restrained. In design, maroon carries the intensity of red with added depth and formality, making it a popular choice for institutions, luxury branding, and elegant print. It can communicate tradition, confidence, and seriousness without the aggressiveness of brighter reds. Picture maroon as a deep ember that glows with quiet authority.",
       ],
@@ -3562,6 +3620,7 @@ export default {
       },
       descriptive: ["maroon", "burgundy"],
       nouns: ["maroon"],
+      effects: ["ground", "warm", "signal seriousness"],
       description: [
         "Maroon is a dark, rich red that feels grounded and dignified. It evokes aged wine, dark leather, and autumn foliage—warm but restrained. In design, maroon carries the intensity of red with added depth and formality, making it a popular choice for institutions, luxury branding, and elegant print. It can communicate tradition, confidence, and seriousness without the aggressiveness of brighter reds. Picture maroon as a deep ember that glows with quiet authority.",
       ],
@@ -3594,6 +3653,7 @@ export default {
       },
       descriptive: ["gold", "mustard"],
       nouns: ["gold"],
+      effects: ["warm", "enrich", "signal value"],
       description: [
         "Gold and mustard are dark, rich yellows. Gold is the warm, lustrous yellow of the metal and of autumn light; mustard is its earthier, more muted cousin. Both feel warm, confident and a little retro. In design they add richness where plain yellow would feel loud. Picture gold as a brass fixture catching the light, and mustard as a wool scarf in October.",
       ],
@@ -3611,6 +3671,7 @@ export default {
       },
       descriptive: ["gold", "mustard"],
       nouns: ["gold"],
+      effects: ["warm", "enrich", "signal value"],
       description: [
         "Gold and mustard are dark, rich yellows. Gold is the warm, lustrous yellow of the metal and of autumn light; mustard is its earthier, more muted cousin. Both feel warm, confident and a little retro. In design they add richness where plain yellow would feel loud. Picture gold as a brass fixture catching the light, and mustard as a wool scarf in October.",
       ],
@@ -3628,6 +3689,7 @@ export default {
       },
       descriptive: ["peach"],
       nouns: ["peach"],
+      effects: ["soften", "warm", "comfort"],
       description: [
         "Peach is a soft, light orange with a touch of pink, like the skin of the fruit. It feels gentle, warm and friendly, and is a favourite for skin tones, sunsets and summery pastels. In design it works as a warm neutral or a tender accent that never shouts. Picture peach as late afternoon light on a plastered wall.",
       ],
@@ -3644,6 +3706,7 @@ export default {
       },
       descriptive: ["peach"],
       nouns: ["peach"],
+      effects: ["soften", "warm", "comfort"],
       description: [
         "Peach is a soft, light orange with a touch of pink, like the skin of the fruit. It feels gentle, warm and friendly, and is a favourite for skin tones, sunsets and summery pastels. In design it works as a warm neutral or a tender accent that never shouts. Picture peach as late afternoon light on a plastered wall.",
       ],
@@ -3661,6 +3724,7 @@ export default {
       },
       descriptive: ["peach"],
       nouns: ["peach"],
+      effects: ["soften", "warm", "comfort"],
       description: [
         "Peach is a soft, light orange with a touch of pink, like the skin of the fruit. It feels gentle, warm and friendly, and is a favourite for skin tones, sunsets and summery pastels. In design it works as a warm neutral or a tender accent that never shouts. Picture peach as late afternoon light on a plastered wall.",
       ],
@@ -3678,6 +3742,7 @@ export default {
       },
       descriptive: ["sandy"],
       nouns: ["brown"],
+      effects: ["ground", "reassure", "warm", "steady"],
       description: [
         "A light, warm brown: sand, leather, camel hair, a summer beach. It is one of the great quiet neutrals, warmer than grey and softer than a full brown, and it pairs with almost anything. In design it reads as natural, relaxed and a little classic. Picture a worn leather satchel in the sun.",
       ],
@@ -3695,6 +3760,7 @@ export default {
       },
       descriptive: ["salmon"],
       nouns: ["salmon"],
+      effects: ["warm", "stimulate appetite", "cheer"],
       description: [
         "Salmon is a pinkish orange, between coral and peach, named after the flesh of the fish. It feels warm, healthy and appetising, softer than coral and livelier than peach. In design it works well for food, wellness and friendly consumer brands. Picture salmon as a sunset reflected on wet sand.",
       ],
@@ -3712,6 +3778,7 @@ export default {
       },
       descriptive: ["mauve"],
       nouns: ["mauve"],
+      effects: ["soften", "calm", "evoke nostalgia"],
       description: [
         "Mauve is a greyish pinkish purple, dusty and restrained. It carries a Victorian, slightly faded elegance, and it is one of the few purples that works as a near-neutral. In design it reads as soft, mature and a little nostalgic. Picture mauve as dried rose petals.",
       ],
@@ -3728,6 +3795,7 @@ export default {
       },
       descriptive: ["mauve"],
       nouns: ["mauve"],
+      effects: ["soften", "calm", "evoke nostalgia"],
       description: [
         "Mauve is a greyish pinkish purple, dusty and restrained. It carries a Victorian, slightly faded elegance, and it is one of the few purples that works as a near-neutral. In design it reads as soft, mature and a little nostalgic. Picture mauve as dried rose petals.",
       ],
@@ -3744,6 +3812,7 @@ export default {
       },
       descriptive: ["mauve"],
       nouns: ["mauve"],
+      effects: ["soften", "calm", "evoke nostalgia"],
       description: [
         "Mauve is a greyish pinkish purple, dusty and restrained. It carries a Victorian, slightly faded elegance, and it is one of the few purples that works as a near-neutral. In design it reads as soft, mature and a little nostalgic. Picture mauve as dried rose petals.",
       ],
@@ -3760,6 +3829,7 @@ export default {
       },
       descriptive: ["mauve"],
       nouns: ["mauve"],
+      effects: ["soften", "calm", "evoke nostalgia"],
       description: [
         "Mauve is a greyish pinkish purple, dusty and restrained. It carries a Victorian, slightly faded elegance, and it is one of the few purples that works as a near-neutral. In design it reads as soft, mature and a little nostalgic. Picture mauve as dried rose petals.",
       ],
@@ -3777,6 +3847,7 @@ export default {
       },
       descriptive: ["mint"],
       nouns: ["mint"],
+      effects: ["refresh", "cool", "lighten"],
       description: [
         "Mint is a pale, fresh green with a hint of blue, like the leaf or the sweet. It feels clean, cool and refreshing, and it is a natural pastel for spring and health themes. In design mint lifts a palette without adding weight. Picture mint as a scoop of ice cream on a hot day.",
       ],
@@ -3794,6 +3865,7 @@ export default {
       },
       descriptive: ["turquoise", "aqua"],
       nouns: ["turquoise"],
+      effects: ["refresh", "energize", "cool"],
       description: [
         "Turquoise and aqua are bright greenish blues named after the gemstone and after water. They feel tropical, clean and energetic, the colour of shallow seas over sand. In design they suggest holidays, swimming pools and freshness, and they carry more warmth than plain cyan. Picture turquoise as a lagoon seen from above.",
       ],
@@ -3877,6 +3949,7 @@ export default {
       },
       descriptive: ["sky blue"],
       nouns: ["sky blue"],
+      effects: ["open up", "calm", "lighten"],
       description: [
         "Sky blue is a light, clear blue, the colour of a cloudless day. It feels open, calm and optimistic, and it is the most universally liked of the blues. In design it reads as friendly and trustworthy without the weight of a dark blue. Picture sky blue as the view from a window in summer.",
       ],
@@ -3894,6 +3967,7 @@ export default {
       },
       descriptive: ["sky blue"],
       nouns: ["sky blue"],
+      effects: ["open up", "calm", "lighten"],
       description: [
         "Sky blue is a light, clear blue, the colour of a cloudless day. It feels open, calm and optimistic, and it is the most universally liked of the blues. In design it reads as friendly and trustworthy without the weight of a dark blue. Picture sky blue as the view from a window in summer.",
       ],
@@ -3911,6 +3985,7 @@ export default {
       },
       descriptive: ["periwinkle"],
       nouns: ["periwinkle"],
+      effects: ["calm", "soothe", "soften"],
       description: [
         "Periwinkle is a soft blue with a touch of lavender, named after the flower. It feels calm, airy and slightly dreamy, sitting exactly where blue turns into purple. In design it is a gentle alternative to sky blue with a little more character. Picture periwinkle as a hazy morning sky.",
       ],
@@ -3928,31 +4003,12 @@ export default {
       },
       descriptive: ["indigo"],
       nouns: ["indigo"],
+      effects: ["deepen", "focus", "calm"],
       description: [
         "Indigo is deep and contemplative, sitting between blue's steadiness and purple's imagination. It can evoke twilight, ink, denim, and night skies—quiet, thoughtful, and a little mysterious. In design, indigo often feels sophisticated and layered, adding depth without the starkness of pure black. It can suggest introspection, tradition, or spirituality depending on context. Picture indigo as dusk settling in: calm, rich, and full of hidden detail.",
       ],
-      meanings: [
-        "spirituality",
-        "structure",
-        "compassion",
-        "sensitivity",
-        "mystery",
-        "tolerance",
-        "integrity",
-        "order",
-        "wisdom",
-        "inspiration",
-      ],
-      usage: [
-        "luxury",
-        "religion",
-        "psychic",
-        "spirituality",
-        "meditation",
-        "denim",
-        "night sky themes",
-        "creative industries",
-      ],
+      meanings: ["intuition", "wisdom", "depth", "spirituality", "integrity"],
+      usage: ["denim", "luxury", "spiritual", "night themes", "print"],
     },
     // Lavender / lilac: light purples.
     {
@@ -3965,6 +4021,7 @@ export default {
       },
       descriptive: ["lavender", "lilac"],
       nouns: ["lavender"],
+      effects: ["relax", "soothe", "soften"],
       description: [
         "Lavender is a soft, light purple that feels gentle and refined. It evokes lavender fields, spring blossoms, and soft fabric—calm, romantic, and slightly whimsical. In design, lavender adds a feminine, soothing touch without the intensity of deeper purples. It works well for wellness brands, cosmetics, and any context that wants to feel approachable and delicate. Picture lavender as a light haze of purple that softens everything it touches.",
       ],
@@ -3996,6 +4053,7 @@ export default {
       },
       descriptive: ["violet"],
       nouns: ["violet"],
+      effects: ["intrigue", "inspire", "calm"],
       description: [
         "Violet is the bluer side of purple, the colour of the flower and the last band of the rainbow. It feels mystical, refined and a little cooler than purple proper. In design it reads as creative and spiritual, and it sits well next to blues. Picture violet as the sky a few minutes after sunset.",
       ],
@@ -4013,6 +4071,7 @@ export default {
       },
       descriptive: ["violet"],
       nouns: ["violet"],
+      effects: ["intrigue", "inspire", "calm"],
       description: [
         "Violet is the bluer side of purple, the colour of the flower and the last band of the rainbow. It feels mystical, refined and a little cooler than purple proper. In design it reads as creative and spiritual, and it sits well next to blues. Picture violet as the sky a few minutes after sunset.",
       ],
@@ -4030,35 +4089,23 @@ export default {
       },
       descriptive: ["magenta", "fuchsia"],
       nouns: ["magenta"],
+      effects: ["energize", "draw attention", "provoke"],
       description: [
         "Magenta is bold and expressive, often associated with creativity, intensity, and modern flair. It can feel like neon signage, stage lights, or vivid flowers—lively and unapologetic. In design, magenta is often used as a punchy accent to add energy and personality, especially in contemporary or playful palettes. It can read as romantic and warm, but also edgy and unconventional. Imagine magenta as a bright pulse that makes a layout feel instantly more alive.",
       ],
       meanings: [
-        "support",
-        "kind",
-        "change",
-        "harmony",
-        "kink",
-        "charm",
-        "politeness",
-        "sensitivity",
-        "tenderness",
-        "sweetness",
-        "femininity",
-        "romance",
-        "seductiveness",
-        "sexiness",
+        "creativity",
+        "boldness",
+        "imagination",
+        "transformation",
+        "nonconformity",
       ],
       usage: [
-        "children's products",
-        "erotica",
-        "cosmetics",
         "pop culture",
-        "fashion",
+        "printing",
         "nightlife",
-        "confectionery",
-        "romance",
-        "floral",
+        "fashion",
+        "tech branding",
       ],
     },
     // Plum: dark reddish purples.
@@ -4072,6 +4119,7 @@ export default {
       },
       descriptive: ["plum"],
       nouns: ["plum"],
+      effects: ["enrich", "ground", "add depth"],
       description: [
         "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
       ],
@@ -4089,6 +4137,7 @@ export default {
       },
       descriptive: ["plum"],
       nouns: ["plum"],
+      effects: ["enrich", "ground", "add depth"],
       description: [
         "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
       ],
@@ -4105,6 +4154,7 @@ export default {
       },
       descriptive: ["plum"],
       nouns: ["plum"],
+      effects: ["enrich", "ground", "add depth"],
       description: [
         "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
       ],
@@ -4121,6 +4171,7 @@ export default {
       },
       descriptive: ["plum"],
       nouns: ["plum"],
+      effects: ["enrich", "ground", "add depth"],
       description: [
         "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
       ],
@@ -4138,6 +4189,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -4175,6 +4227,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -4212,6 +4265,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
@@ -4249,6 +4303,7 @@ export default {
       },
       descriptive: ["purple", "purplish", "violet"],
       nouns: ["purple"],
+      effects: ["inspire", "intrigue", "elevate"],
       description: [
         "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
       ],
