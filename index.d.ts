@@ -5,6 +5,10 @@ export interface ColorDescriptionEntry {
       c: [number, number] | null;
       l: [number, number] | null;
     };
+    /** okhsl saturation: chroma relative to the sRGB gamut at that lightness and hue */
+    okhsl?: {
+      s: [number, number] | null;
+    };
   };
   descriptive?: string[];
   nouns?: string[];
@@ -36,7 +40,7 @@ declare class ColorDescription {
   /** Set or get the current color (any culori-compatible color string) */
   color: string;
 
-  /** Parsed color formats keyed by model name */
+  /** Parsed color in rgb, hsl, oklch, okhsl and cmyk, keyed by model name */
   formats: Record<string, Record<string, number>>;
 
   /** Closest color temperature bucket */

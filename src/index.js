@@ -1,5 +1,5 @@
 import { rgb2temperature, isInRange, randomizeArr, rgbToCMYK } from "./utils";
-import { wcagContrast, parse, converter, formatHex } from "culori";
+import { wcagContrast, parse, converter } from "culori";
 import wordsEN from "./en";
 
 const converters = {

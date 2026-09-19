@@ -325,6 +325,20 @@ export default {
       descriptive: ["light", "soft", "fresh"],
     },
     {
+      // light beiges and sands read as soft rather than pastel
+      criteria: {
+        oklch: {
+          h: [30, 100],
+          c: [0.05, 0.5],
+          l: [0.75, 0.9],
+        },
+        okhsl: {
+          s: [0, 0.62],
+        },
+      },
+      descriptive: ["soft", "light", "warm"],
+    },
+    {
       criteria: {
         oklch: {
           h: null,
@@ -365,10 +379,64 @@ export default {
       },
       descriptive: ["bright", "vivid", "brilliant", "glowing"],
     },
+    // browns and olives at full saturation are rich, never vivid
     {
       criteria: {
         oklch: {
-          h: null,
+          h: [20, 90],
+          c: [0.05, 0.5],
+          l: [0.4, 0.6],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["rich", "strong", "warm"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [88, 135],
+          c: [0.05, 0.5],
+          l: [0.4, 0.65],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["rich", "strong", "full"],
+    },
+    // (browns 20-88 below L 0.6 and olives 88-135 are covered above)
+    {
+      criteria: {
+        oklch: {
+          h: [0, 20],
+          c: [0.05, 0.5],
+          l: [0.4, 0.65],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["vivid", "vibrant", "strong", "bold", "saturated"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [20, 88],
+          c: [0.05, 0.5],
+          l: [0.6, 0.65],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["vivid", "vibrant", "strong", "bold", "saturated"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [135, 360],
           c: [0.05, 0.5],
           l: [0.4, 0.65],
         },
@@ -567,7 +635,7 @@ export default {
       criteria: {
         oklch: {
           h: null,
-          c: [0.07, 0.5],
+          c: [0.1, 0.5],
           l: [0.22, 0.99],
         },
         okhsl: {
@@ -580,7 +648,7 @@ export default {
       criteria: {
         oklch: {
           h: null,
-          c: [0.07, 0.5],
+          c: [0.14, 0.5],
           l: [0.22, 0.99],
         },
         okhsl: {
@@ -2794,7 +2862,7 @@ export default {
         oklch: {
           h: [105, 113],
           c: [0.08, 0.5],
-          l: [0.66, 0.99],
+          l: [0.66, 0.9],
         },
       },
       descriptive: ["greenish"],
