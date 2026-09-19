@@ -387,7 +387,12 @@ ${baselineNote}
     td.scrollIntoView({ block: "center", inline: "center" });
     td.focus({ preventScroll: true });
   }
-  window.swatchView = { show: show, close: close, refocus: function () { view.focus({ preventScroll: true }); } };
+  window.swatchView = {
+    show: show,
+    close: close,
+    current: function () { return view.classList.contains("open") ? cells[current] : null; },
+    refocus: function () { view.focus({ preventScroll: true }); },
+  };
   cells.forEach(function (td, i) {
     td.addEventListener("click", function () { show(i); });
     td.addEventListener("keydown", function (e) {
