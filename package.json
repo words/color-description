@@ -22,6 +22,7 @@
   ],
   "scripts": {
     "build": "npm run build:esm && npm run build:browser && npm run build:node",
+    "prepublishOnly": "npm run build && npm test",
     "format": "npx prettier . --write",
     "build:esm": "esbuild src/index.js --outfile=dist/index.esm.js --format=esm --bundle --target=es2020 --minify",
     "build:browser": "esbuild src/index.js --outfile=dist/index.iife.js --bundle --target=es6 --format=iife --global-name=ColorDescription --minify",
