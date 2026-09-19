@@ -261,15 +261,15 @@
       }
       .atlas .cells {
         display: grid;
-        grid-template-columns: repeat(5, 1.6rem);
-        grid-auto-rows: 1.6rem;
+        grid-template-columns: repeat(10, 0.8rem);
+        grid-auto-rows: 0.8rem;
         gap: 0;
       }
       .atlas .page-a .cells {
         direction: rtl;
       }
       .atlas .axis {
-        grid-template-columns: 1.6rem;
+        grid-template-columns: 0.8rem;
       }
       .atlas .cell {
         position: relative;
@@ -453,8 +453,14 @@ const cd = new ColorDescription('#b40404');
       const toOklch = converter("oklch");
       const toRgb = converter("rgb");
       const inSrgb = inGamut("rgb");
-      const MINI_L = [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
-      const MINI_C = [0.03, 0.09, 0.15, 0.21, 0.27];
+      const MINI_L = Array.from(
+        { length: 21 },
+        (_, i) => +(1 - i * 0.05).toFixed(2),
+      );
+      const MINI_C = Array.from(
+        { length: 10 },
+        (_, i) => +(0.03 + i * 0.03).toFixed(2),
+      );
       const miniCd = new ColorDescription.default("#000");
       function textOn(hex) {
         const { r, g, b } = toRgb(hex);
