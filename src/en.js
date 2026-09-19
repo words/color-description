@@ -995,6 +995,48 @@ export default {
         "floral",
       ],
     },
+    // Pale greyish magenta hues above L 0.72 are pink (the survey is 60–90%
+    // sure); below that they are grey purple.
+    {
+      criteria: {
+        oklch: {
+          h: [325, 345],
+          c: [0.02, 0.075],
+          l: [0.72, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
     // Pink reaches a little lower around hue 0 (raspberry, dusky rose).
     {
       criteria: {
