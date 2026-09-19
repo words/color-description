@@ -348,7 +348,7 @@ describe("First descriptive word matches the character of the shade", () => {
     ["#3a7ab8", "rich"],
     ["#4a8ac0", "medium"],
     ["#6f8fb0", "muted"],
-    ["#8a9ab0", "dusty"],
+    ["#8a9ab0", "cool"],
     ["#dcc6c8", "pale"],
     ["#e8a0b8", "pastel"],
     ["#f8c8d8", "pale"],

@@ -203,16 +203,36 @@ export default {
       descriptive: ["dark", "dim", "somber"],
     },
     // -- low chroma
+    // faint tints read as warm or cool greys: warm grey, cool grey blue
     {
-      // dusty pink, dusty blue
       criteria: {
         oklch: {
-          h: null,
+          h: [330, 360],
           c: [0.012, 0.05],
           l: [0.4, 0.78],
         },
       },
-      descriptive: ["dusty", "greyish", "muted"],
+      descriptive: ["warm", "muted", "greyish", "dusty"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 125],
+          c: [0.012, 0.05],
+          l: [0.4, 0.78],
+        },
+      },
+      descriptive: ["warm", "muted", "greyish", "dusty"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [125, 330],
+          c: [0.012, 0.05],
+          l: [0.4, 0.78],
+        },
+      },
+      descriptive: ["cool", "muted", "greyish", "dusty"],
     },
     {
       // pale pink, pale blue
