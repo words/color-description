@@ -951,7 +951,7 @@ export default {
       criteria: {
         oklch: {
           h: [345, 360],
-          c: [0.02, 0.075],
+          c: [0.045, 0.075],
           l: [0.65, 0.99],
         },
       },
@@ -991,7 +991,7 @@ export default {
       criteria: {
         oklch: {
           h: [0, 12],
-          c: [0.02, 0.075],
+          c: [0.045, 0.075],
           l: [0.65, 0.99],
         },
       },
@@ -1115,6 +1115,87 @@ export default {
         oklch: {
           h: [12, 25],
           c: [0.02, 0.075],
+          l: [0.78, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    // Very pale greyish pinks around hue 0.
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.02, 0.045],
+          l: [0.78, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 12],
+          c: [0.02, 0.045],
           l: [0.78, 0.99],
         },
       },
@@ -1322,6 +1403,56 @@ export default {
           h: [5, 40],
           c: [0.115, 0.5],
           l: [0.38, 0.68],
+        },
+      },
+      descriptive: ["red", "reddish"],
+      nouns: ["red"],
+      description: [
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
+      ],
+      meanings: [
+        "excitement",
+        "energy",
+        "passion",
+        "courage",
+        "attention",
+        "lust",
+        "power",
+        "love",
+        "speed",
+        "anger",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "vigor",
+        "urgency",
+      ],
+      effects: [
+        "stimulate",
+        "create urgency",
+        "draw attention",
+        "encourage",
+        "excite",
+        "heighten arousal",
+      ],
+      usage: [
+        "caution",
+        "food industry",
+        "sports",
+        "sales",
+        "entertainment",
+        "romance",
+        "emergency services",
+      ],
+    },
+    // Vivid light pinks near red (coral) are red as well.
+    {
+      criteria: {
+        oklch: {
+          h: [5, 25],
+          c: [0.15, 0.5],
+          l: [0.65, 0.75],
         },
       },
       descriptive: ["red", "reddish"],
@@ -3382,7 +3513,7 @@ export default {
       criteria: {
         oklch: {
           h: [345, 360],
-          c: [0.05, 0.12],
+          c: [0.05, 0.16],
           l: [0.24, 0.52],
         },
       },
@@ -3398,7 +3529,7 @@ export default {
       criteria: {
         oklch: {
           h: [0, 15],
-          c: [0.05, 0.12],
+          c: [0.05, 0.16],
           l: [0.24, 0.48],
         },
       },
