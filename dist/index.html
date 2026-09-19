@@ -257,19 +257,19 @@
         grid-template-columns: max-content max-content max-content;
         width: max-content;
         align-items: start;
-        gap: 0;
+        gap: 1px;
       }
       .atlas .cells {
         display: grid;
-        grid-template-columns: repeat(5, 1.65rem);
-        grid-auto-rows: 1.35rem;
-        gap: 0;
+        grid-template-columns: repeat(5, 1.6rem);
+        grid-auto-rows: 1.6rem;
+        gap: 1px;
       }
       .atlas .page-a .cells {
         direction: rtl;
       }
       .atlas .axis {
-        grid-template-columns: 1.65rem;
+        grid-template-columns: 1.6rem;
       }
       .atlas .cell {
         position: relative;
@@ -530,7 +530,7 @@ const cd = new ColorDescription('#b40404');
           $c.classList.remove("edge-right", "edge-bottom");
           const r = $c.getBoundingClientRect();
           if (box.right - r.left < 100) $c.classList.add("edge-right");
-          if (box.bottom - r.top < 74) $c.classList.add("edge-bottom");
+          if (box.bottom - r.top < 78) $c.classList.add("edge-bottom");
         }
       }
       {
