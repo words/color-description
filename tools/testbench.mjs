@@ -300,7 +300,15 @@ const html = `<!doctype html>
   .grid { display: flex; flex-wrap: wrap; gap: 0 28px; }
   td[data-hex] { cursor: zoom-in; }
   td[data-hex]:focus-visible { outline: 3px solid #06f; outline-offset: -3px; }
-  #view { position: fixed; inset: 0; z-index: 10; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 24px; cursor: zoom-out; font-family: inherit; }
+  #view { position: fixed; inset: 0; z-index: 10; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 24px; font-family: inherit; outline: none; }
+  #view .pos { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; opacity: .7; margin-bottom: 18px; }
+  #view .nav { position: absolute; top: 14px; right: 14px; display: flex; gap: 8px; }
+  #view .nav button, #view .side { font: inherit; font-size: 15px; width: 40px; height: 40px; border-radius: 50%; border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
+  #view .side { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; font-size: 20px; }
+  #view .side.prev { left: 14px; } #view .side.next { right: 14px; }
+  #view button:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+  td.last { outline: 4px solid #06f; outline-offset: -4px; animation: last 1.6s ease-out 3; }
+  @keyframes last { 50% { outline-color: transparent; } }
   #view.open { display: flex; }
   #view .names { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; margin-bottom: 28px; max-width: 100%; }
   #view .names > div { min-width: 0; }
@@ -312,7 +320,7 @@ const html = `<!doctype html>
   #view .meta { font-size: 15px; opacity: .8; font-variant-numeric: tabular-nums; }
   #view .meta span { display: inline-block; margin: 0 10px; }
   #view .words { margin-top: 18px; max-width: 60ch; font-size: 14px; opacity: .75; line-height: 1.5; }
-  #view .hint { position: absolute; bottom: 16px; left: 0; right: 0; font-size: 12px; opacity: .55; }
+  #view .hint { position: absolute; bottom: 12px; left: 0; right: 0; font-size: 12px; opacity: .55; }
   @media (max-width: 600px) { #view .names { grid-template-columns: 1fr; } #view .names .arrow { transform: rotate(90deg); } }
   @media (prefers-reduced-motion: no-preference) { #view.open { animation: fade .15s ease-out; } }
   @keyframes fade { from { opacity: 0; } }
@@ -332,7 +340,11 @@ ${baselineNote}
 <h2>Per survey term</h2>
 <table class="terms"><thead><tr><th>term</th><th>agree</th><th>%</th><th>top confusions</th></tr></thead><tbody>${termRows}</tbody></table>
 <div class="grid">${panels}</div>
-<div id="view" role="dialog" aria-modal="true" aria-label="Swatch detail">
+<div id="view" role="dialog" aria-modal="true" aria-label="Swatch detail" tabindex="-1">
+  <div class="nav"><button type="button" id="v-close" aria-label="Close">✕</button></div>
+  <button type="button" class="side prev" id="v-prev" aria-label="Previous swatch">‹</button>
+  <button type="button" class="side next" id="v-next" aria-label="Next swatch">›</button>
+  <div class="pos" id="v-pos"></div>
   <div class="names">
     <div class="was"><small>Before</small><b id="v-was"></b></div>
     <div class="arrow" aria-hidden="true">→</div>
@@ -340,7 +352,7 @@ ${baselineNote}
   </div>
   <div class="meta"><span id="v-hex"></span><span id="v-oklch"></span><span id="v-expected"></span></div>
   <div class="words" id="v-words"></div>
-  <div class="hint">Click anywhere or press Esc to close. Arrow keys move to the next swatch.</div>
+  <div class="hint">Esc or ✕ closes and jumps back to the swatch in the grid. Arrow keys or ‹ › step through swatches.</div>
 </div>
 <script>
 (function () {
@@ -360,22 +372,35 @@ ${baselineNote}
     document.getElementById("v-oklch").textContent = d.oklch;
     document.getElementById("v-expected").textContent = "survey: " + d.expected;
     document.getElementById("v-words").textContent = d.words;
+    var m = /oklch\(([\d.]+) ([\d.]+) (\d+)\)/.exec(d.oklch);
+    document.getElementById("v-pos").textContent = m ? "Panel H " + m[3] + "\u00b0 \u00b7 row L " + m[1] + " \u00b7 column C " + m[2] + " \u00b7 " + (i + 1) + " of " + cells.length : "";
     view.classList.toggle("unchanged", d.was === d.now);
     view.classList.add("open");
+    view.focus({ preventScroll: true });
   }
   function close() {
     view.classList.remove("open");
-    if (cells[current]) cells[current].focus();
+    var td = cells[current];
+    if (!td) return;
+    cells.forEach(function (c) { c.classList.remove("last"); });
+    td.classList.add("last");
+    td.scrollIntoView({ block: "center", inline: "center" });
+    td.focus({ preventScroll: true });
   }
+  window.swatchView = { show: show, close: close, refocus: function () { view.focus({ preventScroll: true }); } };
   cells.forEach(function (td, i) {
     td.addEventListener("click", function () { show(i); });
     td.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(i); }
     });
   });
-  view.addEventListener("click", close);
+  document.getElementById("v-close").addEventListener("click", close);
+  document.getElementById("v-prev").addEventListener("click", function () { show(Math.max(current - 1, 0)); });
+  document.getElementById("v-next").addEventListener("click", function () { show(Math.min(current + 1, cells.length - 1)); });
   document.addEventListener("keydown", function (e) {
     if (!view.classList.contains("open")) return;
+    var tag = e.target && e.target.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") { if (e.key === "Escape") { e.target.blur(); view.focus(); } return; }
     if (e.key === "Escape") close();
     else if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); show(Math.min(current + 1, cells.length - 1)); }
     else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); show(Math.max(current - 1, 0)); }

@@ -990,7 +990,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 25],
+          h: [0, 12],
           c: [0.02, 0.075],
           l: [0.65, 0.99],
         },
@@ -1110,12 +1110,52 @@ export default {
         "floral",
       ],
     },
+    {
+      criteria: {
+        oklch: {
+          h: [12, 25],
+          c: [0.02, 0.075],
+          l: [0.78, 0.99],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
     // Pink reaches a little lower around hue 0 (raspberry, dusky rose).
     {
       criteria: {
         oklch: {
           h: [0, 12],
-          c: [0.02, 0.5],
+          c: [0.1, 0.5],
           l: [0.48, 0.55],
         },
       },
@@ -1237,7 +1277,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [25, 50],
+          h: [25, 38],
           c: [0.02, 0.06],
           l: [0.85, 0.99],
         },
@@ -1329,7 +1369,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [30, 50],
+          h: [35, 50],
           c: [0.135, 0.5],
           l: [0.55, 0.86],
         },
@@ -2998,7 +3038,7 @@ export default {
         oklch: {
           h: [318, 360],
           c: [0.02, 0.1],
-          l: [0.45, 0.72],
+          l: [0.45, 0.85],
         },
       },
       descriptive: ["mauve"],
@@ -3014,7 +3054,7 @@ export default {
         oklch: {
           h: [0, 25],
           c: [0.02, 0.1],
-          l: [0.45, 0.72],
+          l: [0.45, 0.85],
         },
       },
       descriptive: ["mauve"],
