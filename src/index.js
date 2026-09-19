@@ -4,50 +4,33 @@ import {
   modeRgb,
   modeLrgb,
   modeHsl,
-  modeHsv,
   modeHwb,
   modeLab,
   modeLch,
-  modeLab65,
-  modeLch65,
   modeOklab,
   modeOklch,
   modeOkhsl,
-  modeOkhsv,
   modeP3,
-  modeXyz65,
-  modeXyz50,
-  modeRec2020,
-  modeA98,
-  modeProphoto,
   parse,
   converter,
   wcagContrast,
 } from "culori/fn";
 import wordsEN from "./en";
 
-// Tree-shaken culori: only the color spaces that the CSS color syntax and the
-// matcher need are registered, which keeps the bundle small.
+// Tree-shaken culori: only the color spaces of the CSS color syntax
+// (named, hex, rgb, hsl, hwb, lab, lch, oklab, oklch, display-p3) plus okhsl
+// for the matcher are registered, which keeps the bundle small.
 [
   modeRgb,
   modeLrgb,
   modeHsl,
-  modeHsv,
   modeHwb,
   modeLab,
   modeLch,
-  modeLab65,
-  modeLch65,
   modeOklab,
   modeOklch,
   modeOkhsl,
-  modeOkhsv,
   modeP3,
-  modeXyz65,
-  modeXyz50,
-  modeRec2020,
-  modeA98,
-  modeProphoto,
 ].forEach(useMode);
 
 const converters = {
