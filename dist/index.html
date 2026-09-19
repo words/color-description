@@ -615,7 +615,7 @@ const cd = new ColorDescription('#b40404');
               <h3>Description Paragraph</h3>
               <code>cd.description</code>
             </div>
-            <p>${cd.description}</p>
+            ${cd.description.map((t) => `<p>${t}</p>`).join("")}
             
             <div class="t">
             <h3>Description</h3>

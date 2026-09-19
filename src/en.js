@@ -781,7 +781,7 @@ export default {
       },
       nouns: ["black"],
       description: [
-        "Black often reads as bold, serious, and refined. It brings strong contrast, visual weight, and a sense of depth—like night sky, ink, or polished stone. In design and fashion, black can signal luxury and confidence, while also suggesting mystery or formality. Used carefully, it makes layouts feel crisp and intentional; used heavily, it can feel severe or intimidating. Imagine black as a deep backdrop that sharpens silhouettes and pulls focus to what matters.",
+        "Black is the absence of light: the deepest, most grounded color there is. It reads as formal, powerful and definitive, and it makes every other color beside it look brighter. Very dark tints of a hue are still black to the eye, with only a faint cast that shows up next to a pure black. In design, black carries weight and authority, from typography and luxury packaging to stage and cinema. Picture black as the velvet backdrop that lets everything else shine.",
       ],
       meanings: [
         "power",
@@ -3679,7 +3679,7 @@ export default {
       descriptive: ["sandy"],
       nouns: ["brown"],
       description: [
-        "Tan is a light, warm brown: sand, leather, camel hair, a summer suntan. It is one of the great quiet neutrals, warmer than grey and softer than brown, and it pairs with almost anything. In design it reads as natural, relaxed and a little classic. Picture tan as a worn leather satchel in the sun.",
+        "A light, warm brown: sand, leather, camel hair, a summer beach. It is one of the great quiet neutrals, warmer than grey and softer than a full brown, and it pairs with almost anything. In design it reads as natural, relaxed and a little classic. Picture a worn leather satchel in the sun.",
       ],
       meanings: ["nature", "reliability", "comfort", "simplicity"],
       usage: ["fashion", "interiors", "leather goods", "outdoor"],
