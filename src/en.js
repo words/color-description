@@ -425,7 +425,7 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.025, 0.045],
-          l: [0.62, 0.78],
+          l: [0.55, 0.78],
         },
       },
       descriptive: ["grey"],
@@ -457,7 +457,7 @@ export default {
         oklch: {
           h: [0, 80],
           c: [0.025, 0.045],
-          l: [0.62, 0.78],
+          l: [0.55, 0.78],
         },
       },
       descriptive: ["grey"],
@@ -877,7 +877,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [325, 360],
+          h: [345, 360],
           c: [0.02, 0.075],
           l: [0.65, 0.99],
         },
@@ -1166,7 +1166,7 @@ export default {
         oklch: {
           h: [5, 40],
           c: [0.135, 0.5],
-          l: [0.42, 0.68],
+          l: [0.38, 0.68],
         },
       },
       descriptive: ["red", "reddish"],
@@ -1238,7 +1238,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [50, 85],
+          h: [50, 78],
           c: [0.1, 0.5],
           l: [0.58, 0.85],
         },
@@ -1284,13 +1284,38 @@ export default {
         "Halloween",
       ],
     },
+    // Amber (hue 78–85) is orange only when light; darker it is gold or brown.
+    {
+      criteria: {
+        oklch: {
+          h: [78, 85],
+          c: [0.1, 0.5],
+          l: [0.74, 0.85],
+        },
+      },
+      descriptive: ["orange"],
+      nouns: ["orange"],
+      description: [
+        "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
+      ],
+      meanings: ["optimism", "independence", "adventure", "creativity", "fun"],
+      effects: ["stimulate", "draw attention", "express freedom", "fascinate"],
+      usage: [
+        "food and beverages",
+        "sports",
+        "construction safety",
+        "youth marketing",
+        "autumn themes",
+        "Halloween",
+      ],
+    },
     // Brown — the whole warm half of the wheel below L 0.72 at low chroma.
     {
       criteria: {
         oklch: {
           h: [0, 25],
           c: [0.02, 0.1],
-          l: [0.15, 0.55],
+          l: [0.15, 0.45],
         },
       },
       descriptive: ["brown"],
@@ -1396,6 +1421,43 @@ export default {
         "vintage and retro",
       ],
     },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 25],
+          c: [0.02, 0.075],
+          l: [0.45, 0.55],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
     // Above L 0.55 the pink hues are brown only when greyish.
     {
       criteria: {
@@ -1440,7 +1502,7 @@ export default {
       criteria: {
         oklch: {
           h: [30, 105],
-          c: [0.1, 0.19],
+          c: [0.1, 0.16],
           l: [0.15, 0.55],
         },
       },
@@ -1589,7 +1651,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [335, 360],
+          h: [345, 360],
           c: [0.02, 0.07],
           l: [0.25, 0.5],
         },
@@ -2514,9 +2576,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [85, 110],
+          h: [78, 110],
           c: [0.1, 0.18],
-          l: [0.62, 0.76],
+          l: [0.62, 0.74],
         },
       },
       descriptive: ["gold", "mustard"],
@@ -2534,6 +2596,23 @@ export default {
           h: [25, 70],
           c: [0.04, 0.14],
           l: [0.75, 0.93],
+        },
+      },
+      descriptive: ["peach"],
+      nouns: ["peach"],
+      description: [
+        "Peach is a soft, light orange with a touch of pink, like the skin of the fruit. It feels gentle, warm and friendly, and is a favourite for skin tones, sunsets and summery pastels. In design it works as a warm neutral or a tender accent that never shouts. Picture peach as late afternoon light on a plastered wall.",
+      ],
+      meanings: ["warmth", "gentleness", "youth", "friendliness"],
+      usage: ["cosmetics", "wedding", "summer", "food"],
+    },
+    // Pale butter tones at hue 70–85 read as peach.
+    {
+      criteria: {
+        oklch: {
+          h: [70, 85],
+          c: [0.04, 0.12],
+          l: [0.85, 0.93],
         },
       },
       descriptive: ["peach"],
@@ -2582,7 +2661,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [340, 360],
+          h: [345, 360],
           c: [0.02, 0.075],
           l: [0.55, 0.72],
         },
@@ -2683,7 +2762,7 @@ export default {
       criteria: {
         oklch: {
           h: [200, 265],
-          c: [0.02, 0.16],
+          c: [0.05, 0.16],
           l: [0.7, 0.95],
         },
       },
