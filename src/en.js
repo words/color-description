@@ -1400,7 +1400,56 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [5, 40],
+          h: [5, 20],
+          c: [0.115, 0.5],
+          l: [0.42, 0.68],
+        },
+      },
+      descriptive: ["red", "reddish"],
+      nouns: ["red"],
+      description: [
+        "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
+      ],
+      meanings: [
+        "excitement",
+        "energy",
+        "passion",
+        "courage",
+        "attention",
+        "lust",
+        "power",
+        "love",
+        "speed",
+        "anger",
+        "danger",
+        "ferocity",
+        "violence",
+        "fury",
+        "vigor",
+        "urgency",
+      ],
+      effects: [
+        "stimulate",
+        "create urgency",
+        "draw attention",
+        "encourage",
+        "excite",
+        "heighten arousal",
+      ],
+      usage: [
+        "caution",
+        "food industry",
+        "sports",
+        "sales",
+        "entertainment",
+        "romance",
+        "emergency services",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [20, 40],
           c: [0.115, 0.5],
           l: [0.38, 0.68],
         },
@@ -3169,7 +3218,23 @@ export default {
         oklch: {
           h: [318, 360],
           c: [0.02, 0.1],
-          l: [0.45, 0.85],
+          l: [0.45, 0.72],
+        },
+      },
+      descriptive: ["mauve"],
+      nouns: ["mauve"],
+      description: [
+        "Mauve is a greyish pinkish purple, dusty and restrained. It carries a Victorian, slightly faded elegance, and it is one of the few purples that works as a near-neutral. In design it reads as soft, mature and a little nostalgic. Picture mauve as dried rose petals.",
+      ],
+      meanings: ["nostalgia", "elegance", "softness", "maturity"],
+      usage: ["fashion", "interiors", "cosmetics", "stationery"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [318, 360],
+          c: [0.02, 0.06],
+          l: [0.72, 0.85],
         },
       },
       descriptive: ["mauve"],
@@ -3185,7 +3250,23 @@ export default {
         oklch: {
           h: [0, 25],
           c: [0.02, 0.1],
-          l: [0.45, 0.85],
+          l: [0.45, 0.72],
+        },
+      },
+      descriptive: ["mauve"],
+      nouns: ["mauve"],
+      description: [
+        "Mauve is a greyish pinkish purple, dusty and restrained. It carries a Victorian, slightly faded elegance, and it is one of the few purples that works as a near-neutral. In design it reads as soft, mature and a little nostalgic. Picture mauve as dried rose petals.",
+      ],
+      meanings: ["nostalgia", "elegance", "softness", "maturity"],
+      usage: ["fashion", "interiors", "cosmetics", "stationery"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 25],
+          c: [0.02, 0.06],
+          l: [0.72, 0.85],
         },
       },
       descriptive: ["mauve"],
@@ -3514,7 +3595,23 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.05, 0.16],
-          l: [0.24, 0.52],
+          l: [0.24, 0.45],
+        },
+      },
+      descriptive: ["plum"],
+      nouns: ["plum"],
+      description: [
+        "Plum is a dark, rich purple with a hint of red, like the skin of the fruit. It feels deep, luxurious and grown-up, warmer than navy and softer than black. In design plum works as a dramatic dark or a moody accent. Picture plum as velvet in low light.",
+      ],
+      meanings: ["luxury", "depth", "maturity", "drama"],
+      usage: ["fashion", "wine", "interiors", "cosmetics"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.05, 0.12],
+          l: [0.45, 0.52],
         },
       },
       descriptive: ["plum"],
@@ -3540,6 +3637,81 @@ export default {
       ],
       meanings: ["luxury", "depth", "maturity", "drama"],
       usage: ["fashion", "wine", "interiors", "cosmetics"],
+    },
+    // Dusky wines and plums around hue 0 carry a purple cast (second name).
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.05, 0.16],
+          l: [0.28, 0.5],
+        },
+      },
+      descriptive: ["purple", "purplish", "violet"],
+      nouns: ["purple"],
+      description: [
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
+      ],
+      meanings: [
+        "spirituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 10],
+          c: [0.05, 0.16],
+          l: [0.28, 0.5],
+        },
+      },
+      descriptive: ["purple", "purplish", "violet"],
+      nouns: ["purple"],
+      description: [
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
+      ],
+      meanings: [
+        "spirituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
     },
   ],
 
