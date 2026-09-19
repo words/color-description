@@ -51,7 +51,6 @@
         display: inline-block;
         width: 0.75em;
         aspect-ratio: 1;
-        border-radius: 50%;
         background: var(--color);
         margin-right: 0.25em;
       }
@@ -134,19 +133,17 @@
         top: 0;
         background: white;
         border: 2px solid #202124;
-        border-radius: 15px;
         transition: 300ms transform cubic-bezier(0.7, 0.3, 0, 1);
       }
       button::after {
         content: "";
         position: absolute;
         height: 100%;
-        left: 2px;
-        right: 2px;
+        left: 1px;
+        right: 1px;
         top: 0.2em;
         background: var(--color, #202124);
         border: 2px solid #202124;
-        border-radius: 18px;
         z-index: 1;
       }
 
@@ -166,7 +163,6 @@
         display: flex;
         padding: 4rem 2rem;
         margin-top: -1.5rem;
-        border-radius: 15px;
         border: 2px solid #202124;
       }
       .currentColor p {
@@ -228,7 +224,6 @@
         padding: 1.5rem 2rem;
         line-height: 1.5;
         z-index: -1;
-        border-radius: 15px;
       }
       .example pre {
         font-size: 1.2rem;
@@ -250,7 +245,82 @@
         font-size: 0.7rem;
         display: inline-block;
         margin-bottom: 1rem;
-        border-radius: 15px;
+      }
+
+      .side {
+        flex: 0 0 auto;
+      }
+      .atlas {
+        position: relative;
+        margin: 1.5rem auto 0;
+        display: grid;
+        grid-template-columns: max-content max-content max-content;
+        width: max-content;
+        align-items: start;
+        gap: 0;
+      }
+      .atlas .cells {
+        display: grid;
+        grid-template-columns: repeat(10, 0.8rem);
+        grid-auto-rows: 0.8rem;
+        gap: 0;
+      }
+      .atlas .page-a .cells {
+        direction: rtl;
+      }
+      .atlas .axis {
+        grid-template-columns: 0.8rem;
+      }
+      .atlas .cell {
+        position: relative;
+        direction: ltr;
+        cursor: pointer;
+        /* 1px inside and 1px outside each cell: a uniform 2px line between them */
+        outline: 2px solid #202124;
+        outline-offset: -1px;
+      }
+      .atlas .cell.oog {
+        visibility: hidden;
+        cursor: default;
+      }
+      .atlas .cell.active {
+        z-index: 2;
+      }
+      /* the active swatch grows out of its cell and carries the words */
+      .atlas .cell .big {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6.2rem;
+        height: 4.6rem;
+        box-sizing: border-box;
+        padding: 0.35rem 0.5rem;
+        background: inherit;
+        outline: 2px solid #202124;
+        outline-offset: -2px;
+        font-size: 0.75rem;
+        line-height: 1.2;
+        pointer-events: none;
+      }
+      .atlas .cell.active .big {
+        display: block;
+      }
+      .atlas .cell .big i {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 0.85rem;
+      }
+      .atlas .cell .big b {
+        font-weight: bold;
+      }
+      .atlas .cell.edge-right .big {
+        left: auto;
+        right: 0;
+      }
+      .atlas .cell.edge-bottom .big {
+        top: auto;
+        bottom: 0;
       }
     </style>
   </head>
@@ -316,7 +386,24 @@ const cd = new ColorDescription('#b40404');
       >
     </code>
     <div class="currentColor">
-      <div aria-hidden data-picker></div>
+      <div class="side">
+        <div aria-hidden data-picker></div>
+        <aside
+          class="atlas"
+          data-atlas
+          aria-label="Hue slice: this hue and its complement around the neutral axis"
+        >
+          <div class="page-a">
+            <div class="cells" data-atlas-a></div>
+          </div>
+          <div class="page-n">
+            <div class="cells axis" data-atlas-n></div>
+          </div>
+          <div class="page-b">
+            <div class="cells" data-atlas-b></div>
+          </div>
+        </aside>
+      </div>
       <article class="result">
         <h2 data-colorname aria-live="polite" class="colorname"></h2>
         <div data-result aria-live="polite"></div>
@@ -342,7 +429,13 @@ const cd = new ColorDescription('#b40404');
 
     <script src="./index.iife.js"></script>
     <script type="module">
-      import { rgb, random, formatHex } from "https://cdn.skypack.dev/culori";
+      import {
+        rgb,
+        random,
+        formatHex,
+        converter,
+        inGamut,
+      } from "https://cdn.skypack.dev/culori";
 
       //import ColorDescription from './index.esm.js';
       const cd = new ColorDescription.default("#b40404");
@@ -355,6 +448,121 @@ const cd = new ColorDescription('#b40404');
       const $neighbors = document.querySelector("[data-neighbors]");
 
       let timer;
+
+      // --- mini testbench: this hue and its complement, swatches named by the library
+      const toOklch = converter("oklch");
+      const toRgb = converter("rgb");
+      const inSrgb = inGamut("rgb");
+      const MINI_L = Array.from(
+        { length: 21 },
+        (_, i) => +(1 - i * 0.05).toFixed(2),
+      );
+      const MINI_C = Array.from(
+        { length: 10 },
+        (_, i) => +(0.03 + i * 0.03).toFixed(2),
+      );
+      const miniCd = new ColorDescription.default("#000");
+      function textOn(hex) {
+        const { r, g, b } = toRgb(hex);
+        const lin = (v) =>
+          v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+        return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b) > 0.3
+          ? "#202124"
+          : "#fff";
+      }
+      function cellHtml(hex, l, c, h, extra = "") {
+        miniCd.color = hex;
+        const words = miniCd.descriptiveWords;
+        const adj = words.length
+          ? words[Math.floor(Math.random() * words.length)]
+          : "";
+        const nouns = miniCd.nouns.join(" ");
+        return `<div class="cell${extra}" data-setcolor="${hex}" title="${hex} oklch(${l} ${c} ${h})" style="background:${hex};color:${textOn(hex)}"><span class="big"><i>${adj}</i> <b>${nouns}</b></span></div>`;
+      }
+      function renderMiniGrid($el, hue, current) {
+        let html = "";
+        for (const l of MINI_L) {
+          for (const c of MINI_C) {
+            const color = { mode: "oklch", l, c, h: hue };
+            if (!inSrgb(color)) {
+              html += `<div class="cell oog"></div>`;
+              continue;
+            }
+            const hex = formatHex(toRgb(color));
+            const here =
+              current && current.l === l && current.c === c
+                ? " active current"
+                : "";
+            html += cellHtml(hex, l, c, Math.round(hue), here);
+          }
+        }
+        $el.innerHTML = html;
+      }
+      function renderMini(value) {
+        const o = toOklch(value);
+        const hue = Math.round(o.h ?? 0);
+        const comp = (hue + 180) % 360;
+        // nearest grid cell to the current color, snapped into the gamut
+        const nearest = (arr, v) =>
+          arr.reduce((a, b) => (Math.abs(b - v) < Math.abs(a - v) ? b : a));
+        const target = {
+          l: nearest(MINI_L, o.l),
+          c: nearest(MINI_C, o.c ?? 0),
+        };
+        while (
+          target.c > MINI_C[0] &&
+          !inSrgb({ mode: "oklch", l: target.l, c: target.c, h: hue })
+        ) {
+          target.c = MINI_C[MINI_C.indexOf(target.c) - 1];
+        }
+        const onAxis = (o.c ?? 0) < 0.015;
+        renderMiniGrid(
+          document.querySelector("[data-atlas-a]"),
+          hue,
+          onAxis ? null : target,
+        );
+        renderMiniGrid(document.querySelector("[data-atlas-b]"), comp, null);
+        let axis = "";
+        for (const l of MINI_L) {
+          const hex = formatHex(toRgb({ mode: "oklch", l, c: 0, h: 0 }));
+          const here = onAxis && target.l === l ? " active current" : "";
+          axis += cellHtml(hex, l, 0, 0, here);
+        }
+        document.querySelector("[data-atlas-n]").innerHTML = axis;
+        placeLabels();
+      }
+      // grow the active swatch towards the inside of the atlas
+      function placeLabels() {
+        const $atlas = document.querySelector("[data-atlas]");
+        const box = $atlas.getBoundingClientRect();
+        for (const $c of $atlas.querySelectorAll(".cell.active")) {
+          $c.classList.remove("edge-right", "edge-bottom");
+          const r = $c.getBoundingClientRect();
+          if (box.right - r.left < 100) $c.classList.add("edge-right");
+          if (box.bottom - r.top < 78) $c.classList.add("edge-bottom");
+        }
+      }
+      {
+        const $atlas = document.querySelector("[data-atlas]");
+        $atlas.addEventListener("mouseover", (e) => {
+          const $c = e.target.closest(".cell");
+          if (!$c || $c.classList.contains("oog")) return;
+          for (const $a of $atlas.querySelectorAll(".cell.active")) {
+            $a.classList.remove("active");
+          }
+          $c.classList.add("active");
+          placeLabels();
+        });
+        $atlas.addEventListener("mouseleave", () => {
+          for (const $a of $atlas.querySelectorAll(".cell.active")) {
+            $a.classList.remove("active");
+          }
+          for (const $a of $atlas.querySelectorAll(".cell.current")) {
+            $a.classList.add("active");
+          }
+          placeLabels();
+        });
+      }
 
       function colorFetch(color, colors = 10) {
         const apiURL = new URL("https://api.color.pizza/v1/");
@@ -409,13 +617,14 @@ const cd = new ColorDescription('#b40404');
 
         $body.style.setProperty("--color", value);
         $body.style.setProperty("--color-contrast", cd.bestContrast);
+        renderMini(value);
 
         $result.innerHTML = `
             <div class="t">
               <h3>Description Paragraph</h3>
               <code>cd.description</code>
             </div>
-            <p>${cd.description}</p>
+            ${cd.description.map((t) => `<p>${t}</p>`).join("")}
             
             <div class="t">
             <h3>Description</h3>

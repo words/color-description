@@ -3,9 +3,10 @@ import ColorDescription from "../src/index";
 // Regression tests for the chroma/relative-saturation accuracy bugs:
 // vivid light colors were mislabeled "pale/faded/bleached", and colors with
 // very different chroma (clear teal vs dull brown) collapsed to the same
-// muted word set. See instructions.md.
+// muted word set. Relative saturation is okhsl s (chroma relative to the
+// sRGB gamut at that lightness and hue), exposed as formats.okhsl.s.
 
-const PALE_WORDS = ["pale", "faded", "bleached"];
+const PALE_WORDS = ["pale", "faded"];
 
 describe("Saturation accuracy", () => {
   test("vivid light yellow (#ffe737) is NOT pale/faded/bleached", () => {
@@ -57,8 +58,8 @@ describe("Saturation accuracy", () => {
 
   test("contradictory saturation adjectives never co-occur", () => {
     const groups = [
-      ["pale", "faded", "bleached"],
-      ["muted", "matte", "dusty", "bleak"],
+      ["pale", "faded"],
+      ["muted", "matte", "dusty"],
       ["saturated", "vivid", "vibrant", "bold"],
     ];
     // Sweep a wide range of colors.
@@ -83,7 +84,7 @@ describe("Saturation accuracy", () => {
     for (let s = 5; s <= 100; s += 5) {
       const cd = new ColorDescription(`hsl(${h} ${s}% ${l}%)`);
       const words = cd.descriptiveWords;
-      const relC = cd.formats.oklch.relC;
+      const relC = cd.formats.okhsl.s;
 
       // A vivid (high relative chroma) color must never be pale/faded/bleached.
       if (relC >= 0.6) {

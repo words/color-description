@@ -6,6 +6,7 @@ const HUE_NOUNS = new Set([
   "maroon",
   "orange",
   "brown",
+  "beige",
   "yellow",
   "olive",
   "lime",
@@ -20,6 +21,25 @@ const HUE_NOUNS = new Set([
   "lavender",
   "magenta",
   "pink",
+  // secondary and achromatic names
+  "black",
+  "grey",
+  "white",
+  "peach",
+  "tan",
+  "gold",
+  "mustard",
+  "salmon",
+  "mauve",
+  "mint",
+  "turquoise",
+  "aqua",
+  "periwinkle",
+  "violet",
+  "lilac",
+  "fuchsia",
+  "burgundy",
+  "plum",
 ]);
 
 describe("Systematic hue sweep", () => {
@@ -145,7 +165,10 @@ describe("Achromatic colors", () => {
     const cd = new ColorDescription("#808080");
     const nouns = cd.nouns;
     // Grey shouldn't claim to be "red" or "blue" etc.
-    const chromaticMatch = nouns.filter((n) => HUE_NOUNS.has(n));
+    const ACHROMATIC = new Set(["black", "grey", "white"]);
+    const chromaticMatch = nouns.filter(
+      (n) => HUE_NOUNS.has(n) && !ACHROMATIC.has(n),
+    );
     expect(chromaticMatch).toEqual([]);
   });
 });
@@ -313,5 +336,35 @@ describe("Multiple color formats accepted", () => {
     for (const c of contrasts) {
       expect(c).toBe(contrasts[0]);
     }
+  });
+});
+
+describe("First descriptive word matches the character of the shade", () => {
+  // The first adjective comes from the highest-priority character entry.
+  // These were judged by eye on the testbench grid.
+  const cases = [
+    ["#e0407a", "vivid"],
+    ["#3050f0", "vivid"],
+    ["#3a7ab8", "rich"],
+    ["#4a8ac0", "medium"],
+    ["#6f8fb0", "muted"],
+    ["#8a9ab0", "cool"],
+    ["#dcc6c8", "pale"],
+    ["#e8a0b8", "pastel"],
+    ["#f8c8d8", "pale"],
+    ["#48f8e0", "bright"],
+    ["#6ea6d6", "soft"],
+    ["#0a4a7a", "deep"],
+    ["#4a3a40", "dark"],
+    ["#1a1020", "very dark"],
+    ["#d8b858", "muted"],
+    ["#e0b830", "rich"],
+    ["#808080", "neutral"],
+    ["#c3c3c3", "light"],
+    ["#ffffff", "bright"],
+    ["#000000", "pure"],
+  ];
+  test.each(cases)("%s starts with %s", (hex, word) => {
+    expect(new ColorDescription(hex).descriptiveWords[0]).toBe(word);
   });
 });

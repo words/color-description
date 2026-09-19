@@ -11,41 +11,42 @@ Color-Description is a class that turns a technical color representation into a 
 ```js
 import ColorDescription from "color-description/dist/index.esm";
 
-console.log(ColorDescription);
+const cd = new ColorDescription("#0a4a7a");
 
-const cd = new ColorDescription("#ffffff");
+cd.nouns;
+// ["blue", "navy"]
 
-console.log(cd.getDescriptiveList());
-/**
- * pale, light, faded, delicate, glistening, bleached, neutral colorless, bright, briliant and high
- **/
+cd.descriptiveWords;
+// ["deep", "rich", "dark", "dim", "somber", "matte", "dusty", "ashy",
+//  "unsaturated", "cold", "cool", "blue", "blueish", "navy"]
 
-console.log(cd.meanings);
-console.log(cd.effects);
-console.log(cd.usage);
+cd.getDescriptiveList(false, 2);
+// "deep and rich"
 
-cd.color = "red";
+cd.color = "#e0b830";
 
-console.log(cd.getDescriptiveList());
-/**
- * saturated, strong, lush, ablaze, beaming, bold, brilliant, flamboyant, vibrant, vivid, loud, very saturated, warm, mellow, red and reddish
- **/
+cd.nouns;
+// ["yellow", "gold"]
 
-console.log(cd.meanings);
-/**
- * ["excitement", "energy", "passion", ...]
- **/
+cd.getDescriptiveList(false, 3);
+// "rich, golden and warm"
 
-console.log(cd.effects);
-/**
- * ["stimulate", "create urgency", "draw attention", ...]
- **/
+cd.meanings;
+// ["enthusiasm", "opportunity", ...]
 
-console.log(cd.usage);
-/**
- * ["caution", "food industry", "sports", ...]
- **/
+cd.effects;
+// ["stimulate", "relax", ...]
+
+cd.usage;
+// ["sale", "cheap", "budget", ...]
 ```
+
+**The order of the words matters.** Both `nouns` and `descriptiveWords` are sorted from the best fit to the loosest one:
+
+- `nouns[0]` is the name most people would give the color. `#0a4a7a` is "blue" first and "navy" second; a colour can also be "grey" first and "blue" second when the tint is faint.
+- `descriptiveWords[0]` is the single adjective that best describes the shade: `deep` for a dark saturated blue, `cool` for a faintly tinted grey, `rich` for a gold, `bright` for a turquoise at the gamut edge. The words after it are secondary: still true, but less specific.
+
+So `descriptiveWords[0] + " " + nouns.join(" ")` gives a short, sensible name ("deep blue navy", "cool grey blue", "rich yellow gold"), and `getDescriptiveList(false, n)` gives the n most fitting adjectives as a sentence fragment. Ask for `getDescriptiveList(true)` only when you want a random order.
 
 ## Color Meaning & Translation
 
@@ -60,27 +61,29 @@ Interpretation model used by the dataset:
 
 ## API
 
-### `ColorDescription`
+### `new ColorDescription(color, words?)`
 
-#### Constructor
+- `color` (string | object): any color culori can parse (hex, `rgb()`, `hsl()`, `oklch()`, named colors, ...)
+- `words` (object, optional): a word dataset in the shape of `src/en.js`; defaults to the English one
 
-```js
-const cd = new ColorDescription(color);
-```
+### Properties
 
-- `color` (string | object): A color representation (hex, rgb, hsl, or similar)
+- `color`: get or set the current color
+- `nouns`: color names, best fit first (`["blue", "navy"]`)
+- `descriptiveWords`: adjectives, best fit first (`["deep", "rich", "dark", ...]`)
+- `description`: a short paragraph about the color family
+- `meanings`: symbolic or emotional associations
+- `effects`: typical effects or signals the color can create
+- `usage`: contexts, industries, themes, or applications where the color fits
+- `temperatureWords`: the closest correlated color temperature, `{ value: 1800, descriptive: ["ultra warm"] }`
+- `bestContrast`: `"black"` or `"white"`, whichever has the higher WCAG contrast on this color
+- `formats`: the parsed color in `rgb`, `hsl`, `oklch`, `okhsl` and `cmyk`
 
-#### Methods
+### Methods
 
-- `getDescriptiveList()`: Returns an array of descriptive words for the color
-- `getColorFamily()`: Returns the color family/category (e.g., "red", "blue")
-
-#### Properties
-
-- `color`: Get or set the current color
-- `meanings`: Symbolic or emotional associations
-- `effects`: Typical effects or signals the color can create
-- `usage`: Contexts, industries, themes, or applications where the color fits
+- `getDescriptiveList(random?, limit?)`: the descriptive words joined into a phrase (`"deep, rich and dark"`). `limit` keeps the first n words, which are the best fitting ones; `random` shuffles them first
+- `percentages(model?)`: channel values of the color as fractions, for `"rgb"` (default), `"hsl"` or `"cmyk"`
+- `percentageWords(model?)`: those channels described in words (`["a good bit of", "a good bit of", "a little bit of"]`)
 
 ## Module Formats
 
@@ -107,9 +110,15 @@ npm run dev
 
 All color matching is performed in **OKLCH** color space, which provides perceptually uniform lightness, chroma, and hue — unlike HSL where identical saturation/lightness values can look dramatically different across hues.
 
-Hue name boundaries are empirically grounded using data from **~49,000 English-language color naming responses** collected via the [Many Languages, Many Colors](https://uwdata.github.io/color-naming-in-different-languages) project. Boundaries are placed at midpoints between adjacent survey-term centroids in OKLCH hue space, ensuring that each color is labeled with the name most English speakers would use.
+Color names are fitted to **~184,000 English-language responses** from the [Many Languages, Many Colors](https://uwdata.github.io/color-naming-in-different-languages) survey. For every point of a grid over the sRGB gamut in OKLCH, the names given to the nearest survey responses are counted; each entry in `src/en.js` covers the region where its name is the most common answer, or a close second. That is why a hue alone never names a color here: a dark muted yellow is olive, a pale red is pink, a muted mid-light orange is brown, a dark cyan is teal, and low-chroma colors are grey or black first.
 
-> Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). *Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models.* EuroVis 2019.
+The nouns are the names people actually used: red, orange, yellow, green, blue, purple, pink, brown, black, white and grey as the basic terms, then maroon, beige, peach, salmon, gold, olive, lime, mint, teal, turquoise, cyan, sky blue, navy, periwinkle, indigo, lavender, violet, magenta, plum and mauve where they are common enough to win or come second in the vote. Synonyms with the same region (burgundy, mustard, aqua, lilac, fuchsia) appear as descriptive words rather than separate nouns.
+
+The adjectives are ordered the same way. The character words in `src/en.js` (pure, very dark, deep, dark, warm and cool for faint tints, pale, pastel, light, bright, muted, soft, medium, rich, vivid) are listed by priority, and the first entry whose region contains the color supplies `descriptiveWords[0]`; every later match only adds secondary words. Greyishness is judged on absolute OKLCH chroma, but vividness is judged on okhsl saturation, the chroma relative to what sRGB can show at that lightness and hue: a turquoise at the gamut edge is "bright" although its absolute chroma is small, and a darkened yellow is "muted" or a "rich gold" rather than vivid. Each region was checked by eye on a sheet of swatches per hue.
+
+`node tools/testbench.mjs` renders the whole grid as an HTML page (`tools/testbench.html`) with the library's names next to the survey vote for each swatch, for checking by eye. `tools/survey-fit.mjs` and `tools/survey-finemap.mjs` rebuild `tools/survey-labels.json` from the raw survey file.
+
+> Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). _Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models._ EuroVis 2019.
 > [Project repository](https://github.com/uwdata/color-naming-in-different-languages)
 
 ## Data Sources

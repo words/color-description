@@ -5,6 +5,7 @@ const HUE_NOUNS = new Set([
   "maroon",
   "orange",
   "brown",
+  "beige",
   "yellow",
   "olive",
   "lime",
@@ -19,6 +20,25 @@ const HUE_NOUNS = new Set([
   "lavender",
   "magenta",
   "pink",
+  // secondary and achromatic names
+  "black",
+  "grey",
+  "white",
+  "peach",
+  "tan",
+  "gold",
+  "mustard",
+  "salmon",
+  "mauve",
+  "mint",
+  "turquoise",
+  "aqua",
+  "periwinkle",
+  "violet",
+  "lilac",
+  "fuchsia",
+  "burgundy",
+  "plum",
 ]);
 
 test("parses color corectly", () => {
