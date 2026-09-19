@@ -229,7 +229,7 @@ export default {
       criteria: {
         oklch: {
           h: null,
-          c: [0, 0.075],
+          c: [0, 0.045],
           l: [0, 0.32],
         },
       },
@@ -240,14 +240,14 @@ export default {
       meanings: ["power", "elegance", "formality", "mystery", "authority"],
       usage: ["luxury", "typography", "fashion", "technology", "backgrounds"],
     },
-    // Very dark but slightly more chromatic: black still wins the vote, the
-    // hue noun comes second.
+    // Very dark but slightly more chromatic: black still wins or ties the
+    // vote up to L 0.25; the hue noun comes second.
     {
       criteria: {
         oklch: {
           h: null,
-          c: [0.075, 0.1],
-          l: [0, 0.23],
+          c: [0.045, 0.1],
+          l: [0, 0.25],
         },
       },
       nouns: ["black"],
