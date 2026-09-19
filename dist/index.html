@@ -456,9 +456,7 @@ const cd = new ColorDescription('#b40404');
             const hex = formatHex(toRgb(color));
             miniCd.color = hex;
             const words = miniCd.descriptiveWords;
-            const adj = words.length
-              ? words[Math.floor(Math.random() * words.length)]
-              : "";
+            const adj = words.length ? words[0] : "";
             const here =
               current &&
               Math.abs(current.l - l) < 0.05 &&
@@ -481,9 +479,7 @@ const cd = new ColorDescription('#b40404');
           const hex = formatHex(toRgb({ mode: "oklch", l, c: 0, h: 0 }));
           miniCd.color = hex;
           const words = miniCd.descriptiveWords;
-          const adj = words.length
-            ? words[Math.floor(Math.random() * words.length)]
-            : "";
+          const adj = words.length ? words[0] : "";
           axis += `<div class="cell" data-setcolor="${hex}" title="${hex} oklch(${l} 0 0)" style="background:${hex};color:${textOn(hex)}"><i>${adj}</i> <b>${miniCd.nouns.join(" ")}</b></div>`;
         }
         document.querySelector("[data-atlas-n]").innerHTML = axis;
