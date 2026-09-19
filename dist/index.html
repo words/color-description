@@ -251,7 +251,8 @@
         float: right;
         margin: 0 0 2rem 3rem;
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: max-content max-content max-content;
+        width: max-content;
         align-items: start;
         gap: 0;
       }
@@ -298,7 +299,7 @@
       @media (max-width: 1400px), (orientation: portrait) {
         .atlas {
           float: none;
-          margin: 0 0 3rem;
+          margin: 0 0 3rem auto;
           max-width: 100%;
           overflow-x: auto;
         }
