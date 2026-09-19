@@ -435,7 +435,7 @@ const cd = new ColorDescription('#b40404');
         formatHex,
         converter,
         inGamut,
-      } from "https://cdn.skypack.dev/culori";
+      } from "https://cdn.skypack.dev/culori@4.0.2";
 
       //import ColorDescription from './index.esm.js';
       const cd = new ColorDescription.default("#b40404");
@@ -472,11 +472,14 @@ const cd = new ColorDescription('#b40404');
       }
       function cellHtml(hex, l, c, h, extra = "") {
         miniCd.color = hex;
-        const words = miniCd.descriptiveWords;
+        const nounList = miniCd.nouns;
+        const words = miniCd.descriptiveWords.filter(
+          (w) => !nounList.includes(w) && !w.endsWith("ish"),
+        );
         const adj = words.length
           ? words[Math.floor(Math.random() * words.length)]
           : "";
-        const nouns = miniCd.nouns.join(" ");
+        const nouns = nounList.join(" ");
         return `<div class="cell${extra}" data-setcolor="${hex}" title="${hex} oklch(${l} ${c} ${h})" style="background:${hex};color:${textOn(hex)}"><span class="big"><i>${adj}</i> <b>${nouns}</b></span></div>`;
       }
       function renderMiniGrid($el, hue, current) {
