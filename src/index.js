@@ -6,6 +6,7 @@ const converters = {
   rgb: converter("rgb"),
   hsl: converter("hsl"),
   oklch: converter("oklch"),
+  okhsl: converter("okhsl"),
 };
 
 const formatComponents = {
@@ -36,6 +37,7 @@ class ColorDescription {
     this.formats.rgb = rgb;
     this.formats.hsl = converters["hsl"](this.currentColor);
     this.formats.oklch = converters["oklch"](this.currentColor);
+    this.formats.okhsl = converters["okhsl"](this.currentColor);
     this.formats.cmyk = rgbToCMYK(rgb);
   }
 

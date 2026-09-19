@@ -9,220 +9,58 @@
 export default {
   descriptions: [
     // ===========================
-    // Character words (hue-agnostic, based on OKLCH lightness & chroma)
-    // Survey-informed L/C ranges from compound terms (dark X, pale X, etc.)
+    // Character words (hue-agnostic, from OKLCH lightness and chroma plus
+    // okhsl saturation, which is chroma relative to what sRGB can show at
+    // that lightness and hue). Entries are in priority order: the first
+    // entry that matches gives the first adjective, later matches add
+    // secondary words. Every region was judged by eye on the testbench.
     // ===========================
+    // -- neutral axis (chroma below 0.012)
     {
+      // white
       criteria: {
         oklch: {
           h: null,
-          c: [0.15, 0.5],
-          l: [0.45, 0.75],
+          c: [0, 0.012],
+          l: [0.97, 1.001],
         },
       },
-      descriptive: [
-        "saturated",
-        "strong",
-        "lush",
-        "ablaze",
-        "beaming",
-        "bold",
-        "brilliant",
-        "flamboyant",
-        "vibrant",
-        "vivid",
-        "loud",
-      ],
-      meanings: ["energy", "intensity", "excitement", "attention"],
-      usage: ["highlights", "calls to action", "accents"],
+      descriptive: ["bright", "pure", "clean", "colorless"],
     },
     {
+      // light greys
       criteria: {
         oklch: {
           h: null,
-          c: null,
-          l: [0, 0.18],
+          c: [0, 0.012],
+          l: [0.65, 0.97],
         },
       },
-      descriptive: ["dark", "ashy", "somber", "bleak", "muddy", "sooty"],
-      meanings: ["mystery", "seriousness", "depth", "gloom"],
-      usage: ["backgrounds", "contrast", "moody designs"],
+      descriptive: ["light", "pale", "neutral"],
     },
     {
-      // Survey: "dark X" terms span L 0.34–0.66 (p10–p90)
+      // mid greys
       criteria: {
         oklch: {
           h: null,
-          c: null,
-          l: [0, 0.5],
+          c: [0, 0.012],
+          l: [0.35, 0.65],
         },
       },
-      descriptive: ["dark", "dim", "gloomy", "dull"],
-      meanings: ["mystery", "seriousness", "depth", "gloom"],
-      usage: ["backgrounds", "contrast", "moody designs"],
+      descriptive: ["neutral", "medium", "colorless"],
     },
     {
+      // dark greys
       criteria: {
         oklch: {
           h: null,
-          c: [0.02, 0.12],
-          l: [0.25, 0.65],
+          c: [0, 0.012],
+          l: [0.22, 0.35],
         },
       },
-      descriptive: ["bleak", "muted", "matte", "dusty"],
-      meanings: ["subtlety", "calm", "understatement"],
-      usage: ["backgrounds", "supporting elements"],
+      descriptive: ["dark", "neutral", "shady"],
     },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0.02, 0.5],
-          l: [0.75, 1],
-        },
-      },
-      descriptive: ["tinted"],
-    },
-    {
-      // Survey: "pastel X" terms span L 0.70–0.85, C 0.08–0.13
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0.04, 0.13],
-          l: [0.7, 0.96],
-        },
-      },
-      descriptive: ["pastel"],
-      meanings: ["softness", "peace", "gentleness", "youth"],
-      usage: ["backgrounds", "spring themes", "baby products"],
-    },
-    {
-      // Survey: "pale X" terms span L 0.68–0.92, C 0.07–0.12
-      criteria: {
-        oklch: {
-          h: null,
-          c: null,
-          l: [0.8, 1.001],
-        },
-      },
-      descriptive: [
-        "pale",
-        "light",
-        "faded",
-        "delicate",
-        "glistening",
-        "bleached",
-      ],
-      meanings: ["delicacy", "fragility", "cleanliness", "airiness"],
-      usage: ["backgrounds", "minimalism", "open space"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0.08, 0.5],
-          l: [0.75, 0.92],
-        },
-      },
-      descriptive: [
-        "fresh",
-        "sparkling",
-        "glittering",
-        "glowing",
-        "jazzy",
-        "opalescent",
-      ],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0, 0.02],
-          l: [0.92, 1],
-        },
-      },
-      descriptive: ["neutral"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0.02, 0.5],
-          l: [0.92, 1],
-        },
-      },
-      descriptive: ["luminous"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: null,
-          l: [0.999, 1.001],
-        },
-      },
-      descriptive: ["colorless", "bright", "brilliant", "high"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: null,
-          l: [0, 0.001],
-        },
-      },
-      descriptive: ["colorless", "low", "dark"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0, 0.01],
-          l: null,
-        },
-      },
-      descriptive: ["colorless", "neutral"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: null,
-          l: [0.09, 0.5],
-        },
-      },
-      descriptive: ["shady"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0, 0.08],
-          l: [0, 0.85],
-        },
-      },
-      descriptive: ["ashy", "dusty"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: null,
-          l: [0.05, 0.18],
-        },
-      },
-      descriptive: ["almost black"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: null,
-          l: [0.0, 0.1],
-        },
-      },
-      descriptive: ["black"],
-    },
+    // -- black nouns (the near-black rule in the matcher skips hue entries)
     // Near black. In the survey "black" is the most common answer up to about
     // L 0.32 at low chroma. The matcher skips hue entries in the darkest part.
     {
@@ -257,232 +95,329 @@ export default {
       meanings: ["power", "elegance", "formality", "mystery", "authority"],
       usage: ["luxury", "typography", "fashion", "technology", "backgrounds"],
     },
+    // -- yellows and golds: dark yellow reads as mustard, not as vivid
+    {
+      criteria: {
+        oklch: {
+          h: [80, 115],
+          c: [0.06, 0.16],
+          l: [0.85, 1.001],
+        },
+      },
+      descriptive: ["light", "pastel", "delicate"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [70, 115],
+          c: [0.085, 0.5],
+          l: [0.55, 0.85],
+        },
+        okhsl: {
+          s: [0.4, 0.78],
+        },
+      },
+      descriptive: ["muted", "mellow", "dull"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [70, 115],
+          c: [0.085, 0.5],
+          l: [0.55, 0.85],
+        },
+        okhsl: {
+          s: [0.78, 1.01],
+        },
+      },
+      descriptive: ["rich", "golden", "warm"],
+    },
+    // -- dark
+    {
+      // black
+      criteria: {
+        oklch: {
+          h: null,
+          c: null,
+          l: [0, 0.1],
+        },
+      },
+      descriptive: ["pure", "pitch", "deep"],
+    },
+    {
+      // off-black
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0, 0.025],
+          l: [0.1, 0.28],
+        },
+      },
+      descriptive: ["deep", "inky", "sooty"],
+    },
+    {
+      // dark and colorful: deep red, deep blue
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.25, 0.42],
+        },
+        okhsl: {
+          s: [0.6, 1.01],
+        },
+      },
+      descriptive: ["deep", "rich", "dark"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.15, 0.25],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["deep", "rich", "inky"],
+    },
     {
       criteria: {
         oklch: {
           h: null,
           c: null,
-          l: [0, 0.2],
+          l: [0, 0.25],
         },
       },
-      descriptive: ["very dark"],
+      descriptive: ["very dark", "inky", "gloomy"],
     },
     {
       criteria: {
         oklch: {
           h: null,
-          c: [0, 0.06],
-          l: [0, 0.38],
+          c: null,
+          l: [0.25, 0.4],
         },
       },
-      descriptive: ["dark"],
+      descriptive: ["dark", "dim", "somber"],
     },
+    // -- low chroma
     {
-      // Survey: "deep X" terms at L 0.39–0.42, C 0.09–0.21
+      // dusty pink, dusty blue
       criteria: {
         oklch: {
           h: null,
-          c: [0.02, 0.1],
-          l: [0, 0.55],
+          c: [0.012, 0.05],
+          l: [0.4, 0.78],
         },
       },
-      descriptive: ["dark", "inky", "dim", "gloomy"],
+      descriptive: ["dusty", "greyish", "muted"],
     },
-    // Grey. True neutrals at any lightness; and, per the survey, faintly
-    // tinted cool colors (yellow-green through purple) up to C 0.045, while
-    // warm tints (pink, red, orange) are called pink, brown or beige already
-    // at C 0.03, except in the mid-light band where grey still ties.
+    {
+      // pale pink, pale blue
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.012, 0.06],
+          l: [0.78, 1.001],
+        },
+      },
+      descriptive: ["pale", "delicate", "faded"],
+    },
+    // -- very light
     {
       criteria: {
         oklch: {
           h: null,
-          c: [0, 0.012],
-          l: [0.15, 0.98],
+          c: [0.1, 0.5],
+          l: [0.9, 1.001],
+        },
+        okhsl: {
+          s: [0.75, 1.01],
         },
       },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
+      descriptive: ["bright", "light", "luminous"],
     },
     {
       criteria: {
         oklch: {
-          h: [80, 345],
-          c: [0.012, 0.045],
-          l: [0.33, 0.92],
+          h: null,
+          c: [0.06, 0.5],
+          l: [0.9, 1.001],
         },
       },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
+      descriptive: ["light", "pastel", "delicate"],
+    },
+    // -- light
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.11, 0.5],
+          l: [0.75, 0.9],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["bright", "vivid", "brilliant", "glowing"],
     },
     {
       criteria: {
         oklch: {
-          h: [345, 360],
-          c: [0.012, 0.025],
-          l: [0.33, 0.92],
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.75, 0.9],
+        },
+        okhsl: {
+          s: [0.62, 1.01],
         },
       },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
+      descriptive: ["light", "soft", "fresh"],
     },
     {
       criteria: {
         oklch: {
-          h: [0, 80],
-          c: [0.012, 0.025],
-          l: [0.33, 0.92],
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.75, 0.9],
+        },
+        okhsl: {
+          s: [0, 0.62],
         },
       },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
+      descriptive: ["pastel", "soft", "light"],
+    },
+    // -- mid
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.65, 0.75],
+        },
+        okhsl: {
+          s: [0.7, 1.01],
+        },
+      },
+      descriptive: ["bright", "vivid", "brilliant", "glowing"],
     },
     {
       criteria: {
         oklch: {
-          h: [345, 360],
-          c: [0.025, 0.045],
-          l: [0.45, 0.92],
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.4, 0.65],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
         },
       },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
+      descriptive: ["vivid", "vibrant", "strong", "bold", "saturated"],
     },
     {
       criteria: {
         oklch: {
-          h: [0, 80],
-          c: [0.025, 0.045],
-          l: [0.45, 0.92],
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.4, 0.75],
+        },
+        okhsl: {
+          s: [0.62, 0.8],
         },
       },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
+      descriptive: ["rich", "full", "medium"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.62, 0.75],
+        },
+        okhsl: {
+          s: [0.45, 0.62],
+        },
+      },
+      descriptive: ["soft", "light", "fresh"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.4, 0.62],
+        },
+        okhsl: {
+          s: [0.45, 0.62],
+        },
+      },
+      descriptive: ["medium", "moderate"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.4, 0.75],
+        },
+        okhsl: {
+          s: [0, 0.45],
+        },
+      },
+      descriptive: ["muted", "dull", "matte", "soft"],
+    },
+    // -- secondary words
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.2, 0.5],
+          l: [0.75, 0.95],
+        },
+      },
+      descriptive: ["neon", "fluorescent"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.02, 0.5],
+          l: [0.92, 1],
+        },
+      },
+      descriptive: ["luminous"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.012, 0.1],
+          l: [0, 0.5],
+        },
+      },
+      descriptive: ["dim", "gloomy", "dull"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.012, 0.12],
+          l: [0.25, 0.65],
+        },
+      },
+      descriptive: ["matte", "dusty", "ashy"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.15, 0.5],
+          l: [0.55, 0.85],
+        },
+      },
+      descriptive: ["fresh", "sparkling"],
     },
     {
       criteria: {
@@ -554,45 +489,192 @@ export default {
       },
       descriptive: ["highly saturated"],
     },
-
-    // Survey-informed character words: deep, bright, neon
     {
-      // Survey: "deep X" at L 0.39–0.42, C 0.09–0.21
       criteria: {
         oklch: {
           h: null,
-          c: [0.08, 0.5],
-          l: [0.25, 0.45],
+          c: [0, 0.012],
+          l: [0.15, 0.98],
         },
       },
-      descriptive: ["deep"],
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
     },
     {
-      // Survey: "bright X" at L 0.58–0.82, C 0.17–0.24
       criteria: {
         oklch: {
-          h: null,
-          c: [0.15, 0.5],
-          l: [0.55, 0.85],
+          h: [80, 345],
+          c: [0.012, 0.045],
+          l: [0.33, 0.92],
         },
       },
-      descriptive: ["bright"],
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
     },
     {
-      // Survey: "neon X" at L 0.60–0.93, C 0.14–0.26
       criteria: {
         oklch: {
-          h: null,
-          c: [0.14, 0.5],
-          l: [0.7, 0.95],
+          h: [345, 360],
+          c: [0.012, 0.025],
+          l: [0.33, 0.92],
         },
       },
-      descriptive: ["neon"],
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
     },
-
-    // ===========================
-    // Warm / Cool (OKLCH hue-based)
-    // ===========================
+    {
+      criteria: {
+        oklch: {
+          h: [0, 80],
+          c: [0.012, 0.025],
+          l: [0.33, 0.92],
+        },
+      },
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [345, 360],
+          c: [0.025, 0.045],
+          l: [0.45, 0.92],
+        },
+      },
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 80],
+          c: [0.025, 0.045],
+          l: [0.45, 0.92],
+        },
+      },
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
+    },
     {
       criteria: {
         oklch: {
@@ -714,7 +796,6 @@ export default {
           l: [0.45, 0.85],
         },
       },
-      descriptive: ["grey"],
       nouns: ["grey"],
       description: [
         "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",

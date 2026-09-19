@@ -111,6 +111,8 @@ Color names are fitted to **~184,000 English-language responses** from the [Many
 
 The nouns are the names people actually used: red, orange, yellow, green, blue, purple, pink, brown, black, white and grey as the basic terms, then maroon, beige, tan, peach, salmon, gold, olive, lime, mint, teal, turquoise, cyan, sky blue, navy, periwinkle, indigo, lavender, violet, magenta, plum and mauve where they are common enough to win or come second in the vote. Synonyms with the same region (burgundy, mustard, aqua, lilac, fuchsia) appear as descriptive words rather than separate nouns.
 
+Descriptive words are returned in priority order: the first one is the single word that best describes the shade (pale, pastel, light, bright, dusty, muted, soft, medium, rich, vivid, deep, dark, very dark), judged by eye on the same grid, and the rest are secondary. Vividness is measured relative to the sRGB gamut at that lightness and hue (okhsl saturation), so a turquoise at the gamut edge is "bright" even though its absolute chroma is small, while a darkened yellow is "muted" rather than vivid.
+
 `node tools/testbench.mjs` renders the whole grid as an HTML page (`tools/testbench.html`) with the library's names next to the survey vote for each swatch, for checking by eye. `tools/survey-fit.mjs` and `tools/survey-finemap.mjs` rebuild `tools/survey-labels.json` from the raw survey file.
 
 > Kim, Y., Thayer, K., Gorsky, G. S., & Heer, J. (2019). _Color Names Across Languages: Salient Colors and Term Translation in Multilingual Color Naming Models._ EuroVis 2019.
