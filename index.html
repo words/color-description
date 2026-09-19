@@ -51,7 +51,6 @@
         display: inline-block;
         width: 0.75em;
         aspect-ratio: 1;
-        border-radius: 50%;
         background: var(--color);
         margin-right: 0.25em;
       }
@@ -134,19 +133,17 @@
         top: 0;
         background: white;
         border: 2px solid #202124;
-        border-radius: 15px;
         transition: 300ms transform cubic-bezier(0.7, 0.3, 0, 1);
       }
       button::after {
         content: "";
         position: absolute;
         height: 100%;
-        left: 2px;
-        right: 2px;
+        left: 1px;
+        right: 1px;
         top: 0.2em;
         background: var(--color, #202124);
         border: 2px solid #202124;
-        border-radius: 18px;
         z-index: 1;
       }
 
@@ -166,7 +163,6 @@
         display: flex;
         padding: 4rem 2rem;
         margin-top: -1.5rem;
-        border-radius: 15px;
         border: 2px solid #202124;
       }
       .currentColor p {
@@ -228,7 +224,6 @@
         padding: 1.5rem 2rem;
         line-height: 1.5;
         z-index: -1;
-        border-radius: 15px;
       }
       .example pre {
         font-size: 1.2rem;
@@ -250,12 +245,92 @@
         font-size: 0.7rem;
         display: inline-block;
         margin-bottom: 1rem;
-        border-radius: 15px;
+      }
+
+      .mini {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 5;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 0.6rem;
+        padding: 0.6rem;
+        background: #fff;
+        border: 2px solid #202124;
+        font-family: "Inter", sans-serif;
+        font-size: 0.6rem;
+        line-height: 1.15;
+      }
+      .mini h4 {
+        margin: 0 0 0.35rem;
+        font:
+          600 0.65rem/1 "Inter",
+          sans-serif;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #202124;
+      }
+      .mini h4 span {
+        font-weight: 300;
+        margin-left: 0.4em;
+      }
+      .mini .cells {
+        display: grid;
+        grid-template-columns: repeat(5, 4.2rem);
+        grid-auto-rows: 2.3rem;
+        gap: 2px;
+      }
+      .mini .cell {
+        padding: 0.2rem 0.3rem;
+        overflow: hidden;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+      .mini .cell i {
+        display: block;
+        font-style: normal;
+        opacity: 0.85;
+      }
+      .mini .cell b {
+        display: block;
+        font-weight: 600;
+      }
+      .mini .cell.oog {
+        background: repeating-linear-gradient(
+          45deg,
+          transparent 0 4px,
+          #ddd 4px 5px
+        );
+        cursor: default;
+      }
+      .mini .cell.here {
+        outline: 2px solid #202124;
+        outline-offset: -2px;
+      }
+      @media (max-width: 1250px), (orientation: portrait) {
+        .mini {
+          display: none;
+        }
       }
     </style>
   </head>
 
   <body>
+    <aside
+      class="mini"
+      data-mini
+      aria-label="Nearby colors and their complements"
+    >
+      <div>
+        <h4>This hue <span data-mini-hue></span></h4>
+        <div class="cells" data-mini-a></div>
+      </div>
+      <div>
+        <h4>Complement <span data-mini-hue2></span></h4>
+        <div class="cells" data-mini-b></div>
+      </div>
+    </aside>
     <h1>Color-Description</h1>
     <p class="intro">
       Color-Description turns a technical color representation into a human
@@ -342,7 +417,13 @@ const cd = new ColorDescription('#b40404');
 
     <script src="./index.iife.js"></script>
     <script type="module">
-      import { rgb, random, formatHex } from "https://cdn.skypack.dev/culori";
+      import {
+        rgb,
+        random,
+        formatHex,
+        converter,
+        inGamut,
+      } from "https://cdn.skypack.dev/culori";
 
       //import ColorDescription from './index.esm.js';
       const cd = new ColorDescription.default("#b40404");
@@ -355,6 +436,58 @@ const cd = new ColorDescription('#b40404');
       const $neighbors = document.querySelector("[data-neighbors]");
 
       let timer;
+
+      // --- mini testbench: this hue and its complement, swatches named by the library
+      const toOklch = converter("oklch");
+      const toRgb = converter("rgb");
+      const inSrgb = inGamut("rgb");
+      const MINI_L = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2];
+      const MINI_C = [0.03, 0.09, 0.15, 0.21, 0.27];
+      const miniCd = new ColorDescription.default("#000");
+      function textOn(hex) {
+        const { r, g, b } = toRgb(hex);
+        const lin = (v) =>
+          v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+        return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b) > 0.3
+          ? "#202124"
+          : "#fff";
+      }
+      function renderMiniGrid($el, hue, current) {
+        let html = "";
+        for (const l of MINI_L) {
+          for (const c of MINI_C) {
+            const color = { mode: "oklch", l, c, h: hue };
+            if (!inSrgb(color)) {
+              html += `<div class="cell oog"></div>`;
+              continue;
+            }
+            const hex = formatHex(toRgb(color));
+            miniCd.color = hex;
+            const words = miniCd.descriptiveWords;
+            const adj = words.length
+              ? words[Math.floor(Math.random() * words.length)]
+              : "";
+            const here =
+              current &&
+              Math.abs(current.l - l) < 0.05 &&
+              Math.abs(current.c - c) < 0.03
+                ? " here"
+                : "";
+            html += `<div class="cell${here}" data-setcolor="${hex}" title="${hex} oklch(${l} ${c} ${Math.round(hue)})" style="background:${hex};color:${textOn(hex)}"><i>${adj}</i><b>${miniCd.nouns.join(" ")}</b></div>`;
+          }
+        }
+        $el.innerHTML = html;
+      }
+      function renderMini(value) {
+        const o = toOklch(value);
+        const hue = Math.round(o.h ?? 0);
+        const comp = (hue + 180) % 360;
+        document.querySelector("[data-mini-hue]").textContent = `${hue}\u00b0`;
+        document.querySelector("[data-mini-hue2]").textContent =
+          `${comp}\u00b0`;
+        renderMiniGrid(document.querySelector("[data-mini-a]"), hue, o);
+        renderMiniGrid(document.querySelector("[data-mini-b]"), comp, null);
+      }
 
       function colorFetch(color, colors = 10) {
         const apiURL = new URL("https://api.color.pizza/v1/");
@@ -409,6 +542,7 @@ const cd = new ColorDescription('#b40404');
 
         $body.style.setProperty("--color", value);
         $body.style.setProperty("--color-contrast", cd.bestContrast);
+        renderMini(value);
 
         $result.innerHTML = `
             <div class="t">
