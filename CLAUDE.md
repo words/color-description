@@ -47,4 +47,6 @@ Tests live in `tests/`. Jest with babel-jest transform, node environment. Tests 
 
 ## Key Dependency
 
-**culori** — handles all color parsing and conversion. Colors can be passed in any format culori supports (hex, rgb(), hsl(), named colors, etc.).
+**culori** — handles all color parsing and conversion, imported tree-shaken from `culori/fn`: `src/index.js` registers the modes it needs with `useMode` (rgb, lrgb, hsl, hsv, hwb, lab, lch, lab65, lch65, oklab, oklch, okhsl, okhsv, p3, xyz65, xyz50, rec2020, a98, prophoto), so every CSS color syntax parses while the bundle stays around 75 KB. Add a mode there before using a new `criteria` model or expecting a new syntax to parse. The demo pins the same culori version from Skypack; keep the two in step when upgrading.
+
+**Word sets in `src/en.js`** — the prose per color name (description, meanings, effects, usage) lives once in the `words` constant at the top of the file and each noun entry spreads it (`...words.pink`). Edit the text there, not in the entries.

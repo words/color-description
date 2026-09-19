@@ -1,6 +1,54 @@
 import { rgb2temperature, isInRange, randomizeArr, rgbToCMYK } from "./utils";
-import { wcagContrast, parse, converter } from "culori";
+import {
+  useMode,
+  modeRgb,
+  modeLrgb,
+  modeHsl,
+  modeHsv,
+  modeHwb,
+  modeLab,
+  modeLch,
+  modeLab65,
+  modeLch65,
+  modeOklab,
+  modeOklch,
+  modeOkhsl,
+  modeOkhsv,
+  modeP3,
+  modeXyz65,
+  modeXyz50,
+  modeRec2020,
+  modeA98,
+  modeProphoto,
+  parse,
+  converter,
+  wcagContrast,
+} from "culori/fn";
 import wordsEN from "./en";
+
+// Tree-shaken culori: only the color spaces that the CSS color syntax and the
+// matcher need are registered, which keeps the bundle small.
+[
+  modeRgb,
+  modeLrgb,
+  modeHsl,
+  modeHsv,
+  modeHwb,
+  modeLab,
+  modeLch,
+  modeLab65,
+  modeLch65,
+  modeOklab,
+  modeOklch,
+  modeOkhsl,
+  modeOkhsv,
+  modeP3,
+  modeXyz65,
+  modeXyz50,
+  modeRec2020,
+  modeA98,
+  modeProphoto,
+].forEach(useMode);
 
 const converters = {
   rgb: converter("rgb"),
@@ -38,6 +86,11 @@ class ColorDescription {
     this.formats.hsl = converters["hsl"](this.currentColor);
     this.formats.oklch = converters["oklch"](this.currentColor);
     this.formats.okhsl = converters["okhsl"](this.currentColor);
+    // okhsl saturation is relative to the sRGB gamut; colors from wider
+    // gamuts come out above 1, which would fall outside every criterion.
+    if (this.formats.okhsl && this.formats.okhsl.s > 1) {
+      this.formats.okhsl.s = 1;
+    }
     this.formats.cmyk = rgbToCMYK(rgb);
   }
 
