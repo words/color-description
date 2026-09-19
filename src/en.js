@@ -425,7 +425,7 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.025, 0.045],
-          l: [0.45, 0.78],
+          l: [0.45, 0.92],
         },
       },
       descriptive: ["grey"],
@@ -457,39 +457,7 @@ export default {
         oklch: {
           h: [0, 80],
           c: [0.025, 0.045],
-          l: [0.55, 0.78],
-        },
-      },
-      descriptive: ["grey"],
-      nouns: ["grey"],
-      description: [
-        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
-      ],
-      meanings: [
-        "neutrality",
-        "balance",
-        "calm",
-        "restraint",
-        "practicality",
-        "stability",
-        "professionalism",
-        "sophistication",
-      ],
-      usage: [
-        "backgrounds",
-        "typography",
-        "minimal design",
-        "interfaces",
-        "product design",
-        "architecture",
-      ],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: [0, 15],
-          c: [0.025, 0.045],
-          l: [0.45, 0.55],
+          l: [0.45, 0.92],
         },
       },
       descriptive: ["grey"],
@@ -736,6 +704,40 @@ export default {
     },
 
     // ===========================
+    // Greyish blues and blue-violets (hue 250–300) are grey as well up to C 0.07.
+
+    {
+      criteria: {
+        oklch: {
+          h: [250, 300],
+          c: [0.045, 0.07],
+          l: [0.45, 0.85],
+        },
+      },
+      descriptive: ["grey"],
+      nouns: ["grey"],
+      description: [
+        "Grey is a quiet, neutral color that often reads as balanced, practical, and composed. It can feel like overcast skies, polished stone, soft shadows, or pencil graphite—present without demanding attention. In design, grey is a reliable foundation: it supports bright accents, creates contrast without harshness, and fits both minimal and classic palettes. Depending on context, it can suggest calm and sophistication, or distance and restraint. Imagine grey as a gentle haze that smooths edges and lets other colors speak.",
+      ],
+      meanings: [
+        "neutrality",
+        "balance",
+        "calm",
+        "restraint",
+        "practicality",
+        "stability",
+        "professionalism",
+        "sophistication",
+      ],
+      usage: [
+        "backgrounds",
+        "typography",
+        "minimal design",
+        "interfaces",
+        "product design",
+        "architecture",
+      ],
+    },
     // Hue names — fitted to the survey data (Kim et al. 2019)
     // Hue boundaries: midpoints between term centroids. Lightness and chroma
     // limits: the region where the term is the most common answer among the
@@ -1644,13 +1646,44 @@ export default {
         "Halloween",
       ],
     },
+    // Amber at hue 76–83 is yellow as well as orange.
+    {
+      criteria: {
+        oklch: {
+          h: [76, 83],
+          c: [0.12, 0.5],
+          l: [0.76, 0.99],
+        },
+      },
+      descriptive: ["yellow"],
+      nouns: ["yellow"],
+      description: [
+        "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
+      ],
+      meanings: [
+        "enthusiasm",
+        "opportunity",
+        "spontaneity",
+        "happiness",
+        "positivity",
+      ],
+      effects: [
+        "stimulate",
+        "relax",
+        "awake awareness",
+        "energize",
+        "affect mood",
+        "convey competence",
+      ],
+      usage: ["sale", "cheap", "budget", "construction"],
+    },
     // Olive — muted yellow-greens from dark to mid-light. Placed before brown
     // and green so it leads where it applies (olive brown, olive green).
     {
       criteria: {
         oklch: {
           h: [88, 125],
-          c: [0.02, 0.16],
+          c: [0.045, 0.16],
           l: [0.28, 0.72],
         },
       },
@@ -1679,8 +1712,37 @@ export default {
       criteria: {
         oklch: {
           h: [125, 135],
-          c: [0.04, 0.15],
+          c: [0.045, 0.15],
           l: [0.4, 0.7],
+        },
+      },
+      descriptive: ["olive"],
+      nouns: ["olive"],
+      description: [
+        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
+      ],
+      meanings: [
+        "nature",
+        "earthiness",
+        "peace",
+        "resilience",
+        "tradition",
+        "humility",
+      ],
+      usage: [
+        "military",
+        "outdoor brands",
+        "organic products",
+        "nature themes",
+        "fashion",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [105, 125],
+          c: [0.08, 0.16],
+          l: [0.72, 0.85],
         },
       },
       descriptive: ["olive"],
@@ -1746,8 +1808,82 @@ export default {
       criteria: {
         oklch: {
           h: [25, 88],
-          c: [0.02, 0.1],
+          c: [0.045, 0.1],
           l: [0.15, 0.68],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [25, 45],
+          c: [0.02, 0.045],
+          l: [0.15, 0.45],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [45, 75],
+          c: [0.02, 0.045],
+          l: [0.15, 0.52],
         },
       },
       descriptive: ["brown"],
@@ -1783,7 +1919,7 @@ export default {
       criteria: {
         oklch: {
           h: [88, 105],
-          c: [0.02, 0.1],
+          c: [0.045, 0.1],
           l: [0.15, 0.68],
         },
       },
@@ -1819,8 +1955,45 @@ export default {
     {
       criteria: {
         oklch: {
+          h: [75, 105],
+          c: [0.02, 0.045],
+          l: [0.15, 0.45],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
           h: [15, 25],
-          c: [0.02, 0.075],
+          c: [0.045, 0.075],
           l: [0.45, 0.55],
         },
       },
@@ -1858,8 +2031,46 @@ export default {
       criteria: {
         oklch: {
           h: [15, 25],
-          c: [0.02, 0.095],
+          c: [0.045, 0.095],
           l: [0.55, 0.66],
+        },
+      },
+      descriptive: ["brown"],
+      nouns: ["brown"],
+      description: [
+        "Brown is earthy and grounded, often associated with wood, soil, leather, and natural materials. It tends to feel steady and dependable, bringing warmth without shouting for attention. In design, brown can signal craft, tradition, and comfort—useful for organic, artisanal, or heritage aesthetics. Lighter browns can feel cozy and approachable, while deeper browns can feel rich and classic. Picture brown as a warm, solid surface you can lean on.",
+      ],
+      meanings: [
+        "strength",
+        "reliability",
+        "resilience",
+        "loneliness",
+        "sadness",
+        "isolation",
+        "warmth",
+        "comfort",
+        "security",
+      ],
+      usage: [
+        "agriculture",
+        "legal",
+        "food",
+        "tobacco",
+        "alcohol",
+        "coffee",
+        "chocolate",
+        "craft and artisan",
+        "organic products",
+        "vintage and retro",
+      ],
+    },
+    // Muted mid-light oranges and ochres carry brown as a second name.
+    {
+      criteria: {
+        oklch: {
+          h: [45, 90],
+          c: [0.08, 0.135],
+          l: [0.65, 0.74],
         },
       },
       descriptive: ["brown"],
@@ -2148,9 +2359,59 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [35, 115],
-          c: [0.02, 0.1],
+          h: [35, 100],
+          c: [0.045, 0.1],
           l: [0.68, 0.99],
+        },
+      },
+      descriptive: ["beige"],
+      nouns: ["beige"],
+      description: [
+        "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
+      ],
+      meanings: ["warmth", "elegance", "neutrality", "calm"],
+      usage: [
+        "backgrounds",
+        "interiors",
+        "fashion",
+        "neutral accents",
+        "cosmetics",
+        "luxury packaging",
+        "spa and wellness",
+        "stationery",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [100, 115],
+          c: [0.045, 0.095],
+          l: [0.68, 0.99],
+        },
+      },
+      descriptive: ["beige"],
+      nouns: ["beige"],
+      description: [
+        "Beige is a light and versatile neutral color that subtly blends soft tones of brown and white. This hue is positioned toward the lighter end of the brown spectrum on the color wheel. It resembles a pale cream rather than spanning to darker hues like taupe, and offers a warm, understated elegance.",
+      ],
+      meanings: ["warmth", "elegance", "neutrality", "calm"],
+      usage: [
+        "backgrounds",
+        "interiors",
+        "fashion",
+        "neutral accents",
+        "cosmetics",
+        "luxury packaging",
+        "spa and wellness",
+        "stationery",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [35, 115],
+          c: [0.02, 0.045],
+          l: [0.78, 0.99],
         },
       },
       descriptive: ["beige"],
@@ -2232,6 +2493,36 @@ export default {
       ],
       usage: ["sale", "cheap", "budget", "construction"],
     },
+    {
+      criteria: {
+        oklch: {
+          h: [95, 120],
+          c: [0.08, 0.1],
+          l: [0.74, 0.88],
+        },
+      },
+      descriptive: ["yellow"],
+      nouns: ["yellow"],
+      description: [
+        "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
+      ],
+      meanings: [
+        "enthusiasm",
+        "opportunity",
+        "spontaneity",
+        "happiness",
+        "positivity",
+      ],
+      effects: [
+        "stimulate",
+        "relax",
+        "awake awareness",
+        "energize",
+        "affect mood",
+        "convey competence",
+      ],
+      usage: ["sale", "cheap", "budget", "construction"],
+    },
     // Lime — light and vivid yellow-greens only.
     {
       criteria: {
@@ -2286,6 +2577,56 @@ export default {
           h: [113, 178],
           c: [0.02, 0.09],
           l: [0.78, 0.99],
+        },
+      },
+      descriptive: ["green", "greenish"],
+      nouns: ["green"],
+      description: [
+        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
+      ],
+      meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+      effects: ["relax", "balance", "revitalize", "encourage"],
+      usage: [
+        "sustainability",
+        "organic and natural",
+        "finance",
+        "pharmacy",
+        "gardening",
+        "eco",
+      ],
+    },
+    // Faint light yellow-greens (hue 105–113) are grey green.
+    {
+      criteria: {
+        oklch: {
+          h: [105, 113],
+          c: [0.02, 0.045],
+          l: [0.66, 0.92],
+        },
+      },
+      descriptive: ["green", "greenish"],
+      nouns: ["green"],
+      description: [
+        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
+      ],
+      meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+      effects: ["relax", "balance", "revitalize", "encourage"],
+      usage: [
+        "sustainability",
+        "organic and natural",
+        "finance",
+        "pharmacy",
+        "gardening",
+        "eco",
+      ],
+    },
+    // Saturated olive-yellows (hue 105–113) are green as well as olive.
+    {
+      criteria: {
+        oklch: {
+          h: [105, 113],
+          c: [0.08, 0.5],
+          l: [0.66, 0.99],
         },
       },
       descriptive: ["green", "greenish"],
@@ -3017,6 +3358,37 @@ export default {
         "nautical themes",
       ],
     },
+    // Muted mid blues just above the navy box still read as navy.
+    {
+      criteria: {
+        oklch: {
+          h: [235, 288],
+          c: [0.045, 0.1],
+          l: [0.45, 0.52],
+        },
+      },
+      descriptive: ["navy"],
+      nouns: ["navy"],
+      description: [
+        "Navy is a dark, authoritative blue that feels professional and dependable. It evokes naval uniforms, deep ocean water, and twilight sky—serious but approachable. In design, navy is a versatile near-neutral that works as a softer alternative to black, lending depth and formality without harshness. It pairs well with almost any accent color and reads as classic and timeless. Picture navy as the deep blue of a clear night sky just after sunset.",
+      ],
+      meanings: [
+        "authority",
+        "trust",
+        "stability",
+        "professionalism",
+        "tradition",
+        "confidence",
+        "reliability",
+      ],
+      usage: [
+        "corporate",
+        "finance",
+        "uniforms",
+        "formal design",
+        "nautical themes",
+      ],
+    },
     // Maroon / burgundy — dark reds and dark pinks.
     {
       criteria: {
@@ -3115,8 +3487,8 @@ export default {
       criteria: {
         oklch: {
           h: [78, 110],
-          c: [0.1, 0.18],
-          l: [0.62, 0.74],
+          c: [0.08, 0.18],
+          l: [0.55, 0.74],
         },
       },
       descriptive: ["gold", "mustard"],
@@ -3161,6 +3533,22 @@ export default {
       meanings: ["warmth", "gentleness", "youth", "friendliness"],
       usage: ["cosmetics", "wedding", "summer", "food"],
     },
+    {
+      criteria: {
+        oklch: {
+          h: [25, 70],
+          c: [0.1, 0.14],
+          l: [0.68, 0.75],
+        },
+      },
+      descriptive: ["peach"],
+      nouns: ["peach"],
+      description: [
+        "Peach is a soft, light orange with a touch of pink, like the skin of the fruit. It feels gentle, warm and friendly, and is a favourite for skin tones, sunsets and summery pastels. In design it works as a warm neutral or a tender accent that never shouts. Picture peach as late afternoon light on a plastered wall.",
+      ],
+      meanings: ["warmth", "gentleness", "youth", "friendliness"],
+      usage: ["cosmetics", "wedding", "summer", "food"],
+    },
     // Pale butter tones at hue 70–85 read as peach.
     {
       criteria: {
@@ -3187,8 +3575,8 @@ export default {
           l: [0.66, 0.78],
         },
       },
-      descriptive: ["tan"],
-      nouns: ["tan"],
+      descriptive: ["sandy"],
+      nouns: ["brown"],
       description: [
         "Tan is a light, warm brown: sand, leather, camel hair, a summer suntan. It is one of the great quiet neutrals, warmer than grey and softer than brown, and it pairs with almost anything. In design it reads as natural, relaxed and a little classic. Picture tan as a worn leather satchel in the sun.",
       ],
@@ -3248,7 +3636,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 25],
+          h: [0, 35],
           c: [0.02, 0.1],
           l: [0.45, 0.72],
         },
