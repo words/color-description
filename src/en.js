@@ -930,7 +930,6 @@ export default {
           l: [0.55, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -971,7 +970,6 @@ export default {
           l: [0.55, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1013,7 +1011,6 @@ export default {
           l: [0.62, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1055,7 +1052,6 @@ export default {
           l: [0.52, 0.62],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1097,7 +1093,6 @@ export default {
           l: [0.65, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1139,7 +1134,6 @@ export default {
           l: [0.65, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1180,7 +1174,6 @@ export default {
           l: [0.65, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1222,7 +1215,6 @@ export default {
           l: [0.85, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1265,7 +1257,6 @@ export default {
           l: [0.72, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1306,7 +1297,6 @@ export default {
           l: [0.78, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1348,7 +1338,6 @@ export default {
           l: [0.78, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1389,7 +1378,6 @@ export default {
           l: [0.78, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1431,7 +1419,6 @@ export default {
           l: [0.48, 0.55],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1473,7 +1460,6 @@ export default {
           l: [0.48, 0.55],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1515,7 +1501,6 @@ export default {
           l: [0.68, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1557,7 +1542,6 @@ export default {
           l: [0.85, 0.99],
         },
       },
-      descriptive: ["pink"],
       nouns: ["pink"],
       effects: ["soothe", "comfort", "soften", "signal affection"],
       description: [
@@ -1600,7 +1584,7 @@ export default {
           l: [0.42, 0.68],
         },
       },
-      descriptive: ["red", "reddish"],
+      descriptive: ["reddish"],
       nouns: ["red"],
       description: [
         "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
@@ -1649,7 +1633,7 @@ export default {
           l: [0.38, 0.68],
         },
       },
-      descriptive: ["red", "reddish"],
+      descriptive: ["reddish"],
       nouns: ["red"],
       description: [
         "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
@@ -1699,7 +1683,7 @@ export default {
           l: [0.65, 0.75],
         },
       },
-      descriptive: ["red", "reddish"],
+      descriptive: ["reddish"],
       nouns: ["red"],
       description: [
         "Red is energetic and attention-grabbing, often linked with passion, heat, and urgency. It can feel like firelight, ripe fruit, warning signs, or a racing heartbeat—immediate and hard to ignore. In design, red is frequently used for calls to action, alerts, and emphasis, because it reads as high-intensity and high-priority. It can communicate love and celebration, but also anger or danger depending on context. Picture red as a bright spark that pulls the eye and raises the emotional volume.",
@@ -1749,7 +1733,6 @@ export default {
           l: [0.55, 0.86],
         },
       },
-      descriptive: ["orange"],
       nouns: ["orange"],
       description: [
         "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
@@ -1773,7 +1756,6 @@ export default {
           l: [0.58, 0.85],
         },
       },
-      descriptive: ["orange"],
       nouns: ["orange"],
       description: [
         "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
@@ -1798,7 +1780,6 @@ export default {
           l: [0.68, 0.86],
         },
       },
-      descriptive: ["orange"],
       nouns: ["orange"],
       description: [
         "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
@@ -1823,7 +1804,6 @@ export default {
           l: [0.74, 0.85],
         },
       },
-      descriptive: ["orange"],
       nouns: ["orange"],
       description: [
         "Orange feels warm, friendly, and optimistic—like sunset light, citrus peel, or autumn leaves. It carries energy without the sharp intensity of red, making it a popular choice for playful brands and welcoming interfaces. In design, orange often signals movement, creativity, and approachability, and it can work well for highlights and calls to action. Depending on saturation, it can read as cheerful and casual or bold and adventurous. Imagine orange as a cozy glow that invites you in.",
@@ -1848,7 +1828,6 @@ export default {
           l: [0.76, 0.99],
         },
       },
-      descriptive: ["yellow"],
       nouns: ["yellow"],
       description: [
         "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
@@ -1880,7 +1859,6 @@ export default {
           l: [0.28, 0.72],
         },
       },
-      descriptive: ["olive"],
       nouns: ["olive"],
       effects: ["ground", "calm", "reassure"],
       description: [
@@ -1910,7 +1888,6 @@ export default {
           l: [0.4, 0.7],
         },
       },
-      descriptive: ["olive"],
       nouns: ["olive"],
       effects: ["ground", "calm", "reassure"],
       description: [
@@ -1940,7 +1917,6 @@ export default {
           l: [0.72, 0.85],
         },
       },
-      descriptive: ["olive"],
       nouns: ["olive"],
       effects: ["ground", "calm", "reassure"],
       description: [
@@ -1971,7 +1947,6 @@ export default {
           l: [0.15, 0.45],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2009,7 +1984,6 @@ export default {
           l: [0.15, 0.68],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2047,7 +2021,6 @@ export default {
           l: [0.15, 0.45],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2085,7 +2058,6 @@ export default {
           l: [0.15, 0.52],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2123,7 +2095,6 @@ export default {
           l: [0.15, 0.68],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2161,7 +2132,6 @@ export default {
           l: [0.15, 0.45],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2199,7 +2169,6 @@ export default {
           l: [0.45, 0.55],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2238,7 +2207,6 @@ export default {
           l: [0.55, 0.66],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2277,7 +2245,6 @@ export default {
           l: [0.65, 0.74],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2317,7 +2284,6 @@ export default {
           l: [0.15, 0.55],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2355,7 +2321,6 @@ export default {
           l: [0.55, 0.62],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2393,7 +2358,6 @@ export default {
           l: [0.55, 0.65],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2432,7 +2396,6 @@ export default {
           l: [0.62, 0.68],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2472,7 +2435,6 @@ export default {
           l: [0.25, 0.45],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2511,7 +2473,6 @@ export default {
           l: [0.68, 0.85],
         },
       },
-      descriptive: ["beige"],
       nouns: ["beige"],
       effects: ["calm", "soften", "recede"],
       description: [
@@ -2537,7 +2498,6 @@ export default {
           l: [0.15, 0.45],
         },
       },
-      descriptive: ["brown"],
       nouns: ["brown"],
       effects: ["ground", "reassure", "warm", "steady"],
       description: [
@@ -2576,7 +2536,6 @@ export default {
           l: [0.68, 0.99],
         },
       },
-      descriptive: ["beige"],
       nouns: ["beige"],
       effects: ["calm", "soften", "recede"],
       description: [
@@ -2602,7 +2561,6 @@ export default {
           l: [0.68, 0.99],
         },
       },
-      descriptive: ["beige"],
       nouns: ["beige"],
       effects: ["calm", "soften", "recede"],
       description: [
@@ -2628,7 +2586,6 @@ export default {
           l: [0.78, 0.99],
         },
       },
-      descriptive: ["beige"],
       nouns: ["beige"],
       effects: ["calm", "soften", "recede"],
       description: [
@@ -2655,7 +2612,6 @@ export default {
           l: [0.88, 0.99],
         },
       },
-      descriptive: ["yellow"],
       nouns: ["yellow"],
       description: [
         "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
@@ -2686,7 +2642,6 @@ export default {
           l: [0.74, 0.88],
         },
       },
-      descriptive: ["yellow"],
       nouns: ["yellow"],
       description: [
         "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
@@ -2716,7 +2671,6 @@ export default {
           l: [0.74, 0.88],
         },
       },
-      descriptive: ["yellow"],
       nouns: ["yellow"],
       description: [
         "Yellow is bright and uplifting, often linked with sunshine, optimism, and alertness. It can feel like morning light, gold, flowers, or caution tape—cheerful but highly noticeable. In design, yellow works well for highlights and friendly emphasis, but large blocks can become visually tiring if too intense. Softer yellows can feel warm and gentle; vivid yellows feel energetic and attention-focused. Imagine yellow as a beam of light that instantly warms a scene.",
@@ -2747,7 +2701,6 @@ export default {
           l: [0.76, 0.99],
         },
       },
-      descriptive: ["lime"],
       nouns: ["lime"],
       description: [
         "Lime is a sharp, zesty green-yellow that feels fresh and high-energy. It can evoke citrus, neon signs, sportswear, or new leaves—bright, youthful, and a little electric. In design, lime is often used to signal novelty, motion, and visibility, especially as an accent or highlight. It can read as playful and modern, but it can also feel loud if overused. Picture lime as a vivid splash that wakes up a palette instantly.",
@@ -2770,7 +2723,7 @@ export default {
           l: [0.15, 0.78],
         },
       },
-      descriptive: ["green", "greenish"],
+      descriptive: ["greenish"],
       nouns: ["green"],
       description: [
         'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
@@ -2794,7 +2747,7 @@ export default {
           l: [0.78, 0.99],
         },
       },
-      descriptive: ["green", "greenish"],
+      descriptive: ["greenish"],
       nouns: ["green"],
       description: [
         'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
@@ -2819,7 +2772,7 @@ export default {
           l: [0.66, 0.92],
         },
       },
-      descriptive: ["green", "greenish"],
+      descriptive: ["greenish"],
       nouns: ["green"],
       description: [
         'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
@@ -2844,7 +2797,7 @@ export default {
           l: [0.66, 0.99],
         },
       },
-      descriptive: ["green", "greenish"],
+      descriptive: ["greenish"],
       nouns: ["green"],
       description: [
         'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
@@ -2869,7 +2822,7 @@ export default {
           l: [0.15, 0.99],
         },
       },
-      descriptive: ["green", "greenish"],
+      descriptive: ["greenish"],
       nouns: ["green"],
       description: [
         'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
@@ -2894,7 +2847,7 @@ export default {
           l: [0.15, 0.66],
         },
       },
-      descriptive: ["green", "greenish"],
+      descriptive: ["greenish"],
       nouns: ["green"],
       description: [
         'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
@@ -2919,7 +2872,6 @@ export default {
           l: [0.6, 0.78],
         },
       },
-      descriptive: ["teal"],
       nouns: ["teal"],
       description: [
         "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
@@ -2949,7 +2901,6 @@ export default {
           l: [0.15, 0.78],
         },
       },
-      descriptive: ["teal"],
       nouns: ["teal"],
       description: [
         "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
@@ -2979,7 +2930,6 @@ export default {
           l: [0.15, 0.72],
         },
       },
-      descriptive: ["teal"],
       nouns: ["teal"],
       description: [
         "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
@@ -3010,7 +2960,6 @@ export default {
           l: [0.35, 0.65],
         },
       },
-      descriptive: ["teal"],
       nouns: ["teal"],
       description: [
         "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
@@ -3041,7 +2990,6 @@ export default {
           l: [0.15, 0.66],
         },
       },
-      descriptive: ["teal"],
       nouns: ["teal"],
       description: [
         "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
@@ -3072,7 +3020,7 @@ export default {
           l: [0.75, 0.99],
         },
       },
-      descriptive: ["blue", "blueish"],
+      descriptive: ["blueish"],
       nouns: ["blue"],
       description: [
         "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
@@ -3108,7 +3056,7 @@ export default {
           l: [0.48, 0.99],
         },
       },
-      descriptive: ["blue", "blueish"],
+      descriptive: ["blueish"],
       nouns: ["blue"],
       description: [
         "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
@@ -3145,7 +3093,7 @@ export default {
           l: [0.85, 0.99],
         },
       },
-      descriptive: ["blue", "blueish"],
+      descriptive: ["blueish"],
       nouns: ["blue"],
       description: [
         "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
@@ -3181,7 +3129,7 @@ export default {
           l: [0.68, 0.99],
         },
       },
-      descriptive: ["blue", "blueish"],
+      descriptive: ["blueish"],
       nouns: ["blue"],
       description: [
         "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
@@ -3218,7 +3166,7 @@ export default {
           l: [0.15, 0.99],
         },
       },
-      descriptive: ["blue", "blueish"],
+      descriptive: ["blueish"],
       nouns: ["blue"],
       description: [
         "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
@@ -3255,7 +3203,7 @@ export default {
           l: [0.15, 0.92],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3294,7 +3242,7 @@ export default {
           l: [0.15, 0.62],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3333,7 +3281,7 @@ export default {
           l: [0.15, 0.75],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3372,7 +3320,7 @@ export default {
           l: [0.15, 0.72],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3411,7 +3359,7 @@ export default {
           l: [0.15, 0.65],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3450,7 +3398,7 @@ export default {
           l: [0.22, 0.45],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3488,7 +3436,7 @@ export default {
           l: [0.22, 0.45],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -3527,7 +3475,6 @@ export default {
           l: [0.18, 0.45],
         },
       },
-      descriptive: ["navy"],
       nouns: ["navy"],
       effects: ["reassure", "signal authority", "steady"],
       description: [
@@ -3559,7 +3506,6 @@ export default {
           l: [0.18, 0.34],
         },
       },
-      descriptive: ["navy"],
       nouns: ["navy"],
       effects: ["reassure", "signal authority", "steady"],
       description: [
@@ -3591,7 +3537,6 @@ export default {
           l: [0.45, 0.52],
         },
       },
-      descriptive: ["navy"],
       nouns: ["navy"],
       effects: ["reassure", "signal authority", "steady"],
       description: [
@@ -3623,7 +3568,7 @@ export default {
           l: [0.22, 0.48],
         },
       },
-      descriptive: ["maroon", "burgundy"],
+      descriptive: ["burgundy"],
       nouns: ["maroon"],
       effects: ["ground", "warm", "signal seriousness"],
       description: [
@@ -3654,7 +3599,7 @@ export default {
           l: [0.22, 0.48],
         },
       },
-      descriptive: ["maroon", "burgundy"],
+      descriptive: ["burgundy"],
       nouns: ["maroon"],
       effects: ["ground", "warm", "signal seriousness"],
       description: [
@@ -3686,7 +3631,7 @@ export default {
           l: [0.48, 0.52],
         },
       },
-      descriptive: ["maroon", "burgundy"],
+      descriptive: ["burgundy"],
       nouns: ["maroon"],
       effects: ["ground", "warm", "signal seriousness"],
       description: [
@@ -3719,7 +3664,7 @@ export default {
           l: [0.55, 0.74],
         },
       },
-      descriptive: ["gold", "mustard"],
+      descriptive: ["mustard"],
       nouns: ["gold"],
       effects: ["warm", "enrich", "signal value"],
       description: [
@@ -3737,7 +3682,7 @@ export default {
           l: [0.74, 0.82],
         },
       },
-      descriptive: ["gold", "mustard"],
+      descriptive: ["mustard"],
       nouns: ["gold"],
       effects: ["warm", "enrich", "signal value"],
       description: [
@@ -3755,7 +3700,6 @@ export default {
           l: [0.75, 0.93],
         },
       },
-      descriptive: ["peach"],
       nouns: ["peach"],
       effects: ["soften", "warm", "comfort"],
       description: [
@@ -3772,7 +3716,6 @@ export default {
           l: [0.68, 0.75],
         },
       },
-      descriptive: ["peach"],
       nouns: ["peach"],
       effects: ["soften", "warm", "comfort"],
       description: [
@@ -3790,7 +3733,6 @@ export default {
           l: [0.85, 0.93],
         },
       },
-      descriptive: ["peach"],
       nouns: ["peach"],
       effects: ["soften", "warm", "comfort"],
       description: [
@@ -3826,7 +3768,6 @@ export default {
           l: [0.65, 0.78],
         },
       },
-      descriptive: ["salmon"],
       nouns: ["salmon"],
       effects: ["warm", "stimulate appetite", "cheer"],
       description: [
@@ -3844,7 +3785,6 @@ export default {
           l: [0.45, 0.72],
         },
       },
-      descriptive: ["mauve"],
       nouns: ["mauve"],
       effects: ["soften", "calm", "evoke nostalgia"],
       description: [
@@ -3861,7 +3801,6 @@ export default {
           l: [0.72, 0.85],
         },
       },
-      descriptive: ["mauve"],
       nouns: ["mauve"],
       effects: ["soften", "calm", "evoke nostalgia"],
       description: [
@@ -3878,7 +3817,6 @@ export default {
           l: [0.45, 0.72],
         },
       },
-      descriptive: ["mauve"],
       nouns: ["mauve"],
       effects: ["soften", "calm", "evoke nostalgia"],
       description: [
@@ -3895,7 +3833,6 @@ export default {
           l: [0.72, 0.85],
         },
       },
-      descriptive: ["mauve"],
       nouns: ["mauve"],
       effects: ["soften", "calm", "evoke nostalgia"],
       description: [
@@ -3913,7 +3850,6 @@ export default {
           l: [0.78, 0.97],
         },
       },
-      descriptive: ["mint"],
       nouns: ["mint"],
       effects: ["refresh", "cool", "lighten"],
       description: [
@@ -3931,7 +3867,7 @@ export default {
           l: [0.7, 0.86],
         },
       },
-      descriptive: ["turquoise", "aqua"],
+      descriptive: ["aqua"],
       nouns: ["turquoise"],
       effects: ["refresh", "energize", "cool"],
       description: [
@@ -3949,7 +3885,6 @@ export default {
           l: [0.68, 0.99],
         },
       },
-      descriptive: ["cyan"],
       nouns: ["cyan"],
       description: [
         "Cyan is crisp and cool, often evoking clear water, bright skies, and clean air. It tends to feel refreshing and modern—light enough to be friendly, but cool enough to be precise. In design, cyan can suggest clarity, communication, and technology, and it works well for bright accents on dark backgrounds. Depending on context, it can feel playful and youthful or sleek and professional. Picture cyan as a splash of cold water: sharp, energizing, and clean.",
@@ -3982,7 +3917,6 @@ export default {
           l: [0.86, 0.99],
         },
       },
-      descriptive: ["cyan"],
       nouns: ["cyan"],
       description: [
         "Cyan is crisp and cool, often evoking clear water, bright skies, and clean air. It tends to feel refreshing and modern—light enough to be friendly, but cool enough to be precise. In design, cyan can suggest clarity, communication, and technology, and it works well for bright accents on dark backgrounds. Depending on context, it can feel playful and youthful or sleek and professional. Picture cyan as a splash of cold water: sharp, energizing, and clean.",
@@ -4015,7 +3949,6 @@ export default {
           l: [0.7, 0.85],
         },
       },
-      descriptive: ["sky blue"],
       nouns: ["sky blue"],
       effects: ["open up", "calm", "lighten"],
       description: [
@@ -4033,7 +3966,6 @@ export default {
           l: [0.85, 0.96],
         },
       },
-      descriptive: ["sky blue"],
       nouns: ["sky blue"],
       effects: ["open up", "calm", "lighten"],
       description: [
@@ -4051,7 +3983,6 @@ export default {
           l: [0.55, 0.85],
         },
       },
-      descriptive: ["periwinkle"],
       nouns: ["periwinkle"],
       effects: ["calm", "soothe", "soften"],
       description: [
@@ -4069,7 +4000,6 @@ export default {
           l: [0.28, 0.55],
         },
       },
-      descriptive: ["indigo"],
       nouns: ["indigo"],
       effects: ["deepen", "focus", "calm"],
       description: [
@@ -4087,7 +4017,7 @@ export default {
           l: [0.62, 0.95],
         },
       },
-      descriptive: ["lavender", "lilac"],
+      descriptive: ["lilac"],
       nouns: ["lavender"],
       effects: ["relax", "soothe", "soften"],
       description: [
@@ -4119,7 +4049,6 @@ export default {
           l: [0.3, 0.75],
         },
       },
-      descriptive: ["violet"],
       nouns: ["violet"],
       effects: ["intrigue", "inspire", "calm"],
       description: [
@@ -4137,7 +4066,6 @@ export default {
           l: [0.55, 0.8],
         },
       },
-      descriptive: ["violet"],
       nouns: ["violet"],
       effects: ["intrigue", "inspire", "calm"],
       description: [
@@ -4155,7 +4083,7 @@ export default {
           l: [0.42, 0.72],
         },
       },
-      descriptive: ["magenta", "fuchsia"],
+      descriptive: ["fuchsia"],
       nouns: ["magenta"],
       effects: ["energize", "draw attention", "provoke"],
       description: [
@@ -4185,7 +4113,6 @@ export default {
           l: [0.25, 0.5],
         },
       },
-      descriptive: ["plum"],
       nouns: ["plum"],
       effects: ["enrich", "ground", "add depth"],
       description: [
@@ -4203,7 +4130,6 @@ export default {
           l: [0.24, 0.45],
         },
       },
-      descriptive: ["plum"],
       nouns: ["plum"],
       effects: ["enrich", "ground", "add depth"],
       description: [
@@ -4220,7 +4146,6 @@ export default {
           l: [0.45, 0.52],
         },
       },
-      descriptive: ["plum"],
       nouns: ["plum"],
       effects: ["enrich", "ground", "add depth"],
       description: [
@@ -4237,7 +4162,6 @@ export default {
           l: [0.24, 0.48],
         },
       },
-      descriptive: ["plum"],
       nouns: ["plum"],
       effects: ["enrich", "ground", "add depth"],
       description: [
@@ -4255,7 +4179,7 @@ export default {
           l: [0.28, 0.5],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -4293,7 +4217,7 @@ export default {
           l: [0.5, 0.53],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -4331,7 +4255,7 @@ export default {
           l: [0.28, 0.5],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
@@ -4369,7 +4293,7 @@ export default {
           l: [0.5, 0.53],
         },
       },
-      descriptive: ["purple", "purplish", "violet"],
+      descriptive: ["purplish"],
       nouns: ["purple"],
       effects: ["inspire", "intrigue", "elevate"],
       description: [
