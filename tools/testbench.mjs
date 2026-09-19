@@ -372,7 +372,7 @@ ${baselineNote}
     document.getElementById("v-oklch").textContent = d.oklch;
     document.getElementById("v-expected").textContent = "survey: " + d.expected;
     document.getElementById("v-words").textContent = d.words;
-    var m = /oklch\(([\d.]+) ([\d.]+) (\d+)\)/.exec(d.oklch);
+    var m = /oklch\\(([\\d.]+) ([\\d.]+) (\\d+)\\)/.exec(d.oklch);
     document.getElementById("v-pos").textContent = m ? "Panel H " + m[3] + "\u00b0 \u00b7 row L " + m[1] + " \u00b7 column C " + m[2] + " \u00b7 " + (i + 1) + " of " + cells.length : "";
     view.classList.toggle("unchanged", d.was === d.now);
     view.classList.add("open");
