@@ -63,7 +63,7 @@ Interpretation model used by the dataset:
 
 ### `new ColorDescription(color, words?)`
 
-- `color` (string | object): any color culori can parse (hex, `rgb()`, `hsl()`, `oklch()`, named colors, ...)
+- `color` (string | object): a color in any CSS syntax: named colors, hex, `rgb()`, `hsl()`, `hwb()`, `lab()`, `lch()`, `oklab()`, `oklch()` and `color(display-p3 ...)`, or a culori color object. Wide-gamut `color()` spaces such as `a98-rgb` or `prophoto-rgb` are not registered and throw. Colors outside sRGB are described as their most saturated in-gamut equivalent.
 - `words` (object, optional): a word dataset in the shape of `src/en.js`; defaults to the English one
 
 ### Properties
@@ -87,11 +87,11 @@ Interpretation model used by the dataset:
 
 ## Module Formats
 
-This package supports multiple module formats:
+This package supports multiple module formats, each about 67 KB minified with the dataset and a tree-shaken [culori](https://culorijs.org) bundled in:
 
 - **ESM** (modern): `dist/index.esm.js`
-- **CommonJS** (Node.js): `dist/index.js`
-- **IIFE** (browser): `dist/index.iife.js`
+- **CommonJS** (Node.js): `dist/index.cjs`
+- **IIFE** (browser, global `ColorDescription`): `dist/index.iife.js`
 
 ## Development
 
