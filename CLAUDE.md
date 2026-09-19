@@ -35,6 +35,8 @@ Build tool is esbuild, configured inline in package.json scripts. Three output f
 
 **Hue nouns are fitted to the survey, not hand-drawn.** `tools/survey-labels.json` holds, for every cell of an OKLCH grid over sRGB, the most common names among the 60 nearest responses of the Kim et al. 2019 English survey. Each noun entry in `en.js` covers the region where its name wins or comes second in that vote, so yellow only exists light, olive is a small mid-toned region, brown owns most dark warm colors, cyan and magenta are only the vivid core of their hues, and low-chroma colors are grey or black first. Primary entries come before secondary ones in the file because nouns are returned in file order. A name can be split over several entries with the same words and different criteria. Regenerate the labels with `tools/survey-fit.mjs` then `tools/survey-finemap.mjs` (see their headers for the data file).
 
+**A second reference, `tools/eye-labels.json`,** holds names given to every testbench swatch by eye: each color was rendered alone on neutral grey, in shuffled order with no label, and named before the hex was revealed. Where the survey vote and the eye disagree (dusky pinks the survey calls brown, light aquas it calls blue), the eye won. Keep both references when moving a boundary: the survey for what people say, the eye for what the color looks like.
+
 ## Testing
 
 Tests live in `tests/`. Jest with babel-jest transform, node environment. Tests must build first (the test script does this automatically). Key test areas: color parsing, temperature words, descriptive word generation, percentage calculations, WCAG contrast, and hue naming coverage (no deadzones).

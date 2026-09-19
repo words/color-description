@@ -746,7 +746,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [318, 360],
+          h: [345, 360],
           c: [0.075, 0.5],
           l: [0.55, 0.99],
         },
@@ -869,8 +869,49 @@ export default {
       criteria: {
         oklch: {
           h: [12, 25],
-          c: [0.095, 0.135],
+          c: [0.095, 0.115],
           l: [0.52, 0.62],
+        },
+      },
+      descriptive: ["pink"],
+      nouns: ["pink"],
+      description: [
+        "Pink often feels warm and kind, associated with care, tenderness, and playful joy. It can evoke blossoms, candy, soft fabric, or sunset clouds—gentle and inviting. In design, pink ranges from subtle and comforting to bright and energetic, depending on saturation. It can communicate affection and approachability, or boldness when pushed toward hot pink. Picture pink as a soft glow that adds friendliness and charm to a scene.",
+      ],
+      meanings: [
+        "support",
+        "kindness",
+        "change",
+        "harmony",
+        "kink",
+        "charm",
+        "politeness",
+        "sensitivity",
+        "tenderness",
+        "sweetness",
+        "femininity",
+        "romance",
+        "seductiveness",
+        "sexiness",
+      ],
+      usage: [
+        "children's products",
+        "erotica",
+        "cosmetics",
+        "pop culture",
+        "fashion",
+        "confectionery",
+        "romance",
+        "floral",
+      ],
+    },
+    // Saturated magenta hues are pink from L 0.65; below that purple or magenta.
+    {
+      criteria: {
+        oklch: {
+          h: [318, 345],
+          c: [0.075, 0.5],
+          l: [0.65, 0.99],
         },
       },
       descriptive: ["pink"],
@@ -1239,7 +1280,7 @@ export default {
       criteria: {
         oklch: {
           h: [5, 40],
-          c: [0.135, 0.5],
+          c: [0.115, 0.5],
           l: [0.38, 0.68],
         },
       },
@@ -1383,6 +1424,66 @@ export default {
         "Halloween",
       ],
     },
+    // Olive — muted yellow-greens from dark to mid-light. Placed before brown
+    // and green so it leads where it applies (olive brown, olive green).
+    {
+      criteria: {
+        oklch: {
+          h: [88, 125],
+          c: [0.02, 0.16],
+          l: [0.28, 0.72],
+        },
+      },
+      descriptive: ["olive"],
+      nouns: ["olive"],
+      description: [
+        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
+      ],
+      meanings: [
+        "nature",
+        "earthiness",
+        "peace",
+        "resilience",
+        "tradition",
+        "humility",
+      ],
+      usage: [
+        "military",
+        "outdoor brands",
+        "organic products",
+        "nature themes",
+        "fashion",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [125, 135],
+          c: [0.04, 0.15],
+          l: [0.4, 0.7],
+        },
+      },
+      descriptive: ["olive"],
+      nouns: ["olive"],
+      description: [
+        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
+      ],
+      meanings: [
+        "nature",
+        "earthiness",
+        "peace",
+        "resilience",
+        "tradition",
+        "humility",
+      ],
+      usage: [
+        "military",
+        "outdoor brands",
+        "organic products",
+        "nature themes",
+        "fashion",
+      ],
+    },
     // Brown — the whole warm half of the wheel below L 0.72 at low chroma.
     {
       criteria: {
@@ -1426,7 +1527,7 @@ export default {
         oklch: {
           h: [25, 88],
           c: [0.02, 0.1],
-          l: [0.15, 0.74],
+          l: [0.15, 0.68],
         },
       },
       descriptive: ["brown"],
@@ -1911,42 +2012,12 @@ export default {
       ],
       usage: ["sale", "cheap", "budget", "construction"],
     },
-    // Olive — a small region: mid lightness, mid chroma, hue 98–125.
-    {
-      criteria: {
-        oklch: {
-          h: [98, 125],
-          c: [0.04, 0.145],
-          l: [0.45, 0.7],
-        },
-      },
-      descriptive: ["olive"],
-      nouns: ["olive"],
-      description: [
-        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
-      ],
-      meanings: [
-        "nature",
-        "earthiness",
-        "peace",
-        "resilience",
-        "tradition",
-        "humility",
-      ],
-      usage: [
-        "military",
-        "outdoor brands",
-        "organic products",
-        "nature themes",
-        "fashion",
-      ],
-    },
     // Lime — light and vivid yellow-greens only.
     {
       criteria: {
         oklch: {
-          h: [113, 135],
-          c: [0.16, 0.5],
+          h: [108, 135],
+          c: [0.12, 0.5],
           l: [0.76, 0.99],
         },
       },
@@ -1970,7 +2041,31 @@ export default {
         oklch: {
           h: [113, 185],
           c: [0.02, 0.09],
-          l: [0.15, 0.99],
+          l: [0.15, 0.78],
+        },
+      },
+      descriptive: ["green", "greenish"],
+      nouns: ["green"],
+      description: [
+        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
+      ],
+      meanings: ["safety", "harmony", "stability", "reliability", "balance"],
+      effects: ["relax", "balance", "revitalize", "encourage"],
+      usage: [
+        "sustainability",
+        "organic and natural",
+        "finance",
+        "pharmacy",
+        "gardening",
+        "eco",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [113, 178],
+          c: [0.02, 0.09],
+          l: [0.78, 0.99],
         },
       },
       descriptive: ["green", "greenish"],
@@ -2020,32 +2115,7 @@ export default {
         oklch: {
           h: [105, 113],
           c: [0.02, 0.15],
-          l: [0.15, 0.9],
-        },
-      },
-      descriptive: ["green", "greenish"],
-      nouns: ["green"],
-      description: [
-        'Green is strongly associated with nature, growth, and renewal—grass, forests, and fresh herbs. It often feels restorative and balanced, making it a common choice for wellness, sustainability, and "safe/ok" signals. In design, green can communicate stability and harmony, or wealth and success depending on context. Dark greens can feel serious and grounded; bright greens can feel energetic and modern. Imagine green as a breath of air that resets the mood and steadies the scene.',
-      ],
-      meanings: ["safety", "harmony", "stability", "reliability", "balance"],
-      effects: ["relax", "balance", "revitalize", "encourage"],
-      usage: [
-        "sustainability",
-        "organic and natural",
-        "finance",
-        "pharmacy",
-        "gardening",
-        "eco",
-      ],
-    },
-    // Dark muted blue-greens (hue 185–210) are green to most people.
-    {
-      criteria: {
-        oklch: {
-          h: [185, 210],
-          c: [0.02, 0.08],
-          l: [0.15, 0.55],
+          l: [0.15, 0.66],
         },
       },
       descriptive: ["green", "greenish"],
@@ -2070,7 +2140,7 @@ export default {
         oklch: {
           h: [165, 180],
           c: [0.07, 0.18],
-          l: [0.6, 0.92],
+          l: [0.6, 0.78],
         },
       },
       descriptive: ["teal"],
@@ -2100,7 +2170,7 @@ export default {
         oklch: {
           h: [180, 200],
           c: [0.02, 0.15],
-          l: [0.15, 0.88],
+          l: [0.15, 0.78],
         },
       },
       descriptive: ["teal"],
@@ -2131,6 +2201,37 @@ export default {
           h: [200, 215],
           c: [0.02, 0.15],
           l: [0.15, 0.72],
+        },
+      },
+      descriptive: ["teal"],
+      nouns: ["teal"],
+      description: [
+        "Teal is a blue-green that feels balanced and sophisticated, often evoking ocean water, tropical lagoons, and polished gemstones. It sits at the intersection of green's natural calm and blue's cool authority. In design, teal is popular for brands seeking a modern, trustworthy look that feels less corporate than pure blue. Depending on lightness, it can read as refreshing and lively or deep and mysterious. Picture teal as the color where water meets sky at the horizon.",
+      ],
+      meanings: [
+        "sophistication",
+        "clarity",
+        "calm",
+        "balance",
+        "refreshing",
+        "trust",
+      ],
+      effects: ["soothe"],
+      usage: [
+        "healthcare",
+        "wellness",
+        "technology",
+        "communication",
+        "hospitality",
+      ],
+    },
+    // Muted blue-greens just before hue 180 are teal too.
+    {
+      criteria: {
+        oklch: {
+          h: [172, 180],
+          c: [0.05, 0.15],
+          l: [0.35, 0.65],
         },
       },
       descriptive: ["teal"],
@@ -2190,9 +2291,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [185, 215],
+          h: [185, 205],
           c: [0.02, 0.5],
-          l: [0.68, 0.99],
+          l: [0.75, 0.99],
         },
       },
       descriptive: ["blue", "blueish"],
@@ -2296,6 +2397,42 @@ export default {
         "nautical",
       ],
     },
+    {
+      criteria: {
+        oklch: {
+          h: [205, 215],
+          c: [0.02, 0.5],
+          l: [0.68, 0.99],
+        },
+      },
+      descriptive: ["blue", "blueish"],
+      nouns: ["blue"],
+      description: [
+        "Blue often feels calm, steady, and trustworthy—like open sky, deep water, or cool shade. It's widely used in design to communicate reliability and competence, especially in finance, security, and healthcare. Lighter blues can feel airy and friendly; darker blues feel formal and authoritative. Blue can also read as distant or reserved when overused. Imagine blue as a stable horizon line that quiets the noise and brings order.",
+      ],
+      meanings: [
+        "trust",
+        "responsibility",
+        "honesty",
+        "loyalty",
+        "security",
+        "reliability",
+        "calmness",
+        "control",
+      ],
+      effects: ["calm", "reassure"],
+      usage: [
+        "security",
+        "finance",
+        "technology",
+        "healthcare",
+        "accounting",
+        "social media",
+        "government",
+        "law enforcement",
+        "nautical",
+      ],
+    },
     // Blue proper, through to the purple boundary.
     {
       criteria: {
@@ -2337,9 +2474,47 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [285, 318],
+          h: [295, 318],
           c: [0.02, 0.5],
           l: [0.15, 0.92],
+        },
+      },
+      descriptive: ["purple", "purplish", "violet"],
+      nouns: ["purple"],
+      description: [
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
+      ],
+      meanings: [
+        "spirituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
+    },
+    // At the blue boundary (285–295) purple only below L 0.62; lighter is periwinkle and lavender.
+    {
+      criteria: {
+        oklch: {
+          h: [285, 295],
+          c: [0.02, 0.5],
+          l: [0.15, 0.62],
         },
       },
       descriptive: ["purple", "purplish", "violet"],
@@ -2376,7 +2551,7 @@ export default {
       criteria: {
         oklch: {
           h: [318, 325],
-          c: [0.02, 0.5],
+          c: [0.02, 0.14],
           l: [0.15, 0.75],
         },
       },
@@ -2414,7 +2589,7 @@ export default {
       criteria: {
         oklch: {
           h: [325, 345],
-          c: [0.02, 0.17],
+          c: [0.02, 0.14],
           l: [0.15, 0.72],
         },
       },
@@ -2451,9 +2626,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [325, 345],
-          c: [0.17, 0.5],
-          l: [0.15, 0.55],
+          h: [318, 345],
+          c: [0.14, 0.5],
+          l: [0.15, 0.65],
         },
       },
       descriptive: ["purple", "purplish", "violet"],
@@ -2564,9 +2739,40 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [225, 298],
-          c: [0.02, 0.2],
+          h: [225, 288],
+          c: [0.02, 0.145],
           l: [0.18, 0.45],
+        },
+      },
+      descriptive: ["navy"],
+      nouns: ["navy"],
+      description: [
+        "Navy is a dark, authoritative blue that feels professional and dependable. It evokes naval uniforms, deep ocean water, and twilight sky—serious but approachable. In design, navy is a versatile near-neutral that works as a softer alternative to black, lending depth and formality without harshness. It pairs well with almost any accent color and reads as classic and timeless. Picture navy as the deep blue of a clear night sky just after sunset.",
+      ],
+      meanings: [
+        "authority",
+        "trust",
+        "stability",
+        "professionalism",
+        "tradition",
+        "confidence",
+        "reliability",
+      ],
+      usage: [
+        "corporate",
+        "finance",
+        "uniforms",
+        "formal design",
+        "nautical themes",
+      ],
+    },
+    // Vivid dark blues are navy only when very dark.
+    {
+      criteria: {
+        oklch: {
+          h: [225, 288],
+          c: [0.145, 0.22],
+          l: [0.18, 0.34],
         },
       },
       descriptive: ["navy"],
@@ -2625,7 +2831,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 35],
+          h: [0, 32],
           c: [0.07, 0.18],
           l: [0.22, 0.48],
         },
@@ -2656,7 +2862,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [0, 35],
+          h: [0, 30],
           c: [0.07, 0.145],
           l: [0.48, 0.52],
         },
@@ -2691,6 +2897,23 @@ export default {
           h: [78, 110],
           c: [0.1, 0.18],
           l: [0.62, 0.74],
+        },
+      },
+      descriptive: ["gold", "mustard"],
+      nouns: ["gold"],
+      description: [
+        "Gold and mustard are dark, rich yellows. Gold is the warm, lustrous yellow of the metal and of autumn light; mustard is its earthier, more muted cousin. Both feel warm, confident and a little retro. In design they add richness where plain yellow would feel loud. Picture gold as a brass fixture catching the light, and mustard as a wool scarf in October.",
+      ],
+      meanings: ["wealth", "warmth", "success", "tradition"],
+      usage: ["luxury", "autumn", "retro", "packaging"],
+    },
+    // Light saturated yellows are also gold.
+    {
+      criteria: {
+        oklch: {
+          h: [85, 110],
+          c: [0.12, 0.18],
+          l: [0.74, 0.82],
         },
       },
       descriptive: ["gold", "mustard"],
@@ -2739,9 +2962,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [70, 105],
-          c: [0.06, 0.11],
-          l: [0.7, 0.86],
+          h: [40, 88],
+          c: [0.04, 0.11],
+          l: [0.66, 0.78],
         },
       },
       descriptive: ["tan"],
@@ -2757,7 +2980,7 @@ export default {
       criteria: {
         oklch: {
           h: [15, 40],
-          c: [0.09, 0.18],
+          c: [0.09, 0.2],
           l: [0.65, 0.78],
         },
       },
@@ -2773,7 +2996,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [345, 360],
+          h: [318, 360],
           c: [0.02, 0.1],
           l: [0.45, 0.72],
         },
@@ -2806,9 +3029,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [140, 165],
-          c: [0.04, 0.18],
-          l: [0.8, 0.97],
+          h: [140, 182],
+          c: [0.025, 0.18],
+          l: [0.78, 0.97],
         },
       },
       descriptive: ["mint"],
@@ -2823,8 +3046,8 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [175, 200],
-          c: [0.09, 0.18],
+          h: [172, 215],
+          c: [0.05, 0.18],
           l: [0.7, 0.86],
         },
       },
@@ -2840,9 +3063,42 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [178, 205],
-          c: [0.1, 0.5],
-          l: [0.85, 0.99],
+          h: [178, 225],
+          c: [0.13, 0.5],
+          l: [0.68, 0.99],
+        },
+      },
+      descriptive: ["cyan"],
+      nouns: ["cyan"],
+      description: [
+        "Cyan is crisp and cool, often evoking clear water, bright skies, and clean air. It tends to feel refreshing and modern—light enough to be friendly, but cool enough to be precise. In design, cyan can suggest clarity, communication, and technology, and it works well for bright accents on dark backgrounds. Depending on context, it can feel playful and youthful or sleek and professional. Picture cyan as a splash of cold water: sharp, energizing, and clean.",
+      ],
+      meanings: [
+        "freedom",
+        "trust",
+        "wisdom",
+        "joy",
+        "refreshing",
+        "consciousness",
+        "stimulating",
+      ],
+      effects: ["self-expression", "refresh"],
+      usage: [
+        "communication",
+        "children's products",
+        "technology",
+        "aerospace",
+        "entertainment",
+        "productivity",
+      ],
+    },
+    // Very light aquas are cyan at lower chroma.
+    {
+      criteria: {
+        oklch: {
+          h: [178, 225],
+          c: [0.06, 0.13],
+          l: [0.86, 0.99],
         },
       },
       descriptive: ["cyan"],
@@ -2873,9 +3129,26 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [200, 265],
+          h: [215, 265],
+          c: [0.08, 0.16],
+          l: [0.7, 0.85],
+        },
+      },
+      descriptive: ["sky blue"],
+      nouns: ["sky blue"],
+      description: [
+        "Sky blue is a light, clear blue, the colour of a cloudless day. It feels open, calm and optimistic, and it is the most universally liked of the blues. In design it reads as friendly and trustworthy without the weight of a dark blue. Picture sky blue as the view from a window in summer.",
+      ],
+      meanings: ["openness", "calm", "optimism", "freedom"],
+      usage: ["air travel", "childhood", "wellness", "backgrounds"],
+    },
+    // Very light blues take sky blue at lower chroma.
+    {
+      criteria: {
+        oklch: {
+          h: [215, 265],
           c: [0.05, 0.16],
-          l: [0.7, 0.95],
+          l: [0.85, 0.96],
         },
       },
       descriptive: ["sky blue"],
@@ -2890,9 +3163,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [265, 278],
-          c: [0.06, 0.2],
-          l: [0.6, 0.85],
+          h: [265, 295],
+          c: [0.06, 0.5],
+          l: [0.55, 0.85],
         },
       },
       descriptive: ["periwinkle"],
@@ -2907,9 +3180,9 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [275, 292],
-          c: [0.16, 0.5],
-          l: [0.3, 0.55],
+          h: [278, 295],
+          c: [0.12, 0.5],
+          l: [0.28, 0.55],
         },
       },
       descriptive: ["indigo"],
@@ -2944,7 +3217,7 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [278, 325],
+          h: [285, 325],
           c: [0.02, 0.13],
           l: [0.62, 0.95],
         },
@@ -2975,9 +3248,26 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [292, 318],
+          h: [295, 318],
           c: [0.13, 0.5],
           l: [0.3, 0.75],
+        },
+      },
+      descriptive: ["violet"],
+      nouns: ["violet"],
+      description: [
+        "Violet is the bluer side of purple, the colour of the flower and the last band of the rainbow. It feels mystical, refined and a little cooler than purple proper. In design it reads as creative and spiritual, and it sits well next to blues. Picture violet as the sky a few minutes after sunset.",
+      ],
+      meanings: ["mystery", "creativity", "spirituality", "refinement"],
+      usage: ["beauty", "spiritual", "creative", "fashion"],
+    },
+    // Vivid blue-violets at the blue boundary are violet as well.
+    {
+      criteria: {
+        oklch: {
+          h: [285, 295],
+          c: [0.18, 0.5],
+          l: [0.55, 0.8],
         },
       },
       descriptive: ["violet"],
@@ -2992,8 +3282,8 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [325, 360],
-          c: [0.17, 0.5],
+          h: [318, 360],
+          c: [0.14, 0.5],
           l: [0.42, 0.72],
         },
       },
@@ -3053,7 +3343,7 @@ export default {
         oklch: {
           h: [345, 360],
           c: [0.05, 0.12],
-          l: [0.24, 0.48],
+          l: [0.24, 0.52],
         },
       },
       descriptive: ["plum"],
@@ -3079,65 +3369,6 @@ export default {
       ],
       meanings: ["luxury", "depth", "maturity", "drama"],
       usage: ["fashion", "wine", "interiors", "cosmetics"],
-    },
-    // Olive as a secondary name beside brown (khaki) and green (olive green).
-    {
-      criteria: {
-        oklch: {
-          h: [88, 98],
-          c: [0.04, 0.12],
-          l: [0.45, 0.68],
-        },
-      },
-      descriptive: ["olive"],
-      nouns: ["olive"],
-      description: [
-        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
-      ],
-      meanings: [
-        "nature",
-        "earthiness",
-        "peace",
-        "resilience",
-        "tradition",
-        "humility",
-      ],
-      usage: [
-        "military",
-        "outdoor brands",
-        "organic products",
-        "nature themes",
-        "fashion",
-      ],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: [125, 135],
-          c: [0.04, 0.15],
-          l: [0.45, 0.7],
-        },
-      },
-      descriptive: ["olive"],
-      nouns: ["olive"],
-      description: [
-        "Olive is a dark, earthy yellow-green that feels natural and understated. It evokes Mediterranean landscapes, military camouflage, and ripe olive groves—rugged, organic, and grounded. In design, olive works well for outdoor, military, or natural aesthetics, adding warmth without brightness. It can signal durability and practicality, or a connection to the earth. Picture olive as the muted green of sun-dried leaves and weathered canvas.",
-      ],
-      meanings: [
-        "nature",
-        "earthiness",
-        "peace",
-        "resilience",
-        "tradition",
-        "humility",
-      ],
-      usage: [
-        "military",
-        "outdoor brands",
-        "organic products",
-        "nature themes",
-        "fashion",
-      ],
     },
   ],
 
