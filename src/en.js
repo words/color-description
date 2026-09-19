@@ -3679,9 +3679,83 @@ export default {
     {
       criteria: {
         oklch: {
+          h: [345, 360],
+          c: [0.05, 0.1],
+          l: [0.5, 0.53],
+        },
+      },
+      descriptive: ["purple", "purplish", "violet"],
+      nouns: ["purple"],
+      description: [
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
+      ],
+      meanings: [
+        "spirituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
           h: [0, 10],
           c: [0.05, 0.16],
           l: [0.28, 0.5],
+        },
+      },
+      descriptive: ["purple", "purplish", "violet"],
+      nouns: ["purple"],
+      description: [
+        "Purple is often linked with creativity, luxury, and a sense of the uncommon. It blends the calm of blue with the energy of red, which can make it feel both soothing and expressive. In design, purple can signal premium experiences, artistry, and individuality, and it pairs well with neutrals for a refined look. Lighter purples feel soft and whimsical; deeper purples feel dramatic and regal. Picture purple as a rich fabric draped over a scene—adding depth, mood, and personality.",
+      ],
+      meanings: [
+        "spirituality",
+        "structure",
+        "compassion",
+        "sensitivity",
+        "mystery",
+        "tolerance",
+        "integrity",
+        "order",
+        "wisdom",
+        "inspiration",
+      ],
+      usage: [
+        "luxury",
+        "religion",
+        "psychic",
+        "royalty",
+        "creativity",
+        "gaming",
+        "confectionery",
+        "wine",
+        "counterculture",
+      ],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [0, 10],
+          c: [0.05, 0.1],
+          l: [0.5, 0.53],
         },
       },
       descriptive: ["purple", "purplish", "violet"],
