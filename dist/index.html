@@ -247,9 +247,12 @@
         margin-bottom: 1rem;
       }
 
+      .side {
+        flex: 0 0 auto;
+      }
       .atlas {
-        float: right;
-        margin: 0 0 2rem 3rem;
+        position: relative;
+        margin: 1.5rem auto 0;
         display: grid;
         grid-template-columns: max-content max-content max-content;
         width: max-content;
@@ -258,71 +261,64 @@
       }
       .atlas .cells {
         display: grid;
-        grid-template-columns: repeat(5, 5.8rem);
-        grid-auto-rows: 4.6rem;
+        grid-template-columns: repeat(5, 1.65rem);
+        grid-auto-rows: 1.35rem;
         gap: 0;
       }
       .atlas .page-a .cells {
         direction: rtl;
       }
       .atlas .axis {
-        grid-template-columns: 5.8rem;
+        grid-template-columns: 1.65rem;
       }
       .atlas .cell {
+        position: relative;
         direction: ltr;
-        padding: 0.3rem 0.4rem;
-        overflow: hidden;
         cursor: pointer;
-        font-size: 0.7rem;
-        line-height: 1.2;
-        transition: 300ms transform cubic-bezier(0.7, 0.3, 0, 1);
-      }
-      .atlas .cell:hover {
-        transform: translateY(0.15em);
-      }
-      .atlas .cell i {
-        font-family: "Playfair Display", serif;
-        font-style: italic;
-        font-size: 0.8rem;
-      }
-      .atlas .cell b {
-        font-weight: bold;
       }
       .atlas .cell.oog {
         visibility: hidden;
         cursor: default;
       }
-      .atlas .cell.here {
+      .atlas .cell.active {
         outline: 2px solid #202124;
         outline-offset: -2px;
+        z-index: 2;
       }
-      @media (max-width: 1400px), (orientation: portrait) {
-        .atlas {
-          float: none;
-          margin: 0 0 3rem auto;
-          max-width: 100%;
-          overflow-x: auto;
-        }
+      .atlas .cell.active::after {
+        content: attr(data-adj) " " attr(data-nouns);
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 0.35rem);
+        transform: translateX(-50%);
+        white-space: nowrap;
+        background: #fff;
+        color: #202124;
+        border: 2px solid #202124;
+        padding: 0.2rem 0.6rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.8rem;
+        font-weight: bold;
+        line-height: 1.3;
+        pointer-events: none;
+        z-index: 3;
+      }
+      .atlas .cell.active[data-adj]::after {
+        content: attr(data-adj) " " attr(data-nouns);
+      }
+      .atlas .cell.active.edge-left::after {
+        left: 0;
+        transform: none;
+      }
+      .atlas .cell.active.edge-right::after {
+        left: auto;
+        right: 0;
+        transform: none;
       }
     </style>
   </head>
 
   <body>
-    <aside
-      class="atlas"
-      data-atlas
-      aria-label="Hue slice: this hue and its complement around the neutral axis"
-    >
-      <div class="page-a">
-        <div class="cells" data-atlas-a></div>
-      </div>
-      <div class="page-n">
-        <div class="cells axis" data-atlas-n></div>
-      </div>
-      <div class="page-b">
-        <div class="cells" data-atlas-b></div>
-      </div>
-    </aside>
     <h1>Color-Description</h1>
     <p class="intro">
       Color-Description turns a technical color representation into a human
@@ -383,7 +379,24 @@ const cd = new ColorDescription('#b40404');
       >
     </code>
     <div class="currentColor">
-      <div aria-hidden data-picker></div>
+      <div class="side">
+        <div aria-hidden data-picker></div>
+        <aside
+          class="atlas"
+          data-atlas
+          aria-label="Hue slice: this hue and its complement around the neutral axis"
+        >
+          <div class="page-a">
+            <div class="cells" data-atlas-a></div>
+          </div>
+          <div class="page-n">
+            <div class="cells axis" data-atlas-n></div>
+          </div>
+          <div class="page-b">
+            <div class="cells" data-atlas-b></div>
+          </div>
+        </aside>
+      </div>
       <article class="result">
         <h2 data-colorname aria-live="polite" class="colorname"></h2>
         <div data-result aria-live="polite"></div>
@@ -444,6 +457,15 @@ const cd = new ColorDescription('#b40404');
           ? "#202124"
           : "#fff";
       }
+      function cellHtml(hex, l, c, h, extra = "") {
+        miniCd.color = hex;
+        const words = miniCd.descriptiveWords;
+        const adj = words.length
+          ? words[Math.floor(Math.random() * words.length)]
+          : "";
+        const nouns = miniCd.nouns.join(" ");
+        return `<div class="cell${extra}" data-setcolor="${hex}" data-adj="${adj}" data-nouns="${nouns}" title="${hex} oklch(${l} ${c} ${h})" style="background:${hex}"></div>`;
+      }
       function renderMiniGrid($el, hue, current) {
         let html = "";
         for (const l of MINI_L) {
@@ -454,16 +476,11 @@ const cd = new ColorDescription('#b40404');
               continue;
             }
             const hex = formatHex(toRgb(color));
-            miniCd.color = hex;
-            const words = miniCd.descriptiveWords;
-            const adj = words.length ? words[0] : "";
             const here =
-              current &&
-              Math.abs(current.l - l) < 0.05 &&
-              Math.abs(current.c - c) < 0.03
-                ? " here"
+              current && current.l === l && current.c === c
+                ? " active current"
                 : "";
-            html += `<div class="cell${here}" data-setcolor="${hex}" title="${hex} oklch(${l} ${c} ${Math.round(hue)})" style="background:${hex};color:${textOn(hex)}"><i>${adj}</i> <b>${miniCd.nouns.join(" ")}</b></div>`;
+            html += cellHtml(hex, l, c, Math.round(hue), here);
           }
         }
         $el.innerHTML = html;
@@ -472,17 +489,67 @@ const cd = new ColorDescription('#b40404');
         const o = toOklch(value);
         const hue = Math.round(o.h ?? 0);
         const comp = (hue + 180) % 360;
-        renderMiniGrid(document.querySelector("[data-atlas-a]"), hue, o);
+        // nearest grid cell to the current color, snapped into the gamut
+        const nearest = (arr, v) =>
+          arr.reduce((a, b) => (Math.abs(b - v) < Math.abs(a - v) ? b : a));
+        const target = {
+          l: nearest(MINI_L, o.l),
+          c: nearest(MINI_C, o.c ?? 0),
+        };
+        while (
+          target.c > MINI_C[0] &&
+          !inSrgb({ mode: "oklch", l: target.l, c: target.c, h: hue })
+        ) {
+          target.c = MINI_C[MINI_C.indexOf(target.c) - 1];
+        }
+        const onAxis = (o.c ?? 0) < 0.015;
+        renderMiniGrid(
+          document.querySelector("[data-atlas-a]"),
+          hue,
+          onAxis ? null : target,
+        );
         renderMiniGrid(document.querySelector("[data-atlas-b]"), comp, null);
         let axis = "";
         for (const l of MINI_L) {
           const hex = formatHex(toRgb({ mode: "oklch", l, c: 0, h: 0 }));
-          miniCd.color = hex;
-          const words = miniCd.descriptiveWords;
-          const adj = words.length ? words[0] : "";
-          axis += `<div class="cell" data-setcolor="${hex}" title="${hex} oklch(${l} 0 0)" style="background:${hex};color:${textOn(hex)}"><i>${adj}</i> <b>${miniCd.nouns.join(" ")}</b></div>`;
+          const here = onAxis && target.l === l ? " active current" : "";
+          axis += cellHtml(hex, l, 0, 0, here);
         }
         document.querySelector("[data-atlas-n]").innerHTML = axis;
+        placeLabels();
+      }
+      // keep the label inside the atlas when the active cell sits at an edge
+      function placeLabels() {
+        const $atlas = document.querySelector("[data-atlas]");
+        const box = $atlas.getBoundingClientRect();
+        for (const $c of $atlas.querySelectorAll(".cell.active")) {
+          $c.classList.remove("edge-left", "edge-right");
+          const r = $c.getBoundingClientRect();
+          const mid = (r.left + r.right) / 2;
+          if (mid - box.left < 70) $c.classList.add("edge-left");
+          else if (box.right - mid < 70) $c.classList.add("edge-right");
+        }
+      }
+      {
+        const $atlas = document.querySelector("[data-atlas]");
+        $atlas.addEventListener("mouseover", (e) => {
+          const $c = e.target.closest(".cell");
+          if (!$c || $c.classList.contains("oog")) return;
+          for (const $a of $atlas.querySelectorAll(".cell.active")) {
+            $a.classList.remove("active");
+          }
+          $c.classList.add("active");
+          placeLabels();
+        });
+        $atlas.addEventListener("mouseleave", () => {
+          for (const $a of $atlas.querySelectorAll(".cell.active")) {
+            $a.classList.remove("active");
+          }
+          for (const $a of $atlas.querySelectorAll(".cell.current")) {
+            $a.classList.add("active");
+          }
+          placeLabels();
+        });
       }
 
       function colorFetch(color, colors = 10) {
