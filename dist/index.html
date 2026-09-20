@@ -526,7 +526,11 @@ const cd = new ColorDescription('#b40404');
         ) {
           target.c = MINI_C[MINI_C.indexOf(target.c) - 1];
         }
-        const onAxis = (o.c ?? 0) < 0.015;
+        // near whites and blacks have no in-gamut cell even at the lowest
+        // chroma column, so they light up the grey axis instead
+        const onAxis =
+          (o.c ?? 0) < 0.015 ||
+          !inSrgb({ mode: "oklch", l: target.l, c: target.c, h: hue });
         renderMiniGrid(
           document.querySelector("[data-atlas-a]"),
           hue,
