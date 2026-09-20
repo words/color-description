@@ -41,7 +41,7 @@ Build tool is esbuild, configured inline in package.json scripts. Three output f
 
 ## Testing
 
-Tests live in `tests/`. Jest with babel-jest transform, node environment. Tests must build first (the test script does this automatically). Key test areas: color parsing, temperature words, descriptive word generation, percentage calculations, WCAG contrast, and hue naming coverage (no deadzones).
+Tests live in `tests/`. Jest with babel-jest transform, node environment. Tests must build first (the test script does this automatically). Key test areas: color parsing, temperature words, descriptive word generation, percentage calculations, WCAG contrast, hue naming coverage (no deadzones), and `tests/coverage.test.js`, which sweeps every in-gamut cell of the OKLCH grid (21 lightness steps, 10 chroma steps, 360 hues) and fails if any color comes back without a noun or an adjective.
 
 **Visual testbench:** `npm run build && node tools/testbench.mjs` samples the sRGB gamut on an OKLCH grid, scores the nouns against the survey vote in `tools/survey-labels.json`, and writes `tools/testbench.html` (ignored by git). Click a swatch to see it full screen. `--baseline a.json` marks changed cells, `--json out.json` dumps cell data, `--hues 80,100` renders a subset. Agreement should stay near 98%; the cells that disagree are ones where the survey vote itself is split. Judge the swatches by eye before moving a boundary.
 
