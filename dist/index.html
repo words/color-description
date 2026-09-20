@@ -249,6 +249,14 @@
 
       .side {
         flex: 0 0 auto;
+        position: sticky;
+        top: 2rem;
+        align-self: flex-start;
+      }
+      @media (orientation: portrait) {
+        .side {
+          position: static;
+        }
       }
       .atlas {
         position: relative;
