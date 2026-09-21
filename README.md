@@ -17,8 +17,8 @@ cd.nouns;
 // ["blue", "navy"]
 
 cd.descriptiveWords;
-// ["deep", "rich", "dark", "dim", "somber", "matte", "dusty", "ashy",
-//  "unsaturated", "cold", "cool", "blue", "blueish", "navy"]
+// ["deep", "rich", "dark", "dim", "somber", "saturated", "cold", "cool",
+//  "blueish"]
 
 cd.getDescriptiveList(false, 2);
 // "deep and rich"
@@ -41,12 +41,12 @@ cd.usage;
 // ["sale", "cheap", "budget", ...]
 ```
 
-**The order of the words matters.** Both `nouns` and `descriptiveWords` are sorted from the best fit to the loosest one:
+**The first word matters most.** Both `nouns` and `descriptiveWords` put the best fit first:
 
 - `nouns[0]` is the name most people would give the color. `#0a4a7a` is "blue" first and "navy" second; a colour can also be "grey" first and "blue" second when the tint is faint.
-- `descriptiveWords[0]` is the single adjective that best describes the shade: `deep` for a dark saturated blue, `cool` for a faintly tinted grey, `rich` for a gold, `bright` for a turquoise at the gamut edge. The words after it are secondary: still true, but less specific.
+- `descriptiveWords[0]` is the single adjective that best describes the shade: `deep` for a dark saturated blue, `cool` for a faintly tinted grey, `rich` for a gold, `bright` for a turquoise at the gamut edge. The words after it are every other adjective that applies, in the order of the dataset's rules; they are not ranked against each other.
 
-So `descriptiveWords[0] + " " + nouns.join(" ")` gives a short, sensible name ("deep blue navy", "cool grey blue", "rich yellow gold"), and `getDescriptiveList(false, n)` gives the n most fitting adjectives as a sentence fragment. Ask for `getDescriptiveList(true)` only when you want a random order.
+So `descriptiveWords[0] + " " + nouns.join(" ")` gives a short, sensible name ("deep blue navy", "cool grey blue", "rich yellow gold"), and `getDescriptiveList(false, n)` gives the first n adjectives as a sentence fragment. Ask for `getDescriptiveList(true)` only when you want a random order.
 
 ## Color Meaning & Translation
 

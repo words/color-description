@@ -665,7 +665,7 @@ export default {
           s: [0.4, 0.75],
         },
       },
-      descriptive: ["muted", "mellow", "dull"],
+      descriptive: ["muted", "dull"],
     },
     {
       criteria: {
@@ -845,7 +845,7 @@ export default {
           s: [0.8, 1.01],
         },
       },
-      descriptive: ["bright", "vivid", "brilliant", "glowing"],
+      descriptive: ["bright", "vivid", "brilliant"],
     },
     {
       criteria: {
@@ -900,7 +900,7 @@ export default {
           s: [0.7, 1.01],
         },
       },
-      descriptive: ["bright", "vivid", "brilliant", "glowing"],
+      descriptive: ["bright", "vivid", "brilliant"],
     },
     {
       criteria: {
@@ -913,13 +913,28 @@ export default {
           s: [0.7, 1.01],
         },
       },
-      descriptive: ["bright", "vivid", "brilliant", "glowing"],
+      descriptive: ["bright", "vivid", "brilliant"],
     },
-    // browns and olives at full saturation are rich, never vivid
+    // browns and olives at full saturation are rich, never vivid. Red sits
+    // at hue 29 in OKLCH, so below hue 40 the rule stops at L 0.52: brick
+    // reds are rich, the tomato reds above them are vivid.
     {
       criteria: {
         oklch: {
-          h: [20, 90],
+          h: [20, 40],
+          c: [0.05, 0.5],
+          l: [0.4, 0.52],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["rich", "strong", "warm"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [40, 90],
           c: [0.05, 0.5],
           l: [0.4, 0.6],
         },
@@ -959,7 +974,20 @@ export default {
     {
       criteria: {
         oklch: {
-          h: [20, 88],
+          h: [20, 40],
+          c: [0.05, 0.5],
+          l: [0.52, 0.65],
+        },
+        okhsl: {
+          s: [0.8, 1.01],
+        },
+      },
+      descriptive: ["vivid", "vibrant", "strong", "bold", "saturated"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: [40, 88],
           c: [0.05, 0.5],
           l: [0.6, 0.65],
         },
@@ -1022,12 +1050,27 @@ export default {
       },
       descriptive: ["soft", "light", "fresh"],
     },
+    // Between L 0.40 and 0.45 a half-saturated color is still plainly dark
+    // by eye (#274c65, #2f5136, #5f4025); medium only starts at 0.45.
     {
       criteria: {
         oklch: {
           h: null,
           c: [0.05, 0.5],
-          l: [0.4, 0.62],
+          l: [0.4, 0.45],
+        },
+        okhsl: {
+          s: [0, 0.62],
+        },
+      },
+      descriptive: ["dark", "muted", "dim"],
+    },
+    {
+      criteria: {
+        oklch: {
+          h: null,
+          c: [0.05, 0.5],
+          l: [0.45, 0.62],
         },
         okhsl: {
           s: [0.45, 0.62],
@@ -1094,16 +1137,6 @@ export default {
         },
       },
       descriptive: ["matte", "dusty", "ashy"],
-    },
-    {
-      criteria: {
-        oklch: {
-          h: null,
-          c: [0.15, 0.5],
-          l: [0.55, 0.85],
-        },
-      },
-      descriptive: ["fresh", "sparkling"],
     },
     {
       criteria: {
@@ -1267,7 +1300,7 @@ export default {
           l: [0.15, 1],
         },
       },
-      descriptive: ["warm", "mellow"],
+      descriptive: ["warm"],
     },
     {
       criteria: {
@@ -1277,7 +1310,7 @@ export default {
           l: [0.15, 1],
         },
       },
-      descriptive: ["warm", "mellow"],
+      descriptive: ["warm"],
     },
     {
       criteria: {
